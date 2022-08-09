@@ -10,7 +10,6 @@ There are hardware, software and service prerequisites for participating in this
     | CPU             | Single core 3 GHz, x86-64 architecture compatible | Dual core 2 GHz, x86-64 architecture compatible |
     | Memory (RAM)    | 2 GB                                              | 4 GB                                            |
     | Free disk space | 3 GB                                              | 20 GB                                           |
-* 
 
 ## Software
 
@@ -23,10 +22,10 @@ There are hardware, software and service prerequisites for participating in this
     - Mozilla Firefox (latest version)
     - Windows Internet Explorer (as of version 10)
     
+    <br>
 
     > The application can also be used with Safari browser and Internet Explorer 9. However, some features might not work as expected.
-
-
+* REST client, e.g. Postman, to send requests to the integration flows that we deploy to SAP Cloud Integration.
 
 ## Services
 
