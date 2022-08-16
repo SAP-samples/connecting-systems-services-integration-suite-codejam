@@ -62,7 +62,7 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 1. Can you list some of the third-party services that there's integration packages available for SAP SuccessFactors?
 2. We were able to retrieve data from a sandbox environment via the web browser. What is required to retrieve data from the sandbox APIs available in SAP API Business via other utilities/applications, e.g. curl, Postman?
-3. Whilst navigating the APIs for different SAP products, you might have noticed the different states of an API, e.g. ACTIVE, BETA, DECOMMISSIONED, DEPRECATED. What is the deprecation policy of APIs published by SAP? 
+3. Whilst navigating the APIs for different SAP products, you might have noticed the different states of an API, e.g. `ACTIVE`, `BETA`, `DECOMMISSIONED`, `DEPRECATED`. What is the deprecation policy of APIs published by SAP? 
 
 ## Next
 
