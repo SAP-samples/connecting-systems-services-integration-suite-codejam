@@ -1,19 +1,15 @@
 # Prerequisites
 
-There are hardware, software and service prerequisites for participating in this CodeJam. The exercises will be developed using different SAP Integration Suite services as well as communicating with a service that runs locally. For this, we will use [Cloud Connector](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e6c7616abb5710148cfcf3e75d96d596.html?locale=en-US) to enable the communication between SAP BTP and the local service. 
+There are hardware, software and service prerequisites for participating in this CodeJam. The exercises will be developed using different SAP Integration Suite services and communicating with remote services that will be made available for the CodeJam. 
+
+Alternatively, the remote services can be run locally and we can use [Cloud Connector](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e6c7616abb5710148cfcf3e75d96d596.html?locale=en-US) to enable the communication between SAP BTP and the local service. The prerequisites to run it locally are included in [running-locally-prerequisites.md](running-locally-prerequisites.md) *Note: This is recommended if you are doing this exercise outside of a CodeJam event*. 
 
 ## Hardware
 
-* Cloud Connector: [Hardware requirements](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e23f776e4d594fdbaeeb1196d47bbcc0.html?locale=en-US#hardware) to install Cloud Connector in your local machine:
-    |                 | Minimum                                           | Recommended                                     |
-    | --------------- | ------------------------------------------------- | ----------------------------------------------- |
-    | CPU             | Single core 3 GHz, x86-64 architecture compatible | Dual core 2 GHz, x86-64 architecture compatible |
-    | Memory (RAM)    | 2 GB                                              | 4 GB                                            |
-    | Free disk space | 3 GB                                              | 20 GB                                           |
+None.
 
 ## Software
 
-* Cloud Connector: The software requirements for Cloud Connector can be found [here](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e23f776e4d594fdbaeeb1196d47bbcc0.html?locale=en-US#software).
 * A web browser supported by the SAP Integration Suite[^1]: For the UIs of the service, the following browsers are supported on Microsoft Windows PCs and, where mentioned below, on macOS. Note that, however, certain limitations might apply for specific browsers:
 
     Cloud Integration has been tested using the following browsers:
@@ -25,7 +21,7 @@ There are hardware, software and service prerequisites for participating in this
     <br>
 
     > The application can also be used with Safari browser and Internet Explorer 9. However, some features might not work as expected.
-* REST client, e.g. Postman, to send requests to the integration flows that we deploy to SAP Cloud Integration.
+* [Postman](https://www.getpostman.com/downloads/), to send requests to the integration flows that we deploy to SAP Cloud Integration. Follow the installation instructions included in this [tutorial: Install Postman REST Client](https://developers.sap.com/tutorials/api-tools-postman-install.html).
 
 ## Services
 
