@@ -1,0 +1,63 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: s4-mock-server
+  annotations:
+    sidecar.istio.io/inject: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: s4-mock-server
+  template:
+    metadata:
+      labels:
+        app: s4-mock-server
+        version: v1
+    spec:
+      containers:
+      - name: s4-mock-server
+        image: ajmaradiaga/s4-mock-server:latest
+        ports:
+          - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: s4-mock-server-service
+  namespace: default
+  labels:
+    app: s4-mock-server
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 443
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: s4-mock-server
+
+---
+apiVersion: gateway.kyma-project.io/v1alpha1
+kind: APIRule
+metadata:
+  name: s4-mock-server-service
+  namespace: default
+  labels:
+    app: s4-mock-server
+spec:
+  service:
+    host: s4-mock-server-service
+    name: s4-mock-server-service
+    port: 443
+  gateway: kyma-gateway.kyma-system.svc.cluster.local
+  rules:
+    - path: /.*
+      methods: ["GET"]
+      accessStrategies:
+        - handler: noop
+      mutators: []
