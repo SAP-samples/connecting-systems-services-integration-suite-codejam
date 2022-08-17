@@ -7,7 +7,7 @@
 
 ## Description
 
-
+In this SAP CodeJam we will look at different services, part of the SAP Integration Suite, and how we can use them to connect our systems and services. 
 
 ## Prerequisites
 
@@ -28,7 +28,11 @@ See below for an overview of the exercises part of this CodeJam.
 * Please ensure that you have completed all the [prerequisites](prerequisites.md).
 * Exercises:
   * [Exercise 01 - Getting familiar with the SAP API Business Hub](./exercises/01-getting-familiar-api-business-hub/README.md)
-  * [Exercise 02 - Exploring the mock services](./exercises/02-exploring-the-mock-services/README.md)
+  * [Exercise 02 - Exploring the mock services (Cloud Integration)](./exercises/02-exploring-the-mock-services/README.md)
+  * [Exercise 03 - Build our first integration flow](./exercises/03-build-first-integration-flow/README.md)
+  * Exercise 04 - Retrieve Business Partner dependant's information
+  * Exercise 05 - Log service call in Google BigQuery (Open Connectors)
+  * Exercise 06 - Add security to unsecure service (API Management)
 
 ## Known Issues
 
