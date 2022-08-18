@@ -5,9 +5,17 @@
 
 ⚠️ This is a work-in-progress.
 
-## Description
+In this SAP CodeJam we will look at different services, part of the SAP Integration Suite, and how we can use them to connect our systems and services.
 
-In this SAP CodeJam we will look at different services, part of the SAP Integration Suite, and how we can use them to connect our systems and services. 
+## Integration Scenario
+
+Let's imagine we work for a company, ITeLO. ITeLO uses an external platform to manage its Employee Benefits, through which its employees can select their benefits, e.g. discount gym membership, private health insurance, and dental. In addition, ITeLO is interested in expanding its adoption of the benefits platform to allow employees to include their dependants, e.g. spouse, child or other family members, as beneficiaries of the different offerings available on the platform. 
+
+Currently, the benefits platform only has basic employee information, e.g. employee ID, personal email address, full name, and additional data will need to be shared to include dependants as beneficiaries. The employee dependant data exists within ITeLO's systems, and the benefits platform will need to communicate with these systems to retrieve employee dependant data. The employee dependant data is distributed across different geographies, Americas and the European Union (EU). The Americas server stores data for employees in the American continent, whilst the EU instance stores data for employees in the EU. 
+
+We are in charge of building the integration scenario to allow the benefits platform access to the employee dependants' data.
+  
+The benefits platform will send us a request for an employee ID. We will need to validate the employee ID against our SAP S/4HANA Cloud system before requesting the employee dependant data from the servers hosting the data. 
 
 ## Prerequisites
 
