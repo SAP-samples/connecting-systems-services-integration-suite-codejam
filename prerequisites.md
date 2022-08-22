@@ -22,6 +22,9 @@ None.
 
     > The application can also be used with Safari browser and Internet Explorer 9. However, some features might not work as expected.
 * [Postman](https://www.getpostman.com/downloads/), to send requests to the integration flows that we deploy to SAP Cloud Integration. Follow the installation instructions included in this [tutorial: Install Postman REST Client](https://developers.sap.com/tutorials/api-tools-postman-install.html).
+  > Once installed you can import the collection and environments included in the `./connecting-services-integration-suite-codejam/assets/postman` folder.
+
+  > ![Import objects to Postman](./assets/import-objects-to-Postman.gif)
 
 ## Services
 
@@ -92,6 +95,7 @@ From the BTP Cockpit:
 3. Copy credentials: click on the service key just created and a pop-up will appear with the service key details, e.g. clientid, clientsecret, url, tokenurl.
    ![view-service-key](assets/pi-rt-view-service-key.png)
 
+  > 👉 Copy the iflow-client credentials in the Postman environment imported for Cloud Integration
 
 [^1]: [Feature Scope Description for SAP Integration
 Suite](https://help.sap.com/doc/e50e61e7b66c4b60ae5e88c00c01486a/sap.cp.integration.suite/en-US/FSD_IntegrationSuite.pdf)
