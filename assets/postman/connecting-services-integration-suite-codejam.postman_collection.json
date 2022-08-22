@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "f49ed892-7db4-4413-bdbf-76320e0c36e5",
+		"name": "connecting-services-integration-suite-codejam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "372207"
+	},
+	"item": [
+		{
+			"name": "bp-dependants-mock-service",
+			"item": [
+				{
+					"name": "All Dependants",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/employees/{{employee_id}}/dependants",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"employees",
+								"{{employee_id}}",
+								"dependants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Dependant",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/employees/1003767/dependants/8255729496883",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"employees",
+								"1003767",
+								"dependants",
+								"8255729496883"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/ping",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "s4-bp-mock-server",
+			"item": [
+				{
+					"name": "All Business Partners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"sap",
+								"opu",
+								"odata",
+								"sap",
+								"API_BUSINESS_PARTNER",
+								"A_BusinessPartner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Business Partners with Addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner?$expand=to_BusinessPartnerAddress",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"sap",
+								"opu",
+								"odata",
+								"sap",
+								"API_BUSINESS_PARTNER",
+								"A_BusinessPartner"
+							],
+							"query": [
+								{
+									"key": "$expand",
+									"value": "to_BusinessPartnerAddress"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
