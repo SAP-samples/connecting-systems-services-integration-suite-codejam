@@ -58,5 +58,40 @@ Once subscribed to the SAP Integration Suite service, we will need to provision 
 To provision the SAP Integration Suite capabilities, follow the instructions included in [step 3](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#d87e7e9f-7862-410d-ae85-ede409587a60) of the  _Set up the SAP Integration Suite trial_ tutorial.
 
 
+### Create SAP Cloud Integration runtime client credentials
+
+Once subscribed to the SAP Integration Suite, we will need to provision the create an instance of the Process Integration runtime. This service allow us to create client credentials which can be used to retrieve data from the SAP Cloud Integration APIs or calling an integration flow.
+
+From command line:
+```bash
+# Create instance of service
+$ cf create-service it-rt integration-flow pi-rt-iflow -c '{"roles": ["ESBMessaging.send"],"grant-types": ["client_credentials"],"redirect-uris": [] }'
+
+# Create service key
+$ cf create-service-key  pi-rt-iflow iflow-client
+
+# Get the credentials
+$ cf service-key pi-rt-iflow iflow-client
+```
+
+From the BTP Cockpit:
+1. Create instance of service
+   ![create-service-instance](assets/pi-rt-create-service-instance.png)
+
+   Ensure the `ESBMessaging.send` role is selected and the grant-type is `Client Credentials`
+
+   ![create-service-params](assets/pi-rt-create-service-instance-2.png)
+
+   Finalise by clicking the create button
+
+   ![create-service-finalise](assets/pi-rt-create-service-instance-3.png)
+
+2. Create service key
+   ![create-service-key](assets/pi-rt-create-service-key.png)
+
+3. Copy credentials: click on the service key just created and a pop-up will appear with the service key details, e.g. clientid, clientsecret, url, tokenurl.
+   ![view-service-key](assets/pi-rt-view-service-key.png)
+
+
 [^1]: [Feature Scope Description for SAP Integration
 Suite](https://help.sap.com/doc/e50e61e7b66c4b60ae5e88c00c01486a/sap.cp.integration.suite/en-US/FSD_IntegrationSuite.pdf)
