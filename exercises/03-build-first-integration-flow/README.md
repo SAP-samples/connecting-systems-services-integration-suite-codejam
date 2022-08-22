@@ -1,12 +1,27 @@
 # Exercise 03 - Building our first integration flow
 
-At the end of this exercise, you'll have successfully created a simple integration flow that communicates with the SAP S/4HANA mock server.
+At the end of this exercise, you'll have successfully created a simple integration flow that communicates with the SAP S/4HANA Cloud mock server.
 
 > **What is an integration flow [^1]?** 
 > 
 > An integration flow allows you to specify how SAP Cloud Integration is to process a message. The modeling environment, provided in SAP Cloud Integration, allows you to design the details of message processing (its senders and receivers as well as the individual processing steps) with a graphical user interface.
 
-//TODO: Include diagram
+The diagram below captures, from a data flow point of view, what we are going to achieve as part of this exercise. We will expose an HTTP endpoint through which we will be able to send requests to the integration flow we develop. The integration flow will extract some data (the employee_id) from the payload received, which will then be used to retrieve the Business Partner information from the SAP S/4HANA Cloud mock server. 
+
+![Data flow](assets/diagrams/first_data_flow.png)
+
+The integration flow expects a sample request message like the one below and it should return a response message like the one underneath the request.
+
+```json
+// Sample request
+{
+    "employee_id": "181987918"
+}
+
+// Sample response
+
+```
+
 
 ## Access your Cloud Integration workspace
 
@@ -43,7 +58,7 @@ Let's jump to the Design section to start developing our integration flow. Befor
 
 Once created, we can start adding artifacts to our package. 
 
-👉 Navigate to the `Artifacts` tab in your integration package, Add an Integration Flow, specify a Name and ID for the integration flow and click on the newly created integration flow.
+👉 Navigate to the `Artifacts` tab in your integration package, Add an Integration Flow, specify a Name and ID for the integration flow. Once created, click on the new integration flow.
 
 | Field  | Value                       |
 | ------ | --------------------------- |
@@ -55,10 +70,21 @@ Once created, we can start adding artifacts to our package.
 ![Add artifact to package](assets/add-artifact.png)
 
 When accessing the newly created integration flow you'll notice a couple of things:
+
 ![New integration flow](assets/new-integration-flow.png)
-- There are no connections between the Sender and our integration process or the integration processes and the receiver.
-- The palette is greyed out (*highlighted in orange*) and we are unable to modify the integration flow. This is because our integration flow is not in edit mode. To switch to edit mode, click the `Edit button`.
-- 
+- There is no connection between the Sender participant and our integration process or the integration process and the Receiver participant.
+- The palette is greyed out (*highlighted in orange*) and we are unable to modify the integration flow. This is because our integration flow is not in edit mode. To switch to edit mode, click the `Edit button` (*highlighted in green*).
+- The configuration section, at the bottom of the modeling area, is collapsed. The contents of this section will change depending on the object selected in the modeling area. To expand it, click the `Restore button`.
+  ![Expand configuration section](assets/expand-configuration-section.gif)
+
+
+### Modeling 
+
+We will expose the integration flow via an HTTP endpoint. To send requests to the integration flow we will also require a user with the ESBMessaging.send role. The user we will use should have been setup as part of the CodeJam prerequisites.
+
+👉 If not in editing mode, click the `Edit button` to enter edit mode in our integration flow and connect the sender participant to the start message event and select HTTPS as the adapter.
+
+![Connect sender](assets/connect-sender-to-start-message.gif)
 
 
 
@@ -76,6 +102,9 @@ Justo donec enim diam vulputate ut pharetra. Pulvinar proin gravida hendrerit le
 Justo donec enim diam vulputate ut pharetra. Pulvinar proin gravida hendrerit lectus a. Leo a diam sollicitudin tempor id eu. Enim eu turpis egestas pretium aenean pharetra magna. Et molestie ac feugiat sed lectus vestibulum mattis. A iaculis at erat pellentesque. 
 
 > ⚠️ The [URL's hostname](https://developer.mozilla.org/en-US/docs/Web/API/URL/hostname) where our integration flow is deployed (https://my-instance.it-cpi018-rt.cfapps.eu10-003.hana.ondemand.com/http/my-endpoint) is very similar to the URL's hostname we access the SAP Cloud Integration UI (https://my-instance.it-cpi018.cfapps.eu10-003.hana.ondemand.com/itspaces/). Make sure to use the correct hostname when invoking the integration flow, if not an HTML page will be returned as a response when trying to send a request to the integration flow. Can you spot the difference in the URL hostnames?
+
+I'm getting an HTTP 403 error message when posting a message from Postman to SAP Cloud Integration. What can I do?
+It's a 403, not a 401... meaning that you are authenticating well to the service but the user you are using for communication doesn't have the right roles assign to it. Make sure that the user, like to be your.email@company.com, has the 
 
 ## Summary
 
