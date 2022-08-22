@@ -10,16 +10,66 @@ The diagram below captures, from a data flow point of view, what we are going to
 
 ![Data flow](assets/diagrams/first_data_flow.png)
 
-The integration flow expects a sample request message like the one below and it should return a response message like the one underneath the request.
+The integration flow expects a sample request message like the one below and it should return a response message like the one underneath the request. 
+
+> A full sample response payload can be found in the assets folder - [sample-response.json](assets/sample-response.json)
 
 ```json
 // Sample request
 {
-    "employee_id": "181987918"
+    "employee_id": "1003764"
 }
 
 // Sample response
-
+{
+    "d": {
+        "__metadata": {
+            "id": "http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')",
+            "uri": "http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')",
+            "type": "API_BUSINESS_PARTNER.A_BusinessPartnerType"
+        },
+        "BusinessPartner": "1003764",
+        "Customer": "",
+        "Supplier": "",
+        "AcademicTitle": "",
+        "AuthorizationGroup": "",
+        "BusinessPartnerCategory": "1",
+        "BusinessPartnerFullName": "John Doe",
+        "BusinessPartnerGrouping": "BP02",
+        "BusinessPartnerName": "John Doe",
+        "BusinessPartnerUUID": "00163e30-4e2a-1ed8-8483-a08c52249f04",
+        ...
+        "to_BusinessPartnerAddress": {
+            "results": [
+                {
+                    "__metadata": {
+                        "id": "http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')",
+                        "uri": "http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')",
+                        "type": "API_BUSINESS_PARTNER.A_BusinessPartnerAddressType"
+                    },
+                    "BusinessPartner": "1003764",
+                    "AddressID": "28238",
+                    "ValidityStartDate": "/Date(1518393600000+0000)/",
+                    "ValidityEndDate": "/Date(253402300799000+0000)/",
+                    "AuthorizationGroup": "",
+                    "AddressUUID": "00163e30-4e2a-1ed8-8483-a08c5224bf04",
+                    "AdditionalStreetPrefixName": "",
+                    "AdditionalStreetSuffixName": "",
+                    "AddressTimeZone": "CET",
+                    "CareOfName": "",
+                    "CityCode": "",
+                    "CityName": "Walldorf",
+                    "CompanyPostalCode": "",
+                    "Country": "DE",
+                    "County": "",
+                    "DeliveryServiceNumber": "",
+                    "DeliveryServiceTypeCode": "",
+                    ...
+                }
+            ]
+        }
+    }
+}
 ```
 
 
@@ -80,18 +130,93 @@ When accessing the newly created integration flow you'll notice a couple of thin
 
 ### Modeling 
 
-We will expose the integration flow via an HTTP endpoint. To send requests to the integration flow we will also require a user with the ESBMessaging.send role. The user we will use should have been setup as part of the CodeJam prerequisites.
+We will expose the integration flow via an HTTP endpoint. To send requests to the integration flow we will also require a user with the ESBMessaging.send role. The user we will use should have been created as part of the CodeJam [prerequisites](../../prerequisites.md#create-sap-cloud-integration-runtime-client-credentials).
 
-👉 If not in editing mode, click the `Edit button` to enter edit mode in our integration flow and connect the sender participant to the start message event and select HTTPS as the adapter.
+#### Sender participant
+
+👉 If not in editing mode, click the `Edit button` to enter edit mode in our integration flow and connect the sender participant to the start message event and select HTTPS as the adapter. 
 
 ![Connect sender](assets/connect-sender-to-start-message.gif)
 
+👉 Now that we've connected the sender participant, we can proceed to configure the connection of the HTTPS adapter. We need to specify an address, a user role and if the endpoint should be CSRF ([Cross-site request forgery](https://owasp.org/www-community/attacks/csrf)) protected. 
+
+![HTTPS adapter connection settings](assets/http-adapter-connection.png)
+
+#### JSON to XML converter
+
+To extract the data needed from the request, we will first convert the JSON payload to XML. This is to ease the message processing in the integration flow, e.g. take advantage of the XPath in the Content Modifier transformation step. For this, we will need to add a couple of steps in the flow. We can do this by selecting the step from the palette (highlighted in orange a few screenshots above) or by clicking the Add button in the hover menu. *I personally prefer using the hover menu as the search functionality is very handy.* 
+
+👉 Add the JSON to XML converter and the Content Modifier transformation to the integration flow
+
+![hover menu to add steps](assets/add-steps-using-hover-menu.gif)
+
+The JSON to XML converter enables you to transform messages in JSON format to XML format. The body of the exchange will be replaced with an XML payload, similar to the one below, and the XML payload will contain a `root` node. The name of the `root` node can be changed in the JSON to XML Converter - Processing tab.
+
+```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+    <employee_id>1003764</employee_id>
+</root>
+```
+
+#### Content Modifier
+
+You can use the content modifier to define local properties for storing additional data during message processing. The content modified can also be use to set header properties that can be included in the HTTP request made to other systems. Also, the header and properties can be further used in connectors and conditions. 
+
+👉 Let's create a property in our exchange. The `employee_id` exchange property will store the employee_id value sent in the request payload. To do this, we need to access the value using XPath. Configure the Content Modifier - Exchange Property as shown in the screenshot below.
+
+| Field          | Value                       |
+| -------------- | --------------------------- |
+| *Action*       | Request Employee Dependants |
+| *Name*         | employee_id                 |
+| *Source Type*  | XPath                       |
+| *Source Value* | /root/employee_id           |
+| *Data Type*    | java.lang.String            |
+
+![Create exchange property](assets/create-employee-id-property.png)
+
+#### Request/Reply
+
+For our integration scenarios we require that our integration flow communicates with the SAP S/4HANA Cloud mock server, to retrieve Business Partner data from it. In this case, we will use the request reply step to connect to the Business Partner mock service.
+
+> In exercise 4 we will further process the data received from the SAP S/4HANA Cloud - Business Partner mock service.
+
+👉 Add a Request Reply external call to call the SAP S/4HANA Cloud - Business Partner mock service, connect it to the Receiver participant, select as a [receiver the HTTP adapter](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/2da452effb764b3bb28f8e0a2f5bd480.html?locale=en-US), and set the connections details in the HTTP adapter.
+
+![Add Request Reply step in iFlow](assets/request-reply-step-in-iflow.png)
+
+HTTP Connection details:
+| Field           | Value                                                                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| *Address*       | https://s4-mock-server-service.c-1e90315.kyma.ondemand.com/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('${property.employee_id}') |
+| *Query*         | $expand=to_BusinessPartnerAddress                                                                                                              |
+| *Proxy Type*    | Internet                                                                                                                                       |
+| *Method*        | GET                                                                                                                                            |
+| *Authenticaton* | None                                                                                                                                           |
+
+Let's break down the configuration set in the HTTP adapter:
+- Connection Details:
+  - Address: URL of the SAP S/4HANA Cloud mock server we're connecting to, e.g., https://s4-mock-server-service.c-1e90315.kyma.ondemand.com. You'll notice that we are also including the full path, and dynamically setting the value stored in the `employee_id` exchange property as part of the URL. 
+  - Query: Query string that we want to send with the HTTP request. In our case just expanding the to_BusinessPartnerAddress field.
+  - Proxy: The type of proxy that you are using to connect to the target system. In our case we are communicating with a cloud system, therefore we select Internet. If we would be communicating with an on-premise system we will need to set it to On-Premise.
+  - Method: Action that the HTTP request must perform. In our case a GET request.
+  - Authentication: The mock server has no authentication enabled hence why we select None. In a real world scenario you would set up a communication user in SAP S/4HANA and deploy the credentials to the secure store available in SAP Cloud Integration. 
+- Header Details:
+  - Request Headers: List of header that you want to send to the target system. We don't need to send any request headers to the Business Partners mock service but this parameter will be set in a future exercise where we will need to pass a header parameter.
+  - Response Headers: List of headers coming from the target system's response. They will be available in the exchange after the request.
 
 
 ## Deploy
 
 Justo donec enim diam vulputate ut pharetra. Pulvinar proin gravida hendrerit lectus a. Leo a diam sollicitudin tempor id eu. Enim eu turpis egestas pretium aenean pharetra magna. Et molestie ac feugiat sed lectus vestibulum mattis. A iaculis at erat pellentesque. 
 
+![Deployment status](assets/deployment-starting-to-started.gif)
+
+Once deployed, and the runtime status is `✅ Started`, you can click the `Navigate to Manage Integration Content link` and it will take you to the details of the deployed content. An HTTP endpoint URL, similar to the one below, will be displayed in the UI.
+
+![Deployed content - HTTP endpoint URL](assets/deployed-content.png)
+
+> ℹ️ In case you don't see the HTTP endpoint URL immediately in the deployed content page, see [troubleshooting](../../troubleshooting.md#there-is-no-http-endpoint-url-on-the-deployed-content-page).
 
 ## Monitoring
 
@@ -112,14 +237,14 @@ Now that you are familiar with the basic functionality of SAP API Business Hub a
 
 ## Further reading
 
-* [Link 1](https://blogs.sap.com/)
-* [Link 2](https://blogs.sap.com/)
+* [Definin the JSON-to-XML converter](https://help.sap.com/docs/CLOUD_INTEGRATION/987273656c2f47d2aca4e0bfce26c594/2f75a807d7574f099170de52dd8f91e2.html?locale=en-US&version=Cloud)
+* [Request Reply external call](https://help.sap.com/docs/CLOUD_INTEGRATION/987273656c2f47d2aca4e0bfce26c594/dc39fdd4a44d4b9a9eabb56f49434250.html?locale=en-US&version=Cloud)
 
 ---
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. First question.
-2. Second question.
+1. Can you think of a problem that we might face if we set the `employee_id` property as a header property instead of as an exchange property?
+2. How can we configure that any errors faced during the execution can be returned as an exception to the sender?
 
 * [^1]: [Getting Started with Integration Flow Development](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/e5724cd84b854719973afe0356ea128b.html?locale=en-US&q=%22integration%20flow%22)
