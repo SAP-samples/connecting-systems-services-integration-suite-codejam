@@ -67,6 +67,9 @@ Once subscribed to the SAP Integration Suite, we will need to provision the crea
 
 From command line:
 ```bash
+# Login to Cloud Foundry
+$ cf login --sso
+
 # Create instance of service
 $ cf create-service it-rt integration-flow pi-rt-iflow -c '{"roles": ["ESBMessaging.send"],"grant-types": ["client_credentials"],"redirect-uris": [] }'
 
