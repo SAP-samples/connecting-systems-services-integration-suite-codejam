@@ -27,31 +27,37 @@ PRIMARY_EMPHASIZE_AREA_GRAPH_ATTR = {
 NODE_LABEL = {"fontname": "72 Regular"}
 EDGE_LABEL = {"color": FIX_GREY_COLOUR, "fontname": "72 Italic"}
 
-with Diagram("Final data flow", show=False, filename="final_data_flow", graph_attr={"splines": "true"}):
+with Diagram("", show=False, filename="final_data_flow", graph_attr={"splines": "true"}):
     rest_client = Custom("REST Client", "../postman-logo.png")
     benefits_platform = Server("Benefits Platform", **NODE_LABEL)
     sap_server = SAPS4HANACloud(**{"height": "2.5", "width": "2.5"})
     big_query = BigQuery("Logs")
 
-    with Cluster("SAP Business Technology Platform", graph_attr=GLOBALACCOUNT_GRAPH_ATTR):
+    with Cluster("SAP Business Technology Platform - CodeJam account", graph_attr=GLOBALACCOUNT_GRAPH_ATTR):
+        with Cluster("Americas Subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
+            americas_service = KymaRuntime_Circle("BP Dependants\nService", **NODE_LABEL)
+
+        with Cluster("European Subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
+            european_service = KymaRuntime_Circle("BP Dependants\nService", **NODE_LABEL)
+            
+    with Cluster("SAP Business Technology Platform - Participant account", graph_attr=GLOBALACCOUNT_GRAPH_ATTR):
         with Cluster("Your Subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
             with Cluster("SAP Integration Suite", graph_attr=PRIMARY_EMPHASIZE_AREA_GRAPH_ATTR):
                 cloud_integration = ProcessIntegration_Circle("Cloud Integration", **NODE_LABEL)
                 api_management = APIManagement_Circle("API Management", **NODE_LABEL)
                 open_connectors = OpenConnectors_Circle("Open Connectors", **NODE_LABEL)
+                
+                cloud_integration >> Edge(label="Business Partners", **EDGE_LABEL) >> sap_server
+
+                open_connectors >> Edge(label="Log request", **EDGE_LABEL) >> big_query
+
+                cloud_integration >> americas_service
+
+                cloud_integration >> Edge(label="Dependants", **EDGE_LABEL) >> european_service
+
 
                 benefits_platform >> Edge(label="Send request", orientation="135", **EDGE_LABEL) >> api_management
                 rest_client >> Edge(label="Send request", **EDGE_LABEL) >> api_management
                 api_management - cloud_integration - open_connectors
 
-                cloud_integration >> Edge(label="Business Partners", **EDGE_LABEL) >> sap_server
-
-                open_connectors >> Edge(label="Log request", **EDGE_LABEL) >> big_query
-
-        with Cluster("European Subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
-            european_service = KymaRuntime_Circle("BP Dependants\nService", **NODE_LABEL)
-            cloud_integration >> Edge(label="Dependants", **EDGE_LABEL) >> european_service
-        
-        with Cluster("Americas Subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
-            americas_service = KymaRuntime_Circle("BP Dependants\nService", **NODE_LABEL)
-            cloud_integration >> Edge(label="Dependants", **EDGE_LABEL) >> americas_service
+                
