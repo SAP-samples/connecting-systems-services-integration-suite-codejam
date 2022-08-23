@@ -72,6 +72,7 @@ The integration flow expects a sample request message like the one below and sho
 }
 ```
 
+> ℹ️ While going through the exercise, you might encounter common problems not explicitly related to it. Your first stop should be the [troubleshooting.md](troubleshooting.md) page, which includes a list of these common problems and their potential solutions.
 
 ## Access your Cloud Integration workspace
 
