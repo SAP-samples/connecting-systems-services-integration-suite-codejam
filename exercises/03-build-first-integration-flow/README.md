@@ -236,9 +236,10 @@ Congratulations, you've built and deployed the first integration flow. Now you h
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. Can you think of a problem we might face if we set the `employee_id` property as a header property instead of an exchange property?
-2. In the receiver HTTP adapter, we hardcoded a URL. How can we parametrise this field or other fields in our integration flow? Why would we want to parametrise our integration flow?
-3. How can we configure our integration flow so that the error can be returned to the sender whenever an error is raised during execution?
+1. Now that you've built your first integration flow with SAP Cloud Integration, how would you compare the process of building an integration flow to writing a program to achieve the same?
+2. Can you think of a problem we might face if we set the `employee_id` property as a header property instead of an exchange property?
+3. In the receiver HTTP adapter, we hardcoded a URL. How can we parametrise this field or other fields in our integration flow? Why would we want to parametrise our integration flow?
+4. How can we configure our integration flow so that the error can be returned to the sender whenever an error is raised during execution?
 
 [^1]: [Getting Started with Integration Flow Development](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/e5724cd84b854719973afe0356ea128b.html?locale=en-US&q=%22integration%20flow%22)
 [^2]: [Cross-site request forgery]((https://owasp.org/www-community/attacks/csrf))
