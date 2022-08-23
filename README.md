@@ -1,6 +1,6 @@
 # Connecting Systems and Services Using SAP Integration Suite
 
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/connecting-systems-services-integration-suite-codejam)](https://api.reuse.software/info/github.com/SAP-samples/connecting-systems-services-integration-suite-codejam)
 
 ⚠️ This is a work-in-progress.
 
