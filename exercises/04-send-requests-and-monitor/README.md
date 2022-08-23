@@ -41,20 +41,21 @@ It is possible  that you've
 
 ## Simulation
 
-
+//TODO: Complete simulation
 
 ## Tracing
 
-
+//TODO: Complete tracing
 
 ## Summary
 
-Now that you are familiar with the basic functionality of SAP API Business Hub and the Business Partner API, we are ready to start interacting with the services from which our integration will be extracting data.
+//TODO: Complete summary
 
 ## Further reading
 
 * [Link 1](https://blogs.sap.com/)
 * [Link 2](https://blogs.sap.com/)
+* [Link 3](https://blogs.sap.com/)
 
 ---
 
