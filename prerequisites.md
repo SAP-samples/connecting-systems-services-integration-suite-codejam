@@ -10,7 +10,9 @@ None.
 
 ## Software
 
-* A web browser supported by the SAP Integration Suite[^1]: For the UIs of the service, the following browsers are supported on Microsoft Windows PCs and, where mentioned below, on macOS. Note that, however, certain limitations might apply for specific browsers:
+### Web browser
+
+A web browser supported by the SAP Integration Suite[^1]: For the UIs of the service, the following browsers are supported on Microsoft Windows PCs and, where mentioned below, on macOS. Note that, however, certain limitations might apply for specific browsers:
 
     Cloud Integration has been tested using the following browsers:
     - Google Chrome (latest version)
@@ -21,7 +23,10 @@ None.
     <br>
 
     > The application can also be used with Safari browser and Internet Explorer 9. However, some features might not work as expected.
-* [Postman](https://www.getpostman.com/downloads/), to send requests to the integration flows that we deploy to SAP Cloud Integration. Follow the installation instructions included in this [tutorial: Install Postman REST Client](https://developers.sap.com/tutorials/api-tools-postman-install.html).
+
+### Postman
+
+[Postman](https://www.getpostman.com/downloads/), to send requests to the integration flows that we deploy to SAP Cloud Integration. Follow the installation instructions included in this [tutorial: Install Postman REST Client](https://developers.sap.com/tutorials/api-tools-postman-install.html).
   > Once installed you can import the collection and environments included in the `./connecting-services-integration-suite-codejam/assets/postman` folder.
 
   > ![Import objects to Postman](./assets/import-objects-to-Postman.gif)
