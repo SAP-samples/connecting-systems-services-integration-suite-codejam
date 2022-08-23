@@ -45,6 +45,10 @@ See below for an overview of the exercises part of this CodeJam.
   * Exercise 06 - Log service call in Google BigQuery (Open Connectors)
   * Exercise 07 - Add security to unsecure service (API Management)
 
+### Troubleshooting
+
+While going through the exercises, you might encounter common problems not explicitly related to them. Check out the [troubleshooting.md](troubleshooting.md) page, which includes a list of these common problems and their potential solutions.
+
 ## Known Issues
 
 None

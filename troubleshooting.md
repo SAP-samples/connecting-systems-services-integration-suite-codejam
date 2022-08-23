@@ -1,6 +1,6 @@
 # Troubleshooting
 
-This page intends to capture any issues that you might face while going through the exercises that are part of the CodeJam. 
+This page intends to capture common problems that you might face while going through the exercises part of the CodeJam. 
 
 ## Cloud Integration
 
@@ -18,7 +18,7 @@ This page intends to capture any issues that you might face while going through 
     2. If the Authorization header is set, the Bearer token may have expired. Refresh the token by sending a request to the token URL (In Postman collection - `cloud-integration > POST Token`) and then retry sending the request to the integration flow.
 
 - #### HTTP 403 Forbidden error message when posting a message to SAP Cloud Integration
-    It's a 403, not a 401... meaning that you are authenticating well to the service but the user you are using for communication doesn't have the right roles assigned to it. Make sure that the user has the ESBMessagingSend.send role in the BTP Cockpit. See the roles set up for the instance in the [prerequisites - Create SAP Cloud Integration runtime client credentials](prerequisites.md#create-sap-cloud-integration-runtime-client-credentials).
+    It's an HTTP 403, not an HTTP 401... meaning that you are authenticating well to the service but the user you are using for communication doesn't have the right roles assigned to it. Make sure that the user has the ESBMessagingSend.send role in the BTP Cockpit. See the roles set up for the instance in the [prerequisites - Create SAP Cloud Integration runtime client credentials](prerequisites.md#create-sap-cloud-integration-runtime-client-credentials).
 
 - #### HTTP 500 Internal Server error - PKIX path building failed. Unable to find valid certification path to requested target.
     The certificate presented by the service you are communicating with is unknown to your Cloud Integration tenant. You need to import the certificate presented by the service in your Cloud Integration tenant.
@@ -35,6 +35,10 @@ This page intends to capture any issues that you might face while going through 
 
     3. Confirm certificate
     ![Confirm certificate](assets/confirm-certificate.png)
+
+    Once the certificate is added, you can test connectivity with the service by using the `Connectivity Tests` utility under Monitor
+
+    ![Test connectivity](assets/test-connectivity.png)
 
 
 
