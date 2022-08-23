@@ -41,10 +41,6 @@ This page intends to capture common problems that you might face while going thr
     ![Test connectivity](assets/test-connectivity.png)
 
 
-
-
-- 
-
 ## Postman
 
 TBA
