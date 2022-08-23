@@ -1,7 +1,6 @@
-# Connecting systems and services using SAP Integration Suite
-<!--- Register repository https://api.reuse.software/register, then add REUSE badge:
+# Connecting Systems and Services Using SAP Integration Suite
+
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
--->
 
 ⚠️ This is a work-in-progress.
 
