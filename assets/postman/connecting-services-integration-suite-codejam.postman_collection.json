@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f49ed892-7db4-4413-bdbf-76320e0c36e5",
+		"_postman_id": "001e9da3-4ba1-4c0d-8c67-7f2a6f402a9f",
 		"name": "connecting-services-integration-suite-codejam",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "372207"
@@ -46,15 +46,15 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/employees/1003767/dependants/8255729496883",
+							"raw": "{{host}}/employees/{{employee_id}}/dependants/{{dependant_id}}",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"employees",
-								"1003767",
+								"{{employee_id}}",
 								"dependants",
-								"8255729496883"
+								"{{dependant_id}}"
 							]
 						}
 					},
@@ -76,6 +76,29 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Countries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "apiKey",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/countries",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -84,6 +107,17 @@
 			"item": [
 				{
 					"name": "All Business Partners",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -102,15 +136,161 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200 OK - All Business Partners",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"sap",
+										"opu",
+										"odata",
+										"sap",
+										"API_BUSINESS_PARTNER",
+										"A_BusinessPartner"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "16834"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 23 Aug 2022 07:47:27 GMT"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"41c2-+OYjXl6zYRV15NZX38n9JUBwQ9E\""
+								},
+								{
+									"key": "server",
+									"value": "istio-envoy"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "3"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"d\": {\n        \"results\": [\n            {\n                \"__metadata\": {\n                    \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')\",\n                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')\",\n                    \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n                },\n                \"BusinessPartner\": \"1003764\",\n                \"Customer\": \"\",\n                \"Supplier\": \"\",\n                \"AcademicTitle\": \"\",\n                \"AuthorizationGroup\": \"\",\n                \"BusinessPartnerCategory\": \"1\",\n                \"BusinessPartnerFullName\": \"John Doe\",\n                \"BusinessPartnerGrouping\": \"BP02\",\n                \"BusinessPartnerName\": \"John Doe\",\n                \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a08c52249f04\",\n                \"CorrespondenceLanguage\": \"\",\n                \"CreatedByUser\": \"CC0000000002\",\n                \"CreationDate\": \"/Date(1518393600000)/\",\n                \"CreationTime\": \"PT17H49M05S\",\n                \"FirstName\": \"John\",\n                \"FormOfAddress\": \"\",\n                \"Industry\": \"\",\n                \"InternationalLocationNumber1\": \"0\",\n                \"InternationalLocationNumber2\": \"0\",\n                \"IsFemale\": false,\n                \"IsMale\": true,\n                \"IsNaturalPerson\": \"X\",\n                \"IsSexUnknown\": false,\n                \"Language\": \"\",\n                \"LastChangeDate\": null,\n                \"LastChangeTime\": \"PT00H00M00S\",\n                \"LastChangedByUser\": \"\",\n                \"LastName\": \"Doe\",\n                \"LegalForm\": \"\",\n                \"OrganizationBPName1\": \"\",\n                \"OrganizationBPName2\": \"\",\n                \"OrganizationBPName3\": \"\",\n                \"OrganizationBPName4\": \"\",\n                \"OrganizationFoundationDate\": null,\n                \"OrganizationLiquidationDate\": null,\n                \"SearchTerm1\": \"Entwickler\",\n                \"AdditionalLastName\": \"\",\n                \"BirthDate\": null,\n                \"BusinessPartnerIsBlocked\": false,\n                \"BusinessPartnerType\": \"\",\n                \"ETag\": \"CC000000000220180212174905\",\n                \"GroupBusinessPartnerName1\": \"\",\n                \"GroupBusinessPartnerName2\": \"\",\n                \"IndependentAddressID\": \"\",\n                \"InternationalLocationNumber3\": \"0\",\n                \"MiddleName\": \"doe@company-a.com\",\n                \"NameCountry\": \"\",\n                \"NameFormat\": \"\",\n                \"PersonFullName\": \"\",\n                \"PersonNumber\": \"28237\",\n                \"IsMarkedForArchiving\": false,\n                \"BusinessPartnerIDByExtSystem\": \"\",\n                \"YY1_AddrLastCheckedOn_bus\": null,\n                \"YY1_AddrLastCheckedBy_bus\": \"\",\n                \"to_BuPaIdentification\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BuPaIdentification\"\n                    }\n                },\n                \"to_BusinessPartnerAddress\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerAddress\"\n                    }\n                },\n                \"to_BusinessPartnerBank\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerBank\"\n                    }\n                },\n                \"to_BusinessPartnerContact\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerContact\"\n                    }\n                },\n                \"to_BusinessPartnerRole\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerRole\"\n                    }\n                },\n                \"to_BusinessPartnerTax\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerTax\"\n                    }\n                },\n                \"to_Customer\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_Customer\"\n                    }\n                },\n                \"to_Supplier\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_Supplier\"\n                    }\n                }\n            },\n            {\n                \"__metadata\": {\n                    \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')\",\n                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')\",\n                    \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n                },\n                \"BusinessPartner\": \"1003765\",\n                \"Customer\": \"\",\n                \"Supplier\": \"\",\n                \"AcademicTitle\": \"\",\n                \"AuthorizationGroup\": \"\",\n                \"BusinessPartnerCategory\": \"1\",\n                \"BusinessPartnerFullName\": \"Jane Roe\",\n                \"BusinessPartnerGrouping\": \"BP02\",\n                \"BusinessPartnerName\": \"Jane Roe\",\n                \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a0a5f4c2bf04\",\n                \"CorrespondenceLanguage\": \"\",\n                \"CreatedByUser\": \"CC0000000002\",\n                \"CreationDate\": \"/Date(1518393600000)/\",\n                \"CreationTime\": \"PT17H49M06S\",\n                \"FirstName\": \"Jane\",\n                \"FormOfAddress\": \"\",\n                \"Industry\": \"\",\n                \"InternationalLocationNumber1\": \"0\",\n                \"InternationalLocationNumber2\": \"0\",\n                \"IsFemale\": true,\n                \"IsMale\": false,\n                \"IsNaturalPerson\": \"X\",\n                \"IsSexUnknown\": false,\n                \"Language\": \"\",\n                \"LastChangeDate\": null,\n                \"LastChangeTime\": \"PT00H00M00S\",\n                \"LastChangedByUser\": \"\",\n                \"LastName\": \"Roe\",\n                \"LegalForm\": \"\",\n                \"OrganizationBPName1\": \"\",\n                \"OrganizationBPName2\": \"\",\n                \"OrganizationBPName3\": \"\",\n                \"OrganizationBPName4\": \"\",\n                \"OrganizationFoundationDate\": null,\n                \"OrganizationLiquidationDate\": null,\n                \"SearchTerm1\": \"Buchhalterin\",\n                \"AdditionalLastName\": \"\",\n                \"BirthDate\": null,\n                \"BusinessPartnerIsBlocked\": false,\n                \"BusinessPartnerType\": \"\",\n                \"ETag\": \"CC000000000220180212174906\",\n                \"GroupBusinessPartnerName1\": \"\",\n                \"GroupBusinessPartnerName2\": \"\",\n                \"IndependentAddressID\": \"\",\n                \"InternationalLocationNumber3\": \"0\",\n                \"MiddleName\": \"jane.roe@my-company.com\",\n                \"NameCountry\": \"\",\n                \"NameFormat\": \"\",\n                \"PersonFullName\": \"\",\n                \"PersonNumber\": \"28240\",\n                \"IsMarkedForArchiving\": false,\n                \"BusinessPartnerIDByExtSystem\": \"\",\n                \"YY1_AddrLastCheckedOn_bus\": null,\n                \"YY1_AddrLastCheckedBy_bus\": \"\",\n                \"to_BuPaIdentification\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_BuPaIdentification\"\n                    }\n                },\n                \"to_BusinessPartnerAddress\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_BusinessPartnerAddress\"\n                    }\n                },\n                \"to_BusinessPartnerBank\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_BusinessPartnerBank\"\n                    }\n                },\n                \"to_BusinessPartnerContact\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_BusinessPartnerContact\"\n                    }\n                },\n                \"to_BusinessPartnerRole\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_BusinessPartnerRole\"\n                    }\n                },\n                \"to_BusinessPartnerTax\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_BusinessPartnerTax\"\n                    }\n                },\n                \"to_Customer\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_Customer\"\n                    }\n                },\n                \"to_Supplier\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_Supplier\"\n                    }\n                }\n            },\n            {\n                \"__metadata\": {\n                    \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')\",\n                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')\",\n                    \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n                },\n                \"BusinessPartner\": \"1003766\",\n                \"Customer\": \"\",\n                \"Supplier\": \"\",\n                \"AcademicTitle\": \"\",\n                \"AuthorizationGroup\": \"\",\n                \"BusinessPartnerCategory\": \"1\",\n                \"BusinessPartnerFullName\": \"John Smith\",\n                \"BusinessPartnerGrouping\": \"BP02\",\n                \"BusinessPartnerName\": \"John Smith\",\n                \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a0b2387e1f04\",\n                \"CorrespondenceLanguage\": \"\",\n                \"CreatedByUser\": \"CC0000000002\",\n                \"CreationDate\": \"/Date(1518393600000)/\",\n                \"CreationTime\": \"PT17H49M07S\",\n                \"FirstName\": \"John\",\n                \"FormOfAddress\": \"\",\n                \"Industry\": \"\",\n                \"InternationalLocationNumber1\": \"0\",\n                \"InternationalLocationNumber2\": \"0\",\n                \"IsFemale\": false,\n                \"IsMale\": true,\n                \"IsNaturalPerson\": \"X\",\n                \"IsSexUnknown\": false,\n                \"Language\": \"\",\n                \"LastChangeDate\": null,\n                \"LastChangeTime\": \"PT00H00M00S\",\n                \"LastChangedByUser\": \"\",\n                \"LastName\": \"Smith\",\n                \"LegalForm\": \"\",\n                \"OrganizationBPName1\": \"\",\n                \"OrganizationBPName2\": \"\",\n                \"OrganizationBPName3\": \"\",\n                \"OrganizationBPName4\": \"\",\n                \"OrganizationFoundationDate\": null,\n                \"OrganizationLiquidationDate\": null,\n                \"SearchTerm1\": \"Ontwikkelaar\",\n                \"AdditionalLastName\": \"\",\n                \"BirthDate\": null,\n                \"BusinessPartnerIsBlocked\": false,\n                \"BusinessPartnerType\": \"\",\n                \"ETag\": \"CC000000000220180212174907\",\n                \"GroupBusinessPartnerName1\": \"\",\n                \"GroupBusinessPartnerName2\": \"\",\n                \"IndependentAddressID\": \"\",\n                \"InternationalLocationNumber3\": \"0\",\n                \"MiddleName\": \"j.smith02@firma-a.de\",\n                \"NameCountry\": \"\",\n                \"NameFormat\": \"\",\n                \"PersonFullName\": \"\",\n                \"PersonNumber\": \"28243\",\n                \"IsMarkedForArchiving\": false,\n                \"BusinessPartnerIDByExtSystem\": \"\",\n                \"YY1_AddrLastCheckedOn_bus\": null,\n                \"YY1_AddrLastCheckedBy_bus\": \"\",\n                \"to_BuPaIdentification\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_BuPaIdentification\"\n                    }\n                },\n                \"to_BusinessPartnerAddress\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_BusinessPartnerAddress\"\n                    }\n                },\n                \"to_BusinessPartnerBank\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_BusinessPartnerBank\"\n                    }\n                },\n                \"to_BusinessPartnerContact\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_BusinessPartnerContact\"\n                    }\n                },\n                \"to_BusinessPartnerRole\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_BusinessPartnerRole\"\n                    }\n                },\n                \"to_BusinessPartnerTax\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_BusinessPartnerTax\"\n                    }\n                },\n                \"to_Customer\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_Customer\"\n                    }\n                },\n                \"to_Supplier\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_Supplier\"\n                    }\n                }\n            },\n            {\n                \"__metadata\": {\n                    \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')\",\n                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')\",\n                    \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n                },\n                \"BusinessPartner\": \"1003767\",\n                \"Customer\": \"\",\n                \"Supplier\": \"\",\n                \"AcademicTitle\": \"\",\n                \"AuthorizationGroup\": \"\",\n                \"BusinessPartnerCategory\": \"1\",\n                \"BusinessPartnerFullName\": \"Carla Coe\",\n                \"BusinessPartnerGrouping\": \"BP02\",\n                \"BusinessPartnerName\": \"Carla Coe\",\n                \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a0c9ef089f04\",\n                \"CorrespondenceLanguage\": \"\",\n                \"CreatedByUser\": \"CC0000000002\",\n                \"CreationDate\": \"/Date(1518393600000)/\",\n                \"CreationTime\": \"PT17H49M08S\",\n                \"FirstName\": \"Carla\",\n                \"FormOfAddress\": \"\",\n                \"Industry\": \"\",\n                \"InternationalLocationNumber1\": \"0\",\n                \"InternationalLocationNumber2\": \"0\",\n                \"IsFemale\": true,\n                \"IsMale\": false,\n                \"IsNaturalPerson\": \"X\",\n                \"IsSexUnknown\": false,\n                \"Language\": \"\",\n                \"LastChangeDate\": \"/Date(1519084800000)/\",\n                \"LastChangeTime\": \"PT12H30M13S\",\n                \"LastChangedByUser\": \"CC0000000002\",\n                \"LastName\": \"Coe\",\n                \"LegalForm\": \"\",\n                \"OrganizationBPName1\": \"\",\n                \"OrganizationBPName2\": \"\",\n                \"OrganizationBPName3\": \"\",\n                \"OrganizationBPName4\": \"\",\n                \"OrganizationFoundationDate\": null,\n                \"OrganizationLiquidationDate\": null,\n                \"SearchTerm1\": \"Geschäftsführerin\",\n                \"AdditionalLastName\": \"\",\n                \"BirthDate\": null,\n                \"BusinessPartnerIsBlocked\": false,\n                \"BusinessPartnerType\": \"\",\n                \"ETag\": \"CC000000000220180220123013\",\n                \"GroupBusinessPartnerName1\": \"\",\n                \"GroupBusinessPartnerName2\": \"\",\n                \"IndependentAddressID\": \"\",\n                \"InternationalLocationNumber3\": \"0\",\n                \"MiddleName\": \"carla.c@sap.com\",\n                \"NameCountry\": \"\",\n                \"NameFormat\": \"\",\n                \"PersonFullName\": \"\",\n                \"PersonNumber\": \"28246\",\n                \"IsMarkedForArchiving\": false,\n                \"BusinessPartnerIDByExtSystem\": \"\",\n                \"YY1_AddrLastCheckedOn_bus\": null,\n                \"YY1_AddrLastCheckedBy_bus\": \"\",\n                \"to_BuPaIdentification\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_BuPaIdentification\"\n                    }\n                },\n                \"to_BusinessPartnerAddress\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_BusinessPartnerAddress\"\n                    }\n                },\n                \"to_BusinessPartnerBank\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_BusinessPartnerBank\"\n                    }\n                },\n                \"to_BusinessPartnerContact\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_BusinessPartnerContact\"\n                    }\n                },\n                \"to_BusinessPartnerRole\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_BusinessPartnerRole\"\n                    }\n                },\n                \"to_BusinessPartnerTax\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_BusinessPartnerTax\"\n                    }\n                },\n                \"to_Customer\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_Customer\"\n                    }\n                },\n                \"to_Supplier\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_Supplier\"\n                    }\n                }\n            },\n            {\n                \"__metadata\": {\n                    \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')\",\n                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')\",\n                    \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n                },\n                \"BusinessPartner\": \"1003768\",\n                \"Customer\": \"\",\n                \"Supplier\": \"\",\n                \"AcademicTitle\": \"\",\n                \"AuthorizationGroup\": \"\",\n                \"BusinessPartnerCategory\": \"2\",\n                \"BusinessPartnerFullName\": \"Sample Company Ltd\",\n                \"BusinessPartnerGrouping\": \"BP02\",\n                \"BusinessPartnerName\": \"Sample Company Ltd\",\n                \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a0c9ef089f05\",\n                \"CorrespondenceLanguage\": \"\",\n                \"CreatedByUser\": \"CC0000000002\",\n                \"CreationDate\": \"/Date(1518393600000)/\",\n                \"CreationTime\": \"PT17H49M08S\",\n                \"FirstName\": \"\",\n                \"FormOfAddress\": \"\",\n                \"Industry\": \"\",\n                \"InternationalLocationNumber1\": \"0\",\n                \"InternationalLocationNumber2\": \"0\",\n                \"IsFemale\": false,\n                \"IsMale\": false,\n                \"IsNaturalPerson\": \"\",\n                \"IsSexUnknown\": false,\n                \"Language\": \"\",\n                \"LastChangeDate\": \"/Date(1519084800000)/\",\n                \"LastChangeTime\": \"PT12H30M13S\",\n                \"LastChangedByUser\": \"CC0000000002\",\n                \"LastName\": \"\",\n                \"LegalForm\": \"\",\n                \"OrganizationBPName1\": \"Sample Company Ltd\",\n                \"OrganizationBPName2\": \"\",\n                \"OrganizationBPName3\": \"\",\n                \"OrganizationBPName4\": \"\",\n                \"OrganizationFoundationDate\": null,\n                \"OrganizationLiquidationDate\": null,\n                \"SearchTerm1\": \"\",\n                \"AdditionalLastName\": \"\",\n                \"BirthDate\": null,\n                \"BusinessPartnerIsBlocked\": false,\n                \"BusinessPartnerType\": \"\",\n                \"ETag\": \"CC000000000220180220123013\",\n                \"GroupBusinessPartnerName1\": \"\",\n                \"GroupBusinessPartnerName2\": \"\",\n                \"IndependentAddressID\": \"\",\n                \"InternationalLocationNumber3\": \"0\",\n                \"MiddleName\": \"info@sample-company.co.uk\",\n                \"NameCountry\": \"\",\n                \"NameFormat\": \"\",\n                \"PersonFullName\": \"\",\n                \"PersonNumber\": \"\",\n                \"IsMarkedForArchiving\": false,\n                \"BusinessPartnerIDByExtSystem\": \"\",\n                \"YY1_AddrLastCheckedOn_bus\": null,\n                \"YY1_AddrLastCheckedBy_bus\": \"\",\n                \"to_BuPaIdentification\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_BuPaIdentification\"\n                    }\n                },\n                \"to_BusinessPartnerAddress\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_BusinessPartnerAddress\"\n                    }\n                },\n                \"to_BusinessPartnerBank\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_BusinessPartnerBank\"\n                    }\n                },\n                \"to_BusinessPartnerContact\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_BusinessPartnerContact\"\n                    }\n                },\n                \"to_BusinessPartnerRole\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_BusinessPartnerRole\"\n                    }\n                },\n                \"to_BusinessPartnerTax\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_BusinessPartnerTax\"\n                    }\n                },\n                \"to_Customer\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_Customer\"\n                    }\n                },\n                \"to_Supplier\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_Supplier\"\n                    }\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "200 OK - expanding to_BusinessPartnerAddress",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner?$expand=to_BusinessPartnerAddress",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"sap",
+										"opu",
+										"odata",
+										"sap",
+										"API_BUSINESS_PARTNER",
+										"A_BusinessPartner"
+									],
+									"query": [
+										{
+											"key": "$expand",
+											"value": "to_BusinessPartnerAddress"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "27126"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 23 Aug 2022 07:44:45 GMT"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"69f6-DyThtx3hM5nowkXtCG1CAjoHMZg\""
+								},
+								{
+									"key": "server",
+									"value": "istio-envoy"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "12"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"d\": {\n        \"results\": [\n            {\n                \"__metadata\": {\n                    \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')\",\n                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')\",\n                    \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n                },\n                \"BusinessPartner\": \"1003764\",\n                \"Customer\": \"\",\n                \"Supplier\": \"\",\n                \"AcademicTitle\": \"\",\n                \"AuthorizationGroup\": \"\",\n                \"BusinessPartnerCategory\": \"1\",\n                \"BusinessPartnerFullName\": \"John Doe\",\n                \"BusinessPartnerGrouping\": \"BP02\",\n                \"BusinessPartnerName\": \"John Doe\",\n                \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a08c52249f04\",\n                \"CorrespondenceLanguage\": \"\",\n                \"CreatedByUser\": \"CC0000000002\",\n                \"CreationDate\": \"/Date(1518393600000)/\",\n                \"CreationTime\": \"PT17H49M05S\",\n                \"FirstName\": \"John\",\n                \"FormOfAddress\": \"\",\n                \"Industry\": \"\",\n                \"InternationalLocationNumber1\": \"0\",\n                \"InternationalLocationNumber2\": \"0\",\n                \"IsFemale\": false,\n                \"IsMale\": true,\n                \"IsNaturalPerson\": \"X\",\n                \"IsSexUnknown\": false,\n                \"Language\": \"\",\n                \"LastChangeDate\": null,\n                \"LastChangeTime\": \"PT00H00M00S\",\n                \"LastChangedByUser\": \"\",\n                \"LastName\": \"Doe\",\n                \"LegalForm\": \"\",\n                \"OrganizationBPName1\": \"\",\n                \"OrganizationBPName2\": \"\",\n                \"OrganizationBPName3\": \"\",\n                \"OrganizationBPName4\": \"\",\n                \"OrganizationFoundationDate\": null,\n                \"OrganizationLiquidationDate\": null,\n                \"SearchTerm1\": \"Entwickler\",\n                \"AdditionalLastName\": \"\",\n                \"BirthDate\": null,\n                \"BusinessPartnerIsBlocked\": false,\n                \"BusinessPartnerType\": \"\",\n                \"ETag\": \"CC000000000220180212174905\",\n                \"GroupBusinessPartnerName1\": \"\",\n                \"GroupBusinessPartnerName2\": \"\",\n                \"IndependentAddressID\": \"\",\n                \"InternationalLocationNumber3\": \"0\",\n                \"MiddleName\": \"doe@company-a.com\",\n                \"NameCountry\": \"\",\n                \"NameFormat\": \"\",\n                \"PersonFullName\": \"\",\n                \"PersonNumber\": \"28237\",\n                \"IsMarkedForArchiving\": false,\n                \"BusinessPartnerIDByExtSystem\": \"\",\n                \"YY1_AddrLastCheckedOn_bus\": null,\n                \"YY1_AddrLastCheckedBy_bus\": \"\",\n                \"to_BuPaIdentification\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BuPaIdentification\"\n                    }\n                },\n                \"to_BusinessPartnerAddress\": {\n                    \"results\": [\n                        {\n                            \"__metadata\": {\n                                \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')\",\n                                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')\",\n                                \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerAddressType\"\n                            },\n                            \"BusinessPartner\": \"1003764\",\n                            \"AddressID\": \"28238\",\n                            \"ValidityStartDate\": \"/Date(1518393600000+0000)/\",\n                            \"ValidityEndDate\": \"/Date(253402300799000+0000)/\",\n                            \"AuthorizationGroup\": \"\",\n                            \"AddressUUID\": \"00163e30-4e2a-1ed8-8483-a08c5224bf04\",\n                            \"AdditionalStreetPrefixName\": \"\",\n                            \"AdditionalStreetSuffixName\": \"\",\n                            \"AddressTimeZone\": \"CET\",\n                            \"CareOfName\": \"\",\n                            \"CityCode\": \"\",\n                            \"CityName\": \"Walldorf\",\n                            \"CompanyPostalCode\": \"\",\n                            \"Country\": \"DE\",\n                            \"County\": \"\",\n                            \"DeliveryServiceNumber\": \"\",\n                            \"DeliveryServiceTypeCode\": \"\",\n                            \"District\": \"\",\n                            \"FormOfAddress\": \"\",\n                            \"FullName\": \"\",\n                            \"HomeCityName\": \"\",\n                            \"HouseNumber\": \"16\",\n                            \"HouseNumberSupplementText\": \"\",\n                            \"Language\": \"\",\n                            \"POBox\": \"\",\n                            \"POBoxDeviatingCityName\": \"\",\n                            \"POBoxDeviatingCountry\": \"\",\n                            \"POBoxDeviatingRegion\": \"\",\n                            \"POBoxIsWithoutNumber\": false,\n                            \"POBoxLobbyName\": \"\",\n                            \"POBoxPostalCode\": \"\",\n                            \"Person\": \"28237\",\n                            \"PostalCode\": \"69190\",\n                            \"PrfrdCommMediumType\": \"\",\n                            \"Region\": \"\",\n                            \"StreetName\": \"Dietmar-Hopp-Allee\",\n                            \"StreetPrefixName\": \"\",\n                            \"StreetSuffixName\": \"\",\n                            \"TaxJurisdiction\": \"\",\n                            \"TransportZone\": \"\",\n                            \"AddressIDByExternalSystem\": \"\",\n                            \"to_AddressUsage\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_AddressUsage\"\n                                }\n                            },\n                            \"to_EmailAddress\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_EmailAddress\"\n                                }\n                            },\n                            \"to_FaxNumber\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_FaxNumber\"\n                                }\n                            },\n                            \"to_MobilePhoneNumber\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_MobilePhoneNumber\"\n                                }\n                            },\n                            \"to_PhoneNumber\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_PhoneNumber\"\n                                }\n                            },\n                            \"to_URLAddress\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_URLAddress\"\n                                }\n                            }\n                        }\n                    ]\n                },\n                \"to_BusinessPartnerBank\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerBank\"\n                    }\n                },\n                \"to_BusinessPartnerContact\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerContact\"\n                    }\n                },\n                \"to_BusinessPartnerRole\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerRole\"\n                    }\n                },\n                \"to_BusinessPartnerTax\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerTax\"\n                    }\n                },\n                \"to_Customer\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_Customer\"\n                    }\n                },\n                \"to_Supplier\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_Supplier\"\n                    }\n                }\n            },\n            {\n                \"__metadata\": {\n                    \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')\",\n                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')\",\n                    \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n                },\n                \"BusinessPartner\": \"1003765\",\n                \"Customer\": \"\",\n                \"Supplier\": \"\",\n                \"AcademicTitle\": \"\",\n                \"AuthorizationGroup\": \"\",\n                \"BusinessPartnerCategory\": \"1\",\n                \"BusinessPartnerFullName\": \"Jane Roe\",\n                \"BusinessPartnerGrouping\": \"BP02\",\n                \"BusinessPartnerName\": \"Jane Roe\",\n                \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a0a5f4c2bf04\",\n                \"CorrespondenceLanguage\": \"\",\n                \"CreatedByUser\": \"CC0000000002\",\n                \"CreationDate\": \"/Date(1518393600000)/\",\n                \"CreationTime\": \"PT17H49M06S\",\n                \"FirstName\": \"Jane\",\n                \"FormOfAddress\": \"\",\n                \"Industry\": \"\",\n                \"InternationalLocationNumber1\": \"0\",\n                \"InternationalLocationNumber2\": \"0\",\n                \"IsFemale\": true,\n                \"IsMale\": false,\n                \"IsNaturalPerson\": \"X\",\n                \"IsSexUnknown\": false,\n                \"Language\": \"\",\n                \"LastChangeDate\": null,\n                \"LastChangeTime\": \"PT00H00M00S\",\n                \"LastChangedByUser\": \"\",\n                \"LastName\": \"Roe\",\n                \"LegalForm\": \"\",\n                \"OrganizationBPName1\": \"\",\n                \"OrganizationBPName2\": \"\",\n                \"OrganizationBPName3\": \"\",\n                \"OrganizationBPName4\": \"\",\n                \"OrganizationFoundationDate\": null,\n                \"OrganizationLiquidationDate\": null,\n                \"SearchTerm1\": \"Buchhalterin\",\n                \"AdditionalLastName\": \"\",\n                \"BirthDate\": null,\n                \"BusinessPartnerIsBlocked\": false,\n                \"BusinessPartnerType\": \"\",\n                \"ETag\": \"CC000000000220180212174906\",\n                \"GroupBusinessPartnerName1\": \"\",\n                \"GroupBusinessPartnerName2\": \"\",\n                \"IndependentAddressID\": \"\",\n                \"InternationalLocationNumber3\": \"0\",\n                \"MiddleName\": \"jane.roe@my-company.com\",\n                \"NameCountry\": \"\",\n                \"NameFormat\": \"\",\n                \"PersonFullName\": \"\",\n                \"PersonNumber\": \"28240\",\n                \"IsMarkedForArchiving\": false,\n                \"BusinessPartnerIDByExtSystem\": \"\",\n                \"YY1_AddrLastCheckedOn_bus\": null,\n                \"YY1_AddrLastCheckedBy_bus\": \"\",\n                \"to_BuPaIdentification\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_BuPaIdentification\"\n                    }\n                },\n                \"to_BusinessPartnerAddress\": {\n                    \"results\": [\n                        {\n                            \"__metadata\": {\n                                \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003765',AddressID='28241')\",\n                                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003765',AddressID='28241')\",\n                                \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerAddressType\"\n                            },\n                            \"BusinessPartner\": \"1003765\",\n                            \"AddressID\": \"28241\",\n                            \"ValidityStartDate\": \"/Date(1518393600000+0000)/\",\n                            \"ValidityEndDate\": \"/Date(253402300799000+0000)/\",\n                            \"AuthorizationGroup\": \"\",\n                            \"AddressUUID\": \"00163e30-4e2a-1ed8-8483-a0a5f4c2df04\",\n                            \"AdditionalStreetPrefixName\": \"\",\n                            \"AdditionalStreetSuffixName\": \"\",\n                            \"AddressTimeZone\": \"PST\",\n                            \"CareOfName\": \"\",\n                            \"CityCode\": \"\",\n                            \"CityName\": \"Palo Alto\",\n                            \"CompanyPostalCode\": \"\",\n                            \"Country\": \"US\",\n                            \"County\": \"\",\n                            \"DeliveryServiceNumber\": \"\",\n                            \"DeliveryServiceTypeCode\": \"\",\n                            \"District\": \"\",\n                            \"FormOfAddress\": \"\",\n                            \"FullName\": \"\",\n                            \"HomeCityName\": \"\",\n                            \"HouseNumber\": \"3410\",\n                            \"HouseNumberSupplementText\": \"\",\n                            \"Language\": \"\",\n                            \"POBox\": \"\",\n                            \"POBoxDeviatingCityName\": \"\",\n                            \"POBoxDeviatingCountry\": \"\",\n                            \"POBoxDeviatingRegion\": \"\",\n                            \"POBoxIsWithoutNumber\": false,\n                            \"POBoxLobbyName\": \"\",\n                            \"POBoxPostalCode\": \"\",\n                            \"Person\": \"28240\",\n                            \"PostalCode\": \"CA 94304\",\n                            \"PrfrdCommMediumType\": \"\",\n                            \"Region\": \"\",\n                            \"StreetName\": \"Hillview Avenue\",\n                            \"StreetPrefixName\": \"\",\n                            \"StreetSuffixName\": \"\",\n                            \"TaxJurisdiction\": \"\",\n                            \"TransportZone\": \"\",\n                            \"AddressIDByExternalSystem\": \"\",\n                            \"to_AddressUsage\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003765',AddressID='28241')/to_AddressUsage\"\n                                }\n                            },\n                            \"to_EmailAddress\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003765',AddressID='28241')/to_EmailAddress\"\n                                }\n                            },\n                            \"to_FaxNumber\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003765',AddressID='28241')/to_FaxNumber\"\n                                }\n                            },\n                            \"to_MobilePhoneNumber\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003765',AddressID='28241')/to_MobilePhoneNumber\"\n                                }\n                            },\n                            \"to_PhoneNumber\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003765',AddressID='28241')/to_PhoneNumber\"\n                                }\n                            },\n                            \"to_URLAddress\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003765',AddressID='28241')/to_URLAddress\"\n                                }\n                            }\n                        }\n                    ]\n                },\n                \"to_BusinessPartnerBank\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_BusinessPartnerBank\"\n                    }\n                },\n                \"to_BusinessPartnerContact\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_BusinessPartnerContact\"\n                    }\n                },\n                \"to_BusinessPartnerRole\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_BusinessPartnerRole\"\n                    }\n                },\n                \"to_BusinessPartnerTax\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_BusinessPartnerTax\"\n                    }\n                },\n                \"to_Customer\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_Customer\"\n                    }\n                },\n                \"to_Supplier\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003765')/to_Supplier\"\n                    }\n                }\n            },\n            {\n                \"__metadata\": {\n                    \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')\",\n                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')\",\n                    \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n                },\n                \"BusinessPartner\": \"1003766\",\n                \"Customer\": \"\",\n                \"Supplier\": \"\",\n                \"AcademicTitle\": \"\",\n                \"AuthorizationGroup\": \"\",\n                \"BusinessPartnerCategory\": \"1\",\n                \"BusinessPartnerFullName\": \"John Smith\",\n                \"BusinessPartnerGrouping\": \"BP02\",\n                \"BusinessPartnerName\": \"John Smith\",\n                \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a0b2387e1f04\",\n                \"CorrespondenceLanguage\": \"\",\n                \"CreatedByUser\": \"CC0000000002\",\n                \"CreationDate\": \"/Date(1518393600000)/\",\n                \"CreationTime\": \"PT17H49M07S\",\n                \"FirstName\": \"John\",\n                \"FormOfAddress\": \"\",\n                \"Industry\": \"\",\n                \"InternationalLocationNumber1\": \"0\",\n                \"InternationalLocationNumber2\": \"0\",\n                \"IsFemale\": false,\n                \"IsMale\": true,\n                \"IsNaturalPerson\": \"X\",\n                \"IsSexUnknown\": false,\n                \"Language\": \"\",\n                \"LastChangeDate\": null,\n                \"LastChangeTime\": \"PT00H00M00S\",\n                \"LastChangedByUser\": \"\",\n                \"LastName\": \"Smith\",\n                \"LegalForm\": \"\",\n                \"OrganizationBPName1\": \"\",\n                \"OrganizationBPName2\": \"\",\n                \"OrganizationBPName3\": \"\",\n                \"OrganizationBPName4\": \"\",\n                \"OrganizationFoundationDate\": null,\n                \"OrganizationLiquidationDate\": null,\n                \"SearchTerm1\": \"Ontwikkelaar\",\n                \"AdditionalLastName\": \"\",\n                \"BirthDate\": null,\n                \"BusinessPartnerIsBlocked\": false,\n                \"BusinessPartnerType\": \"\",\n                \"ETag\": \"CC000000000220180212174907\",\n                \"GroupBusinessPartnerName1\": \"\",\n                \"GroupBusinessPartnerName2\": \"\",\n                \"IndependentAddressID\": \"\",\n                \"InternationalLocationNumber3\": \"0\",\n                \"MiddleName\": \"j.smith02@firma-a.de\",\n                \"NameCountry\": \"\",\n                \"NameFormat\": \"\",\n                \"PersonFullName\": \"\",\n                \"PersonNumber\": \"28243\",\n                \"IsMarkedForArchiving\": false,\n                \"BusinessPartnerIDByExtSystem\": \"\",\n                \"YY1_AddrLastCheckedOn_bus\": null,\n                \"YY1_AddrLastCheckedBy_bus\": \"\",\n                \"to_BuPaIdentification\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_BuPaIdentification\"\n                    }\n                },\n                \"to_BusinessPartnerAddress\": {\n                    \"results\": [\n                        {\n                            \"__metadata\": {\n                                \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003766',AddressID='28244')\",\n                                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003766',AddressID='28244')\",\n                                \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerAddressType\"\n                            },\n                            \"BusinessPartner\": \"1003766\",\n                            \"AddressID\": \"28244\",\n                            \"ValidityStartDate\": \"/Date(1518393600000+0000)/\",\n                            \"ValidityEndDate\": \"/Date(253402300799000+0000)/\",\n                            \"AuthorizationGroup\": \"\",\n                            \"AddressUUID\": \"00163e30-4e2a-1ed8-8483-a0b2387e3f04\",\n                            \"AdditionalStreetPrefixName\": \"\",\n                            \"AdditionalStreetSuffixName\": \"\",\n                            \"AddressTimeZone\": \"CET\",\n                            \"CareOfName\": \"\",\n                            \"CityCode\": \"\",\n                            \"CityName\": \"Hallbergmoos\",\n                            \"CompanyPostalCode\": \"\",\n                            \"Country\": \"DE\",\n                            \"County\": \"\",\n                            \"DeliveryServiceNumber\": \"\",\n                            \"DeliveryServiceTypeCode\": \"\",\n                            \"District\": \"\",\n                            \"FormOfAddress\": \"\",\n                            \"FullName\": \"\",\n                            \"HomeCityName\": \"\",\n                            \"HouseNumber\": \"2\",\n                            \"HouseNumberSupplementText\": \"\",\n                            \"Language\": \"\",\n                            \"POBox\": \"\",\n                            \"POBoxDeviatingCityName\": \"\",\n                            \"POBoxDeviatingCountry\": \"\",\n                            \"POBoxDeviatingRegion\": \"\",\n                            \"POBoxIsWithoutNumber\": false,\n                            \"POBoxLobbyName\": \"\",\n                            \"POBoxPostalCode\": \"\",\n                            \"Person\": \"28243\",\n                            \"PostalCode\": \"85399\",\n                            \"PrfrdCommMediumType\": \"\",\n                            \"Region\": \"\",\n                            \"StreetName\": \"Zeppelinstraße\",\n                            \"StreetPrefixName\": \"\",\n                            \"StreetSuffixName\": \"\",\n                            \"TaxJurisdiction\": \"\",\n                            \"TransportZone\": \"\",\n                            \"AddressIDByExternalSystem\": \"\",\n                            \"to_AddressUsage\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003766',AddressID='28244')/to_AddressUsage\"\n                                }\n                            },\n                            \"to_EmailAddress\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003766',AddressID='28244')/to_EmailAddress\"\n                                }\n                            },\n                            \"to_FaxNumber\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003766',AddressID='28244')/to_FaxNumber\"\n                                }\n                            },\n                            \"to_MobilePhoneNumber\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003766',AddressID='28244')/to_MobilePhoneNumber\"\n                                }\n                            },\n                            \"to_PhoneNumber\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003766',AddressID='28244')/to_PhoneNumber\"\n                                }\n                            },\n                            \"to_URLAddress\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003766',AddressID='28244')/to_URLAddress\"\n                                }\n                            }\n                        }\n                    ]\n                },\n                \"to_BusinessPartnerBank\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_BusinessPartnerBank\"\n                    }\n                },\n                \"to_BusinessPartnerContact\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_BusinessPartnerContact\"\n                    }\n                },\n                \"to_BusinessPartnerRole\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_BusinessPartnerRole\"\n                    }\n                },\n                \"to_BusinessPartnerTax\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_BusinessPartnerTax\"\n                    }\n                },\n                \"to_Customer\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_Customer\"\n                    }\n                },\n                \"to_Supplier\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003766')/to_Supplier\"\n                    }\n                }\n            },\n            {\n                \"__metadata\": {\n                    \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')\",\n                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')\",\n                    \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n                },\n                \"BusinessPartner\": \"1003767\",\n                \"Customer\": \"\",\n                \"Supplier\": \"\",\n                \"AcademicTitle\": \"\",\n                \"AuthorizationGroup\": \"\",\n                \"BusinessPartnerCategory\": \"1\",\n                \"BusinessPartnerFullName\": \"Carla Coe\",\n                \"BusinessPartnerGrouping\": \"BP02\",\n                \"BusinessPartnerName\": \"Carla Coe\",\n                \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a0c9ef089f04\",\n                \"CorrespondenceLanguage\": \"\",\n                \"CreatedByUser\": \"CC0000000002\",\n                \"CreationDate\": \"/Date(1518393600000)/\",\n                \"CreationTime\": \"PT17H49M08S\",\n                \"FirstName\": \"Carla\",\n                \"FormOfAddress\": \"\",\n                \"Industry\": \"\",\n                \"InternationalLocationNumber1\": \"0\",\n                \"InternationalLocationNumber2\": \"0\",\n                \"IsFemale\": true,\n                \"IsMale\": false,\n                \"IsNaturalPerson\": \"X\",\n                \"IsSexUnknown\": false,\n                \"Language\": \"\",\n                \"LastChangeDate\": \"/Date(1519084800000)/\",\n                \"LastChangeTime\": \"PT12H30M13S\",\n                \"LastChangedByUser\": \"CC0000000002\",\n                \"LastName\": \"Coe\",\n                \"LegalForm\": \"\",\n                \"OrganizationBPName1\": \"\",\n                \"OrganizationBPName2\": \"\",\n                \"OrganizationBPName3\": \"\",\n                \"OrganizationBPName4\": \"\",\n                \"OrganizationFoundationDate\": null,\n                \"OrganizationLiquidationDate\": null,\n                \"SearchTerm1\": \"Geschäftsführerin\",\n                \"AdditionalLastName\": \"\",\n                \"BirthDate\": null,\n                \"BusinessPartnerIsBlocked\": false,\n                \"BusinessPartnerType\": \"\",\n                \"ETag\": \"CC000000000220180220123013\",\n                \"GroupBusinessPartnerName1\": \"\",\n                \"GroupBusinessPartnerName2\": \"\",\n                \"IndependentAddressID\": \"\",\n                \"InternationalLocationNumber3\": \"0\",\n                \"MiddleName\": \"carla.c@sap.com\",\n                \"NameCountry\": \"\",\n                \"NameFormat\": \"\",\n                \"PersonFullName\": \"\",\n                \"PersonNumber\": \"28246\",\n                \"IsMarkedForArchiving\": false,\n                \"BusinessPartnerIDByExtSystem\": \"\",\n                \"YY1_AddrLastCheckedOn_bus\": null,\n                \"YY1_AddrLastCheckedBy_bus\": \"\",\n                \"to_BuPaIdentification\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_BuPaIdentification\"\n                    }\n                },\n                \"to_BusinessPartnerAddress\": {\n                    \"results\": [\n                        {\n                            \"__metadata\": {\n                                \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003767',AddressID='28247')\",\n                                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003767',AddressID='28247')\",\n                                \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerAddressType\"\n                            },\n                            \"BusinessPartner\": \"1003767\",\n                            \"AddressID\": \"28247\",\n                            \"ValidityStartDate\": \"/Date(1518393600000+0000)/\",\n                            \"ValidityEndDate\": \"/Date(253402300799000+0000)/\",\n                            \"AuthorizationGroup\": \"\",\n                            \"AddressUUID\": \"00163e30-4e2a-1ed8-8483-a0c9ef08bf04\",\n                            \"AdditionalStreetPrefixName\": \"\",\n                            \"AdditionalStreetSuffixName\": \"\",\n                            \"AddressTimeZone\": \"CET\",\n                            \"CareOfName\": \"\",\n                            \"CityCode\": \"\",\n                            \"CityName\": \"Potsdam\",\n                            \"CompanyPostalCode\": \"\",\n                            \"Country\": \"DE\",\n                            \"County\": \"\",\n                            \"DeliveryServiceNumber\": \"\",\n                            \"DeliveryServiceTypeCode\": \"\",\n                            \"District\": \"\",\n                            \"FormOfAddress\": \"\",\n                            \"FullName\": \"\",\n                            \"HomeCityName\": \"\",\n                            \"HouseNumber\": \"10\",\n                            \"HouseNumberSupplementText\": \"\",\n                            \"Language\": \"\",\n                            \"POBox\": \"\",\n                            \"POBoxDeviatingCityName\": \"\",\n                            \"POBoxDeviatingCountry\": \"\",\n                            \"POBoxDeviatingRegion\": \"\",\n                            \"POBoxIsWithoutNumber\": false,\n                            \"POBoxLobbyName\": \"\",\n                            \"POBoxPostalCode\": \"\",\n                            \"Person\": \"28246\",\n                            \"PostalCode\": \"14469\",\n                            \"PrfrdCommMediumType\": \"\",\n                            \"Region\": \"\",\n                            \"StreetName\": \"Konrad-Zuse-Ring\",\n                            \"StreetPrefixName\": \"\",\n                            \"StreetSuffixName\": \"\",\n                            \"TaxJurisdiction\": \"\",\n                            \"TransportZone\": \"\",\n                            \"AddressIDByExternalSystem\": \"\",\n                            \"to_AddressUsage\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003767',AddressID='28247')/to_AddressUsage\"\n                                }\n                            },\n                            \"to_EmailAddress\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003767',AddressID='28247')/to_EmailAddress\"\n                                }\n                            },\n                            \"to_FaxNumber\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003767',AddressID='28247')/to_FaxNumber\"\n                                }\n                            },\n                            \"to_MobilePhoneNumber\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003767',AddressID='28247')/to_MobilePhoneNumber\"\n                                }\n                            },\n                            \"to_PhoneNumber\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003767',AddressID='28247')/to_PhoneNumber\"\n                                }\n                            },\n                            \"to_URLAddress\": {\n                                \"__deferred\": {\n                                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003767',AddressID='28247')/to_URLAddress\"\n                                }\n                            }\n                        }\n                    ]\n                },\n                \"to_BusinessPartnerBank\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_BusinessPartnerBank\"\n                    }\n                },\n                \"to_BusinessPartnerContact\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_BusinessPartnerContact\"\n                    }\n                },\n                \"to_BusinessPartnerRole\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_BusinessPartnerRole\"\n                    }\n                },\n                \"to_BusinessPartnerTax\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_BusinessPartnerTax\"\n                    }\n                },\n                \"to_Customer\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_Customer\"\n                    }\n                },\n                \"to_Supplier\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003767')/to_Supplier\"\n                    }\n                }\n            },\n            {\n                \"__metadata\": {\n                    \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')\",\n                    \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')\",\n                    \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n                },\n                \"BusinessPartner\": \"1003768\",\n                \"Customer\": \"\",\n                \"Supplier\": \"\",\n                \"AcademicTitle\": \"\",\n                \"AuthorizationGroup\": \"\",\n                \"BusinessPartnerCategory\": \"2\",\n                \"BusinessPartnerFullName\": \"Sample Company Ltd\",\n                \"BusinessPartnerGrouping\": \"BP02\",\n                \"BusinessPartnerName\": \"Sample Company Ltd\",\n                \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a0c9ef089f05\",\n                \"CorrespondenceLanguage\": \"\",\n                \"CreatedByUser\": \"CC0000000002\",\n                \"CreationDate\": \"/Date(1518393600000)/\",\n                \"CreationTime\": \"PT17H49M08S\",\n                \"FirstName\": \"\",\n                \"FormOfAddress\": \"\",\n                \"Industry\": \"\",\n                \"InternationalLocationNumber1\": \"0\",\n                \"InternationalLocationNumber2\": \"0\",\n                \"IsFemale\": false,\n                \"IsMale\": false,\n                \"IsNaturalPerson\": \"\",\n                \"IsSexUnknown\": false,\n                \"Language\": \"\",\n                \"LastChangeDate\": \"/Date(1519084800000)/\",\n                \"LastChangeTime\": \"PT12H30M13S\",\n                \"LastChangedByUser\": \"CC0000000002\",\n                \"LastName\": \"\",\n                \"LegalForm\": \"\",\n                \"OrganizationBPName1\": \"Sample Company Ltd\",\n                \"OrganizationBPName2\": \"\",\n                \"OrganizationBPName3\": \"\",\n                \"OrganizationBPName4\": \"\",\n                \"OrganizationFoundationDate\": null,\n                \"OrganizationLiquidationDate\": null,\n                \"SearchTerm1\": \"\",\n                \"AdditionalLastName\": \"\",\n                \"BirthDate\": null,\n                \"BusinessPartnerIsBlocked\": false,\n                \"BusinessPartnerType\": \"\",\n                \"ETag\": \"CC000000000220180220123013\",\n                \"GroupBusinessPartnerName1\": \"\",\n                \"GroupBusinessPartnerName2\": \"\",\n                \"IndependentAddressID\": \"\",\n                \"InternationalLocationNumber3\": \"0\",\n                \"MiddleName\": \"info@sample-company.co.uk\",\n                \"NameCountry\": \"\",\n                \"NameFormat\": \"\",\n                \"PersonFullName\": \"\",\n                \"PersonNumber\": \"\",\n                \"IsMarkedForArchiving\": false,\n                \"BusinessPartnerIDByExtSystem\": \"\",\n                \"YY1_AddrLastCheckedOn_bus\": null,\n                \"YY1_AddrLastCheckedBy_bus\": \"\",\n                \"to_BuPaIdentification\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_BuPaIdentification\"\n                    }\n                },\n                \"to_BusinessPartnerAddress\": {\n                    \"results\": []\n                },\n                \"to_BusinessPartnerBank\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_BusinessPartnerBank\"\n                    }\n                },\n                \"to_BusinessPartnerContact\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_BusinessPartnerContact\"\n                    }\n                },\n                \"to_BusinessPartnerRole\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_BusinessPartnerRole\"\n                    }\n                },\n                \"to_BusinessPartnerTax\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_BusinessPartnerTax\"\n                    }\n                },\n                \"to_Customer\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_Customer\"\n                    }\n                },\n                \"to_Supplier\": {\n                    \"__deferred\": {\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003768')/to_Supplier\"\n                    }\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
 				},
 				{
-					"name": "All Business Partners with Addresses",
+					"name": "Single Business Partner",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner?$expand=to_BusinessPartnerAddress",
+							"raw": "{{host}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('{{employee_id}}')",
 							"host": [
 								"{{host}}"
 							],
@@ -120,17 +300,693 @@
 								"odata",
 								"sap",
 								"API_BUSINESS_PARTNER",
-								"A_BusinessPartner"
-							],
-							"query": [
-								{
-									"key": "$expand",
-									"value": "to_BusinessPartnerAddress"
+								"A_BusinessPartner('{{employee_id}}')"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK - Single Business Partner",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('{{employee_id}}')",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"sap",
+										"opu",
+										"odata",
+										"sap",
+										"API_BUSINESS_PARTNER",
+										"A_BusinessPartner('{{employee_id}}')"
+									]
 								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "3345"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 23 Aug 2022 07:44:13 GMT"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"d11-55QkA/GKUA4sOKt93F1zl2kUukM\""
+								},
+								{
+									"key": "server",
+									"value": "istio-envoy"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "6"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"d\": {\n        \"__metadata\": {\n            \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')\",\n            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')\",\n            \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n        },\n        \"BusinessPartner\": \"1003764\",\n        \"Customer\": \"\",\n        \"Supplier\": \"\",\n        \"AcademicTitle\": \"\",\n        \"AuthorizationGroup\": \"\",\n        \"BusinessPartnerCategory\": \"1\",\n        \"BusinessPartnerFullName\": \"John Doe\",\n        \"BusinessPartnerGrouping\": \"BP02\",\n        \"BusinessPartnerName\": \"John Doe\",\n        \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a08c52249f04\",\n        \"CorrespondenceLanguage\": \"\",\n        \"CreatedByUser\": \"CC0000000002\",\n        \"CreationDate\": \"/Date(1518393600000)/\",\n        \"CreationTime\": \"PT17H49M05S\",\n        \"FirstName\": \"John\",\n        \"FormOfAddress\": \"\",\n        \"Industry\": \"\",\n        \"InternationalLocationNumber1\": \"0\",\n        \"InternationalLocationNumber2\": \"0\",\n        \"IsFemale\": false,\n        \"IsMale\": true,\n        \"IsNaturalPerson\": \"X\",\n        \"IsSexUnknown\": false,\n        \"Language\": \"\",\n        \"LastChangeDate\": null,\n        \"LastChangeTime\": \"PT00H00M00S\",\n        \"LastChangedByUser\": \"\",\n        \"LastName\": \"Doe\",\n        \"LegalForm\": \"\",\n        \"OrganizationBPName1\": \"\",\n        \"OrganizationBPName2\": \"\",\n        \"OrganizationBPName3\": \"\",\n        \"OrganizationBPName4\": \"\",\n        \"OrganizationFoundationDate\": null,\n        \"OrganizationLiquidationDate\": null,\n        \"SearchTerm1\": \"Entwickler\",\n        \"AdditionalLastName\": \"\",\n        \"BirthDate\": null,\n        \"BusinessPartnerIsBlocked\": false,\n        \"BusinessPartnerType\": \"\",\n        \"ETag\": \"CC000000000220180212174905\",\n        \"GroupBusinessPartnerName1\": \"\",\n        \"GroupBusinessPartnerName2\": \"\",\n        \"IndependentAddressID\": \"\",\n        \"InternationalLocationNumber3\": \"0\",\n        \"MiddleName\": \"doe@company-a.com\",\n        \"NameCountry\": \"\",\n        \"NameFormat\": \"\",\n        \"PersonFullName\": \"\",\n        \"PersonNumber\": \"28237\",\n        \"IsMarkedForArchiving\": false,\n        \"BusinessPartnerIDByExtSystem\": \"\",\n        \"YY1_AddrLastCheckedOn_bus\": null,\n        \"YY1_AddrLastCheckedBy_bus\": \"\",\n        \"to_BuPaIdentification\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BuPaIdentification\"\n            }\n        },\n        \"to_BusinessPartnerAddress\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerAddress\"\n            }\n        },\n        \"to_BusinessPartnerBank\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerBank\"\n            }\n        },\n        \"to_BusinessPartnerContact\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerContact\"\n            }\n        },\n        \"to_BusinessPartnerRole\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerRole\"\n            }\n        },\n        \"to_BusinessPartnerTax\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerTax\"\n            }\n        },\n        \"to_Customer\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_Customer\"\n            }\n        },\n        \"to_Supplier\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_Supplier\"\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "200 OK - expanding to_BusinessPartnerAddress",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('{{employee_id}}')?$expand=to_BusinessPartnerAddress",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"sap",
+										"opu",
+										"odata",
+										"sap",
+										"API_BUSINESS_PARTNER",
+										"A_BusinessPartner('{{employee_id}}')"
+									],
+									"query": [
+										{
+											"key": "$expand",
+											"value": "to_BusinessPartnerAddress"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "5959"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 23 Aug 2022 07:45:21 GMT"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1747-SQVE3Ai2vZ1sCX+s3Rjy+syvZIg\""
+								},
+								{
+									"key": "server",
+									"value": "istio-envoy"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "8"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"d\": {\n        \"__metadata\": {\n            \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')\",\n            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')\",\n            \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n        },\n        \"BusinessPartner\": \"1003764\",\n        \"Customer\": \"\",\n        \"Supplier\": \"\",\n        \"AcademicTitle\": \"\",\n        \"AuthorizationGroup\": \"\",\n        \"BusinessPartnerCategory\": \"1\",\n        \"BusinessPartnerFullName\": \"John Doe\",\n        \"BusinessPartnerGrouping\": \"BP02\",\n        \"BusinessPartnerName\": \"John Doe\",\n        \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a08c52249f04\",\n        \"CorrespondenceLanguage\": \"\",\n        \"CreatedByUser\": \"CC0000000002\",\n        \"CreationDate\": \"/Date(1518393600000)/\",\n        \"CreationTime\": \"PT17H49M05S\",\n        \"FirstName\": \"John\",\n        \"FormOfAddress\": \"\",\n        \"Industry\": \"\",\n        \"InternationalLocationNumber1\": \"0\",\n        \"InternationalLocationNumber2\": \"0\",\n        \"IsFemale\": false,\n        \"IsMale\": true,\n        \"IsNaturalPerson\": \"X\",\n        \"IsSexUnknown\": false,\n        \"Language\": \"\",\n        \"LastChangeDate\": null,\n        \"LastChangeTime\": \"PT00H00M00S\",\n        \"LastChangedByUser\": \"\",\n        \"LastName\": \"Doe\",\n        \"LegalForm\": \"\",\n        \"OrganizationBPName1\": \"\",\n        \"OrganizationBPName2\": \"\",\n        \"OrganizationBPName3\": \"\",\n        \"OrganizationBPName4\": \"\",\n        \"OrganizationFoundationDate\": null,\n        \"OrganizationLiquidationDate\": null,\n        \"SearchTerm1\": \"Entwickler\",\n        \"AdditionalLastName\": \"\",\n        \"BirthDate\": null,\n        \"BusinessPartnerIsBlocked\": false,\n        \"BusinessPartnerType\": \"\",\n        \"ETag\": \"CC000000000220180212174905\",\n        \"GroupBusinessPartnerName1\": \"\",\n        \"GroupBusinessPartnerName2\": \"\",\n        \"IndependentAddressID\": \"\",\n        \"InternationalLocationNumber3\": \"0\",\n        \"MiddleName\": \"doe@company-a.com\",\n        \"NameCountry\": \"\",\n        \"NameFormat\": \"\",\n        \"PersonFullName\": \"\",\n        \"PersonNumber\": \"28237\",\n        \"IsMarkedForArchiving\": false,\n        \"BusinessPartnerIDByExtSystem\": \"\",\n        \"YY1_AddrLastCheckedOn_bus\": null,\n        \"YY1_AddrLastCheckedBy_bus\": \"\",\n        \"to_BuPaIdentification\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BuPaIdentification\"\n            }\n        },\n        \"to_BusinessPartnerAddress\": {\n            \"results\": [\n                {\n                    \"__metadata\": {\n                        \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')\",\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')\",\n                        \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerAddressType\"\n                    },\n                    \"BusinessPartner\": \"1003764\",\n                    \"AddressID\": \"28238\",\n                    \"ValidityStartDate\": \"/Date(1518393600000+0000)/\",\n                    \"ValidityEndDate\": \"/Date(253402300799000+0000)/\",\n                    \"AuthorizationGroup\": \"\",\n                    \"AddressUUID\": \"00163e30-4e2a-1ed8-8483-a08c5224bf04\",\n                    \"AdditionalStreetPrefixName\": \"\",\n                    \"AdditionalStreetSuffixName\": \"\",\n                    \"AddressTimeZone\": \"CET\",\n                    \"CareOfName\": \"\",\n                    \"CityCode\": \"\",\n                    \"CityName\": \"Walldorf\",\n                    \"CompanyPostalCode\": \"\",\n                    \"Country\": \"DE\",\n                    \"County\": \"\",\n                    \"DeliveryServiceNumber\": \"\",\n                    \"DeliveryServiceTypeCode\": \"\",\n                    \"District\": \"\",\n                    \"FormOfAddress\": \"\",\n                    \"FullName\": \"\",\n                    \"HomeCityName\": \"\",\n                    \"HouseNumber\": \"16\",\n                    \"HouseNumberSupplementText\": \"\",\n                    \"Language\": \"\",\n                    \"POBox\": \"\",\n                    \"POBoxDeviatingCityName\": \"\",\n                    \"POBoxDeviatingCountry\": \"\",\n                    \"POBoxDeviatingRegion\": \"\",\n                    \"POBoxIsWithoutNumber\": false,\n                    \"POBoxLobbyName\": \"\",\n                    \"POBoxPostalCode\": \"\",\n                    \"Person\": \"28237\",\n                    \"PostalCode\": \"69190\",\n                    \"PrfrdCommMediumType\": \"\",\n                    \"Region\": \"\",\n                    \"StreetName\": \"Dietmar-Hopp-Allee\",\n                    \"StreetPrefixName\": \"\",\n                    \"StreetSuffixName\": \"\",\n                    \"TaxJurisdiction\": \"\",\n                    \"TransportZone\": \"\",\n                    \"AddressIDByExternalSystem\": \"\",\n                    \"to_AddressUsage\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_AddressUsage\"\n                        }\n                    },\n                    \"to_EmailAddress\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_EmailAddress\"\n                        }\n                    },\n                    \"to_FaxNumber\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_FaxNumber\"\n                        }\n                    },\n                    \"to_MobilePhoneNumber\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_MobilePhoneNumber\"\n                        }\n                    },\n                    \"to_PhoneNumber\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_PhoneNumber\"\n                        }\n                    },\n                    \"to_URLAddress\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_URLAddress\"\n                        }\n                    }\n                }\n            ]\n        },\n        \"to_BusinessPartnerBank\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerBank\"\n            }\n        },\n        \"to_BusinessPartnerContact\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerContact\"\n            }\n        },\n        \"to_BusinessPartnerRole\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerRole\"\n            }\n        },\n        \"to_BusinessPartnerTax\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerTax\"\n            }\n        },\n        \"to_Customer\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_Customer\"\n            }\n        },\n        \"to_Supplier\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_Supplier\"\n            }\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cloud-integration",
+			"item": [
+				{
+					"name": "Playground Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/http/playground/request",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"http",
+								"playground",
+								"request"
 							]
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response_body = JSON.parse(responseBody);",
+									"",
+									"pm.environment.set(\"access_token\", response_body['access_token']);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{client_secret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{client_id}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{token_url}}?grant_type=client_credentials",
+							"host": [
+								"{{token_url}}"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK - Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{token_url}}?grant_type=client_credentials",
+									"host": [
+										"{{token_url}}"
+									],
+									"query": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 23 Aug 2022 07:48:49 GMT"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "7b463a54-df13-4ee3-453d-46b0bb44ecdb"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vYW50b25pby1tYXJhZGlhZ2EtZnJlZS10aWVyLWFhcTNsNDlnLmF1dGhlbnRpY2F0aW9uLmV1MTAuaGFuYS5vbmRlbWFuZC5jb20vdG9rZW5fa2V5cyIsImtpZCI6ImRlZmF1bHQtand0LWtleS0xODYwNzM0NTEzIiwidHlwIjoiSldUIn0.eyJqdGkiOiJmOGY2OGJmMGI1MjA0ZTJhYjM2YWU0ZmZmMDI3MDk5MCIsImV4dF9hdHRyIjp7ImVuaGFuY2VyIjoiWFNVQUEiLCJzdWJhY2NvdW50aWQiOiI3MDA5NDFlYS05OTVmLTRmYWEtOTVhNC0xMGRjZDQ0OGFkNWMiLCJ6ZG4iOiJhbnRvbmlvLW1hcmFkaWFnYS1mcmVlLXRpZXItYWFxM2w0OWciLCJzZXJ2aWNlaW5zdGFuY2VpZCI6ImRiM2Q2MmI2LWUxODYtNDJiYi1iYTU3LTgwM2ZhMzdkMDg3YiJ9LCJzdWIiOiJzYi1kYjNkNjJiNi1lMTg2LTQyYmItYmE1Ny04MDNmYTM3ZDA4N2IhYjEzOTU4OHxpdC1ydC1hbnRvbmlvLW1hcmFkaWFnYS1mcmVlLXRpZXItYWFxM2w0OWchYjExNzkxMiIsImF1dGhvcml0aWVzIjpbInVhYS5yZXNvdXJjZSIsIml0LXJ0LWFudG9uaW8tbWFyYWRpYWdhLWZyZWUtdGllci1hYXEzbDQ5ZyFiMTE3OTEyLkVTQk1lc3NhZ2luZy5zZW5kIl0sInNjb3BlIjpbInVhYS5yZXNvdXJjZSIsIml0LXJ0LWFudG9uaW8tbWFyYWRpYWdhLWZyZWUtdGllci1hYXEzbDQ5ZyFiMTE3OTEyLkVTQk1lc3NhZ2luZy5zZW5kIl0sImNsaWVudF9pZCI6InNiLWRiM2Q2MmI2LWUxODYtNDJiYi1iYTU3LTgwM2ZhMzdkMDg3YiFiMTM5NTg4fGl0LXJ0LWFudG9uaW8tbWFyYWRpYWdhLWZyZWUtdGllci1hYXEzbDQ5ZyFiMTE3OTEyIiwiY2lkIjoic2ItZGIzZDYyYjYtZTE4Ni00MmJiLWJhNTctODAzZmEzN2QwODdiIWIxMzk1ODh8aXQtcnQtYW50b25pby1tYXJhZGlhZ2EtZnJlZS10aWVyLWFhcTNsNDlnIWIxMTc5MTIiLCJhenAiOiJzYi1kYjNkNjJiNi1lMTg2LTQyYmItYmE1Ny04MDNmYTM3ZDA4N2IhYjEzOTU4OHxpdC1ydC1hbnRvbmlvLW1hcmFkaWFnYS1mcmVlLXRpZXItYWFxM2w0OWchYjExNzkxMiIsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJyZXZfc2lnIjoiNjQwNGJlMGQiLCJpYXQiOjE2NjEyNDA5MjksImV4cCI6MTY2MTI0NTEyOSwiaXNzIjoiaHR0cHM6Ly9hbnRvbmlvLW1hcmFkaWFnYS1mcmVlLXRpZXItYWFxM2w0OWcuYXV0aGVudGljYXRpb24uZXUxMC5oYW5hLm9uZGVtYW5kLmNvbS9vYXV0aC90b2tlbiIsInppZCI6IjcwMDk0MWVhLTk5NWYtNGZhYS05NWE0LTEwZGNkNDQ4YWQ1YyIsImF1ZCI6WyJ1YWEiLCJpdC1ydC1hbnRvbmlvLW1hcmFkaWFnYS1mcmVlLXRpZXItYWFxM2w0OWchYjExNzkxMi5FU0JNZXNzYWdpbmciLCJzYi1kYjNkNjJiNi1lMTg2LTQyYmItYmE1Ny04MDNmYTM3ZDA4N2IhYjEzOTU4OHxpdC1ydC1hbnRvbmlvLW1hcmFkaWFnYS1mcmVlLXRpZXItYWFxM2w0OWchYjExNzkxMiJdfQ.DacwBh6g5WBNdRgZ85ij6pVw4XFDC8PHarz6BmKtCCGTR8Iyg7Ed3Aca95TMKzEv_haEBDfOkOWxzPCXHnj0W2iEpKwGzDEGz5NzlIkYYWLKe5_8ljp4KnD4iV8Xc3lbSNyL9Ltp7_XhEtULhbNfbEHwzzpQ8Vx6fqoH07ZlmuCJd17fqHqqTdMvFRYuIXlDTvWrahXiFFgG7Tg6-m8w2GQfzlh4tcuJwV4Pt6uQelLufIY_k9hcKS7EOeFSaryc5gUIlGiElDjP-pL1t3cN34woL_71DDtFmtQN-dPlUevlsIRo3euSoNZtz6gahOfhm1IbiuxVyVKFJtLaRN78TQ\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 4199,\n    \"scope\": \"uaa.resource it-rt-antonio-maradiaga-free-tier-aaq3l49g!b117912.ESBMessaging.send\",\n    \"jti\": \"f8f68bf0b5204e2ab36ae4fff0270990\"\n}"
+						},
+						{
+							"name": "401 Unauthorised - Bad Credentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{token_url}}?grant_type=client_credentials",
+									"host": [
+										"{{token_url}}"
+									],
+									"query": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 23 Aug 2022 07:49:23 GMT"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "server",
+									"value": "nginx"
+								},
+								{
+									"key": "www-authenticate",
+									"value": "Basic realm=\"UAA/client\", error=\"unauthorized\", error_description=\"Bad credentials\""
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "132d3866-07b2-43e3-6ef5-768ea6e51870"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"unauthorized\",\n    \"error_description\": \"Bad credentials\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Request Employee Dependants",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/http/request-employee-dependants",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"http",
+								"request-employee-dependants"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK - Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/http/request-employee-dependants",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Mon, 22 Aug 2022 14:32:44 GMT"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1747-SQVE3Ai2vZ1sCX+s3Rjy+syvZIg\""
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "sap_messageprocessinglogid",
+									"value": "AGMDk4xoI4HyB3JEHjYPc_OacRnI"
+								},
+								{
+									"key": "sap_mplcorrelationid",
+									"value": "AGMDk4wmjag1XrzTGOhtBm90ydzl"
+								},
+								{
+									"key": "sap_pregeneratedmplid",
+									"value": "AGMDk4x_C-7i-3-JThXBiFou0B6a"
+								},
+								{
+									"key": "server",
+									"value": "SAP"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-correlationid",
+									"value": "fa5ccadd-293d-40ac-4ea7-7569bd964b7e"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "10"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "fa5ccadd-293d-40ac-4ea7-7569bd964b7e"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"d\": {\n        \"__metadata\": {\n            \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')\",\n            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')\",\n            \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n        },\n        \"BusinessPartner\": \"1003764\",\n        \"Customer\": \"\",\n        \"Supplier\": \"\",\n        \"AcademicTitle\": \"\",\n        \"AuthorizationGroup\": \"\",\n        \"BusinessPartnerCategory\": \"1\",\n        \"BusinessPartnerFullName\": \"John Doe\",\n        \"BusinessPartnerGrouping\": \"BP02\",\n        \"BusinessPartnerName\": \"John Doe\",\n        \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a08c52249f04\",\n        \"CorrespondenceLanguage\": \"\",\n        \"CreatedByUser\": \"CC0000000002\",\n        \"CreationDate\": \"/Date(1518393600000)/\",\n        \"CreationTime\": \"PT17H49M05S\",\n        \"FirstName\": \"John\",\n        \"FormOfAddress\": \"\",\n        \"Industry\": \"\",\n        \"InternationalLocationNumber1\": \"0\",\n        \"InternationalLocationNumber2\": \"0\",\n        \"IsFemale\": false,\n        \"IsMale\": true,\n        \"IsNaturalPerson\": \"X\",\n        \"IsSexUnknown\": false,\n        \"Language\": \"\",\n        \"LastChangeDate\": null,\n        \"LastChangeTime\": \"PT00H00M00S\",\n        \"LastChangedByUser\": \"\",\n        \"LastName\": \"Doe\",\n        \"LegalForm\": \"\",\n        \"OrganizationBPName1\": \"\",\n        \"OrganizationBPName2\": \"\",\n        \"OrganizationBPName3\": \"\",\n        \"OrganizationBPName4\": \"\",\n        \"OrganizationFoundationDate\": null,\n        \"OrganizationLiquidationDate\": null,\n        \"SearchTerm1\": \"Entwickler\",\n        \"AdditionalLastName\": \"\",\n        \"BirthDate\": null,\n        \"BusinessPartnerIsBlocked\": false,\n        \"BusinessPartnerType\": \"\",\n        \"ETag\": \"CC000000000220180212174905\",\n        \"GroupBusinessPartnerName1\": \"\",\n        \"GroupBusinessPartnerName2\": \"\",\n        \"IndependentAddressID\": \"\",\n        \"InternationalLocationNumber3\": \"0\",\n        \"MiddleName\": \"doe@company-a.com\",\n        \"NameCountry\": \"\",\n        \"NameFormat\": \"\",\n        \"PersonFullName\": \"\",\n        \"PersonNumber\": \"28237\",\n        \"IsMarkedForArchiving\": false,\n        \"BusinessPartnerIDByExtSystem\": \"\",\n        \"YY1_AddrLastCheckedOn_bus\": null,\n        \"YY1_AddrLastCheckedBy_bus\": \"\",\n        \"to_BuPaIdentification\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BuPaIdentification\"\n            }\n        },\n        \"to_BusinessPartnerAddress\": {\n            \"results\": [\n                {\n                    \"__metadata\": {\n                        \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')\",\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')\",\n                        \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerAddressType\"\n                    },\n                    \"BusinessPartner\": \"1003764\",\n                    \"AddressID\": \"28238\",\n                    \"ValidityStartDate\": \"/Date(1518393600000+0000)/\",\n                    \"ValidityEndDate\": \"/Date(253402300799000+0000)/\",\n                    \"AuthorizationGroup\": \"\",\n                    \"AddressUUID\": \"00163e30-4e2a-1ed8-8483-a08c5224bf04\",\n                    \"AdditionalStreetPrefixName\": \"\",\n                    \"AdditionalStreetSuffixName\": \"\",\n                    \"AddressTimeZone\": \"CET\",\n                    \"CareOfName\": \"\",\n                    \"CityCode\": \"\",\n                    \"CityName\": \"Walldorf\",\n                    \"CompanyPostalCode\": \"\",\n                    \"Country\": \"DE\",\n                    \"County\": \"\",\n                    \"DeliveryServiceNumber\": \"\",\n                    \"DeliveryServiceTypeCode\": \"\",\n                    \"District\": \"\",\n                    \"FormOfAddress\": \"\",\n                    \"FullName\": \"\",\n                    \"HomeCityName\": \"\",\n                    \"HouseNumber\": \"16\",\n                    \"HouseNumberSupplementText\": \"\",\n                    \"Language\": \"\",\n                    \"POBox\": \"\",\n                    \"POBoxDeviatingCityName\": \"\",\n                    \"POBoxDeviatingCountry\": \"\",\n                    \"POBoxDeviatingRegion\": \"\",\n                    \"POBoxIsWithoutNumber\": false,\n                    \"POBoxLobbyName\": \"\",\n                    \"POBoxPostalCode\": \"\",\n                    \"Person\": \"28237\",\n                    \"PostalCode\": \"69190\",\n                    \"PrfrdCommMediumType\": \"\",\n                    \"Region\": \"\",\n                    \"StreetName\": \"Dietmar-Hopp-Allee\",\n                    \"StreetPrefixName\": \"\",\n                    \"StreetSuffixName\": \"\",\n                    \"TaxJurisdiction\": \"\",\n                    \"TransportZone\": \"\",\n                    \"AddressIDByExternalSystem\": \"\",\n                    \"to_AddressUsage\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_AddressUsage\"\n                        }\n                    },\n                    \"to_EmailAddress\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_EmailAddress\"\n                        }\n                    },\n                    \"to_FaxNumber\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_FaxNumber\"\n                        }\n                    },\n                    \"to_MobilePhoneNumber\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_MobilePhoneNumber\"\n                        }\n                    },\n                    \"to_PhoneNumber\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_PhoneNumber\"\n                        }\n                    },\n                    \"to_URLAddress\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_URLAddress\"\n                        }\n                    }\n                }\n            ]\n        },\n        \"to_BusinessPartnerBank\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerBank\"\n            }\n        },\n        \"to_BusinessPartnerContact\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerContact\"\n            }\n        },\n        \"to_BusinessPartnerRole\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerRole\"\n            }\n        },\n        \"to_BusinessPartnerTax\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerTax\"\n            }\n        },\n        \"to_Customer\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_Customer\"\n            }\n        },\n        \"to_Supplier\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_Supplier\"\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "500 Error - No body in request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/http/request-employee-dependants",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "content-type",
+									"value": "text/plain;charset=ISO-8859-1"
+								},
+								{
+									"key": "date",
+									"value": "Mon, 22 Aug 2022 14:36:32 GMT"
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "server",
+									"value": "SAP"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-correlationid",
+									"value": "24542760-e1b5-4fb9-6b93-787b743692b3"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "24542760-e1b5-4fb9-6b93-787b743692b3"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "An internal server error occured: End of input at line 1 column 1 path $.\nThe MPL ID for the failed message is : AGMDlHCX0eur2oFSGr_ozC9Um7BV\n\n"
+						},
+						{
+							"name": "Wrong host - HTML page response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://antonio-maradiaga-free-tier-aaq3l49g.it-cpi018.cfapps.eu10-003.hana.ondemand.com/http/request-employee-dependants",
+									"protocol": "https",
+									"host": [
+										"antonio-maradiaga-free-tier-aaq3l49g",
+										"it-cpi018",
+										"cfapps",
+										"eu10-003",
+										"hana",
+										"ondemand",
+										"com"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, must-revalidate"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "script-src 'self' 'unsafe-inline'; frame-ancestors *"
+								},
+								{
+									"key": "content-type",
+									"value": "text/html"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 23 Aug 2022 15:28:49 GMT"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-request-id",
+									"value": "0d0a2dc3-fc55-46ac-6a1f-a4f9441d0851"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "0d0a2dc3-fc55-46ac-6a1f-a4f9441d0851"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "<html>\n    <head>\n        <link rel=\"shortcut icon\" href=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" />\n        <script>document.cookie=\"fragmentAfterLogin=\"+encodeURIComponent(location.hash)+\";path=/\";document.cookie=\"locationAfterLogin=\"+encodeURIComponent(location.href.split('#')[0].split(location.host)[1])+\";path=/\";document.cookie=\"signature=dFHLOnX4KR%2B5kJIKZIug5p80faU%3D;path=/\";location=\"https://antonio-maradiaga-free-tier-aaq3l49g.authentication.eu10.hana.ondemand.com/oauth/authorize?response_type=code&client_id=sb-it!b117912&redirect_uri=https%3A%2F%2Fantonio-maradiaga-free-tier-aaq3l49g.it-cpi018.cfapps.eu10-003.hana.ondemand.com%2Flogin%2Fcallback\"</script>\n    </head>\n</html>"
+						}
+					]
 				}
 			]
 		}
