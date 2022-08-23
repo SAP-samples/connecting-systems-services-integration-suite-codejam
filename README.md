@@ -38,9 +38,10 @@ See below for an overview of the exercises part of this CodeJam.
   * [Exercise 01 - Getting familiar with the SAP API Business Hub](./exercises/01-getting-familiar-api-business-hub/README.md)
   * [Exercise 02 - Exploring the mock services (Cloud Integration)](./exercises/02-exploring-the-mock-services/README.md)
   * [Exercise 03 - Build our first integration flow](./exercises/03-build-first-integration-flow/README.md)
-  * Exercise 04 - Retrieve Business Partner dependant's information
-  * Exercise 05 - Log service call in Google BigQuery (Open Connectors)
-  * Exercise 06 - Add security to unsecure service (API Management)
+  * [Exercise 04 - Send requests and monitor our integration flow](./exercises/04-send-requests-and-monitor/)
+  * Exercise 05 - Retrieve Business Partner dependant's information
+  * Exercise 06 - Log service call in Google BigQuery (Open Connectors)
+  * Exercise 07 - Add security to unsecure service (API Management)
 
 ## Known Issues
 
