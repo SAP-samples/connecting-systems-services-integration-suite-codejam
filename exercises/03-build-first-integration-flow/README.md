@@ -87,7 +87,7 @@ We are now on the landing page of SAP Cloud Integration. The page is divided int
 ![Cloud Integration landing page](assets/cloud_integration_landing_page.png)
 
 - *Discover*: Here, you can find predefined integration content provided by SAP that you can use out of the box and adapt to your requirements.
-- *Design*: This is where you design your integration content. It contains the graphical integration flow modelling environment. You will find a list of integration packages defined for the tenant. When you select an integration package, you can find the integration flows (and other artefacts) defined for the package (on the Artifacts tab).
+- *Design*: This is where you design your integration content. It contains the graphical integration flow modelling environment. You will find a list of integration packages defined for the tenant. When you select an integration package, you can find the integration flows (and other artefacts) defined for the package (on the `Artifacts` tab).
 - *Monitor*: This is where you can monitor your integration flow. You also use this section to manage additional artefacts that you deploy on your tenant to complement your integration flows (for example, User Credential artefacts to configure connections using basic authentication).
 
 ## Design
