@@ -205,7 +205,11 @@ Let's break down the configuration set in the HTTP adapter:
   - *Request Headers*: List of headers that you want to send to the target system. We don't need to send request headers to the Business Partners mock service, but we will use this field to include a header parameter in a future exercise.
   - *Response Headers*: List of headers coming from the target system's response. They will be available in the exchange after the request.
 
-We've completed the design of our basic integration flow. In it, we've used some of the most commonly used flow steps, converter (JSON to XML), transformer (Content Modifier), and external call (Request Reply). We will extend this integration flow in future exercises to cover other commonly used flow steps. Now let's proceed to deploy the integration flow.
+We've completed the design of our basic integration flow. In it, we've used some of the most commonly used flow steps, converter (JSON to XML), transformer (Content Modifier), and external call (Request Reply). We will extend this integration flow in future exercises to cover other commonly used flow steps. 
+
+🧭 Before deploying the integration flow, let's dedicate some time to navigate/click around and get familiar with the properties of the flow steps we just included in the integration flow. Click around the palette and see what other flow steps are available. Check out other flow steps that we've not used. Drag/add them to the integration flow to see their properties. Once you've done some self-discovery, make sure you leave the integration flow like the one on the screenshot above and come back here to continue with the exercise.
+
+Now let's proceed to deploy the integration flow.
 
 ## Deploy
 
