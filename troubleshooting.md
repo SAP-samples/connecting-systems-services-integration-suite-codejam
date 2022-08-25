@@ -40,6 +40,11 @@ This page intends to capture common problems that you might face while going thr
 
     ![Test connectivity](assets/test-connectivity.png)
 
+- #### Tracing
+
+TBA - 
+
+> Tracing an integration flow in SAP Cloud Integration - https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/4ec27d358d844c96b3ae11febd440eac.html?locale=en-US
 
 ## Postman
 
