@@ -99,24 +99,22 @@ The log level will tell us exactly where the integration flow is failing and det
 <i>Message monitoring - Failed message log content</i>
 </p>
 
-
-
 ## Summary
 
-Congratulations, you've sent messages to the deployed integration flow. Also, you now have a basic understanding of some of the Monitoring capabilities of SAP Cloud Integration and how you can "debug" issues in your integration flow.
+Congratulations, you've sent messages to the deployed integration flow. Also, you now have a basic understanding of some of the Monitoring capabilities of SAP Cloud Integration.
 
 ## Further reading
 
-* [Link 1](https://blogs.sap.com/)
-* [Link 2](https://blogs.sap.com/)
-* [Link 3](https://blogs.sap.com/)
+* [Managing Integration Content](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/09a7223883a74dcb9f4b1b96a7c7f011.html?locale=en-US)
+* [Guidelines and Best Practices for Message Monitoring](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/6f598b4d4e0e44c3bd8445b5d58b832c.html?locale=en-US)
+
 
 ---
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
 1. Compare the response headers when calling the service directly (*s4-bp-mock-server > GET Single Business Partner*) vs via Cloud Integration (*cloud-integration > GET Request Employee Dependants*). Do you see any headers returned that might be specific to SAP Cloud Integration? Can you think of a place where you can use one of those headers?
-2. Increase the tracing level for a deployed integration flow and  
+2. Go ahead and on purpose make the integration flow fail. You can do this by sending a malformed payload to the integration flow. What's the error that you get? Try not sending a valid access token, what error do you get? What happens if no authentication token is sent? The idea here is to get familiar with different error situation that you might face.
 
 [^1]: Bearer Tokens: https://www.oauth.com/oauth2-servers/differences-between-oauth-1-2/bearer-tokens/ 
 [^2]: URL hostnames: https://developer.mozilla.org/en-US/docs/Web/API/URL/hostname
