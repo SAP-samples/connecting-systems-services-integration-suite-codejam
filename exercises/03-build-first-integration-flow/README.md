@@ -74,7 +74,9 @@ The integration flow expects a sample request message like the one below and sho
 
 > ℹ️ While going through the exercise, you might encounter common problems not explicitly related to it. Your first stop should be the [troubleshooting.md](troubleshooting.md) page, which includes a list of these common problems and their potential solutions.
 
-## Enterprise Integration Patterns (EIP)
+Before building the integration flow, let's start with some context and talk a bit about what Enterprise Integration Patterns are and what Apache Camel is.
+
+### Enterprise Integration Patterns (EIP)
 
 ![Messaging patterns](assets/enterprise-integration-patterns.png)
 <p align = "center">
@@ -86,6 +88,20 @@ Under the hood, SAP Cloud Integration runs [Apache Camel](https://camel.apache.o
 The [Integration Flow Design Guidelines - Enterprise Integration Patterns package](https://api.sap.com/package/DesignGuidelinesPatterns/overview), available in the SAP API Business Hub, contain integration flows that illustrate the design of the most common Enterprise Integration Patterns. These integration flows can be used as a reference when exploring an integration pattern and seeing how you can implement it in SAP Cloud Integration. These also come in handy when implementing the integration patterns in your integration flows.
 
 > ℹ️ For more information about enterprise integration patterns, see https://www.enterpriseintegrationpatterns.com/patterns/messaging/
+
+### Apache Camel 
+
+<img src="assets/apache-camel.svg" alt="Apache Camel logo" width="200"/>
+
+As mentioned before, Apache Camel is an open-source integration framework based on the enterprise integration patterns, and it is what's running under the hood in SAP Cloud Integration.
+
+**Do you need to understand how Apache Camel works to develop integration flows in SAP Cloud Integration?**
+
+Not necessarily, but it is essential to remember that Apache Camel runs within SAP Cloud Integration. Knowing this can help you develop complex integration flows, [understand its behaviour](https://blogs.sap.com/2022/06/20/zip-files-the-right-way-in-sap-ci/comment-page-1/#comment-628010) and troubleshoot exceptions that might be raised when executing an integration flow. 
+
+You'll notice that the SAP Cloud Integration documentation includes details of various Camel headers/properties. For example, the [HTTP Receiver Adapter](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/2da452effb764b3bb28f8e0a2f5bd480.html?locale=en-US) documentation tells us how we can use the `CamelHttpUri`, `CamelHttpQuery`, `CamelCharsetName` exchange headers/properties to set values or override a behaviour during message processing dynamically. In addition, different [adapters](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/e3dce8814857444eacbcf0d3ca4e6706.html?locale=en-US) expose other *Camel* headers/properties that we can use during runtime.
+
+Also, SAP Cloud Integration support the [Camel Simple expression language](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/4688083fad6546c1ba25a06d4ffb9fae.html?locale=en-US), and we interact with it in different components, e.g. Content Modifier, write variables, filtering. The [Simple language documentation](https://camel.apache.org/components/3.18.x/languages/simple-language.html) can come in handy when dealing with expressions. 
 
 ## Access your Cloud Integration workspace
 
@@ -210,7 +226,7 @@ HTTP Connection details:
 Let's break down the configuration set in the HTTP adapter:
 - Connection Details:
   - *Address*: URL of the SAP S/4HANA Cloud mock server we're connecting to, e.g., https://s4-mock-server-service.c-1e90315.kyma.ondemand.com. You'll notice that we are also including the full path and dynamically setting the value stored in the `employee_id` exchange property as part of the URL.
-  > 🐪 ${property.employee_id} - Simple expression
+    > 🐪 At runtime, the ${property.employee_id} string specified in the `Address` field will be substitute with the value that is stored in the property. We created this property in the Content Modifier previously. Following this approach you can dynamically set string values with values stored in the exchange headers/properties. For more information, check out how you can use the [Camel Simple Expression language](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/4688083fad6546c1ba25a06d4ffb9fae.html?locale=en-US) in SAP Cloud Integration.
   - *Query*: Query string that we want to send with the HTTP request. In our case, we are just expanding the `to_BusinessPartnerAddress` field.
   - *Proxy*: The type of proxy that you are using to connect to the target system. In our case, we are communicating with a cloud system; therefore, we select Internet. If we would be communicating with an on-premise system, we will need to set it to On-Premise.
   - *Method*: Action that the HTTP request must perform. In our case, a GET request.
