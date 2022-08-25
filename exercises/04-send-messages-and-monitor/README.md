@@ -116,5 +116,9 @@ If you finish earlier than your fellow participants, you might like to ponder th
 1. Compare the response headers when calling the service directly (*s4-bp-mock-server > GET Single Business Partner*) vs via Cloud Integration (*cloud-integration > GET Request Employee Dependants*). Do you see any headers returned that might be specific to SAP Cloud Integration? Can you think of a place where you can use one of those headers?
 2. Go ahead and on purpose make the integration flow fail. You can do this by sending a malformed payload to the integration flow. What's the error that you get? Try not sending a valid access token, what error do you get? What happens if no authentication token is sent? The idea here is to get familiar with different error situation that you might face.
 
+## Next
+
+Continue to 👉 [Exercise 05 - Retrieve Business Partner dependant's information](../05-retrieve-bp-depedants/)
+
 [^1]: Bearer Tokens: https://www.oauth.com/oauth2-servers/differences-between-oauth-1-2/bearer-tokens/ 
 [^2]: URL hostnames: https://developer.mozilla.org/en-US/docs/Web/API/URL/hostname

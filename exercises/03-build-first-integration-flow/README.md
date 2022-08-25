@@ -276,5 +276,9 @@ If you finish earlier than your fellow participants, you might like to ponder th
 3. In the receiver HTTP adapter, we hardcoded a URL. How can we parametrise this field or other fields in our integration flow? Why would we want to parametrise our integration flow?
 4. How can we configure our integration flow so that the error can be returned to the sender whenever an error is raised during execution?
 
+## Next
+
+Continue to 👉 [Exercise 04 - Sending messages and monitoring our integration flow](../04-send-messages-and-monitor/)
+
 [^1]: [Getting Started with Integration Flow Development](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/e5724cd84b854719973afe0356ea128b.html?locale=en-US&q=%22integration%20flow%22)
 [^2]: [Cross-site request forgery]((https://owasp.org/www-community/attacks/csrf))
