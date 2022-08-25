@@ -14,15 +14,15 @@ None.
 
 A web browser supported by the SAP Integration Suite[^1]: For the UIs of the service, the following browsers are supported on Microsoft Windows PCs and, where mentioned below, on macOS. Note that, however, certain limitations might apply for specific browsers:
 
-    Cloud Integration has been tested using the following browsers:
-    - Google Chrome (latest version)
-    - Microsoft Edge (latest version)
-    - Mozilla Firefox (latest version)
-    - Windows Internet Explorer (as of version 10)
-    
-    <br>
+```
+Cloud Integration has been tested using the following browsers:
+- Google Chrome (latest version)
+- Microsoft Edge (latest version)
+- Mozilla Firefox (latest version)
+- Windows Internet Explorer (as of version 10)
 
-    > The application can also be used with Safari browser and Internet Explorer 9. However, some features might not work as expected.
+The application can also be used with Safari browser and Internet Explorer 9. However, some features might not work as expected.
+```
 
 ### Postman
 

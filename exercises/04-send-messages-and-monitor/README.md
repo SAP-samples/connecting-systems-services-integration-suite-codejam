@@ -99,12 +99,6 @@ The log level will tell us exactly where the integration flow is failing and det
 <i>Message monitoring - Failed message log content</i>
 </p>
 
-## Tracing
-
-//TODO: Complete tracing
-
-
-https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/4ec27d358d844c96b3ae11febd440eac.html?locale=en-US
 
 
 ## Summary
@@ -122,7 +116,7 @@ Congratulations, you've sent messages to the deployed integration flow. Also, yo
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
 1. Compare the response headers when calling the service directly (*s4-bp-mock-server > GET Single Business Partner*) vs via Cloud Integration (*cloud-integration > GET Request Employee Dependants*). Do you see any headers returned that might be specific to SAP Cloud Integration? Can you think of a place where you can use one of those headers?
-2. Try retrieving other 
+2. Increase the tracing level for a deployed integration flow and  
 
 [^1]: Bearer Tokens: https://www.oauth.com/oauth2-servers/differences-between-oauth-1-2/bearer-tokens/ 
 [^2]: URL hostnames: https://developer.mozilla.org/en-US/docs/Web/API/URL/hostname
