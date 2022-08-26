@@ -12,6 +12,6 @@ See below for an overview of the exercises part of this CodeJam.
   * [Exercise 02 - Exploring the mock services (Cloud Integration)](./02-exploring-the-mock-services/)
   * [Exercise 03 - Build our first integration flow](./03-build-first-integration-flow/)
   * [Exercise 04 - Send messages and monitor our integration flow](./04-send-messages-and-monitor/)
-  * [Exercise 05 - Retrieve Business Partner dependant's information](./05-retrieve-bp-depedants/)
+  * [Exercise 05 - Retrieve Business Partner dependant's information](./05-retrieve-bp-dependants/)
   * Exercise 06 - Log service call in Google BigQuery (Open Connectors)
   * Exercise 07 - Add security to unsecure service (API Management)
