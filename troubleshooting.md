@@ -35,15 +35,15 @@ This page intends to capture common problems that you might face while going thr
 
     You might face this error when trying to communicate with the services part of this CodeJam. The services are hosted in a Kyma environment and Cloud Integration is missing the certificate root chain presented by the service hosted in Kyma. 
     
-    👉 Go to `Monitor > Manage Security - Keystore tile` and `Add` a certificate. Import the [kyma-ondemand-com-chain.pem](assets/kyma-ondemand-com-chain.pem) certificate included in the assets folder and `Confirm` you want to add it.
+    👉 Go to `Monitor > Manage Security - Keystore tile` and `Add` a certificate. Import the [kyma-ondemand-com-chain.pem](assets/cloud-integration/kyma-ondemand-com-chain.pem) certificate included in the assets folder and `Confirm` you want to add it.
 
     1. Add certificate
     ![Manage Keystore](assets/manage-keystore.png)
 
-    2. Browse for certificate
+    1. Browse for certificate
     ![Add certificate](assets/add-certificate-name.png)
 
-    3. Confirm certificate
+    1. Confirm certificate
     ![Confirm certificate](assets/confirm-certificate.png)
 
     Once the certificate is added, you can test connectivity with the service by using the `Connectivity Tests` utility under Monitor
