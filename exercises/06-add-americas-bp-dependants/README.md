@@ -1,6 +1,6 @@
-# Exercise 06 - Add the Americas instance of the Business Partner Dependants service
+# Exercise 06 - Add the America's instance of the Business Partner Dependants service
 
-At the end of this exercise, you'll have successfully added the Americas instance of Business Partner service to the integration flow.
+At the end of this exercise, you'll have successfully added America's instance of Business Partner service to the integration flow.
 
 ![Connect the integration flow to the European instance of the BP Dependants service](assets/diagrams/bp_americas_data_flow.png)
 <p align = "center">
