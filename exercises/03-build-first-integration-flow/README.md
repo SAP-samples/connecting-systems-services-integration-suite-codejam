@@ -259,7 +259,7 @@ Once deployed, and the runtime status is `✅ Started`, you can click the `Navig
 
 ## Summary
 
-Congratulations, you've built and deployed the first integration flow. Now you have a basic understanding of some of the most commonly used integration flow steps.
+Congratulations, you've built and deployed the first integration flow. You now have a basic understanding of some of the most commonly used integration flow steps.
 
 ## Further reading
 

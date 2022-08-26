@@ -7,7 +7,7 @@ At the end of this exercise, you'll have successfully retrieved Business Partner
 <i>Exercise 05 - Data flow</i>
 </p>
 
-Now that we are familiar with the basics of SAP Cloud Integration, we will start moving a bit faster when adding components and deploying the integration flow. When we finish the exercise our integration flow will include a few additional Content Modifiers and we will have implemented a new pattern - Router (Content Based Routing)[^1].
+Now that we are familiar with the basics of SAP Cloud Integration, we will start moving a bit faster when adding components and deploying the integration flow. When we finish the exercise, the integration flow will include a few additional Content Modifiers and we will be familiar with a few new concepts/components, externalised parameters, simulation, secure store, scripting, and  implemented a new pattern - Router (Content Based Routing)[^1].
 
 ![Integration flow - End of Exercise 05](assets/end-of-exercise-integration-flow.png)
 <p align = "center">
@@ -145,7 +145,7 @@ We need to include an API key in the request we send to the EU instance of the B
 
 #### Add Groovy script and Request Reply
 
-To include the API Key in our request, we will first retrieve the secure parameter using a Groovy script and in the same script, we will add it as a header in the exchange. The script that we will use is included in the [exercises/05-retrieve-bp-dependants/assets/scripts](assets/scripts/retrieve-api-key.groovy) folder
+To include the API Key in our request, we will first retrieve the secure parameter using a Groovy script and in the same script, we will add it as a header in the exchange. The script that we will use is included in the [exercises/05-retrieve-bp-dependants/assets/scripts](assets/scripts/retrieve-api-key.groovy) folder. 
 
 ![Add Groovy script and Request Reply](assets/add-script-and-request-reply.png)
 <p align = "center">
@@ -153,7 +153,29 @@ To include the API Key in our request, we will first retrieve the secure paramet
 </p>
 
 👉 In the `Route to EU` route, add a `Groovy Script` step, followed by a `Request Reply` and a new `Receiver participant`.
-- *Groovy script*: Import the script included in the exercise assets folder by uploading it from the file system after clicking the Select button and set `processData` as the script function in the processing tab.
+- *Groovy script*: Import the script included in the exercise assets folder by uploading it from the file system after clicking the Select button and set `processData` as the script function in the processing tab. The script reads an exchange property to know which secure parameter it needs to retrieve from the secure store. Once retrieved, it sets the value as a header in the exchange.
+  ```groovy
+  import com.sap.gateway.ip.core.customdev.util.Message;
+  import com.sap.it.api.ITApiFactory;
+  import com.sap.it.api.securestore.SecureStoreService
+  import com.sap.it.api.securestore.exception.SecureStoreException
+
+  // Source: Read Security-Related Artifacts
+  // https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/8dd981e4f1f44d22bee22c174e5c52d0.html?locale=en-US
+
+  def Message processData(Message message) {
+      def apiKeyAlias = message.getProperty("eu-bp-dependants-api-key-alias")
+      def secureStorageService =  ITApiFactory.getService(SecureStoreService.class, null)
+      try{
+          def secureParameter = secureStorageService.getUserCredential(apiKeyAlias)
+          def apiKey = secureParameter.getPassword().toString()
+          message.setHeader("apiKey", apiKey)
+      } catch(Exception e){
+          throw new SecureStoreException("Secure Parameter not available")
+      }
+      return message;
+  }
+  ```
 - *Request Reply → Receiver participant*: We will use the HTTP adapter to communicate with the service. Set the below configuration details in the HTTP adapter.
 
   | Field             | Value                                                                                                                  |
@@ -164,28 +186,43 @@ To include the API Key in our request, we will first retrieve the secure paramet
   | *Authenticaton*   | None                                                                                                                   |
   | *Request Headers* | apiKey                                                                                                                 |
 
+We are almost done, we just need to define the property that the script is reading and we are ready to deploy the integration flow.
 
+👉 Add a new exchange property in the `Set employee id and country` content modifier with the same name specified in the Groovy script `eu-bp-dependants-api-key-alias`. Set as the value an external parameter with the same name - `eu-bp-dependants-api-key-alias` -  and set as the default value the name of the secure parameter that we deployed before, e.g. `bp-dependants-eu`.
 
 ## Deploy
 
-Justo donec enim diam vulputate ut pharetra. Pulvinar proin gravida hendrerit lectus a. Leo a diam sollicitudin tempor id eu. Enim eu turpis egestas pretium aenean pharetra magna. Et molestie ac feugiat sed lectus vestibulum mattis. A iaculis at erat pellentesque. 
+👉 Save and deploy the integration flow.
 
+> If the deployment process fails with an error similar to this: [Failed to create route - HTTP address already registered](../../troubleshooting.md#failed-to-create-route---http-address-already-registered-for-another-iflow), add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex5`, so that the address `/request-employee-dependants-ex5`  doesn't clash with the one configured for our previous integration flow, and try deploying it again.
+
+Our integration flow is now ready. Let's send some messages to it using Postman. 
+
+👉 Open the `Request Employee Dependants - Exercise 05` request under the cloud-integration folder in the Postman collection and test the following scenarios:
+- Send a request for `employee_id` = 1003764. Where is this employee from and what's the response you get?
+- Now, `employee_id` = 1003765. Where is this employee from and what's the response you get?
+- Finally, an employee that doesn't exist, e.g. `8765432ABC`.
 
 ## Summary
 
-Now that you are familiar with the basic functionality of SAP API Business Hub and the Business Partner API, we are ready to start interacting with the services from which our integration will be extracting data.
+We've added some cool functionality to the integration flow. Some parts of it have been parametrised, it does some data validations, it communicates with more than one service and we even modify its behaviour by using the exchange headers.
 
 ## Further reading
 
-* [Link 1](https://blogs.sap.com/)
-* [Link 2](https://blogs.sap.com/)
+* [Externalise parameters of an integration flow](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/45b2a0772db94bd9b0e57bc82d8d3797.html?locale=en-US)
+* [Message routers in SAP Cloud Integration](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/ad0a19ab854c4e6e929013a9be66d809.html?locale=en-US)
+* [Integration Flow Design Guidelines - Enterprise Integration Patterns](https://api.sap.com/package/DesignGuidelinesPatterns/integrationflow)
 
 ---
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
 1. How else could we have set the API key required by BP Dependants service? Is it secure? 
-2. How can we prevent hard coding the service host name in the HTTP adapter? 
+2. How can we prevent hard coding the service hostname in the HTTP adapter? 
+
+## Next
+
+Continue to 👉 [Exercise 06 - Add the Americas instance of the Business Partner Dependants service](../06-add-americas-bp-dependants/)
 
 [^1]: Pattern Content Based Routing: https://api.sap.com/integrationflow/Pattern_ContentBasedRouting_IgnoreIfNoReceiver
 [^2]: Simple: https://camel.apache.org/components/3.18.x/languages/simple-language.html 
