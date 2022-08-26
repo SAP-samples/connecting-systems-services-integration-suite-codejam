@@ -13,6 +13,16 @@ This page intends to capture common problems that you might face while going thr
 - #### There is no HTTP endpoint URL on the deployed content page.
     In case you don't see the HTTP endpoint URL immediately on the deployed content page, it takes a couple of seconds before it is reflected in the UI. Refresh the web page a couple of times and it will then be displayed.
 
+- #### Failed to create route - HTTP address already registered for another iflow
+    You can face this error if you are trying to deploy an integration whose HTTP sender adapter is configured with the same address as another integration flow that's already deployed. There are two possible solutions to this problem:
+    1. Change the address configured in the HTTP sender adapter of the integration flow that you are trying to deploy, e.g. add a suffix `-ex5`
+    2. Undeploy the previous integration flow
+
+    ![Deploy status - HTTP address error](assets/deploy-status-http-address-error.png)
+    <p align = "center">
+    <i>Deploy status - HTTP address error</i>
+    </p>
+
 - #### HTTP 401 Unauthorized error when sending requests to the integration flow
     1. Ensure that you are including authorization details in your request. In our case, that would be a Bearer token in the Authorization HTTP header.
     2. If the Authorization header is set, the Bearer token may have expired. Refresh the token by sending a request to the token URL (In Postman collection - `cloud-integration > POST Token`) and then retry sending the request to the integration flow.
