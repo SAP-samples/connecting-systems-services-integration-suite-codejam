@@ -118,7 +118,7 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 05 - Retrieve Business Partner dependant's information](../05-retrieve-bp-depedants/)
+Continue to 👉 [Exercise 05 - Retrieve Business Partner dependant's information](../05-retrieve-bp-dependants/)
 
 [^1]: Bearer Tokens: https://www.oauth.com/oauth2-servers/differences-between-oauth-1-2/bearer-tokens/ 
 [^2]: URL hostnames: https://developer.mozilla.org/en-US/docs/Web/API/URL/hostname
