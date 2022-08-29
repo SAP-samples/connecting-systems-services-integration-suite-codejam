@@ -66,9 +66,24 @@ The Americas instance set up is very similar to the one we completed in the prev
     <i>Route to Americas</i>
     </p>
 - *Update the Groovy script*: The script we imported in exercise 05 is reading the `eu-bp-dependants-api-key-alias` property. Let's replace this value with `bp-dependants-api-key-alias` so that the script can be reused in the local integraion process we will create two steps below
-- *Include a new content modifier in the `EU - Integration Process`*: 
+- *Include a new content modifier in the `EU - Integration Process`*: The new content modifier will just assign the "location specific" key alias to the `bp-dependants-api-key-alias` exchange property that the Groovy script expects.
+  | Action | Name                        | Source Type | Source Value                   |
+    | ------ | --------------------------- | ----------- | ------------------------------ |
+    | Create | bp-dependants-api-key-alias | Property    | eu-bp-dependants-api-key-alias |
 - *Create another local integration process (`Americas - Integration Process`)*:  This new local integration process will look the same as the `EU - Integration Process` but we will assign the corresponding Americas configuration.
-
+  - Set apiKey alias:
+    | Action | Name                        | Source Type | Source Value                   |
+    | ------ | --------------------------- | ----------- | ------------------------------ |
+    | Create | bp-dependants-api-key-alias | Property    | americas-bp-dependants-api-key-alias |
+  - GET BP Dependants Groovy script: Select the `/script/retrieve-api-key.groovy` script and `processData` as the script function.
+  - Request Reply - HTTP adapter:
+    | Field             | Value                                                                                                                    |
+    | ----------------- | ------------------------------------------------------------------------------------------------------------------------ |
+    | *Address*         | https://businesspartner-dependants-americas-svc.c-1e90315.kyma.ondemand.com/employees/${property.employee_id}/dependants |
+    | *Proxy Type*      | Internet                                                                                                                 |
+    | *Method*          | GET                                                                                                                      |
+    | *Authenticaton*   | None                                                                                                                     |
+    | *Request Headers* | apiKey                                                                                                                   |
 
 Once you've carried out all the steps above, your integration flow will look like the screenshots below
 
