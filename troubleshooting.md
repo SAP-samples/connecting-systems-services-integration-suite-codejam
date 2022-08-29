@@ -7,6 +7,9 @@ This page intends to capture common problems that you might face while going thr
 - #### Why am I unable to edit the integration flow?
     This is because our integration flow is not in edit mode. To switch to edit mode, click the `Edit button` (*upper right corner*).
 
+- #### Why am I unable to edit the Groovy script in my integration flow?
+    Same reason as above 👆.
+
 - #### An internal server error occurred: End of input at line 1 column 1 path $.
     No body was sent in the request. Remember that our integration flow expects a JSON payload. See [request payload sample](exercises/03-build-first-integration-flow/assets/request-payload-sample.json).
 
