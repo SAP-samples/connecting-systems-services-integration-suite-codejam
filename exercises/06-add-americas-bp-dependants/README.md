@@ -1,6 +1,6 @@
 # Exercise 06 - Add the America's instance of the Business Partner Dependants service
 
-At the end of this exercise, you'll have successfully added America's instance of Business Partner service to the integration flow.
+In the previous exercise we set up the communication between our integration flow and the European instance of the Business Partner dependants service. In this exercise, we will extend our integration flow to also send requests to the Americas instance. We will repeat various of the steps carried out in exercise 05, helping us reinforce what we've learned, introduce a new component - local integration processes,  and add some additional conditions to handle the new instance.
 
 ![Connect the integration flow to the European instance of the BP Dependants service](assets/diagrams/bp_americas_data_flow.png)
 <p align = "center">
@@ -13,6 +13,8 @@ Now that we are familiar with the basics of SAP Cloud Integration.....
 <p align = "center">
 <i>Integration Flow - End of Exercise 06</i>
 </p>
+
+At the end of this exercise, you'll have successfully added America's instance of Business Partner service to the integration flow.
 
 ## Design
 
@@ -60,7 +62,7 @@ The Americas instance set up is very similar to the one we completed in the prev
     <p align = "center">
     <i>Content Modifier - Add americas_countries properties</i>
     </p>
-- *New route*: Add a new route in the `Receiver Determination` Router.  Set the route condition to `${property.employee_country} in ${property.americas_countries}`.
+- *New route*: Add a new route in the `Receiver Determination` Router by adding a `Process Call` flow step.  Set the route condition to `${property.employee_country} in ${property.americas_countries}`. *Note: We will configure the process to call later.*
     ![Route to Americas](assets/add-new-americas-route.png)
     <p align = "center">
     <i>Route to Americas</i>
@@ -84,8 +86,9 @@ The Americas instance set up is very similar to the one we completed in the prev
     | *Method*          | GET                                                                                                                      |
     | *Authenticaton*   | None                                                                                                                     |
     | *Request Headers* | apiKey                                                                                                                   |
+- *Configure Americas process call*: In the `Route to Americas`, set the `America - Integration Process` in the `Local Integration Process` field.
 
-Once you've carried out all the steps above, your integration flow will look like the screenshots below
+Once you've carried out all the steps above, your integration flow will look like the screenshots below.
 
 ![Main integration process](assets/main-integration-process.png)
 <p align = "center">
@@ -112,20 +115,20 @@ Our integration flow is now ready. Let's send some messages to it using Postman.
 
 ## Summary
 
-//TODO: Summary
+We've added a couple of local integration processes to our integration flow. This makes our integration flow more readable, when compared to having everything in a single integration flow. 
 
 ## Further reading
 
 * [Local Integration Process](https://help.sap.com/docs/CLOUD_INTEGRATION/)
-* [Link 2](https://help.sap.com)
+* [Pattern Recipient - Dynamic routing](https://api.sap.com/integrationflow/Pattern_RecipientList_DynamicRouting)
 
 ---
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. Question 1
-2. Question 2
+1. Can you think of how this process would be different if one of the instance required OAuth 2.0 authentication? Where would we store the credentials? How will we get a new token?
+2. Given that the process carried out to call the instances is very similar, it is possible that we could create a single local integration process to handle it. How could we achieve that?
 
 ## Next
 
-Continue to 👉 [Exercise 07 - TBD](../07-log-requests-in-big-query/)
+Continue to 👉 [Exercise 07 - Log requests in BigQuery](../07-log-requests-in-bigquery/)
