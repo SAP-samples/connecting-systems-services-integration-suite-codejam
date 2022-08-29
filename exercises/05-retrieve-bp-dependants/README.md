@@ -35,7 +35,7 @@ As stated in the [documentation](https://help.sap.com/docs/CLOUD_INTEGRATION/368
 
 👉 Extend the `Set employee_id property` content modifier to create a new property called `european_countries` which will be assigned the value configured for the external parameter with the same name and set `DE,FR,ES,IT,PT` as the default value. Optional: Rename the content modifier to reflect the additional action, e.g. Set employee_id and country properties.
 
-> Click the **Add button** in the Exchange Property tab, enter `european_countries` as the name and `{{european_countries}}` as source value. The double curly braces indicates to SAP Cloud Integration that this is an external parameter. Click the tab key or change the focus field so that the UI can detect the external parameter. As the external parameter doesn't exist, we need to define a value for it.
+> Click the **Add button** in the Exchange Property tab, enter `european_countries` as the name and `{{european_countries}}` as source value. The double curly braces indicates to SAP Cloud Integration that this is an external parameter. Click the tab or enter key on your keyboard or change the focus field so that the UI can detect the external parameter. As the external parameter doesn't exist, we need to define a value for it.
 
 ![Create european_countries property and external parameter](assets/create-property-with-externalised-parameter.gif)
 <p align = "center">
