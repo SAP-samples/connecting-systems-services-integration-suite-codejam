@@ -7,7 +7,7 @@ At the end of this exercise, you'll have successfully retrieved Business Partner
 <i>Exercise 05 - Data flow</i>
 </p>
 
-Now that we are familiar with the basics of SAP Cloud Integration, we will start moving a bit faster when adding components and deploying the integration flow. When we finish the exercise, the integration flow will include a few additional Content Modifiers and we will be familiar with a few new concepts/components, externalised parameters, simulation, secure store, scripting, and  implemented a new pattern - Router (Content Based Routing)[^1].
+Now that we are familiar with the basics of SAP Cloud Integration, we will start moving a bit faster when adding components and deploying the integration flow. When we finish the exercise, the integration flow will include a few additional Content Modifiers and we will be familiar with a few new concepts/components, externalised parameters, simulation, secure store, scripting, and implemented a new pattern - Router (Content Based Routing)[^1].
 
 ![Integration flow - End of Exercise 05](assets/end-of-exercise-integration-flow.png)
 <p align = "center">
