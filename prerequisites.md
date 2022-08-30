@@ -105,5 +105,32 @@ From the BTP Cockpit:
 
   > 👉 Copy the iflow-client credentials in the Postman environment imported for Cloud Integration
 
+### BigQuery
+
+In [exercise 07](exercises/07-log-requests-in-bigquery/) we will configure a connection to Google's BigQuery via SAP Open Connectors. Google Cloud Platform offers a free tier, through which you can use BigQuery. Go ahead and create a free account if you don’t have access to Google Cloud Platform – https://cloud.google.com/free/.
+
+Once you have an account, navigate to BigQuery - https://console.cloud.google.com/bigquery, create a dataset and a table under your project.
+
+👉 Create dataset under your Google Cloud project. Enable table expiration and set the maximum table age to `60` days.
+
+![Create bp_dependants_log dataset](assets/create-dataset.gif)
+<p align = "center">
+<i>Create bp_dependants_log dataset</i>
+</p>
+
+👉 Create a table under the `bp_dependants_log` dataset created with the schema below.
+
+| Field name        | Type      | Max Length |
+| ----------------- | --------- | ---------- |
+| request_timestamp | TIMESTAMP |            |
+| employee_id       | STRING    | 15         |
+| employee_country  | STRING    | 2          |
+
+![Create api-requests table](assets/create-api-requests-table.gif)
+<p align = "center">
+<i>Create api-requests table</i>
+</p>
+
+
 [^1]: [Feature Scope Description for SAP Integration
 Suite](https://help.sap.com/doc/e50e61e7b66c4b60ae5e88c00c01486a/sap.cp.integration.suite/en-US/FSD_IntegrationSuite.pdf)
