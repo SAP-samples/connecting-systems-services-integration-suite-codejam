@@ -16,7 +16,7 @@ Currently, the benefits platform only has basic employee information, e.g. emplo
 
 We are in charge of building the integration scenario to allow the benefits platform access to the employee dependants' data.
   
-The benefits platform will not store employee dependant data and will send our integration service a message whenever it needs an employee dependants' data. We will need to validate the employee ID sent in the message against our global SAP S/4HANA Cloud system before retrieving the employee dependant data from the servers hosting the data.
+The benefits platform will not store employee dependant data and will send our integration service a message whenever it needs an employee dependants' data. We will need to validate the employee ID sent in the message against our global SAP S/4HANA Cloud system before retrieving the employee dependant data from the servers hosting the data. Also, our integration service will need to log the requests received.
 
 ## Prerequisites
 
