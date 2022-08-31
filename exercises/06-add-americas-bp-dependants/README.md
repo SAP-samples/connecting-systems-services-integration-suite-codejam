@@ -62,7 +62,7 @@ The Americas instance set up is very similar to the one we completed in the prev
     <p align = "center">
     <i>Content Modifier - Add americas_countries properties</i>
     </p>
-- *New route*: Add a new route in the `Receiver Determination` Router by adding a `Process Call` flow step.  Set the route condition to `${property.employee_country} in ${property.americas_countries}`. *Note: We will configure the process to call later.*
+- *New route*: Add a new route in the `Receiver Determination` Router by adding a `Process Call` flow step.  Set the route *Expression Type* to `Non-XML` and the *Condition* to `${property.employee_country} in ${property.americas_countries}`. *Note: We will configure the process to call later.*
     ![Route to Americas](assets/add-new-americas-route.png)
     <p align = "center">
     <i>Route to Americas</i>
