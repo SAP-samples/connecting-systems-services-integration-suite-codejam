@@ -97,13 +97,15 @@ Access the Open Connectors UI, from within the SAP Integration Suite landing pag
 
 ## SAP Cloud Integration
 
-# Deploy security material in SAP Cloud Integration
+Before we can jump to add the necessary flow steps in our integration flow, we will first deploy the Open Connectors instance credentials in SAP Cloud Integration. These credentials will then be configured in the adapter when setting up a new receiver participant.
 
-👉 Go to your SAP Cloud Integration instance and create/deploy the security material (Monitor > Manage Security > Security Material) for BigQuery. This will be used by the integration flow to communicate with BigQuery.
+👉 Go to your SAP Cloud Integration instance and create/deploy a new user credential (`Monitor > Manage Security > Security Material`) for BigQuery. This will be used by the integration flow to communicate with BigQuery.
 
 | Name        | Type            | Fields                                                                       |
 | ----------- | --------------- | ---------------------------------------------------------------------------- |
-| OC_BigQuery | Open Connectors | Enter the `User`, `Organization`, and `Element` details from Open Connectors |
+| oc-bigquery-bp-dependants-log | Open Connectors | Enter the `User`, `Organization`, and `Element` details from Open Connectors |
+
+
 
 ## Summary
 
