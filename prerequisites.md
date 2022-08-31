@@ -107,7 +107,7 @@ From the BTP Cockpit:
 
 ### BigQuery
 
-In [exercise 07](exercises/07-log-requests-in-bigquery/) we will configure a connection to Google's BigQuery via SAP Open Connectors. Google Cloud Platform offers a free tier, through which you can use BigQuery. Go ahead and create a free account if you don’t have access to Google Cloud Platform – https://cloud.google.com/free/.
+In [exercise 07](exercises/07-log-requests-in-bigquery/) we will configure a connection to Google's BigQuery via Open Connectors. Google Cloud Platform offers a free tier, through which you can use BigQuery. Go ahead and create a free account if you don’t have access to Google Cloud Platform – https://cloud.google.com/free/.
 
 Once you have an account, navigate to BigQuery - https://console.cloud.google.com/bigquery, create a dataset and a table under your project.
 
