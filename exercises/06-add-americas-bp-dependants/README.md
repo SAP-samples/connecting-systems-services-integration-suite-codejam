@@ -57,7 +57,7 @@ The Americas instance set up is very similar to the one we completed in the prev
 
 👉 Carry out the steps below:
 - *Deploy API Key*: [Deploy the Americas instance API key](../05-retrieve-bp-dependants/README.md#deploy-api-key-to-sap-cloud-integration) to the secure store
-- *Create Americas instance exchange properties*: Extend the `Set employee_id and country properties` content modifier to create a new property called `americas_countries`. The property will be assigned the value configured for the external parameter with the same name and set `US,CA,MX,CL,BR,HN` as the default value.
+- *Create Americas instance exchange properties*: Extend the `Set employee_id and country properties` content modifier to create a new property called `americas_countries`. The property will be assigned the value configured for the external parameter with the same name and set `US,CA,MX,CL,BR,HN` as the default value. Also, create an `americas-bp-dependants-api-key-alias` property. This property will be assigned the value configured for the external parameter with the same name and set `bp-dependants-americas` as the default value.
     ![Content Modifier - Add americas_countries properties](assets/api-key-alias-content-modifier.png)
     <p align = "center">
     <i>Content Modifier - Add americas_countries properties</i>
