@@ -57,14 +57,14 @@ None
 
 If you can spare a couple of minutes at the end of the session, please help us improve for next time by giving me some feedback.
 
-Simply use this [Give Feedback](https://github.com/SAP-samples/connecting-systems-integration-suite-codejam/issues/new?assignees=&labels=feedback&template=session-feedback-template.md&title=Feedback) link to create a special "feedback" issue, and follow the instructions there.
+Simply use this [Give Feedback](https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam/issues/new?assignees=&labels=feedback&template=session-feedback-template.md&title=Feedback) link to create a special "feedback" issue, and follow the instructions there.
 
 Gracias/Thank you/Obrigado/Merçi/Danke!
 
 ## How to obtain support
 Support for the content in this repository is available during CodeJam events, for which this content has been designed.
 
-Alternatively, if you are completing this CodeJam on your own, outside of an event, you can [create an issue](https://github.com/SAP-samples/connecting-systems-integration-suite-codejam/) in this repository if you find a bug or have questions about it.
+Alternatively, if you are completing this CodeJam on your own, outside of an event, you can [create an issue](https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam/issues/new) in this repository if you find a bug or have questions about it.
  
 For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
 
