@@ -8,7 +8,7 @@ In our [integration scenario](../../README.md#integration-scenario), it is menti
 <i>Exercise 07 - Data flow</i>
 </p>
 
-At the end of this exercise, you'll have successfully configured an instance of a BigQuery in Open Connectors and modified the integration flow so that it logs every request received.
+At the end of this exercise, you'll have successfully configured an instance of a BigQuery in Open Connectors and modified the integration flow so that it logs every request received. You would have also learned about decoupling integration flows and asynchronous processing.
 
 ## BigQuery
 
@@ -68,7 +68,7 @@ Access the Open Connectors UI, from within the SAP Integration Suite landing pag
 
 ![Create BigQuery instance in Open Connectors](assets/create-bigquery-instance.gif)
 <p align = "center">
-<i>aCreate BigQuery instance in SAP   Open Connectors/i>
+<i>Create BigQuery instance in SAP   Open Connectors</i>
 </p>
 
 🧭 Take some time to explore the methods available in the Test API docs section of the instance we just created. You'll notice that there is a method for the table that is in our dataset. Try retrieving some data or creating data from the Open Connectors UI. Test some other methods available.
@@ -105,20 +105,63 @@ Before we can jump to add the necessary flow steps in our integration flow, we w
 | ----------- | --------------- | ---------------------------------------------------------------------------- |
 | oc-bigquery-bp-dependants-log | Open Connectors | Enter the `User`, `Organization`, and `Element` details from Open Connectors |
 
+Now that our Open Connectors credentials are in place, we can proceed to import the integration flow, that was built for us, which is responsible for inserting the request record in BigQuery. 
 
+👉 Go to the integration package and import the [Send BP Dependants Request Log to BigQuery integration flow](../../assets/cloud-integration/Send%20BP%20Dependants%20Request%20Log%20to%20BigQuery.zip) by clicking Add > Integration Flow and upload the integration flow. Once uploaded, configure it by setting the external parameters and deploy it.
+
+![Import Request Log iFlow](assets/import-request-log-to-bq-iflow.gif)
+<p align = "center">
+<i>Import Request Log iFlow</i>
+</p>
+
+🧭 Take some time to explore the integration flow that we just imported. It is a simple but powerful integration flow. Which sender adapter has been configured? Why are we using this adapter? How often will this integration flow run? What happens after the request was logged in BigQuery? How can it be improved?
+
+### Decouple request logging from our integration flow
+
+As mentioned in the [integration scenario](../../README.md#integration-scenario), we need to log the requests that our integration service receives. That said, this logging is irrelevant to the message sender. Logging the request should in no way affect the response of the integration service. Although we want to do the logging, this can be handled by a separate process and doesn't need to affect the processing of the message received. For example, if logging the request fails, it should not impede our integration flow from serving requests.
+
+To achieve this, we can decouple (separate) request logging from the integration service. The `Send BP Dependants Request Log to BigQuery` integration flow is responsible for communicating with BigQuery and creating a record in a table. We can "communicate" with it in an asynchronous manner, using persistence, e.g. [using the Data Store](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/5467c77da3064f65a5b3a9351fed7d84.html?locale=en-US), and creating data entries in a Data Store. The `Send BP Dependants Request Log to BigQuery` integration flow will then, on a scheduled basis, process any entries it finds in the Data Store and proceeds to store the data in BigQuery.
+
+> What is a **Data Store**?
+> We are able to temporarily store data in our SAP Cloud Integration tenant database. We don't have physical access to the database itself but we can store data in it through the "Data Store" interface. There are a number of integration flow steps that allow us to perform [operations in the the Data Store](https://help.sap.com/docs/CLOUD_INTEGRATION/4b57f249012e4e1f8c15cbd5dbb4fff3/79f63a4bf5a44b5996aa34c51e2f187f.html?locale=en-US), e.g. Data Store Write, Data Store Read, Data Store Delete. The Data Store can also be used for asynchronous processing as highlighted [here](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/5467c77da3064f65a5b3a9351fed7d84.html?locale=en-US). 
+
+Now that we have a basic understanding of why and how we can decouple request logging, let's go ahead and modify our integration flow to handle this.
+
+![Add Content Modifier and DataStore](assets/decouple-contentmodified-and-datastore.jpg)
+<p align = "center">
+<i>Add Content Modifier and DataStore</i>
+</p>
+
+👉 After the `Get Employee Country`, add a new content modifier, that we will use to set the payload that we want the `Send BP Dependants Request Log to BigQuery` integration flow to process asynchronously. The payload will then be stored in the `BP-Dependants-Request-Log` data store by using the `Data Store Operation Write` flow step.
+
+- `Prepare request log payload` content modifier: Go to the Message Body tab and set the *Type* to `Expression` and *Body* below.
+  
+    ```json
+    {
+        "employee_country": "${property.employee_country}",
+        "request_timestamp": "${date:now:yyyy-MM-dd HH:mm:ss}",
+        "employee_id": "${property.employee_id}"
+    }
+    ```
+- `Write BP-Dependants-Request-Log` data store operation: Data Store Name: `BP-Dependants-Request-Log`
+  
+  <p align = "center">
+    <img alt="Write Data Store operation" src="assets/write-data-store-operation.jpg" width="50%"/><br/>
+    <i>Write Data Store operation</i>
+  </p>
 
 ## Summary
 
-Now that you are familiar with the basic functionality of SAP API Business Hub and the Business Partner API, we are ready to start interacting with the services from which our integration will be extracting data.
+//TODO
 
 ## Further reading
 
-* [Link 1](https://blogs.sap.com/)
-* [Link 2](https://blogs.sap.com/)
+* [Decouple Sender and Flows Using Data Store](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/5467c77da3064f65a5b3a9351fed7d84.html?locale=en-US)
+* [Modeling Basics - Decouple Flows Using Persistence](https://api.sap.com/integrationflow/ModelingBasics_DecoupleFlowsUsingPersistence)
 
 ---
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. First question.
-2. Second question.
+1. In this exercise, we used the data store for decoupling. What else persistence method could have been used for decoupling?
+2. Why do you think we didn't build the [BigQuery integration flow](../../assets/cloud-integration/Send%20BP%20Dependants%20Request%20Log%20to%20BigQuery.zip) as part of this exercise? Why import an existing integration flow? How is this approach similar to using libraries/utilities available in programming languages?
