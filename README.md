@@ -4,7 +4,7 @@
 
 ⚠️ This is a work-in-progress.
 
-In this SAP CodeJam, we will look at different services part of the SAP Integration Suite and how we can use them to connect our systems and services. By the end of the CodeJam, we will achieve an integration scenario like the one below in the diagram.
+Welcome to the Connecting Systems and Services Using SAP Integration Suite CodeJam repository. In this SAP CodeJam, we will look at different services part of the SAP Integration Suite and how we can use them to connect our systems and services. By the end of the CodeJam, we will achieve an integration scenario like the one below in the diagram.
 
 ![Final data flow](assets/diagrams/final_data_flow.png)
 
