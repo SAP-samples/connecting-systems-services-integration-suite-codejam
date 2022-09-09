@@ -41,8 +41,8 @@ See below for an overview of the exercises part of this CodeJam.
   * [Exercise 03 - Build our first integration flow](./exercises/03-build-first-integration-flow/)
   * [Exercise 04 - Send messages and monitor our integration flow](./exercises/04-send-messages-and-monitor/)
   * [Exercise 05 - Retrieve Business Partner dependant's information](./exercises/05-retrieve-bp-depedants/)
-  * [Exercise 06 - Add the America's instance of the Business Partner Dependants service](./06-add-americas-bp-dependants/)
-  * Exercise 07 - Log service call in Google BigQuery (Open Connectors)
+  * [Exercise 06 - Add the America's instance of the Business Partner Dependants service](./exercises/06-add-americas-bp-dependants/)
+  * [Exercise 07 - Log service call in Google BigQuery (Open Connectors)](./exercises/07-log-requests-in-bigquery)
   * Exercise 08 - Add security to unsecure service (API Management)
 
 ### Troubleshooting
