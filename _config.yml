@@ -1,0 +1,21 @@
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+plugins:
+  - jekyll-seo-tag
+  - jekyll-coffeescript
+  - jekyll-default-layout
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-optional-front-matter
+  - jekyll-paginate
+  - jekyll-readme-index
+  - jekyll-titles-from-headings
+  - jekyll-relative-links
+gist:
+  noscript: false
+theme: jekyll-theme-cayman
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
