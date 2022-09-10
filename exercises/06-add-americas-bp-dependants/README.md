@@ -18,7 +18,7 @@ At the end of this exercise, you'll have successfully added America's instance o
 
 ## Design
 
-👉 Let's start by making a copy of the integration flow we created in Exercise 06, add the `- Exercise 06` suffix to the name and open it.
+👉 Let's start by making a copy of the integration flow we created in Exercise 05, add the `- Exercise 06` suffix to the name and open it.
 
 > As stated in the previous exercise, you might want to add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex6`, so that the address `/request-employee-dependants-ex6`  doesn't clash with the one configured for our previous integration flows.
 
