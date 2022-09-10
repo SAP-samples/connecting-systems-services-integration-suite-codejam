@@ -132,6 +132,14 @@ Now that we have a basic understanding of why and how we can decouple request lo
 <i>Add Content Modifier and DataStore</i>
 </p>
 
+### Design
+
+👉 Similar to previous exercises, let's start by making a copy of the integration flow we created in the previous exercises and add the `- Exercise 07` suffix to the name and open it.
+
+> As stated in the previous exercise, you might want to add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex7`, so that the address `/request-employee-dependants-ex7`  doesn't clash with the one configured for our previous integration flows.
+
+Given that the imported integration flow handles the communication with BigQuery, there is very little that we need to do in our main integration flow to "log requests".
+
 👉 After the `Get Employee Country`, add a new content modifier, that we will use to set the payload that we want the `Send BP Dependants Request Log to BigQuery` integration flow to process asynchronously. The payload will then be stored in the `BP-Dependants-Request-Log` data store by using the `Data Store Operation Write` flow step.
 
 - `Prepare request log payload` content modifier: Go to the Message Body tab and set the *Type* to `Expression` and *Body* below.
@@ -150,6 +158,19 @@ Now that we have a basic understanding of why and how we can decouple request lo
     <i>Write Data Store operation</i>
   </p>
 
+That was simple, wasn't it?  We are now ready to deploy our integration flow.
+
+### Deploy
+
+👉 Save and deploy the integration flow.
+
+> If the deployment process fails with an error similar to this: [Failed to create route - HTTP address already registered](../../troubleshooting.md#failed-to-create-route---http-address-already-registered-for-another-iflow), add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex7`, so that the address `/request-employee-dependants-ex7`  doesn't clash with the one configured for our previous integration flow, and try deploying it again.
+
+Our integration flow is now ready. Let's send some messages to it using Postman. 
+
+👉 Open the `Request Employee Dependants - Exercise 07` request under the cloud-integration folder in the Postman collection and test the following scenarios:
+- Send a request and check the Data Store. You will see that there is a new entry in the Data Store. After some time the entry will be processed by the integration flow we imported and deployed - `Send BP Dependants Request Log to BigQuery integration flow`.
+
 ## Summary
 
 //TODO
@@ -163,5 +184,6 @@ Now that we have a basic understanding of why and how we can decouple request lo
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. In this exercise, we used the data store for decoupling. What else persistence method could have been used for decoupling?
-2. Why do you think we didn't build the [BigQuery integration flow](../../assets/cloud-integration/Send%20BP%20Dependants%20Request%20Log%20to%20BigQuery.zip) as part of this exercise? Why import an existing integration flow? How is this approach similar to using libraries/utilities available in programming languages?
+1. In this exercise, we used the data store for decoupling. What other persistence methods could have been used for decoupling?
+2. 
+3. Why do you think we didn't build the [BigQuery integration flow](../../assets/cloud-integration/Send%20BP%20Dependants%20Request%20Log%20to%20BigQuery.zip) as part of this exercise? Why import an existing integration flow? How is this approach similar to using libraries/utilities available in programming languages?
