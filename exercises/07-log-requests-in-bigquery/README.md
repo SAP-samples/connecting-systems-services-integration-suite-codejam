@@ -23,8 +23,8 @@ Before we can configure the connectivity between Open Connectors and BigQuery, w
 
 👉 In Google Cloud Platform, select the project and go to `API & Services > OAuth consent screen` - https://console.cloud.google.com/apis/credentials/consent. Set the `User Type` to `Internal` and the app configuration similar to the one in the screenshot below.
 
-![OAuth consent screen](assets/oauth-consent-screen.png)
 <p align = "center">
+<img alt="OAuth consent screen" src="assets/oauth-consent-screen.png" width="66%"/><br/>
 <i>OAuth consent screen</i>
 </p>
 
@@ -35,15 +35,15 @@ An OAuth client is needed to configure the connection between Open Connectors an
 
 👉 Navigate to the Google Cloud Platform console and create an OAuth 2.0 client. In Google Cloud Platform, select the project and go to `API & Services > Credentials`. Create a credential for OAuth Client ID and select `Web application` as the application type. Make sure to add https://auth.cloudelements.io/oauth as an Authorised redirect URI.
 
-![CodeJam - OAuth 2.0 Client](assets/codejam-oauth-clientid.png)
 <p align = "center">
+<img alt="CodeJam - OAuth 2.0" src="assets/codejam-oauth-clientid.png" width="66%"/><br/>
 <i>CodeJam - OAuth 2.0 Client</i>
 </p>
 
 Once the client is created, a view like the one below will be displayed. Copy the Client ID and Client secret as we will need them to configure an instance of BigQuery in Open Connectors.
 
-![OAuth client created](assets/oauth-client-created.png)
 <p align = "center">
+<img alt="OAuth client created" src="assets/oauth-client-created.png" width="66%"/><br/>
 <i>OAuth client created</i>
 </p>
 
@@ -59,8 +59,8 @@ We will use Open Connectors to enable the connection between our integration flo
 
 Access the Open Connectors UI, from within the SAP Integration Suite landing page, and create an instance of the BigQuery connector. Once created, copy the Authorization header details displayed in the API docs.
 
-![Access Open Connectors from SAP Integration Suite](assets/access-open-connectors.png)
 <p align = "center">
+<img alt="Access Open Connectors from SAP Integration Suite" src="assets/access-open-connectors.png" width="75%"/><br/>
 <i>Access Open Connectors from SAP Integration Suite</i>
 </p>
 
