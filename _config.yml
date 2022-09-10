@@ -15,7 +15,7 @@ plugins:
   - jekyll-relative-links
 gist:
   noscript: false
-theme: jekyll-theme-cayman
+theme: jekyll-theme-architect
 markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
