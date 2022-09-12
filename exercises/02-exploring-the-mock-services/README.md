@@ -15,6 +15,8 @@ A couple of things that we need to keep in mind when exploring new APIs/services
 
 At the end of this exercise, you'll have an understanding of the data that we will be interacting with when building our first integration flow in the next exercise.
 
+> 🚨🚨 As part of the prerequisites of this CodeJam, you should have made a [copy of the repository in your local machine](../../prerequisites.md#accessing-the-supporting-material-referenced-in-exercises). If you've not done this, now would be a good time as we will start using some files included in the repository :-). 🚨🚨
+
 ## Importing collections and environments of the mock services
 
 A collection and a few environments are included in this repository to facilitate interacting with the APIs exposed by the services that we will be using in our integration. The collection and environments for the S/4HANA mock server and the Business Partner Dependants mock service can be found in the assets folder, under the [s4-mock-server](assets/s4-mock-server/) and [bp-dependants-mock-service](assets/bp-dependants-mock-service/) folders respectively.
