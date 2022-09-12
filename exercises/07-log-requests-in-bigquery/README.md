@@ -169,11 +169,23 @@ That was simple, wasn't it?  We are now ready to deploy our integration flow.
 Our integration flow is now ready. Let's send some messages to it using Postman. 
 
 👉 Open the `Request Employee Dependants - Exercise 07` request under the cloud-integration folder in the Postman collection and test the following scenarios:
-- Send a request and check the Data Store. You will see that there is a new entry in the Data Store. After some time the entry will be processed by the integration flow we imported and deployed - `Send BP Dependants Request Log to BigQuery integration flow`.
+- Send a request and check the Data Store (`Monitor > Manage Stores > Data Stores`). You will see that there is a new entry in the Data Store.
+
+<p align = "center">
+    <img alt="Data Store entry" src="assets/data-store-entry.jpg" width="100%"/><br/>
+    <i>Data Store entry</i>
+</p>
+
+After some time the entry will be processed by the integration flow we imported and deployed - `Send BP Dependants Request Log to BigQuery integration flow`. The integration flow will delete the data store entry once processed.
+
+<p align = "center">
+    <img alt="Processed Data Store entry - Send BP Dependants Request Log integration flow" src="assets/processed-data-store-entry.jpg" width="80%"/><br/>
+    <i>Processed Data Store entry - Send BP Dependants Request Log integration flow</i>
+</p>
 
 ## Summary
 
-//TODO
+Very few changes in our main integration flow but we got to learn about a few components in this exercise. We started by creating OAuth credentials in Google Cloud Platform, followed by setting up a connector instance in Open Connectors and testing basic communication from the Open Connectors UI. We then moved to SAP Cloud Integration where we imported and deployed a new integration flow, set up a new credential type - Open Connectors, and learnt about Data Stores and how we can use them to decouple our integration flows.
 
 ## Further reading
 
@@ -184,6 +196,7 @@ Our integration flow is now ready. Let's send some messages to it using Postman.
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. In this exercise, we used the data store for decoupling. What other persistence methods could have been used for decoupling?
-2. 
+1. In this exercise, we used the Data Store for decoupling. What other persistence methods could have been used for decoupling?
+2. What will happen to our main integration flow if the `Send BP Dependants Request Log to BigQuery` integration flow fails? How will it be affected? What will happen to the requests received by the integration flow? 
+   > 💡 To simulate this, you can undeploy the `Send BP Dependants Request Log to BigQuery` integration flow, send a few messages and check out what happens.
 3. Why do you think we didn't build the [BigQuery integration flow](../../assets/cloud-integration/Send%20BP%20Dependants%20Request%20Log%20to%20BigQuery.zip) as part of this exercise? Why import an existing integration flow? How is this approach similar to using libraries/utilities available in programming languages?
