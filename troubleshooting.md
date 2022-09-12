@@ -53,6 +53,12 @@ This page intends to capture common problems that you might face while going thr
 
     ![Test connectivity](assets/test-connectivity.png)
 
+    > Alternatively, you can download the certificate from your web browser. Access the URL from your web browser, e.g. `https://s4-mock-server-service.c-1e90315.kyma.ondemand.com/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner` and download the certificate chain. Once downloaded, follow the instructions above.
+    ![Download certificate from web browsers](assets/export-certificate-from-browser.gif)
+    <p align = "center">
+    <i>Download certificate from web browsers</i>
+    </p>
+
 - #### Tracing
 
 TBA - 
