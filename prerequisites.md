@@ -4,6 +4,22 @@ There are hardware, software and service prerequisites for participating in this
 
 Alternatively, the remote services can be run locally and we can use [Cloud Connector](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e6c7616abb5710148cfcf3e75d96d596.html?locale=en-US) to enable the communication between SAP BTP and the local service. The prerequisites to run it locally are included in [running-locally-prerequisites.md](running-locally-prerequisites.md) *Note: This is recommended if you are doing this exercise outside of a CodeJam event*. 
 
+## Accessing the supporting material referenced in exercises
+
+In this CodeJam, you will see that across exercises, there are references to files that will help you get started or that are needed to complete the activities. To access these files, you can download the individual files directly from the repository website, or you can make a copy of the repository on your local machine by following one of the options below:
+1. **(Recommended)** Clone the git repository in your local machine with the following command:
+   ```bash
+   $ git clone https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam.git
+   ```
+   > If you've set up [SSH to communicate with GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) from your local machine, you can clone it using the following command: `git clone git@github.com:SAP-samples/connecting-systems-services-integration-suite-codejam.git`
+
+   Using `git` is recommended as there might be future updates on the CodeJam content; updating your local copy will just be a command away.
+
+   ```bash
+   $ git pull origin main
+   ```
+2. Alternatively, download the [repository as a zip](https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam/archive/refs/heads/main.zip), and unzip it.
+
 ## Hardware
 
 None.
