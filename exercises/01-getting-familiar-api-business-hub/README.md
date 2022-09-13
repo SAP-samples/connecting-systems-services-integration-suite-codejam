@@ -44,7 +44,10 @@ As part of this CodeJam we will simulate interacting with the Business Partner d
 Available values: to_BuPaIdentification, to_BuPaIndustry, to_BusinessPartnerAddress, to_BusinessPartnerBank, to_BusinessPartnerContact, to_BusinessPartnerRole, to_BusinessPartnerTax, to_BusPartAddrDepdntTaxNmbr, to_Customer, to_Supplier</i>
 </details>
 
-> Why is this important? We will be using Business Partner Address data in our integration service to know to which server we will route our request. 
+> Why is this important? We will be using Business Partner Address data in our integration service to know to which server we will route our request.
+
+🧭 Take some time to explore what's documented on the [Business](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) Partner API - Overview page](https://api.sap.com/api/API_BUSINESS_PARTNER/overview). You will be able to find lots of valuable information here, e.g. attributes, authentication methods, API specifications, and configuration details. In [exercise 08](../08-expose-integration-flow-api-management/) we will explore API specifications further.
+
 
 ## Summary
 
@@ -60,7 +63,7 @@ Now that you are familiar with the basic functionality of SAP API Business Hub a
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. Can you list some of the third-party services that there's integration packages available for SAP SuccessFactors?
+1. Can you list some of the third-party services that there are integration packages available for SAP SuccessFactors?
 2. We were able to retrieve data from a sandbox environment via the web browser. What is required to retrieve data from the sandbox APIs available in SAP API Business via other utilities/applications, e.g. curl, Postman?
 3. Whilst navigating the APIs for different SAP products, you might have noticed the different states of an API, e.g. `ACTIVE`, `BETA`, `DECOMMISSIONED`, `DEPRECATED`. What is the deprecation policy of APIs published by SAP? 
 
