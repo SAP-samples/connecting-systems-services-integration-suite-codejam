@@ -59,6 +59,20 @@ This page intends to capture common problems that you might face while going thr
     <i>Download certificate from web browsers</i>
     </p>
 
+- #### Unable to Create application exception in Developer Portal
+  
+  When creating an application in the Developer Portal, a pop-up is displayed stating that it was not possible to create the application.
+
+  There are two potential solutions to the problem:
+  - If you are the only user, make sure you register as a Developer. Go to Manage > Manage Users > Registered Users and add your account details. Select the Developer, Administrator and Content Admin roles.
+  
+    ![Add user in API Management](assets/add-user-api-management.png)
+    <p align = "center">
+    <i>Add user in API Management</i>
+    </p>
+  - Check SAP Note 2718466: [https://launchpad.support.sap.com/#/notes/0002718466](https://launchpad.support.sap.com/#/notes/0002718466) 
+- 
+
 - #### Tracing
 
 TBA - 
