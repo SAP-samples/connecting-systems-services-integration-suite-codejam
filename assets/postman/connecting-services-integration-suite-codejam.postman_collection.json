@@ -32,7 +32,110 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200 OK - Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "apiKey",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/employees/{{employee_id}}/dependants",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"employees",
+										"{{employee_id}}",
+										"dependants"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "245"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 26 Aug 2022 05:04:24 GMT"
+								},
+								{
+									"key": "server",
+									"value": "istio-envoy"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "14"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"results\": [\n        {\n            \"birthdate\": \"1928-10-29\",\n            \"id\": \"8255729496883\",\n            \"mail\": \"gerhardt87@gmx.de\",\n            \"name\": \"Michael Schwital\",\n            \"sex\": \"M\"\n        },\n        {\n            \"birthdate\": \"1973-04-26\",\n            \"id\": \"8242408209148\",\n            \"mail\": \"irmelamies@hotmail.de\",\n            \"name\": \"Jeannine Karge B.Eng.\",\n            \"sex\": \"F\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "404 Not Found - Employee doesn't exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "apiKey",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/employees/{{employee_id}}1/dependants",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"employees",
+										"{{employee_id}}1",
+										"dependants"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "44"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 26 Aug 2022 05:05:07 GMT"
+								},
+								{
+									"key": "server",
+									"value": "istio-envoy"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "3"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Employee 10037671 doesn't exist\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Single Dependant",
@@ -290,7 +393,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('{{employee_id}}')",
+							"raw": "{{host}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('{{employee_id}}')?$expand=to_BusinessPartnerAddress",
 							"host": [
 								"{{host}}"
 							],
@@ -301,6 +404,12 @@
 								"sap",
 								"API_BUSINESS_PARTNER",
 								"A_BusinessPartner('{{employee_id}}')"
+							],
+							"query": [
+								{
+									"key": "$expand",
+									"value": "to_BusinessPartnerAddress"
+								}
 							]
 						}
 					},
@@ -438,6 +547,70 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"d\": {\n        \"__metadata\": {\n            \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')\",\n            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')\",\n            \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerType\"\n        },\n        \"BusinessPartner\": \"1003764\",\n        \"Customer\": \"\",\n        \"Supplier\": \"\",\n        \"AcademicTitle\": \"\",\n        \"AuthorizationGroup\": \"\",\n        \"BusinessPartnerCategory\": \"1\",\n        \"BusinessPartnerFullName\": \"John Doe\",\n        \"BusinessPartnerGrouping\": \"BP02\",\n        \"BusinessPartnerName\": \"John Doe\",\n        \"BusinessPartnerUUID\": \"00163e30-4e2a-1ed8-8483-a08c52249f04\",\n        \"CorrespondenceLanguage\": \"\",\n        \"CreatedByUser\": \"CC0000000002\",\n        \"CreationDate\": \"/Date(1518393600000)/\",\n        \"CreationTime\": \"PT17H49M05S\",\n        \"FirstName\": \"John\",\n        \"FormOfAddress\": \"\",\n        \"Industry\": \"\",\n        \"InternationalLocationNumber1\": \"0\",\n        \"InternationalLocationNumber2\": \"0\",\n        \"IsFemale\": false,\n        \"IsMale\": true,\n        \"IsNaturalPerson\": \"X\",\n        \"IsSexUnknown\": false,\n        \"Language\": \"\",\n        \"LastChangeDate\": null,\n        \"LastChangeTime\": \"PT00H00M00S\",\n        \"LastChangedByUser\": \"\",\n        \"LastName\": \"Doe\",\n        \"LegalForm\": \"\",\n        \"OrganizationBPName1\": \"\",\n        \"OrganizationBPName2\": \"\",\n        \"OrganizationBPName3\": \"\",\n        \"OrganizationBPName4\": \"\",\n        \"OrganizationFoundationDate\": null,\n        \"OrganizationLiquidationDate\": null,\n        \"SearchTerm1\": \"Entwickler\",\n        \"AdditionalLastName\": \"\",\n        \"BirthDate\": null,\n        \"BusinessPartnerIsBlocked\": false,\n        \"BusinessPartnerType\": \"\",\n        \"ETag\": \"CC000000000220180212174905\",\n        \"GroupBusinessPartnerName1\": \"\",\n        \"GroupBusinessPartnerName2\": \"\",\n        \"IndependentAddressID\": \"\",\n        \"InternationalLocationNumber3\": \"0\",\n        \"MiddleName\": \"doe@company-a.com\",\n        \"NameCountry\": \"\",\n        \"NameFormat\": \"\",\n        \"PersonFullName\": \"\",\n        \"PersonNumber\": \"28237\",\n        \"IsMarkedForArchiving\": false,\n        \"BusinessPartnerIDByExtSystem\": \"\",\n        \"YY1_AddrLastCheckedOn_bus\": null,\n        \"YY1_AddrLastCheckedBy_bus\": \"\",\n        \"to_BuPaIdentification\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BuPaIdentification\"\n            }\n        },\n        \"to_BusinessPartnerAddress\": {\n            \"results\": [\n                {\n                    \"__metadata\": {\n                        \"id\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')\",\n                        \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')\",\n                        \"type\": \"API_BUSINESS_PARTNER.A_BusinessPartnerAddressType\"\n                    },\n                    \"BusinessPartner\": \"1003764\",\n                    \"AddressID\": \"28238\",\n                    \"ValidityStartDate\": \"/Date(1518393600000+0000)/\",\n                    \"ValidityEndDate\": \"/Date(253402300799000+0000)/\",\n                    \"AuthorizationGroup\": \"\",\n                    \"AddressUUID\": \"00163e30-4e2a-1ed8-8483-a08c5224bf04\",\n                    \"AdditionalStreetPrefixName\": \"\",\n                    \"AdditionalStreetSuffixName\": \"\",\n                    \"AddressTimeZone\": \"CET\",\n                    \"CareOfName\": \"\",\n                    \"CityCode\": \"\",\n                    \"CityName\": \"Walldorf\",\n                    \"CompanyPostalCode\": \"\",\n                    \"Country\": \"DE\",\n                    \"County\": \"\",\n                    \"DeliveryServiceNumber\": \"\",\n                    \"DeliveryServiceTypeCode\": \"\",\n                    \"District\": \"\",\n                    \"FormOfAddress\": \"\",\n                    \"FullName\": \"\",\n                    \"HomeCityName\": \"\",\n                    \"HouseNumber\": \"16\",\n                    \"HouseNumberSupplementText\": \"\",\n                    \"Language\": \"\",\n                    \"POBox\": \"\",\n                    \"POBoxDeviatingCityName\": \"\",\n                    \"POBoxDeviatingCountry\": \"\",\n                    \"POBoxDeviatingRegion\": \"\",\n                    \"POBoxIsWithoutNumber\": false,\n                    \"POBoxLobbyName\": \"\",\n                    \"POBoxPostalCode\": \"\",\n                    \"Person\": \"28237\",\n                    \"PostalCode\": \"69190\",\n                    \"PrfrdCommMediumType\": \"\",\n                    \"Region\": \"\",\n                    \"StreetName\": \"Dietmar-Hopp-Allee\",\n                    \"StreetPrefixName\": \"\",\n                    \"StreetSuffixName\": \"\",\n                    \"TaxJurisdiction\": \"\",\n                    \"TransportZone\": \"\",\n                    \"AddressIDByExternalSystem\": \"\",\n                    \"to_AddressUsage\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_AddressUsage\"\n                        }\n                    },\n                    \"to_EmailAddress\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_EmailAddress\"\n                        }\n                    },\n                    \"to_FaxNumber\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_FaxNumber\"\n                        }\n                    },\n                    \"to_MobilePhoneNumber\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_MobilePhoneNumber\"\n                        }\n                    },\n                    \"to_PhoneNumber\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_PhoneNumber\"\n                        }\n                    },\n                    \"to_URLAddress\": {\n                        \"__deferred\": {\n                            \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress(BusinessPartner='1003764',AddressID='28238')/to_URLAddress\"\n                        }\n                    }\n                }\n            ]\n        },\n        \"to_BusinessPartnerBank\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerBank\"\n            }\n        },\n        \"to_BusinessPartnerContact\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerContact\"\n            }\n        },\n        \"to_BusinessPartnerRole\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerRole\"\n            }\n        },\n        \"to_BusinessPartnerTax\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_BusinessPartnerTax\"\n            }\n        },\n        \"to_Customer\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_Customer\"\n            }\n        },\n        \"to_Supplier\": {\n            \"__deferred\": {\n                \"uri\": \"http://s4-mock-server-service.default.svc.cluster.local:443/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1003764')/to_Supplier\"\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "404 Not Found - BP doesn't exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('1234567')",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"sap",
+										"opu",
+										"odata",
+										"sap",
+										"API_BUSINESS_PARTNER",
+										"A_BusinessPartner('1234567')"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "9"
+								},
+								{
+									"key": "content-type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Thu, 25 Aug 2022 15:08:35 GMT"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+								},
+								{
+									"key": "server",
+									"value": "istio-envoy"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "3"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "Not Found"
 						}
 					]
 				}
@@ -985,6 +1158,831 @@
 							],
 							"cookie": [],
 							"body": "<html>\n    <head>\n        <link rel=\"shortcut icon\" href=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" />\n        <script>document.cookie=\"fragmentAfterLogin=\"+encodeURIComponent(location.hash)+\";path=/\";document.cookie=\"locationAfterLogin=\"+encodeURIComponent(location.href.split('#')[0].split(location.host)[1])+\";path=/\";document.cookie=\"signature=dFHLOnX4KR%2B5kJIKZIug5p80faU%3D;path=/\";location=\"https://antonio-maradiaga-free-tier-aaq3l49g.authentication.eu10.hana.ondemand.com/oauth/authorize?response_type=code&client_id=sb-it!b117912&redirect_uri=https%3A%2F%2Fantonio-maradiaga-free-tier-aaq3l49g.it-cpi018.cfapps.eu10-003.hana.ondemand.com%2Flogin%2Fcallback\"</script>\n    </head>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "Request Employee Dependants - Exercise 05",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/http/request-employee-dependants-ex5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"http",
+								"request-employee-dependants-ex5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK - Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003766\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/http/request-employee-dependants-ex5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants-ex5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "apikey",
+									"value": "7B32D801-EA44-4C51-A49D-2F380B3A8B06"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 26 Aug 2022 13:13:20 GMT"
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "sap_messageprocessinglogid",
+									"value": "AGMIxvAXMzi2q7Td52n4A3XZfuIL"
+								},
+								{
+									"key": "sap_mplcorrelationid",
+									"value": "AGMIxvASvGG8_bxMOcbu7-Fg2Ky1"
+								},
+								{
+									"key": "sap_pregeneratedmplid",
+									"value": "AGMIxvBj-IodLT7qljyOmRSxdf4i"
+								},
+								{
+									"key": "server",
+									"value": "SAP"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-correlationid",
+									"value": "549ebc7b-be0f-4871-7a1f-07f442ea6147"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "9"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "549ebc7b-be0f-4871-7a1f-07f442ea6147"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"results\": [\n        {\n            \"birthdate\": \"1962-11-10\",\n            \"id\": \"8280764846393\",\n            \"mail\": \"heinz-gerd31@hotmail.de\",\n            \"name\": \"Edeltraud Winkler\",\n            \"sex\": \"F\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "500 error - Employee's country not supported",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003765\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/http/request-employee-dependants-ex5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants-ex5"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 26 Aug 2022 13:13:50 GMT"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1752-MfTtSKWYcFPCB4GFGXqvdqZImak\""
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "sap_messageprocessinglogid",
+									"value": "AGMIxw55-Zvnm1ZKikeg7VAxunMT"
+								},
+								{
+									"key": "sap_mplcorrelationid",
+									"value": "AGMIxw64uKgfj7aGeOov-YskTate"
+								},
+								{
+									"key": "sap_pregeneratedmplid",
+									"value": "AGMIxw5wb8499tAItK9zH6bfATqa"
+								},
+								{
+									"key": "server",
+									"value": "SAP"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-correlationid",
+									"value": "2ae09016-1915-4106-71cf-d0f2556f994d"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "6"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "2ae09016-1915-4106-71cf-d0f2556f994d"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Employee's country not supported\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Request Employee Dependants - Exercise 06",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee_id\": \"1003765\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/http/request-employee-dependants-ex6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"http",
+								"request-employee-dependants-ex6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK - Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003766\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/http/request-employee-dependants-ex5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants-ex5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "apikey",
+									"value": "7B32D801-EA44-4C51-A49D-2F380B3A8B06"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 26 Aug 2022 13:13:20 GMT"
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "sap_messageprocessinglogid",
+									"value": "AGMIxvAXMzi2q7Td52n4A3XZfuIL"
+								},
+								{
+									"key": "sap_mplcorrelationid",
+									"value": "AGMIxvASvGG8_bxMOcbu7-Fg2Ky1"
+								},
+								{
+									"key": "sap_pregeneratedmplid",
+									"value": "AGMIxvBj-IodLT7qljyOmRSxdf4i"
+								},
+								{
+									"key": "server",
+									"value": "SAP"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-correlationid",
+									"value": "549ebc7b-be0f-4871-7a1f-07f442ea6147"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "9"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "549ebc7b-be0f-4871-7a1f-07f442ea6147"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"results\": [\n        {\n            \"birthdate\": \"1962-11-10\",\n            \"id\": \"8280764846393\",\n            \"mail\": \"heinz-gerd31@hotmail.de\",\n            \"name\": \"Edeltraud Winkler\",\n            \"sex\": \"F\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "500 error - Employee's country not supported",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003765\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/http/request-employee-dependants-ex5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants-ex5"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 26 Aug 2022 13:13:50 GMT"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1752-MfTtSKWYcFPCB4GFGXqvdqZImak\""
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "sap_messageprocessinglogid",
+									"value": "AGMIxw55-Zvnm1ZKikeg7VAxunMT"
+								},
+								{
+									"key": "sap_mplcorrelationid",
+									"value": "AGMIxw64uKgfj7aGeOov-YskTate"
+								},
+								{
+									"key": "sap_pregeneratedmplid",
+									"value": "AGMIxw5wb8499tAItK9zH6bfATqa"
+								},
+								{
+									"key": "server",
+									"value": "SAP"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-correlationid",
+									"value": "2ae09016-1915-4106-71cf-d0f2556f994d"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "6"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "2ae09016-1915-4106-71cf-d0f2556f994d"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Employee's country not supported\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Request Employee Dependants - Exercise 07",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee_id\": \"1003767\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/http/request-employee-dependants-ex7",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"http",
+								"request-employee-dependants-ex7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK - Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003766\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/http/request-employee-dependants-ex5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants-ex5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "apikey",
+									"value": "7B32D801-EA44-4C51-A49D-2F380B3A8B06"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 26 Aug 2022 13:13:20 GMT"
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "sap_messageprocessinglogid",
+									"value": "AGMIxvAXMzi2q7Td52n4A3XZfuIL"
+								},
+								{
+									"key": "sap_mplcorrelationid",
+									"value": "AGMIxvASvGG8_bxMOcbu7-Fg2Ky1"
+								},
+								{
+									"key": "sap_pregeneratedmplid",
+									"value": "AGMIxvBj-IodLT7qljyOmRSxdf4i"
+								},
+								{
+									"key": "server",
+									"value": "SAP"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-correlationid",
+									"value": "549ebc7b-be0f-4871-7a1f-07f442ea6147"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "9"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "549ebc7b-be0f-4871-7a1f-07f442ea6147"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"results\": [\n        {\n            \"birthdate\": \"1962-11-10\",\n            \"id\": \"8280764846393\",\n            \"mail\": \"heinz-gerd31@hotmail.de\",\n            \"name\": \"Edeltraud Winkler\",\n            \"sex\": \"F\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "500 error - Employee's country not supported",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003765\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/http/request-employee-dependants-ex5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants-ex5"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 26 Aug 2022 13:13:50 GMT"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1752-MfTtSKWYcFPCB4GFGXqvdqZImak\""
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "sap_messageprocessinglogid",
+									"value": "AGMIxw55-Zvnm1ZKikeg7VAxunMT"
+								},
+								{
+									"key": "sap_mplcorrelationid",
+									"value": "AGMIxw64uKgfj7aGeOov-YskTate"
+								},
+								{
+									"key": "sap_pregeneratedmplid",
+									"value": "AGMIxw5wb8499tAItK9zH6bfATqa"
+								},
+								{
+									"key": "server",
+									"value": "SAP"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-correlationid",
+									"value": "2ae09016-1915-4106-71cf-d0f2556f994d"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "6"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "2ae09016-1915-4106-71cf-d0f2556f994d"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Employee's country not supported\"\n}"
 						}
 					]
 				}
