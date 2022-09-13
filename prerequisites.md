@@ -121,6 +121,22 @@ From the BTP Cockpit:
 
   > 👉 Copy the iflow-client credentials in the Postman environment imported for Cloud Integration
 
+### Set up API Management capability
+
+The first time you access the API Management capability you will be prompted to complete the setup. Enter a host alias, add a notification contact (your email address) and click the `Set Up` button on the upper right corner.
+
+<p align = "center">
+  <img alt="Set up API Management capability" src="assets/set-up-api-management.jpg" width="100%"/><br/>
+  <i>Set up API Management capability</i>
+</p>
+
+<p align = "center">
+  <img alt="Set up API Management - Complete" src="assets/set-up-api-management-complete.jpg" width="100%"/><br/>
+  <i>Set up API Management - Complete</i>
+</p>
+
+For detailed steps, follow the instructions included in [step 5 - Configure the API Management Service](https://developers.sap.com/tutorials/api-mgmt-isuite-initial-setup.html#93fee77e-606e-425c-a6c3-1b6946d2ec87) of the  _Set Up API Management from Integration Suite_ tutorial. 
+
 ### BigQuery
 
 In [exercise 07](exercises/07-log-requests-in-bigquery/) we will configure a connection to Google's BigQuery via Open Connectors. Google Cloud Platform offers a free tier, through which you can use BigQuery. Go ahead and create a free account if you don’t have access to Google Cloud Platform – https://cloud.google.com/free/.
