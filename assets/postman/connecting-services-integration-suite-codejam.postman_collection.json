@@ -620,44 +620,6 @@
 			"name": "cloud-integration",
 			"item": [
 				{
-					"name": "Playground Request",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"employee_id\": \"1003764\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{host}}/http/playground/request",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"http",
-								"playground",
-								"request"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Token",
 					"event": [
 						{
@@ -853,9 +815,6 @@
 				},
 				{
 					"name": "Request Employee Dependants",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -867,7 +826,7 @@
 								}
 							]
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -1163,9 +1122,6 @@
 				},
 				{
 					"name": "Request Employee Dependants - Exercise 05",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1177,7 +1133,7 @@
 								}
 							]
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -1438,9 +1394,6 @@
 				},
 				{
 					"name": "Request Employee Dependants - Exercise 06",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1452,7 +1405,7 @@
 								}
 							]
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -1713,9 +1666,6 @@
 				},
 				{
 					"name": "Request Employee Dependants - Exercise 07",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1727,7 +1677,7 @@
 								}
 							]
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -1983,6 +1933,364 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"error\": \"Employee's country not supported\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "api-management",
+			"item": [
+				{
+					"name": "Request Employee Dependants Proxy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proxy_url}}/http/request-employee-dependants-ex7",
+							"host": [
+								"{{proxy_url}}"
+							],
+							"path": [
+								"http",
+								"request-employee-dependants-ex7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK - Request Employee Dependants Proxy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer valid_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proxy_url}}/http/request-employee-dependants-ex7",
+									"host": [
+										"{{proxy_url}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants-ex7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 13:29:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "apikey",
+									"value": "7B32D801-EA44-4C51-A49D-2F380B3A8B06"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "sap_messageprocessinglogid",
+									"value": "AGMghdJ5PPMFJZ8w9KVoJL1I5Gz9"
+								},
+								{
+									"key": "sap_mplcorrelationid",
+									"value": "AGMghdIsOq7M5tVXPa5uXugK3w-7"
+								},
+								{
+									"key": "sap_pregeneratedmplid",
+									"value": "AGMghdOezNS_loe17RbDVFY6W8CO"
+								},
+								{
+									"key": "sapdatastoreid",
+									"value": "bde1ca44-ac89-4e59-9fbb-2c4669f6819f"
+								},
+								{
+									"key": "Server",
+									"value": "SAP"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-correlationid",
+									"value": "cc6064f5-4a15-44e3-6891-43ac20443902"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "12"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "cc6064f5-4a15-44e3-6891-43ac20443902"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"results\": [\n        {\n            \"birthdate\": \"1974-09-02\",\n            \"id\": \"8249132801006\",\n            \"mail\": \"randolfbriemer@gmail.com\",\n            \"name\": \"Univ.Prof. Franz-Xaver Freudenberger B.Eng.\",\n            \"sex\": \"M\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "401 Unauthorised - No token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proxy_url}}/http/request-employee-dependants-ex7",
+									"host": [
+										"{{proxy_url}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants-ex7"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 13:31:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "437"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "content-language",
+									"value": "en"
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Server",
+									"value": "SAP"
+								},
+								{
+									"key": "www-authenticate",
+									"value": "Basic realm=\"SAP Cloud Integration\""
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "1c0fb064-c974-499a-5dcf-b7538b7c8734"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 401 – Unauthorized</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 401 – Unauthorized</h1></body></html>"
+						},
+						{
+							"name": "401 Unauthorised - Expired token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer invalid_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proxy_url}}/http/request-employee-dependants-ex7",
+									"host": [
+										"{{proxy_url}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants-ex7"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 13:30:43 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Server",
+									"value": "SAP"
+								},
+								{
+									"key": "www-authenticate",
+									"value": "Bearer error=\"invalid_token\", error_description=\"The token is invalid: Error occurred during Json Web Signature Validation: Last unit does not have enough valid bits.\", error_uri=\"https://tools.ietf.org/html/rfc6750#section-3.1\""
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "a965f227-7e14-441a-4a94-95f0e444cd7a"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": null
 						}
 					]
 				}
