@@ -1,0 +1,359 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Request Employee Dependants",
+    "description": "Part of the Connecting services and systems using SAP Integration Suite CodeJam",
+    "contact": {
+      "name": "CodeJam support",
+      "url": "https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam#how-to-obtain-support"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam/blob/main/LICENSE"
+    },
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "GitHub repository",
+    "url": "https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam"
+  },
+  "servers": [
+    {
+      "url": "https://your-tenant-free-tier-gfm1c35e.it-cpi018-rt.cfapps.eu10-654.hana.ondemand.com"
+    }
+  ],
+  "tags": [
+    {
+      "name": "cloud-integration",
+      "description": "Integration flow developed during the CodeJam"
+    }
+  ],
+  "paths": {
+    "/http/request-employee-dependants-ex7": {
+      "post": {
+        "tags": [
+          "cloud-integration"
+        ],
+        "summary": "Request Employee Dependants",
+        "requestBody": {
+          "description": "Employee request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/employee_request"
+              },
+              "example": {
+                "employee_id": "1003767"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "content-type": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "date": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 26 Aug 2022 13:13:20 GMT"
+                }
+              },
+              "expires": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "integer",
+                  "example": 0
+                }
+              },
+              "pragma": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache"
+                }
+              },
+              "sap_messageprocessinglogid": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "AGMIxvAXMzi2q7Td52n4A3XZfuIL"
+                }
+              },
+              "sap_mplcorrelationid": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "AGMIxvASvGG8_bxMOcbu7-Fg2Ky1"
+                }
+              },
+              "sap_pregeneratedmplid": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "AGMIxvBj-IodLT7qljyOmRSxdf4i"
+                }
+              },
+              "server": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "SAP"
+                }
+              },
+              "set-cookie": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "cookie"
+                }
+              },
+              "x-content-type-options": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "nosniff"
+                }
+              },
+              "x-correlationid": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "549ebc7b-be0f-4871-7a1f-07f442ea6147"
+                }
+              },
+              "transfer-encoding": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "strict-transport-security": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=31536000; includeSubDomains; preload;"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "results": [
+                    {
+                      "birthdate": "1928-11-22",
+                      "id": "8255729496883",
+                      "mail": "gerhardt87@gmx.de",
+                      "name": "Michael Schwital",
+                      "sex": "M"
+                    },
+                    {
+                      "birthdate": "1973-05-20",
+                      "id": "8242408209148",
+                      "mail": "irmelamies@hotmail.de",
+                      "name": "Jeannine Karge B.Eng.",
+                      "sex": "F"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "headers": {
+              "cache-control": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, no-store, max-age=0, must-revalidate"
+                }
+              },
+              "content-type": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "application/json;charset=utf-8"
+                }
+              },
+              "date": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 26 Aug 2022 13:13:50 GMT"
+                }
+              },
+              "etag": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"1752-MfTtSKWYcFPCB4GFGXqvdqZImak\""
+                }
+              },
+              "expires": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "integer",
+                  "example": 0
+                }
+              },
+              "pragma": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache"
+                }
+              },
+              "sap_messageprocessinglogid": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "AGMIxw55-Zvnm1ZKikeg7VAxunMT"
+                }
+              },
+              "sap_mplcorrelationid": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "AGMIxw64uKgfj7aGeOov-YskTate"
+                }
+              },
+              "sap_pregeneratedmplid": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "AGMIxw5wb8499tAItK9zH6bfATqa"
+                }
+              },
+              "server": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "SAP"
+                }
+              },
+              "set-cookie": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "cookie"
+                }
+              },
+              "x-content-type-options": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "nosniff"
+                }
+              },
+              "x-correlationid": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "2ae09016-1915-4106-71cf-d0f2556f994d"
+                }
+              },
+              "transfer-encoding": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "strict-transport-security": {
+                "style": "simple",
+                "explode": false,
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=31536000; includeSubDomains; preload;"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error_response"
+                },
+                "example": {
+                  "error": "Employee's country not supported"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "employee_request": {
+        "type": "object",
+        "properties": {
+          "employee_id": {
+            "type": "string",
+            "example": "1003767"
+          }
+        }
+      },
+      "error_response": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "example": "Employee's country not supported"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
