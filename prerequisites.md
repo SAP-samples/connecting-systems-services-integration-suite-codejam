@@ -116,10 +116,10 @@ From the BTP Cockpit:
 2. Create service key
    ![create-service-key](assets/pi-rt-create-service-key.png)
 
-3. Copy credentials: click on the service key just created and a pop-up will appear with the service key details, e.g. clientid, clientsecret, url, tokenurl.
+3. Copy credentials: click on the service key just created and a pop-up will appear with the service key details, e.g. `clientid`, `clientsecret`, `url`, `tokenurl`.
    ![view-service-key](assets/pi-rt-view-service-key.png)
 
-  > 👉 Copy the iflow-client credentials in the Postman environment imported for Cloud Integration
+  > 👉 Copy and paste the credentials details from `iflow-client` service key in the `Cloud Integration` Postman environment.
 
 ### Set up API Management capability
 
