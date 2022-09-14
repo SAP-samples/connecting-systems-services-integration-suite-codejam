@@ -92,7 +92,7 @@ The following information is presented to us when selecting a message:
 
 👉 If available, select a message in `Failed` status and click the `Info` link in the `Log Level` field.
 
-The log level will tell us exactly where the integration flow is failing and details of the erorr. If additional information is required to "debug" our integration flow, we can update the log level of our deployed integration flow. We will see this in the [tracing](#tracing) section.
+The log level will tell us exactly where the integration flow is failing and details of the erorr. If additional information is required to "debug" our integration flow, we can update the log level of our deployed integration flow. This is exaplained in the [tracing section](../../troubleshooting.md#tracing-an-integration-flow) of the troubleshooting page.
 
 ![Message monitoring - Failed message details](assets/message-monitoring-failed-message-details.png)
 <p align = "center">
