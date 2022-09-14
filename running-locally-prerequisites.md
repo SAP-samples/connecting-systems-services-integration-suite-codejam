@@ -1,4 +1,4 @@
-# Prerequisites
+# Running locally - Prerequisites
 
 So you are interested in running the services locally, exciting! Here are the prerequisites of how you can run the services used in this CodeJam locally. 
 
@@ -21,4 +21,8 @@ So you are interested in running the services locally, exciting! Here are the pr
 
 ## Local Services
 
-// TODO: Instructions on how to run the services locally
+You can find detailed instructions on how to run the services locally on each repositories' overview page:
+- SAP S/4HANA Cloud Business Partner mock server: https://hub.docker.com/r/ajmaradiaga/s4-mock-server 
+- Business Partner Dependants mock service: https://hub.docker.com/r/ajmaradiaga/businesspartner-dependants-mock-server
+
+> The repositories also contain instructions on deploying the containers to the SAP BTP, Kyma runtime environment.
