@@ -15,6 +15,6 @@ See below for an overview of the exercises part of this CodeJam.
   * [Exercise 05 - Retrieve Business Partner dependant's information](./05-retrieve-bp-dependants/)
   * [Exercise 06 - Add the America's instance of the Business Partner Dependants service](./06-add-americas-bp-dependants/)
   * [Exercise 07 - Log service call in Google BigQuery (Open Connectors)](./07-log-requests-in-bigquery)
-  * Exercise 08 - Add security to unsecure service (API Management)
+  * [Exercise 08 - Expose integration flow via API Management](./08-expose-integration-flow-api-management/)
 
 > ⚡️ An export of the finalised integration package is included in the [../assets/cloud-integration](../assets/cloud-integration/Connecting%20Systems%20CodeJam.zip) folder. The integration package - [Connecting Systems CodeJam](../assets/cloud-integration/Connecting%20Systems%20CodeJam.zip) - contains multiple integration flows, as they were saved after finalising an exercise. If you run into any problems, you can import these to your tenant and compare your integration flows against it. 

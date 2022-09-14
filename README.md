@@ -43,7 +43,7 @@ See below for an overview of the exercises part of this CodeJam.
   * [Exercise 05 - Retrieve Business Partner dependant's information](./exercises/05-retrieve-bp-depedants/)
   * [Exercise 06 - Add the America's instance of the Business Partner Dependants service](./exercises/06-add-americas-bp-dependants/)
   * [Exercise 07 - Log service call in Google BigQuery (Open Connectors)](./exercises/07-log-requests-in-bigquery)
-  * Exercise 08 - Add security to unsecure service (API Management)
+  * [Exercise 08 - Expose integration flow via API Management](./exercises/08-expose-integration-flow-api-management/)
 
 ### Troubleshooting
 
