@@ -152,7 +152,7 @@ Given that the imported integration flow handles the communication with BigQuery
     }
     ```
 
-    > 🐪 Here, we are using the [Simple language](https://camel.apache.org/components/3.18.x/languages/simple-language.html) in our integration flow again. In this instance we are using Simple expressions can to define/modify the payload in the exchange. In the example above, we access the exchange properties and [create a date and set its format](https://camel.apache.org/components/3.18.x/languages/simple-language.html#_examples).
+    > 🐪 Here, we are using the [Simple language](https://camel.apache.org/components/3.18.x/languages/simple-language.html) in our integration flow again. In this instance we are using Simple expressions to define/modify the payload in the exchange. In the example above, we access the exchange properties and [create a date and set its format](https://camel.apache.org/components/3.18.x/languages/simple-language.html#_examples).
 
 - `Write BP-Dependants-Request-Log` data store operation: Data Store Name: `BP-Dependants-Request-Log`
   
