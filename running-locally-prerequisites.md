@@ -7,11 +7,13 @@ So you are interested in running the services locally, exciting! Here are the pr
 ## Hardware
 
 * Cloud Connector: [Hardware requirements](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e23f776e4d594fdbaeeb1196d47bbcc0.html?locale=en-US#hardware) to install Cloud Connector in your local machine:
+    
     |                 | Minimum                                           | Recommended                                     |
     | --------------- | ------------------------------------------------- | ----------------------------------------------- |
     | CPU             | Single core 3 GHz, x86-64 architecture compatible | Dual core 2 GHz, x86-64 architecture compatible |
     | Memory (RAM)    | 2 GB                                              | 4 GB                                            |
     | Free disk space | 3 GB                                              | 20 GB                                           |
+
 
 ## Software
 
