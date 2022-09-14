@@ -4,7 +4,7 @@ In this exercise, we will expose our integration flow via API Management and tak
 
 To achieve the above we create an API in API Management that will act as a proxy to our integration flow and we will leverage an OpenAPI specification to create it.
 
-## What is an OpenAPI specification?**
+## What is an OpenAPI specification?
 
 > From the specification [website](https://swagger.io/specification/)...
 >  
