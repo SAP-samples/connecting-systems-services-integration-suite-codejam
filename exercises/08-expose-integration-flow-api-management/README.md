@@ -1,4 +1,4 @@
-# Exercise 08 - API Management
+# Exercise 08 - Expose integration flow via API Management
 
 In this exercise, we will expose our integration flow via API Management and take advantage of the functionality provided by API Management to govern and monitor the calls made to the integration flow. Once the API is created we will expose it via the API Business Hub Enterprise (Developer Portal). 
 
