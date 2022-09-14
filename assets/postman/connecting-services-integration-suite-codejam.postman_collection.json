@@ -1958,7 +1958,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+							"raw": "{\n    \"employee_id\": \"1003767\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2291,6 +2291,391 @@
 							],
 							"cookie": [],
 							"body": null
+						}
+					]
+				},
+				{
+					"name": "After applying BTP connectivity policy template",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proxy_url}}/http/request-employee-dependants-ex7",
+							"host": [
+								"{{proxy_url}}"
+							],
+							"path": [
+								"http",
+								"request-employee-dependants-ex7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK - Request Employee Dependants Proxy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer valid_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proxy_url}}/http/request-employee-dependants-ex7",
+									"host": [
+										"{{proxy_url}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants-ex7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 13:29:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "apikey",
+									"value": "7B32D801-EA44-4C51-A49D-2F380B3A8B06"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "sap_messageprocessinglogid",
+									"value": "AGMghdJ5PPMFJZ8w9KVoJL1I5Gz9"
+								},
+								{
+									"key": "sap_mplcorrelationid",
+									"value": "AGMghdIsOq7M5tVXPa5uXugK3w-7"
+								},
+								{
+									"key": "sap_pregeneratedmplid",
+									"value": "AGMghdOezNS_loe17RbDVFY6W8CO"
+								},
+								{
+									"key": "sapdatastoreid",
+									"value": "bde1ca44-ac89-4e59-9fbb-2c4669f6819f"
+								},
+								{
+									"key": "Server",
+									"value": "SAP"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-correlationid",
+									"value": "cc6064f5-4a15-44e3-6891-43ac20443902"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "12"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "cc6064f5-4a15-44e3-6891-43ac20443902"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"results\": [\n        {\n            \"birthdate\": \"1974-09-02\",\n            \"id\": \"8249132801006\",\n            \"mail\": \"randolfbriemer@gmail.com\",\n            \"name\": \"Univ.Prof. Franz-Xaver Freudenberger B.Eng.\",\n            \"sex\": \"M\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "After Verify API Key policy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "APIKey",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proxy_url}}/http/request-employee-dependants-ex7",
+							"host": [
+								"{{proxy_url}}"
+							],
+							"path": [
+								"http",
+								"request-employee-dependants-ex7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK - Request Employee Dependants Proxy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer valid_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proxy_url}}/http/request-employee-dependants-ex7",
+									"host": [
+										"{{proxy_url}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants-ex7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 13:29:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "apikey",
+									"value": "7B32D801-EA44-4C51-A49D-2F380B3A8B06"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "sap_messageprocessinglogid",
+									"value": "AGMghdJ5PPMFJZ8w9KVoJL1I5Gz9"
+								},
+								{
+									"key": "sap_mplcorrelationid",
+									"value": "AGMghdIsOq7M5tVXPa5uXugK3w-7"
+								},
+								{
+									"key": "sap_pregeneratedmplid",
+									"value": "AGMghdOezNS_loe17RbDVFY6W8CO"
+								},
+								{
+									"key": "sapdatastoreid",
+									"value": "bde1ca44-ac89-4e59-9fbb-2c4669f6819f"
+								},
+								{
+									"key": "Server",
+									"value": "SAP"
+								},
+								{
+									"key": "set-cookie",
+									"value": "cookie"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-correlationid",
+									"value": "cc6064f5-4a15-44e3-6891-43ac20443902"
+								},
+								{
+									"key": "x-csrf-token",
+									"value": "dummyToken123"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "12"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-vcap-request-id",
+									"value": "cc6064f5-4a15-44e3-6891-43ac20443902"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains; preload;"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"results\": [\n        {\n            \"birthdate\": \"1974-09-02\",\n            \"id\": \"8249132801006\",\n            \"mail\": \"randolfbriemer@gmail.com\",\n            \"name\": \"Univ.Prof. Franz-Xaver Freudenberger B.Eng.\",\n            \"sex\": \"M\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "401 - Invalid API Key",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "APIKey",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee_id\": \"1003764\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{proxy_url}}/http/request-employee-dependants-ex7",
+									"host": [
+										"{{proxy_url}}"
+									],
+									"path": [
+										"http",
+										"request-employee-dependants-ex7"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 14 Sep 2022 04:08:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fault\": {\n        \"faultstring\": \"Invalid ApiKey\",\n        \"detail\": {\n            \"errorcode\": \"oauth.v2.InvalidApiKey\"\n        }\n    }\n}"
 						}
 					]
 				}
