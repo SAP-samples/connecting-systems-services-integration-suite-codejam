@@ -4,6 +4,24 @@ This page intends to capture common problems that you might face while going thr
 
 ## Cloud Integration
 
+- #### Tracing an integration flow
+
+    To activate tracing in a deployed integration flow, navigate to  `Monitor > Manage Integration Content`, select the deployed integration flow and modify the `Log Level`.
+
+    ![Activate tracing for deployed integration flow](assets/activate-tracing-in-integration-flow.gif)
+    <p align = "center">
+    <i>Activate tracing for deployed integration flow</i>
+    </p>   
+
+    When tracing is enabled for an integration flow, if we send a message to it, we will then have access to the exchange headers, properties and payload at the different steps that are part of the integration flow. Having access to the different steps and the data flowing through them helps greatly when troubleshooting/debugging an integration flow.
+
+    ![Check payload in trace](assets/check-payload-in-trace.gif)
+    <p align = "center">
+    <i>Check payload in trace</i>
+    </p>
+
+    > Tracing an integration flow in SAP Cloud Integration - https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/4ec27d358d844c96b3ae11febd440eac.html?locale=en-US
+
 - #### Why am I unable to edit the integration flow?
     This is because our integration flow is not in edit mode. To switch to edit mode, click the `Edit button` (*upper right corner*).
 
@@ -59,6 +77,8 @@ This page intends to capture common problems that you might face while going thr
     <i>Download certificate from web browsers</i>
     </p>
 
+## API Management
+
 - #### Unable to Create application exception in Developer Portal
   
   When creating an application in the Developer Portal, a pop-up is displayed stating that it was not possible to create the application.
@@ -71,14 +91,15 @@ This page intends to capture common problems that you might face while going thr
     <i>Add user in API Management</i>
     </p>
   - Check SAP Note 2718466: [https://launchpad.support.sap.com/#/notes/0002718466](https://launchpad.support.sap.com/#/notes/0002718466) 
-- 
 
-- #### Tracing
-
-TBA - 
-
-> Tracing an integration flow in SAP Cloud Integration - https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/4ec27d358d844c96b3ae11febd440eac.html?locale=en-US
 
 ## Postman
 
-TBA
+- #### Could not send request - Error: getaddrinfo ENOTFOUND or Error: Invalid URI 
+    
+    If you get this error when sending a request, it is possible that you've not selected the right environment or that the value for a variable that's used in the URL is incorrect. Ensure that you've selected the right environment for the request you are trying to make and check the values of the variables.
+
+- #### Unresolved variable
+
+    The UI states that it is not possible to resolve a variable. Ensure that you've selected the right environment for the request you are trying to make.
+
