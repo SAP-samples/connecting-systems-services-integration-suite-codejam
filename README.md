@@ -2,7 +2,11 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/connecting-systems-services-integration-suite-codejam)](https://api.reuse.software/info/github.com/SAP-samples/connecting-systems-services-integration-suite-codejam)
 
-⚠️ This is a work-in-progress.
+---
+## *SAP CodeJam events scheduled:*
+- 2022-09-29: 🇪🇸 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Madrid, Spain) - [Register here](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap/ec-p/9782#M21).
+- 2022-10-28: 🇪🇸 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Barcelona, Spain) - [Register here](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap/ec-p/9961#M32).
+---
 
 Welcome to the Connecting Systems and Services Using SAP Integration Suite CodeJam repository. In this SAP CodeJam, we will look at different services part of the SAP Integration Suite and how we can use them to connect our systems and services. By the end of the CodeJam, we will achieve an integration scenario like the one below in the diagram.
 
