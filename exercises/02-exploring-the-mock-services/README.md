@@ -2,7 +2,7 @@
 
 Before attempting to build an integration between the services, it is important to get familiar with them. The easiest way to achieve this is by using a REST client, e.g. Postman, to interact with the API exposed by the service. 
 
-> If you are following this exercise outside of a CodeJam event, you can follow the instructions included in [Optional Exercise 01 - Running and deploying the mock services](../optional-01-deploy-mock-services/README.md) to either run the services locally or deploy them to a [Kyma environment part of the SAP BTP](https://discovery-center.cloud.sap/serviceCatalog/kyma-runtime?region=all).
+> If you are following this exercise outside of a CodeJam event, you can follow the instructions included in the [running locally prerequisites](./../../running-locally-prerequisites.md) page to either run the services locally or deploy them to a [Kyma environment part of the SAP BTP](https://discovery-center.cloud.sap/serviceCatalog/kyma-runtime?region=all).
 
 A couple of things that we need to keep in mind when exploring new APIs/services:
 - Is there any documentation that can guide me on how to interact with the API, e.g. [OpenAPI](https://www.openapis.org/) specifications?
