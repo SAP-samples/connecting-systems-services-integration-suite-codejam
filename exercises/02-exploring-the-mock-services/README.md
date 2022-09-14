@@ -24,17 +24,20 @@ A collection and a few environments are included in this repository to facilitat
 > - [Postman Collections](https://www.postman.com/collection/): Postman Collections are Executable API Descriptions. Postman's collection folders make it easy to keep your API requests and elements organized. 
 > - [Postman enviroment](https://learning.postman.com/docs/sending-requests/managing-environments/): A Postman environment is a set of variables you can use in your Postman requests. You can use environments to group related sets of values together and manage access to shared Postman data if you are working as part of a team.
 
-👉 Import the collection and the environments provided to your Postman client. The files are located under the root folder of the repository -> `./connecting-services-integration-suite-codejam/assets/postman`
+👉 Import the collection and the environments provided to your Postman client. The files are located under the root folder of the repository -> `./connecting-systems-services-integration-suite-codejam/assets/postman`
 
 List of the files that you need to import to Postman:
 ```
 Collection:
-- ../postman/connecting-services-integration-suite-codejam.postman_collection.json
+- assets/postman/connecting-services-integration-suite-codejam.postman_collection.json
 
 Environments:
-- ../postman/bp-dependants-mock-service/BP-Dependants-Americas.postman_environment.json
-- ../postman/bp-dependants-mock-service/BP-Dependants-EU.postman_environment.json
-- ../postman/s4-bp-mock-server/S4-BP-Mock-Server.postman_environment.json
+- assets/postman/API Management.postman_environment.json
+- assets/postman/BP-Dependants-Americas.postman_environment.json
+- assets/postman/BP-Dependants-EU.postman_environment.json
+- assets/postman/BP-Dependants-localhost.postman_environment.json
+- assets/postman/Cloud Integration Instance.postman_environment.json
+- assets/postman/S4-BP-Mock-Server.postman_environment.json
 ```
 
 ![Import objects to Postman](assets/import-objects-to-Postman.gif)
