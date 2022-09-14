@@ -43,7 +43,7 @@ The application can also be used with Safari browser and Internet Explorer 9. Ho
 ### Postman
 
 [Postman](https://www.getpostman.com/downloads/), to send requests to the integration flows that we deploy to SAP Cloud Integration. Follow the installation instructions included in this [tutorial: Install Postman REST Client](https://developers.sap.com/tutorials/api-tools-postman-install.html).
-  > Once installed you can import the collection and environments included in the `./connecting-services-integration-suite-codejam/assets/postman` folder.
+  > Once installed you can import the collection and environments included in the `./connecting-systems-services-integration-suite-codejam/assets/postman` folder.
 
   > ![Import objects to Postman](./assets/import-objects-to-Postman.gif)
 
@@ -78,6 +78,8 @@ Once subscribed to the SAP Integration Suite service, we will need to provision 
 - Cloud Integration
 - API Management
 - Extend Non-SAP Connectivity
+
+> ⚠️ *Although the tutorial screenshot doesn't select the Extend Non-SAP Connectivity, don't be misguided by this... do include the Extend Non-SAP Connectivity capability.*
 
 To provision the SAP Integration Suite capabilities, follow the instructions included in [step 3](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#d87e7e9f-7862-410d-ae85-ede409587a60) of the  _Set up the SAP Integration Suite trial_ tutorial.
 
