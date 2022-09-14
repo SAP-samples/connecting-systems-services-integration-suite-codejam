@@ -200,3 +200,7 @@ If you finish earlier than your fellow participants, you might like to ponder th
 2. What will happen to our main integration flow if the `Send BP Dependants Request Log to BigQuery` integration flow fails? How will it be affected? What will happen to the requests received by the integration flow? 
    > 💡 To simulate this, you can undeploy the `Send BP Dependants Request Log to BigQuery` integration flow, send a few messages and check out what happens.
 3. Why do you think we didn't build the [BigQuery integration flow](../../assets/cloud-integration/Send%20BP%20Dependants%20Request%20Log%20to%20BigQuery.zip) as part of this exercise? Why import an existing integration flow? How is this approach similar to using libraries/utilities available in programming languages?
+
+## Next
+
+Continue to 👉 [Exercise 08 - Expose integration flow via API Management](../08-expose-integration-flow-api-management/)
