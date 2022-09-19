@@ -256,7 +256,7 @@ Once deployed, and the runtime status is `✅ Started`, you can click the `Navig
 
 > ℹ️ In case you don't see the HTTP endpoint URL immediately in the deployed content page, see [troubleshooting](../../troubleshooting.md#there-is-no-http-endpoint-url-on-the-deployed-content-page).
 
-👉 Copy the HTTP endpoint URL, as we will use it in the next exercise, [sending requests and monitoring the integration flow](../04-send-requests-and-monitor/).
+👉 Copy the HTTP endpoint URL, as we will use it in the next exercise, [sending requests and monitoring the integration flow](../04-send-messages-and-monitor/).
 
 ## Summary
 
