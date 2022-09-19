@@ -111,7 +111,7 @@ Our integration flow is now ready. Let's send some messages to it using Postman.
 👉 Open the `Request Employee Dependants - Exercise 06` request under the cloud-integration folder in the Postman collection and test the following scenarios:
 - Send a request for `employee_id` = 1003764. Where is this employee from and what's the response you get?
 - Now, `employee_id` = 1003765. Where is this employee from and what's the response you get?
-- //TODO: Include request for an employee who's country we don't handle.
+- What if we send a request for `employee_id` = 1003800. Where is this employee from and what's the response you get?
 
 ## Summary
 
@@ -119,7 +119,7 @@ We've added a couple of local integration processes to our integration flow. Thi
 
 ## Further reading
 
-* [Local Integration Process](https://help.sap.com/docs/CLOUD_INTEGRATION/)
+* [Local Integration Process](https://help.sap.com/docs/CLOUD_INTEGRATION/4b57f249012e4e1f8c15cbd5dbb4fff3/88faa5c1056c4c179a8d1967b2ce5669.html?locale=en-US)
 * [Pattern Recipient - Dynamic routing](https://api.sap.com/integrationflow/Pattern_RecipientList_DynamicRouting)
 
 ---
