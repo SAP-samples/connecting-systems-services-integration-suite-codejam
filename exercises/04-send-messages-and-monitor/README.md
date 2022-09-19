@@ -2,7 +2,7 @@
 
 At the end of this exercise, you'll have successfully sent messages to the integration flow deployed in the previous exercise and have a basic understanding of how we can monitor the integration flow.
 
-> ℹ️ While going through the exercise, you might encounter common problems not explicitly related to it. Your first stop should be the [troubleshooting.md](troubleshooting.md) page, which includes a list of these common problems and their potential solutions.
+> ℹ️ While going through the exercise, you might encounter common problems not explicitly related to it. Your first stop should be the [troubleshooting.md](../../troubleshooting.md) page, which includes a list of these common problems and their potential solutions.
 
 ## Set up the Cloud Integration instance environment
 
@@ -29,7 +29,7 @@ Hooray! 🎉 🥳 We are now ready to send messages to the integration flow.
 
 👉 Firstly, select the Cloud Integration Instance environment. Next, expand the `cloud-integration` folder in collections and open the `GET Request Employee Dependants request`. Finally, click the `Send button`.
 
-> If everything goes as expected, you should see a response similar to the one in the screenshot below. If not, check out the [troubleshooting.md](troubleshooting.md) page, which includes a list of common problems and their potential solutions.
+> If everything goes as expected, you should see a response similar to the one in the screenshot below. If not, check out the [troubleshooting.md](../../troubleshooting.md) page, which includes a list of common problems and their potential solutions.
 
 **What's going on in the request/response**
 
