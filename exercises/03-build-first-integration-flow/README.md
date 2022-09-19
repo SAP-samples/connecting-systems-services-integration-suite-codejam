@@ -72,7 +72,7 @@ The integration flow expects a sample request message like the one below and sho
 }
 ```
 
-> ℹ️ While going through the exercise, you might encounter common problems not explicitly related to it. Your first stop should be the [troubleshooting.md](troubleshooting.md) page, which includes a list of these common problems and their potential solutions.
+> ℹ️ While going through the exercise, you might encounter common problems not explicitly related to it. Your first stop should be the [troubleshooting.md](../../troubleshooting.md) page, which includes a list of these common problems and their potential solutions.
 
 Before building the integration flow, let's start with some context and talk a bit about what Enterprise Integration Patterns are and what Apache Camel is.
 
