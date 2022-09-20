@@ -51,6 +51,18 @@ This page intends to capture common problems that you might face while going thr
 - #### HTTP 403 Forbidden error message when posting a message to SAP Cloud Integration
     It's an HTTP 403, not an HTTP 401... meaning that you are authenticating well to the service but the user you are using for communication doesn't have the right roles assigned to it. Make sure that the user has the ESBMessagingSend.send role in the BTP Cockpit. See the roles set up for the instance in the [prerequisites - Create SAP Cloud Integration runtime client credentials](prerequisites.md#create-sap-cloud-integration-runtime-client-credentials).
 
+- #### HTTP 404 Not Found when sending requests to the integration flow
+    1. Ensure that the deployment of the integration flow that you are trying to send a message has completed. It might still be in the deploying status.
+    2. Check the URL that you are trying to send the message.
+
+- #### HTTP 405 Method not allowed when configuring communication via Cloud Connector
+    The protocol specified in the URL address is likely HTTPS when it should be HTTP.
+
+    ![HTTP Adapter configuration - Protocol in URL address](assets/cloud-connector-http-adapter-configuration-protocol.png)
+    <p align = "center">
+    <i>HTTP Adapter configuration - Protocol in URL address</i>
+    </p>
+
 - #### HTTP 500 Internal Server error - PKIX path building failed. Unable to find valid certification path to requested target.
     The certificate presented by the service you are communicating with is unknown to your Cloud Integration tenant. You need to import the certificate presented by the service in your Cloud Integration tenant.
 
