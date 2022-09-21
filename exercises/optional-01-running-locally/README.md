@@ -1,4 +1,4 @@
-# Optional Exercise 01 - Running services locally
+# Optional Exercise 01 - Running locally services used in CodeJam
 
 All the services that are used as part of this SAP CodeJam can be run locally. If you are doing this CodeJam outside of an event, you will likely need to run the services on your machine to complete the exercises. 
 
