@@ -2,9 +2,9 @@
 
 All the services that are used as part of this SAP CodeJam can be run locally. If you are doing this CodeJam outside of an event, you will likely need to run the services on your machine to complete the exercises. 
 
-In this exercise, we will cover how you can connect Cloud Connector to your SAP BTP subaccount, configure a system in Cloud Connector and then show how the configuration in an HTTP adapter (SAP Cloud Integration) will differ when connecting to a service via Cloud Connector.
+In this exercise, we will cover how you can run the services locally by using Docker 🐳 . Also, we will cover how you can connect Cloud Connector to your SAP BTP subaccount, configure a system in Cloud Connector and then show how the configuration in a Receiver HTTP adapter (SAP Cloud Integration) will differ when connecting to a service via Cloud Connector.
 
-> ⚠️ To run the service used in this CodeJam locally, you should have completed the instructions included in the [running locally prerequisites](../../running-locally-prerequisites.md) page.
+> ⚠️ To run the services used in this CodeJam locally, you should have completed the instructions included in the [running locally prerequisites](../../running-locally-prerequisites.md) page.
 
 ## Connecting Cloud Connector to your SAP BTP Subaccount
 
@@ -26,7 +26,7 @@ Once defined, you'll see an overview page that will show us the connectivity sta
 
 So far we've only registered the Cloud Connector instance against our SAP BTP subaccount. No on-premise systems are exposed via Cloud Connector yet. To expose a system we will need to add a mapping from virtual to an internal system.  Let's go ahead and do that.
 
-> The instructions below assume that you are running the SAP S/4HANA Cloud mock server locally. If you are not running it locally you can follow the instructions in the [running locally prerequisites page](../../running-locally-prerequisites.md#local-services) or just run the following command ⚡️ `docker run --name s4-mock-server --hostname s4-mock-server --publish 8088:8080 -d ajmaradiaga/s4-mock-server`.
+> The instructions below assume that you are running the SAP S/4HANA Cloud mock server locally. If you are not running it locally you can follow the instructions in the [running locally prerequisites page](../../running-locally-prerequisites.md#local-services) or just run the following command 🐳  `docker run --name s4-mock-server --hostname s4-mock-server --publish 8088:8080 -d ajmaradiaga/s4-mock-server`.
 
 👉  Navigate to the `Cloud to On-Premise` section of the recently defined subaccount. Click on the `Add System mapping button` and enter the following details.
 
@@ -66,7 +66,7 @@ It is also possible to [limit the accessible service for HTTP](https://help.sap.
 
 ### ***(Optional) Running all the services locally***
 
-👉  The commands and table below capture the configuration that would be required for the different services to be exposed via Cloud Connector. First, make sure that all the services are running locally and then configure the systems and resources below in the Cloud Connector administration UI.
+👉  The 🐳  commands and table below capture the configuration that would be required for the different services to be exposed via Cloud Connector. First, make sure that all the services are running locally and then configure the systems and resources below in the Cloud Connector administration UI.
 
 > ⚠️ We've already configured the SAP S/4HANA Cloud mock server. All we will need to instantiate will be the BP Dependants services.
 
