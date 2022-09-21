@@ -18,12 +18,12 @@ So you are interested in running the services locally, exciting! Here are the pr
 ## Software
 
 * Cloud Connector: The software requirements for Cloud Connector can be found [here](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e23f776e4d594fdbaeeb1196d47bbcc0.html?locale=en-US#software).
-* Docker: We will use Docker to run the services. Proceed to [install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) if not installed on your local machine.
+* Docker  🐳 : We will use Docker to run the services. Proceed to [install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/) if not installed on your local machine.
 
 
 ## Local Services
 
-You can find detailed instructions on how to run the services locally on each repositories' overview page:
+You can find detailed instructions on how to run the services locally on each  🐳  repositories' overview page:
 - SAP S/4HANA Cloud Business Partner mock server: https://hub.docker.com/r/ajmaradiaga/s4-mock-server 
 - Business Partner Dependants mock service: https://hub.docker.com/r/ajmaradiaga/businesspartner-dependants-mock-server
 
