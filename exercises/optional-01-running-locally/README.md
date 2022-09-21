@@ -140,6 +140,7 @@ The tables below captures the values configured in the different Receiver HTTP a
 <i>Table 4. Communicating via Cloud Connector to local services</i>
 </p>
 
+> ⚡️ An export of the integration flow communicating via Cloud Connector is included in the [../assets/cloud-integration](../../assets/cloud-integration/Request%20Employee%20Dependants%20-%20Cloud%20Connector.zip) folder. The configuration in the Receiver HTTP adapters of the [Request Employee Dependants - Cloud Connector](../../assets/cloud-integration/Request%20Employee%20Dependants%20-%20Cloud%20Connector.zip) integration flow have been updated to reflect what a configuration will look like via Cloud Connector. You can import it into your tenant and check its configuration. 
 
 ## Summary
 
