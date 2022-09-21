@@ -217,7 +217,7 @@ For our integration scenarios, we require that our integration flow communicates
 HTTP Connection details:
 
 | Field           | Value                                                                                                                                          |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
 | *Address*       | https://s4-mock-server-service.c-1e90315.kyma.ondemand.com/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('${property.employee_id}') |
 | *Query*         | $expand=to_BusinessPartnerAddress                                                                                                              |
 | *Proxy Type*    | Internet                                                                                                                                       |

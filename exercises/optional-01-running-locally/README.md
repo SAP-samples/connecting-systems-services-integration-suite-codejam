@@ -32,8 +32,9 @@ So far we've only registered the Cloud Connector instance against our SAP BTP su
 
 <p align = "center">
 
+
 | Field            | Value          |
-| ---------------- | -------------- |
+| :--------------- | :------------- |
 | *Back-end type*  | Non-SAP system |
 | *Protocol*       | HTTP           |
 | *Internal Host*  | localhost      |
@@ -41,6 +42,7 @@ So far we've only registered the Cloud Connector instance against our SAP BTP su
 | *Virtual Host*   | s4-mock-server |
 | *Virtual Port*   | 8088           |
 | *Principal Type* | None           |
+
 
 </p>
 
@@ -81,10 +83,9 @@ docker run --name bpd-europe --publish 8090:8080 --env COUNTRIES=CH,DE,ES,FR,GB,
 docker run --name bpd-americas --publish 8092:8080 --env COUNTRIES=BR,CA,CL,MX,US --env MOCK_API_KEY=7AB7E1567-2A6A-4E5D-A3B1-008B9BE6EEA2 --detach ajmaradiaga/businesspartner-dependants-mock-server
 ```
 
-<p align = "center">
 
-| Field                      | SAP S/4HANA Cloud mock server                     | European BP Dependants service | Americas BP Dependants service |
-| -------------------------- | --------------------------------------- | ------------------------------ | ------------------------------ |
+| Field                      | SAP S/4HANA Cloud mock server           | European BP Dependants service | Americas BP Dependants service |
+| :------------------------- | :-------------------------------------- | :----------------------------- | :----------------------------- |
 | *Back-end type*            | Non-SAP system                          | Non-SAP system                 | Non-SAP system                 |
 | *Protocol*                 | HTTP                                    | HTTP                           | HTTP                           |
 | *Internal Host*            | localhost                               | localhost                      | localhost                      |
@@ -99,7 +100,6 @@ docker run --name bpd-americas --publish 8092:8080 --env COUNTRIES=BR,CA,CL,MX,U
 <i>Table 2. Mapping Virtual to Internal System</i>
 </p>
 
-</p>
 
 Once you've configured all the systems specified above, your Cloud to On-Premise configuration should look like the screenshot below:
 
@@ -122,8 +122,8 @@ There are minor differences to how you would configure the Receiver HTTP adapter
 
 The tables below captures the values configured in the different Receiver HTTP adapters (*Table 3*) and how they should be configured when communicating via Cloud Connector (*Table 4*).
 
-| Field                             | SAP S/4HANA Cloud mock server                                        | European BP Dependants service                                            | Americas BP Dependants service                                              |
-| --------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Field                             | SAP S/4HANA Cloud mock server                              | European BP Dependants service                                            | Americas BP Dependants service                                              |
+| :-------------------------------- | :--------------------------------------------------------- | :------------------------------------------------------------------------ | :-------------------------------------------------------------------------- |
 | *Address - Protocol and Hostname* | https://s4-mock-server-service.c-1e90315.kyma.ondemand.com | https://businesspartner-dependants-europe-svc.c-1e90315.kyma.ondemand.com | https://businesspartner-dependants-americas-svc.c-1e90315.kyma.ondemand.com |
 | *Proxy Type*                      | Internet                                                   | Internet                                                                  | Internet                                                                    |
 | *Location ID*                     |                                                            |                                                                           |                                                                             |
@@ -132,21 +132,18 @@ The tables below captures the values configured in the different Receiver HTTP a
 <i>Table 3. Communicating with Internet services</i>
 </p>
 
-</p>
 
-
-| Field                             | SAP S/4HANA Cloud mock server        | European BP Dependants service | Americas BP Dependants service |
-| --------------------------------- | -------------------------- | ------------------------------ | ------------------------------ |
-| *Address - Protocol and Hostname* | http://s4-mock-server:8088 | http://bpd-europe:8090         | http://bpd-americas:8092       |
-| *Proxy Type*                      | On-Premise                 | On-Premise                     | On-Premise                     |
-| *Location ID*                     | MBP                        | MBP                            | MBP                            |
+| Field                             | SAP S/4HANA Cloud mock server | European BP Dependants service | Americas BP Dependants service |
+| :-------------------------------- | :---------------------------- | :----------------------------- | :----------------------------- |
+| *Address - Protocol and Hostname* | http://s4-mock-server:8088    | http://bpd-europe:8090         | http://bpd-americas:8092       |
+| *Proxy Type*                      | On-Premise                    | On-Premise                     | On-Premise                     |
+| *Location ID*                     | MBP                           | MBP                            | MBP                            |
 
 
 <p align = "center">
 <i>Table 4. Communicating via Cloud Connector to local services</i>
 </p>
 
-</p>
 
 ## Summary
 
