@@ -224,7 +224,7 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 06 - Add the Americas instance of the Business Partner Dependants service](../06-add-americas-bp-dependants/)
+Continue to 👉 [Exercise 06 - Add the Americas instance of the Business Partner Dependants service](../06-add-americas-bp-dependants/README.md#exercise-06---add-the-americas-instance-of-the-business-partner-dependants-service)
 
 [^1]: Pattern Content Based Routing: https://api.sap.com/integrationflow/Pattern_ContentBasedRouting_IgnoreIfNoReceiver
 [^2]: Simple: https://camel.apache.org/components/3.18.x/languages/simple-language.html 

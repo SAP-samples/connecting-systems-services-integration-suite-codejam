@@ -206,4 +206,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 08 - Expose integration flow via API Management](../08-expose-integration-flow-api-management/)
+Continue to 👉 [Exercise 08 - Expose integration flow via API Management](../08-expose-integration-flow-api-management/README.md#exercise-08---expose-integration-flow-via-api-management)

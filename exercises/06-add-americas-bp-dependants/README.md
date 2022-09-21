@@ -133,4 +133,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 07 - Log requests in BigQuery](../07-log-requests-in-bigquery/)
+Continue to 👉 [Exercise 07 - Log requests in BigQuery](../07-log-requests-in-bigquery/README.md#exercise-07---log-request-in-bigquery)
