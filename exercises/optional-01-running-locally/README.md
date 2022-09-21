@@ -20,11 +20,13 @@ Once you've installed Cloud Connector and it's running. You can log in to the Ad
 <i>Define subaccount in Cloud Connector</i>
 </p>
 
+> 🚨  In the gif above I defined a Location ID for my Cloud Connector instance - *MBP*. This value is used also as an example in the configuration tables below. If you didn't define one leave the value as *blank* when specifying *MBP*.
+
 Once defined, you'll see an overview page that will show us the connectivity status to our subaccount.
 
 So far we've only registered the Cloud Connector instance against our SAP BTP subaccount. No on-premise systems are exposed via Cloud Connector yet. To expose a system we will need to add a mapping from virtual to an internal system.  Let's go ahead and do that.
 
-> The instructions below assume that you are running the SAP S/4HANA mock server locally. If you are not running it locally you can follow the instructions in the [running locally prerequisites page](../../running-locally-prerequisites.md#local-services) or just run the following command ⚡️ `docker run --name s4-mock-server --hostname s4-mock-server --publish 8088:8080 -d ajmaradiaga/s4-mock-server`.
+> The instructions below assume that you are running the SAP S/4HANA Cloud mock server locally. If you are not running it locally you can follow the instructions in the [running locally prerequisites page](../../running-locally-prerequisites.md#local-services) or just run the following command ⚡️ `docker run --name s4-mock-server --hostname s4-mock-server --publish 8088:8080 -d ajmaradiaga/s4-mock-server`.
 
 👉  Navigate to the `Cloud to On-Premise` section of the recently defined subaccount. Click on the `Add System mapping button` and enter the following details.
 
@@ -40,10 +42,10 @@ So far we've only registered the Cloud Connector instance against our SAP BTP su
 | *Virtual Port*   | 8088           |
 | *Principal Type* | None           |
 
-<p align = "center">
-<i>SAP S/4HANA Mock service mapping</i>
 </p>
 
+<p align = "center">
+<i>Table 1. SAP S/4HANA Cloud mock server mapping</i>
 </p>
 
 ![Add on-premise system in Cloud Connector](assets/add-on-premise-system.gif)
@@ -62,9 +64,11 @@ It is also possible to [limit the accessible service for HTTP](https://help.sap.
 
 > You can follow the Configure systems in Cloud Connector - [https://developers.sap.com/tutorials/btp-app-ext-service-cloud-connector.html](https://developers.sap.com/tutorials/btp-app-ext-service-cloud-connector.html) tutorial to learn how you can configure an ABAP system in Cloud Connector
 
-***Running all the services locally***
+### ***(Optional) Running all the services locally***
 
-The commands and table below capture the configuration that would be required for the different services to be exposed via Cloud Connector. First, make sure that all the services are running locally and then configure the systems and resources below in the Cloud Connector administration UI.
+👉  The commands and table below capture the configuration that would be required for the different services to be exposed via Cloud Connector. First, make sure that all the services are running locally and then configure the systems and resources below in the Cloud Connector administration UI.
+
+> ⚠️ We've already configured the SAP S/4HANA Cloud mock server. All we will need to instantiate will be the BP Dependants services.
 
 ```bash
 # Run the SAP S/4HANA Cloud mock server
@@ -79,44 +83,85 @@ docker run --name bpd-americas --publish 8092:8080 --env COUNTRIES=BR,CA,CL,MX,U
 
 <p align = "center">
 
-| Field                      | S/4HANA Mock Server                     | European BP Dependants Server | Americas BP Dependants Server |
-| -------------------------- | --------------------------------------- | ----------------------------- | ----------------------------- |
-| *Back-end type*            | Non-SAP system                          | Non-SAP system                | Non-SAP system                |
-| *Protocol*                 | HTTP                                    | HTTP                          | HTTP                          |
-| *Internal Host*            | localhost                               | localhost                     | localhost                     |
-| *Internal Port*            | 8088                                    | 8090                          | 8092                          |
-| *Virtual Host*             | s4-mock-server                          | bpd-europe                    | bpd-americas                  |
-| *Virtual Port*             | 8088                                    | 8090                          | 8092                          |
-| *Principal Type*           | None                                    | None                          | None                          |
-| *Resource - URL Path*      | /sap/opu/odata/sap/API_BUSINESS_PARTNER | /                             | /                             |
-| *Resource - Access Policy* | Path And All Sub-Paths                  | Path And All Sub-Paths        | Path And All Sub-Paths        |
+| Field                      | SAP S/4HANA Cloud mock server                     | European BP Dependants service | Americas BP Dependants service |
+| -------------------------- | --------------------------------------- | ------------------------------ | ------------------------------ |
+| *Back-end type*            | Non-SAP system                          | Non-SAP system                 | Non-SAP system                 |
+| *Protocol*                 | HTTP                                    | HTTP                           | HTTP                           |
+| *Internal Host*            | localhost                               | localhost                      | localhost                      |
+| *Internal Port*            | 8088                                    | 8090                           | 8092                           |
+| *Virtual Host*             | s4-mock-server                          | bpd-europe                     | bpd-americas                   |
+| *Virtual Port*             | 8088                                    | 8090                           | 8092                           |
+| *Principal Type*           | None                                    | None                           | None                           |
+| *Resource - URL Path*      | /sap/opu/odata/sap/API_BUSINESS_PARTNER | /                              | /                              |
+| *Resource - Access Policy* | Path And All Sub-Paths                  | Path And All Sub-Paths         | Path And All Sub-Paths         |
 
 <p align = "center">
-<i>Mapping Virtual to Internal System</i>
+<i>Table 2. Mapping Virtual to Internal System</i>
 </p>
 
 </p>
 
+Once you've configured all the systems specified above, your Cloud to On-Premise configuration should look like the screenshot below:
+
+![Cloud Connector with all systems configured](assets/cloud-connector-all-systems-configured.png)
+<p align = "center">
+<i>Cloud Connector with all systems configured</i>
+</p>
 
 ## Configure HTTP adapter in Cloud Integration
 
-Justo donec enim diam vulputate ut pharetra. Pulvinar proin gravida hendrerit lectus a. Leo a diam sollicitudin tempor id eu. Enim eu turpis egestas pretium aenean pharetra magna. Et molestie ac feugiat sed lectus vestibulum mattis. A iaculis at erat pellentesque. 
+There are minor differences to how you would configure the Receiver HTTP adapter in Cloud Integration when communicating via Cloud Connector compared to when accessing a server available via Internet. Below a list of the connections detail fields that change when configuring the adapter to use Cloud Connector:
+- *Address*: You will configure here the virtual server that you set when adding the system in Cloud Connector. Depending on the protocol and port exposed, you might need to also update it in the `Address`.
+- *Proxy Type*: `On-Premise`, always. Even if you've deployed Cloud Connector in an IaaS, from a connectivity perspective this is an On-Premise system.
+- *(Optiona) Location ID*: If a Location ID was configured in Cloud Connector, you will need to populate this field with the configured value.
 
+![Configure Cloud Connector connectivity in HTTP Adapter](assets/cloud-connector-http-adapter-configuration.png)
+<p align = "center">
+<i>Configure Cloud Connector connectivity in HTTP Adapter</i>
+</p>
+
+The tables below captures the values configured in the different Receiver HTTP adapters (*Table 3*) and how they should be configured when communicating via Cloud Connector (*Table 4*).
+
+| Field                             | SAP S/4HANA Cloud mock server                                        | European BP Dependants service                                            | Americas BP Dependants service                                              |
+| --------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| *Address - Protocol and Hostname* | https://s4-mock-server-service.c-1e90315.kyma.ondemand.com | https://businesspartner-dependants-europe-svc.c-1e90315.kyma.ondemand.com | https://businesspartner-dependants-americas-svc.c-1e90315.kyma.ondemand.com |
+| *Proxy Type*                      | Internet                                                   | Internet                                                                  | Internet                                                                    |
+| *Location ID*                     |                                                            |                                                                           |                                                                             |
+
+<p align = "center">
+<i>Table 3. Communicating with Internet services</i>
+</p>
+
+</p>
+
+
+| Field                             | SAP S/4HANA Cloud mock server        | European BP Dependants service | Americas BP Dependants service |
+| --------------------------------- | -------------------------- | ------------------------------ | ------------------------------ |
+| *Address - Protocol and Hostname* | http://s4-mock-server:8088 | http://bpd-europe:8090         | http://bpd-americas:8092       |
+| *Proxy Type*                      | On-Premise                 | On-Premise                     | On-Premise                     |
+| *Location ID*                     | MBP                        | MBP                            | MBP                            |
+
+
+<p align = "center">
+<i>Table 4. Communicating via Cloud Connector to local services</i>
+</p>
+
+</p>
 
 ## Summary
 
-Now that you are familiar with the basic functionality of SAP API Business Hub and the Business Partner API, we are ready to start interacting with the services from which our integration will be extracting data.
+In this exercise, we've learned how we can get the services used in this CodeJam running locally. Also, we configure a couple of systems and resources in Cloud Connector and we know how we can use it to communicate with servers/services that are running within our landscape. Finally, we've highlighted how the connection details will change in the Receiver HTTP Adapter when communicating via Cloud Connector.
 
 ## Further reading
 
 * [Cloud Connector, explained in simple terms](https://blogs.sap.com/2022/02/03/cloud-connector-explained-in-simple-terms/)
-* [Link 2](https://blogs.sap.com/)
+* [SAP BTP Connectivity - Cloud Connector](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e6c7616abb5710148cfcf3e75d96d596.html?locale=en-US)
 
 ---
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. What happens if you add a resource to a mapped system? Try removing a resource path and send a message via Cloud Integration.
-2. Second question.
+1. What happens if you do not add a resource to a mapped system? Try removing a resource path and send a message via Cloud Integration.
+2. The BP Dependants service can also handle data for the APJ region, how can you run an instance of this service so that the data of the APJ region is available? 
 
 [^1]: Location ID in a Subaccount: [Documentation](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/f16df12fab9f4fe1b8a4122f0fd54b6e.html?locale=en-US).
