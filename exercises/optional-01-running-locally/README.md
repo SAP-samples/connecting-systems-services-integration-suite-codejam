@@ -30,8 +30,6 @@ So far we've only registered the Cloud Connector instance against our SAP BTP su
 
 👉  Navigate to the `Cloud to On-Premise` section of the recently defined subaccount. Click on the `Add System mapping button` and enter the following details.
 
-<p align = "center">
-
 
 | Field            | Value          |
 | :--------------- | :------------- |
@@ -43,8 +41,6 @@ So far we've only registered the Cloud Connector instance against our SAP BTP su
 | *Virtual Port*   | 8088           |
 | *Principal Type* | None           |
 
-
-</p>
 
 <p align = "center">
 <i>Table 1. SAP S/4HANA Cloud mock server mapping</i>
