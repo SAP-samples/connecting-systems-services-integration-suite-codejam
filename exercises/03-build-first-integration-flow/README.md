@@ -281,7 +281,7 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 04 - Sending messages and monitoring our integration flow](../04-send-messages-and-monitor/)
+Continue to 👉 [Exercise 04 - Sending messages and monitoring our integration flow](../04-send-messages-and-monitor/README.md#exercise-04---sending-messages-and-monitoring-our-integration-flow)
 
 [^1]: [Getting Started with Integration Flow Development](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/e5724cd84b854719973afe0356ea128b.html?locale=en-US&q=%22integration%20flow%22)
 [^2]: [Cross-site request forgery]((https://owasp.org/www-community/attacks/csrf))

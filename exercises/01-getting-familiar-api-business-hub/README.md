@@ -71,4 +71,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 02 - Exploring the mock services](../02-exploring-the-mock-services/README.md)
+Continue to 👉 [Exercise 02 - Exploring the mock services](../02-exploring-the-mock-services/README.md#exercise-02---exploring-the-mock-services)

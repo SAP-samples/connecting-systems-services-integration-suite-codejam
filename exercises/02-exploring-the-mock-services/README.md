@@ -123,4 +123,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 03 - Building the first integration flow](../03-build-first-integration-flow/README.md)
+Continue to 👉 [Exercise 03 - Building the first integration flow](../03-build-first-integration-flow/README.md#exercise-03---building-our-first-integration-flow)
