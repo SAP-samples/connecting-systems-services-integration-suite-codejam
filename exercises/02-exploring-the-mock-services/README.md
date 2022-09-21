@@ -19,7 +19,7 @@ At the end of this exercise, you'll have an understanding of the data that we wi
 
 ## Importing collections and environments of the mock services
 
-A collection and a few environments are included in this repository to facilitate interacting with the APIs exposed by the services that we will be using in our integration. The collection and environments for the S/4HANA mock server and the Business Partner Dependants mock service can be found in the [main ./assets/Postman folder](../../assets/postman/).
+A collection and a few environments are included in this repository to facilitate interacting with the APIs exposed by the services that we will be using in our integration. The collection and environments for the SAP S/4HANA Cloud mock server and the Business Partner Dependants mock service can be found in the [main ./assets/Postman folder](../../assets/postman/).
 
 > - [Postman Collections](https://www.postman.com/collection/): Postman Collections are Executable API Descriptions. Postman's collection folders make it easy to keep your API requests and elements organized. 
 > - [Postman enviroment](https://learning.postman.com/docs/sending-requests/managing-environments/): A Postman environment is a set of variables you can use in your Postman requests. You can use environments to group related sets of values together and manage access to shared Postman data if you are working as part of a team.
