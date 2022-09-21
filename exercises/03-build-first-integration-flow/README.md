@@ -224,6 +224,8 @@ HTTP Connection details:
 | *Method*        | GET                                                                                                                                            |
 | *Authenticaton* | None                                                                                                                                           |
 
+> If you are running the services used in this CodeJam locally 🐳 , checkout how you will need to configure the Receiver HTTP Adapter in the [Configure HTTP adapter in Cloud Integration section](../../exercises/optional-01-running-locally/README.md#configure-http-adapter-in-cloud-integration) of the optional exercise 01.
+
 Let's break down the configuration set in the HTTP adapter:
 - Connection Details:
   - *Address*: URL of the SAP S/4HANA Cloud mock server we're connecting to, e.g., https://s4-mock-server-service.c-1e90315.kyma.ondemand.com. You'll notice that we are also including the full path and dynamically setting the value stored in the `employee_id` exchange property as part of the URL.

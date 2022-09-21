@@ -88,6 +88,8 @@ The Americas instance set up is very similar to the one we completed in the prev
     | *Request Headers* | apiKey                                                                                                                   |
 - *Configure Americas process call*: In the `Route to Americas`, set the `America - Integration Process` in the `Local Integration Process` field.
 
+> If you are running the services used in this CodeJam locally 🐳 , checkout how you will need to configure the Receiver HTTP Adapter in the [Configure HTTP adapter in Cloud Integration section](../../exercises/optional-01-running-locally/README.md#configure-http-adapter-in-cloud-integration) of the optional exercise 01.
+
 Once you've carried out all the steps above, your integration flow will look like the screenshots below.
 
 ![Main integration process](assets/main-integration-process.png)

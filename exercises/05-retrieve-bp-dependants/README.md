@@ -186,6 +186,8 @@ To include the API Key in our request, we will first retrieve the secure paramet
   | *Authenticaton*   | None                                                                                                                   |
   | *Request Headers* | apiKey                                                                                                                 |
 
+> If you are running the services used in this CodeJam locally 🐳 , checkout how you will need to configure the Receiver HTTP Adapter in the [Configure HTTP adapter in Cloud Integration section](../../exercises/optional-01-running-locally/README.md#configure-http-adapter-in-cloud-integration) of the optional exercise 01.
+
 We are almost done, we just need to define the property that the script is reading and we are ready to deploy the integration flow.
 
 👉 Add a new exchange property in the `Set employee id and country` content modifier with the same name specified in the Groovy script `eu-bp-dependants-api-key-alias`. Set as the value an external parameter with the same name - `eu-bp-dependants-api-key-alias` -  and set as the default value the name of the secure parameter that we deployed before, e.g. `bp-dependants-eu`.
