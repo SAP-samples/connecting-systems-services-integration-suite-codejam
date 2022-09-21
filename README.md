@@ -42,8 +42,8 @@ See below for an overview of the exercises part of this CodeJam.
 
 * Please ensure that you have completed all the [prerequisites](prerequisites.md).
 * Exercises:
-  * [Exercise 01 - Getting familiar with the SAP API Business Hub](./exercises/01-getting-familiar-api-business-hub/)
-  * [Exercise 02 - Exploring the mock services (Cloud Integration)](./exercises/02-exploring-the-mock-services/)
+  * [Exercise 01 - Getting familiar with the SAP API Business Hub](./exercises/01-getting-familiar-api-business-hub/README.md#exercise-01---getting-familiar-with-the-sap-api-business-hub)
+  * [Exercise 02 - Exploring the mock services (Cloud Integration)](./exercises/02-exploring-the-mock-services/README.md)
   * [Exercise 03 - Build our first integration flow](./exercises/03-build-first-integration-flow/)
   * [Exercise 04 - Send messages and monitor our integration flow](./exercises/04-send-messages-and-monitor/)
   * [Exercise 05 - Retrieve Business Partner dependant's information](./exercises/05-retrieve-bp-depedants/)
