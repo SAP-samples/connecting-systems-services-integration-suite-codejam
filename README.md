@@ -32,6 +32,8 @@ The prerequisites to follow the exercises in this repository, including hardware
 
 The material consists of a series of exercises. These exercises build on each other and should be completed in the given order. For example, we start by creating a simple integration flow, and we will extend it in the subsequent exercises.
 
+The repository includes some [slides](slides.md), which will be used when running an SAP CodeJam event. The slides were built using [Marp](https://github.com/marp-team/marp/) and an HTML export is included [here](slides.html).
+
 ## Exercises
 
 During the CodeJam you will complete each exercise one at a time. At the end of each exercise, questions are included to help you think about the content just covered and are to be discussed with the entire CodeJam class, led by the instructor, when everyone has finished that exercise.
@@ -43,8 +45,8 @@ See below for an overview of the exercises part of this CodeJam.
 * Please ensure that you have completed all the [prerequisites](prerequisites.md).
 * Exercises:
   * [Exercise 01 - Getting familiar with the SAP API Business Hub](./exercises/01-getting-familiar-api-business-hub/README.md#exercise-01---getting-familiar-with-the-sap-api-business-hub)
-  * [Exercise 02 - Exploring the mock services (Cloud Integration)](./exercises/02-exploring-the-mock-services/README.md#exercise-02---exploring-the-mock-services)
-  * [Exercise 03 - Build our first integration flow](./exercises/03-build-first-integration-flow/README.md#exercise-03---building-our-first-integration-flow)
+  * [Exercise 02 - Exploring the mock services](./exercises/02-exploring-the-mock-services/README.md#exercise-02---exploring-the-mock-services)
+  * [Exercise 03 - Build our first integration flow (Cloud Integration)](./exercises/03-build-first-integration-flow/README.md#exercise-03---building-our-first-integration-flow)
   * [Exercise 04 - Send messages and monitor our integration flow](./exercises/04-send-messages-and-monitor/README.md#exercise-04---sending-messages-and-monitoring-our-integration-flow)
   * [Exercise 05 - Retrieve Business Partner dependant's information](./exercises/05-retrieve-bp-dependants/README.md#exercise-05---retrieve-business-partner-dependants-information)
   * [Exercise 06 - Add the America's instance of the Business Partner Dependants service](./exercises/06-add-americas-bp-dependants/README.md#exercise-06---add-the-americas-instance-of-the-business-partner-dependants-service)
