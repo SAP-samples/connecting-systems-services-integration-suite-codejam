@@ -32,7 +32,7 @@ The prerequisites to follow the exercises in this repository, including hardware
 
 The material consists of a series of exercises. These exercises build on each other and should be completed in the given order. For example, we start by creating a simple integration flow, and we will extend it in the subsequent exercises.
 
-The repository includes some [slides](slides.md), which will be used when running an SAP CodeJam event. The slides were built using [Marp](https://github.com/marp-team/marp/) and an HTML export is included [here](slides.html). You can also [preview the slides here](https://htmlpreview.github.io/?https%3A%2F%2Fgithub.com%2FSAP-samples%2Fconnecting-systems-services-integration-suite-codejam%2Fblob%2Fmain%2Fslides.html=&f=5#6).
+The repository includes some [slides](slides.md), which will be used when running an SAP CodeJam event. The slides were built using [Marp](https://github.com/marp-team/marp/) and an HTML export is included [here](slides.html). You can also [preview the slides here](https://htmlpreview.github.io/?https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam/blob/main/slides.html).
 
 ## Exercises
 
