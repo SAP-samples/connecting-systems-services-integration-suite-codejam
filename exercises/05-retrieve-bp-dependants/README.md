@@ -191,7 +191,12 @@ To include the API Key in our request, we will first retrieve the secure paramet
 
 We are almost done, we just need to define the property that the script is reading and we are ready to deploy the integration flow.
 
-👉 Add a new exchange property in the `Set employee id and country` content modifier with the same name specified in the Groovy script `eu-bp-dependants-api-key-alias`. Set as the value an external parameter with the same name - `eu-bp-dependants-api-key-alias` -  and set as the default value the name of the secure parameter that we deployed before, e.g. `bp-dependants-eu`.
+👉 Add a new exchange property in the `Set employee id and country` content modifier with the same name specified in the Groovy script `eu-bp-dependants-api-key-alias`. Set as the value an external parameter with the same name - `{{eu-bp-dependants-api-key-alias}}` -  and set as the default value the name of the secure parameter that we deployed before, e.g. `bp-dependants-eu`. In the end, the Content Modifier properties should look like the screenshot below.
+
+![Set employee id and country Content Modifier - Exchange properties](assets/content-modifier-records.png)
+<p align = "center">
+<i>Set employee id and country Content Modifier - Exchange properties</i>
+</p>
 
 ## Deploy
 
