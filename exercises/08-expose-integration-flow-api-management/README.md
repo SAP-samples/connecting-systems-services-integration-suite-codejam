@@ -61,7 +61,7 @@ Now that we've created the `Request_Employee_Dependants_v1` API, we can communic
 
 - *From the API Management UI*
 
-    Go to the API and *"try out"* the API from the `Resources` tab.
+    👉 Go to the API and *"try out"* the API from the `Resources` tab.
 
     <p align = "center">
         <img alt="Send message to integration flow via API Management UI" src="assets/test-integration-flow-from-api-management.gif" width="100%"/><br/>
@@ -69,17 +69,22 @@ Now that we've created the `Request_Employee_Dependants_v1` API, we can communic
     </p>
 
     > ⚠️ The response is an HTTP 401. Why do you think we get that error? Are we missing something in our request? ❓❓
+        <details>
+        <summary>Hint 🔦</summary>
+        <br>
+        A Bearer token. The same that we send when communicating directly with Cloud Integration.
+        </details>
 
 - *From Postman*
   
-    Update the `proxy_url` variable in the `API Management` Postman environment with the API Proxy URL that's in the API.
+    👉 Update the `proxy_url` variable in the `API Management` Postman environment with the API Proxy URL that's in the API and send a message to the integration flow by using the `api-management > Request Employee Dependants Proxy` request in Postman.
 
     <p align = "center">
         <img alt="API Proxy URL" src="assets/api-proxy-url.png" width="85%"/><br/>
         <i>API Proxy URL</i>
     </p>
 
-    Send a message to the integration flow by using the `api-management > Request Employee Dependants Proxy` request.
+    > 👀 In the gif below, you'll notice that you need to specify a `Bearer Token` in the Authorization tab of the request. This is because we are not managing the authentication process with Cloud Integration in API Management. We will alter this behaviour in the [next section](#add-policies-to-the-request_employee_dependants_v1-api).
 
     ![Send message via API Management from Postman](assets/send-message-via-api-management-from-postman.gif)
     <p align = "center">
