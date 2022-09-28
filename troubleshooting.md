@@ -48,6 +48,9 @@ This page intends to capture common problems that you might face while going thr
     <i>Deploy status - HTTP address error</i>
     </p>
 
+- #### SecureStoreException: Secure Parameter not available
+    Check the value set in the integration flow external parameters, e.g. `eu-bp-dependants-api-key-alias` or `americas-bp-dependants-api-key-alias`. This value is case-sensitive and needs to match the name of the deployed component(s) in Security Material. 
+
 - #### HTTP 401 Unauthorized error when sending requests to the integration flow
     1. Ensure that you are including authorization details in your request. In our case, that would be a Bearer token in the Authorization HTTP header.
     2. If the Authorization header is set, the Bearer token may have expired. Refresh the token by sending a request to the token URL (In Postman collection - `cloud-integration > POST Token`) and then retry sending the request to the integration flow.
