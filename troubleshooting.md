@@ -48,6 +48,10 @@ This page intends to capture common problems that you might face while going thr
     <i>Deploy status - HTTP address error</i>
     </p>
 
+- #### OpenConnectorsException: Invalid Organisation or User secret provided
+    1. Check that the details of the credentials deployed are correct. 
+    2. It is possible that the instance of OpenConnectors that you are communicating with differs from the one configured in the integration flow. Check that the hostname, in the URL configured in the `Send BP Dependants Request Log to BigQuery` integration flow, is the same that you see when interacting with the API via the OpenConnector UI, e.g. https://api.openconnectors.eu10.ext.hana.ondemand.com, https://api.openconnectors.us10.ext.hana.ondemand.com or https://api.openconnectors.trial.us10.ext.hana.ondemand.com. This will be different depending on the region (us10, eu10, etc.) or environment you are using (free tier or trial).
+
 - #### SecureStoreException: Secure Parameter not available
     Check the value set in the integration flow external parameters, e.g. `eu-bp-dependants-api-key-alias` or `americas-bp-dependants-api-key-alias`. This value is case-sensitive and needs to match the name of the deployed component(s) in Security Material. 
 
