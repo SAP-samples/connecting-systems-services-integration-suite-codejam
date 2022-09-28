@@ -121,6 +121,7 @@ We've done quite a few things already. We can run a test in our integration flow
 </p>
 
 Below, are the steps that you need to carry out to run a simulation:
+- Select a connection (arrow)
 - Add a simulation start point
 - Add a simulation end point
 - Define the headers, properties, body of our message
