@@ -109,6 +109,8 @@ Now that our Open Connectors credentials are in place, we can proceed to import 
 
 👉 Go to the integration package and import the [Send BP Dependants Request Log to BigQuery integration flow](../../assets/cloud-integration/Send%20BP%20Dependants%20Request%20Log%20to%20BigQuery.zip) by clicking Add > Integration Flow and upload the integration flow. Once uploaded, configure it by setting the external parameters and deploy it.
 
+> ⚠️ When configuring the integration flow, double check the hostname in the BASE URI field. Depending on the region (eu10, us10, etc.)/environment (free tier/trial) you are working on, the hostname of the URL might be different from the one you are accessing in the OpenConnectors UI.
+
 ![Import Request Log iFlow](assets/import-request-log-to-bq-iflow.gif)
 <p align = "center">
 <i>Import Request Log iFlow</i>
