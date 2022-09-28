@@ -37,6 +37,10 @@ This page intends to capture common problems that you might face while going thr
 - #### Failed to create route - HTTP address already registered for another iflow
     You can face this error if you are trying to deploy an integration whose HTTP sender adapter is configured with the same address as another integration flow that's already deployed. There are two possible solutions to this problem:
     1. Change the address configured in the HTTP sender adapter of the integration flow that you are trying to deploy, e.g. add a suffix `-ex5`
+    <p align = "center">
+        <img alt="Address in HTTP sender adapter" src="assets/address-sender-http-adapter.png" width="90%"/><br/>
+        <i>Address in HTTP sender adapter</i>
+    </p>
     2. Undeploy the previous integration flow
 
     ![Deploy status - HTTP address error](assets/deploy-status-http-address-error.png)
