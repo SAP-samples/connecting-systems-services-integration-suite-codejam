@@ -60,7 +60,7 @@ We will process the response by first converting the JSON response to XML. Once 
 <i>Process mock service reponse - JSON to XML Converter and Content Modifier</i>
 </p>
 
-👉 First, add another `JSON to XML converter` after the Request Reply step. Then, add a `Content Modifier` and create a new property called `employee_country`. Given that our payload is in XML format, we can use XPath to retrieve the . Set `/d/to_BusinessPartnerAddress/results/Country` as the XPath.
+👉 First, add another `JSON to XML converter` after the Request Reply step. Then, add a `Content Modifier` and create a new property called `employee_country`. Given that our payload is in XML format, we can use XPath to retrieve the employee's country from the to_BusinessPartnerAddress structure. Set `XPath` as the *Source Type*, `/d/to_BusinessPartnerAddress/results/Country` as the *Source Value* and `java.lang.String` as the *Data Type*.
 
 Our response payload contains a field that we can use as "root node" - `d`. We don't need to add a root node so we can unselect the `Add XML Root Element checkbox` when configuring the converter.
 
