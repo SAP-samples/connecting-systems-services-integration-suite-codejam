@@ -60,7 +60,13 @@ This page intends to capture common problems that you might face while going thr
     2. If the Authorization header is set, the Bearer token may have expired. Refresh the token by sending a request to the token URL (In Postman collection - `cloud-integration > POST Token`) and then retry sending the request to the integration flow.
 
 - #### HTTP 403 Forbidden error message when posting a message to SAP Cloud Integration
-    It's an HTTP 403, not an HTTP 401... meaning that you are authenticating well to the service but the user you are using for communication doesn't have the right roles assigned to it. Make sure that the user has the ESBMessagingSend.send role in the BTP Cockpit. See the roles set up for the instance in the [prerequisites - Create SAP Cloud Integration runtime client credentials](prerequisites.md#create-sap-cloud-integration-runtime-client-credentials).
+    It's an HTTP 403, not an HTTP 401... meaning that you are authenticating well to the service but the user you are using for communication doesn't have the right roles assigned to it. We can check two things here:
+    1. Make sure that the user has the ESBMessagingSend.send role in the BTP Cockpit. See the roles set up for the instance in the [prerequisites - Create SAP Cloud Integration runtime client credentials](prerequisites.md#create-sap-cloud-integration-runtime-client-credentials).
+    2. The HTTP sender adapter should have the CSRF Protected checkbox unchecked. If it is checked, you will get an HTTP 403 error.
+        <p align = "center">
+            <img alt="Unchecked CSRF protected in HTTP sender adapter" src="assets/csrf-protected-unchecked.png" width="70%"/><br/>
+            <i>Unchecked CSRF protected in HTTP sender adapter</i>
+        </p>
 
 - #### HTTP 404 Not Found when sending requests to the integration flow
     1. Ensure that the deployment of the integration flow that you are trying to send a message has completed. It might still be in the deploying status.
