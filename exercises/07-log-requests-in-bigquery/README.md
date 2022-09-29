@@ -23,6 +23,8 @@ Before we can configure the connectivity between Open Connectors and BigQuery, w
 
 👉 In Google Cloud Platform, select the project and go to `API & Services > OAuth consent screen` - https://console.cloud.google.com/apis/credentials/consent. Set the `User Type` to `Internal` and the app configuration similar to the one in the screenshot below.
 
+> If you aren't able to set the `User Type` to `Internal` and need to select `External`, once completed the OAuth consent screen configuration, you will need to `Publish the application` and confirm that you want to publish it. If you don't do this, OpenConnectors will not be able to authenticate against Google Cloud.
+
 <p align = "center">
 <img alt="OAuth consent screen" src="assets/oauth-consent-screen.png" width="66%"/><br/>
 <i>OAuth consent screen</i>
@@ -65,6 +67,8 @@ Access the Open Connectors UI, from within the SAP Integration Suite landing pag
 </p>
 
 👉  In Open Connectors, go to Connectors and search for BigQuery and select Authenticate. It will open the configuration screen to create a new instance. Enter the required information and complete the authorization flow to grant Open Connectors access to BigQuery.
+
+> ⚠️ If you set the `User Type` to `External`, remember that you will need to `Publish the application` and confirm that you want to publish it before creating the instance. If not, OpenConnectors will not be able to authenticate against Google Cloud.
 
 ![Create BigQuery instance in Open Connectors](assets/create-bigquery-instance.gif)
 <p align = "center">
