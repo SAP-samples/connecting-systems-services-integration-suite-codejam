@@ -14,7 +14,7 @@ Now that we are familiar with the basics of SAP Cloud Integration, we will start
 <i>Integration Flow - End of Exercise 05</i>
 </p>
 
-## Design
+## Design > Integrations
 
 👉 Let's start by making a copy of the integration flow we created in Exercise 03, add the `- Exercise 05` suffix to the name and open it.
 

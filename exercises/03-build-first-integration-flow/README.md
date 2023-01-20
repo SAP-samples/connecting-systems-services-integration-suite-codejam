@@ -107,21 +107,21 @@ Also, SAP Cloud Integration support the [Camel Simple expression language](https
 
 You set up SAP Integration Suite and activated several capabilities as part of the prerequisites of this SAP CodeJam. We now must access the Cloud Integration workspace to build our first integration flow.
 
-👉 Go to the BTP Cockpit, open the SAP Integration Suite application from within Services > Instances and Subscriptions, and then choose the *Design, Develop, and Operate Integration Scenarios* tile.
+👉 Go to the BTP Cockpit, open the SAP Integration Suite application from within Services > Instances and Subscriptions, and then choose the expand the *Design section* and click *Integrations*.
 
 ![Accessing SAP Cloud Integration](assets/accessing-cloud-integration.gif)
 
 We are now on the landing page of SAP Cloud Integration. The page is divided into the following sections: Discover, Design, Monitor, and Settings. In this CodeJam, we will interact the most with Design and Monitor. Below is a brief explanation of what you can find in each section.
 
-![Cloud Integration landing page](assets/cloud_integration_landing_page.png)
+![Cloud Integration components](assets/cloud_integration_components.png)
 
-- *Discover*: Here, you can find predefined integration content provided by SAP that you can use out of the box and adapt to your requirements.
-- *Design*: This is where you design your integration content. It contains the graphical integration flow modelling environment. You will find a list of integration packages defined for the tenant. When you select an integration package, you can find the integration flows (and other artefacts) defined for the package (on the `Artifacts` tab).
-- *Monitor*: This is where you can monitor your integration flow. You also use this section to manage additional artefacts that you deploy on your tenant to complement your integration flows (for example, User Credential artefacts to configure connections using basic authentication).
+- *Discover > Integrations*: Here, you can find predefined integration content provided by SAP that you can use out of the box and adapt to your requirements.
+- *Design > Integrations*: This is where you design your integration content. It contains the graphical integration flow modelling environment. You will find a list of integration packages defined for the tenant. When you select an integration package, you can find the integration flows (and other artefacts) defined for the package (on the `Artifacts` tab).
+- *Monitor > Integrations*: This is where you can monitor your integration flow. You also use this section to manage additional artefacts that you deploy on your tenant to complement your integration flows (for example, User Credential artefacts to configure connections using basic authentication).
 
 ## Design
 
-Let's jump to the Design section to start developing our integration flow. Before designing our integration flow, we will need to create an integration package. Cloud Integration allows us to assemble integration contents, e.g. integration flows, message mappings, value mappings, scripts, and APIs, into packages so that they can be part of our integration scenarios.
+Let's jump to the *Design > Integrations* component to start developing our integration flow. Before designing our integration flow, we will need to create an integration package. Cloud Integration allows us to assemble integration contents, e.g. integration flows, message mappings, value mappings, scripts, and APIs, into packages so that they can be part of our integration scenarios.
 
 ![Design section](assets/design-section.png)
 

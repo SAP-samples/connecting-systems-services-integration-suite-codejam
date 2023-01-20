@@ -35,7 +35,7 @@ An OpenAPI specification for our integration flow is included in the assets of t
 
 Once we've updated the specification file, we can use this to create an API in API Management. Once the API is created we will add it to the Developer Portal. First, let's go ahead and create the API.
 
-👉 Navigate to the `Develop` section of API Management and click the `Import API` button. Select the recently modified OpenAPI spec and create a version for the API, e.g. v1. Check that everything is fine after importing the file and click the `Save` button. Once saved, you can `Deploy` the API.
+👉 Navigate to the `Develop > APIs` component of SAP Integration Suite and click the `Import API` button. Select the recently modified OpenAPI spec and create a version for the API, e.g. v1. Check that everything is fine after importing the file and click the `Save` button. Once saved, you can `Deploy` the API.
 
 <p align = "center">
     <img alt="Import OpenAPI specification to create API" src="assets/import-spec-create-api.gif" width="100%"/><br/>
@@ -44,7 +44,7 @@ Once we've updated the specification file, we can use this to create an API in A
 
 To expose the API in the Developer Portal (API Business Hub Enterprise) we first need to add it to a Product and include the API within it. Let's go ahead, create the product and publish it.
 
-👉 In the Develop section of API Management, click the `Create button` in the `Products` tab. Enter a name and a title, e.g. `Business Partners` and include the `Request_Employee_Dependants_v1` API. Lastly, click the `Publish button`.
+👉 In the `Develop > APIs` component of SAP Integration Suite, click the `Create button` in the `Products` tab. Enter a name and a title, e.g. `Business Partners` and include the `Request_Employee_Dependants_v1` API. Lastly, click the `Publish button`.
 
 > For a detailed step by step instruction on creating a Product, checkout steps 2 - 7 of the [Add an API Proxy to a Product tutorial](https://developers.sap.com/tutorials/hcp-apim-create-product.html).
 
@@ -111,7 +111,7 @@ The Business Technology Platform connectivity policy is available in the API Bus
 
 🧭 Take some time to explore what's documented for the [Business Technology Platform connectivity policy template](https://api.sap.com/policytemplate/Cloud_Platform_Connectivity). Pay particular attention to the `getcredential` and `getoauthtoken` steps as these are the steps that we will need to update later.
 
-👉 Navigate to `Discover`, search for `Connectivity`, select `Connect to SAP Business Technology Platform Services` and copy the `Business Technology Platform connectivity` artefact.
+👉 Navigate to `Discover > APIs` component of SAP Integration Suite, search for `Connectivity`, select `Connect to SAP Business Technology Platform Services` and copy the `Business Technology Platform connectivity` artefact.
 
 ![Discover - Connect to SAP Business Technology Platform service](assets/discover-connect-btp-connectivity.png)
 <p align = "center">
@@ -170,7 +170,7 @@ Note the `Application Secret` and `Application Key` that have been generated for
 
 👉 Update the `APIKey` variable in the `API Management` Postman environment with the `Application Key` of the application, e.g. *UWuWAcWMMeX5bJgd49GbBoW6keEoq7lv*. Now, try sending a request using the `api-management > After Verify API Key policy` request included in the Postman collection.
 
-🧭 We've sent several messages to our integration flow via API Management. Take some time to check the message in Cloud Integration and explore the monitoring capabilities available to us in API Management (Analyse section). You should see the successful and failed requests here. There is quite some information available to us here that can't be easily visualised in Cloud Integration and API Management gives us.
+🧭 We've sent several messages to our integration flow via API Management. Take some time to check the message in Cloud Integration and explore the monitoring capabilities available to us in API Management (`Monitor > APIs`, Analyze section). You should see the successful and failed requests here. There is quite some information available to us here that can't be easily visualised in Cloud Integration and API Management gives us.
 
 ![API Management - Analyse section](assets/api-management-analyse.png)
 <p align = "center">

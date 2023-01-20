@@ -34,6 +34,15 @@ The material consists of a series of exercises. These exercises build on each ot
 
 The repository includes some [slides](slides.md), which will be used when running an SAP CodeJam event. The slides were built using [Marp](https://github.com/marp-team/marp/) and an HTML export is included [here](slides.html). You can also [preview the slides here](https://htmlpreview.github.io/?https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam/blob/main/slides.html).
 
+> ❗️❗️ The UX of Integration Suite was harmonized a couple of months after the SAP CodeJam content was created, see [roadmap item](https://roadmaps.sap.com/board?PRODUCT=000D3A47875C1EDB98A8A910864AC24B&q=Unified&range=2022Q1-LAST#;INNO=000D3AA914A11EDBBA8EE7A803212203). Some text and screenshots included in this material has been updated to reflect this. That said, if the UI in screenshot/video doesn't impact the learning experience, it wasn't modified. ❗️❗️
+> 
+> In the new UI, the different capabilities (services) are accessible from the left hand menu. As you can see in the screenshot below, when developing/designing integrations or APIs, they are both under the *Design* section. Sections that were specific to a particular capability might only list the details for that capability, e.g. the *Test* section only includes API. The items listed under each section will vary depending on the capabilities that have been enabled in SAP Integration Suite. 
+>
+> <p align = "center">
+>  <img alt="SAP Integration Suite - Harmonised UX" src="assets/integration-suite-newui.png" width="100%"/><br/>
+>  <i>SAP Integration Suite - Harmonised UX</i>
+> </p>
+
 ## Exercises
 
 During the CodeJam you will complete each exercise one at a time. At the end of each exercise, questions are included to help you think about the content just covered and are to be discussed with the entire CodeJam class, led by the instructor, when everyone has finished that exercise.
@@ -81,4 +90,4 @@ For additional support, [ask a question in SAP Community](https://answers.sap.co
 Please send a pull request if you wish to contribute code or offer fixes or improvements. Due to legal reasons, contributors will need to accept a DCO when they create the first pull request for this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
 
 ## License
-Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
+Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
