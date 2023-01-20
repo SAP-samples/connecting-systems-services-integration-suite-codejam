@@ -46,11 +46,11 @@ The response contains Business Partner (employee) data, as expected, and address
 
 We've successfully sent a message to our integration flow. Now, let's have a look at the monitoring section to check the status of messages sent to our Cloud Integration tenant.
 
-## Monitoring
+## Monitor > Integrations
 
 SAP Cloud Integration provides us monitoring capabilities out-of-the-box. We can check the status of messages and integration content artefacts for our tenant via the Monitor section. 
 
-👉 Go to the Monitor section of SAP Cloud Integration. A start page like the one below will be on display.
+👉 Go to the *Monitor > Integrations component* of the SAP Integration Suite. A page like the one below will be on display.
 
 ![Monitor section](assets/monitoring.png)
 <p align = "center">

@@ -103,7 +103,7 @@ Access the Open Connectors UI, from within the SAP Integration Suite landing pag
 
 Before we can jump to add the necessary flow steps in our integration flow, we will first deploy the Open Connectors instance credentials in SAP Cloud Integration. These credentials will then be configured in the adapter when setting up a new receiver participant.
 
-👉 Go to your SAP Cloud Integration instance and create/deploy a new user credential (`Monitor > Manage Security > Security Material`) for BigQuery. This will be used by the integration flow to communicate with BigQuery.
+👉 Go to your SAP Cloud Integration instance and create/deploy a new user credential (`Monitor > Integrations > Manage Security > Security Material`) for BigQuery. This will be used by the integration flow to communicate with BigQuery.
 
 | Name        | Type            | Fields                                                                       |
 | ----------- | --------------- | ---------------------------------------------------------------------------- |
@@ -138,7 +138,7 @@ Now that we have a basic understanding of why and how we can decouple request lo
 <i>Add Content Modifier and DataStore</i>
 </p>
 
-### Design
+### Design > Integrations
 
 👉 Similar to previous exercises, let's start by making a copy of the integration flow we created in the previous exercises and add the `- Exercise 07` suffix to the name and open it.
 
@@ -178,7 +178,7 @@ That was simple, wasn't it?  We are now ready to deploy our integration flow.
 Our integration flow is now ready. Let's send some messages to it using Postman. 
 
 👉 Open the `Request Employee Dependants - Exercise 07` request under the cloud-integration folder in the Postman collection and test the following scenarios:
-- Send a request and check the Data Store (`Monitor > Manage Stores > Data Stores`). You will see that there is a new entry in the Data Store.
+- Send a request and check the Data Store (`Monitor > Integrations > Manage Stores > Data Stores`). You will see that there is a new entry in the Data Store.
 
 <p align = "center">
     <img alt="Data Store entry" src="assets/data-store-entry.jpg" width="100%"/><br/>

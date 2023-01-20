@@ -16,7 +16,7 @@ Now that we are familiar with the basics of SAP Cloud Integration.....
 
 At the end of this exercise, you'll have successfully added America's instance of Business Partner service to the integration flow.
 
-## Design
+## Design > Integrations
 
 👉 Let's start by making a copy of the integration flow we created in Exercise 05, add the `- Exercise 06` suffix to the name and open it.
 

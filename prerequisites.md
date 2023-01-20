@@ -125,7 +125,14 @@ From the BTP Cockpit:
 
 ### Set up API Management capability
 
-The first time you access the API Management capability you will be prompted to complete the setup. Enter a host alias, add a notification contact (your email address) and click the `Set Up` button on the upper right corner.
+Before being able to access API Management, you will need to complete the setup. Go to the API Management settings by navigating within the Integration Suite UI to *Settings > APIs*.
+
+<p align = "center">
+  <img alt="API Management settings" src="assets/api-management-settings.png" width="100%"/><br/>
+  <i>API Management settings</i>
+</p>
+
+Enter a host alias, add a notification contact (your email address) and click the `Set Up` button on the upper right corner.
 
 <p align = "center">
   <img alt="Set up API Management capability" src="assets/set-up-api-management.jpg" width="100%"/><br/>
