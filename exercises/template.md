@@ -16,7 +16,7 @@ Justo donec enim diam vulputate ut pharetra. Pulvinar proin gravida hendrerit le
 
 ## Summary
 
-Now that you are familiar with the basic functionality of SAP API Business Hub and the Business Partner API, we are ready to start interacting with the services from which our integration will be extracting data.
+Now that you are familiar with the basic functionality of SAP Business Accelerator Hub and the Business Partner API, we are ready to start interacting with the services from which our integration will be extracting data.
 
 ## Further reading
 

@@ -119,7 +119,7 @@ Now that you are familiar with the APIs and the data included in their responses
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
 1. Which API methods, of the different mock services, do you consider we will need for our integration?
-2. OpenAPI specs are included in the SAP API Business Hub, do you know where you can find them? What if you import one of them to Postman?
+2. OpenAPI specs are included in the SAP Business Accelerator Hub, do you know where you can find them? What if you import one of them to Postman?
 
 ## Next
 
