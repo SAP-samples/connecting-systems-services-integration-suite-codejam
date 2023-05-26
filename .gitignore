@@ -1,3 +1,8 @@
 .DS_Store
 .vscode/
-_site/
+
+# Jekyll - generate static website
+_site
+_config.yml
+Gemfile
+Gemfile.lock
