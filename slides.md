@@ -15,13 +15,51 @@ style: |
   section.centersingleimage p {
     text-align: center;
   }
-  
----
-<!-- _class: lead -->
 
+  section.frontpage h1 {
+    font-weight: bold;
+    font-size: 30px
+  }
+
+  section.frontpage p {
+    font-size: 20px
+  }
+
+<!-- ---
+
+<!-- _class: frontpage 
+<br/><br/><br/><br/><br/><br/><br/><br/>
+# SAP CodeJam: Connecting systems and services using SAP Integration Suite
+
+<br/>
+
+Antonio Maradiaga 
+*Developer Advocate @ SAP*
+
+![bg](assets/sitbarcelona-logo.jpg)
+![bg vertical](assets/TechEd_Front.png)
+
+-->
+<!-- 
 # SAP CodeJam
+*Connecting systems and services using
+SAP Integration Suite*
 
-## [Connecting systems and services using SAP Integration Suite](https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam)
+<br/>
+Antonio Maradiaga
+
+*Developer Advocate @ SAP*
+
+<br/><br/>
+June, 2023
+
+![bg left:70% 90%](assets/art/CodeJam_Art_Madrid.png)
+-->
+
+---
+<!-- paginate: false -->
+
+![bg](assets/art/CodeJam_Art_Madrid.png)
 
 ---
 <!-- paginate: true -->
@@ -58,7 +96,7 @@ style: |
 
 # SAP CodeJam - Exercises
 
-* [Exercise 01 - Getting familiar with the SAP API Business Hub](./01-getting-familiar-api-business-hub/README.md#exercise-01---getting-familiar-with-the-sap-api-business-hub)
+* [Exercise 01 - Getting familiar with the SAP Business Accelerator Hub](./01-getting-familiar-business-accelerator-hub/README.md#exercise-01---getting-familiar-with-the-sap-business-accelerator-hub)
 * [Exercise 02 - Exploring the mock services](./02-exploring-the-mock-services/README.md#exercise-02---exploring-the-mock-services)
 * [Exercise 03 - Build our first integration flow](./03-build-first-integration-flow/README.md#exercise-03---building-our-first-integration-flow)
 * [Exercise 04 - Send messages and monitor our integration flow](./04-send-messages-and-monitor/README.md#exercise-04---sending-messages-and-monitoring-our-integration-flow)
@@ -72,9 +110,9 @@ style: |
 --- 
 <!-- _class: centersingleimage -->
 
-# Exercise 01 - Getting familiar with the SAP API Business Hub
+# Exercise 01 - Getting familiar with the SAP Business Accelerator Hub
 
-![width:25cm height:14cm](exercises/01-getting-familiar-api-business-hub/assets/S4HANACloud-API-BusinessPartner.png)
+![width:25cm height:14cm](exercises/01-getting-familiar-business-accelerator-hub/assets/S4HANACloud-API-BusinessPartner.png)
 
 --- 
 <!-- _class: centersingleimage -->
