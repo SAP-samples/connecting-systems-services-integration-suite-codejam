@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.bp_dependants_america.name }}-mock-server
+  namespace: {{ .Values.namespace }}
+  annotations:
+    sidecar.istio.io/inject: 'true'
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.bp_dependants_america.name }}-mock-server
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: {{ .Values.bp_dependants_america.name }}-mock-server
+        version: v1
+    spec:
+      containers:
+        - name: {{ .Values.bp_dependants_america.name }}-mock-server
+          image: {{ .Values.bp_dependants_america.image }}
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env:
+            - name: COUNTRIES
+              value: {{ .Values.bp_dependants_america.countries }}
+            - name: MOCK_API_KEY
+              value: {{ .Values.bp_dependants_america.mock_api_key }}
+          imagePullPolicy: Always
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Values.bp_dependants_america.name }}-mock-server-service
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.bp_dependants_america.name }}-mock-server
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 443
+      targetPort: 8080
+  selector:
+    app: {{ .Values.bp_dependants_america.name }}-mock-server
+  type: ClusterIP
+  sessionAffinity: None
+---
+apiVersion: gateway.kyma-project.io/v1beta1
+kind: APIRule
+metadata:
+  labels:
+    app: {{ .Values.bp_dependants_america.name }}-mock-server
+  name: {{ .Values.bp_dependants_america.name }}-mock-server-service
+  namespace: {{ .Values.namespace }}
+spec:
+  gateway: kyma-gateway.kyma-system.svc.cluster.local
+  host: {{ .Values.bp_dependants_america.name }}-svc
+  rules:
+    - accessStrategies:
+        - handler: noop
+      methods:
+        - GET
+      path: /.*
+  service:
+    name: {{ .Values.bp_dependants_america.name }}-mock-server-service
+    port: 443

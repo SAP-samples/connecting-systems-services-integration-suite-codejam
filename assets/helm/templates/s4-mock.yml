@@ -1,0 +1,71 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Values.s4hana.name }}-mock-server
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.s4hana.name }}-mock-server
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: {{ .Values.s4hana.name }}-mock-server
+        version: v1
+    spec:
+      containers:
+        - name: {{ .Values.s4hana.name }}-mock-server
+          image: {{ .Values.s4hana.image }}
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Values.s4hana.name }}-mock-server-service
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.s4hana.name }}-mock-server
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 443
+      targetPort: 8080
+  selector:
+    app: {{ .Values.s4hana.name }}-mock-server
+  type: ClusterIP
+  sessionAffinity: None
+---
+apiVersion: gateway.kyma-project.io/v1beta1
+kind: APIRule
+metadata:
+  labels:
+    app: {{ .Values.s4hana.name }}-mock-server
+  name: {{ .Values.s4hana.name }}-mock-server-service
+  namespace: {{ .Values.namespace }}
+spec:
+  gateway: kyma-gateway.kyma-system.svc.cluster.local
+  host: {{ .Values.s4hana.name }}-svc
+  rules:
+    - accessStrategies:
+        - handler: noop
+      methods:
+        - GET
+      path: /.*
+  service:
+    name: {{ .Values.s4hana.name }}-mock-server-service
+    port: 443

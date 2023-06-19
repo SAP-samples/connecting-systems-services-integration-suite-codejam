@@ -1,0 +1,23 @@
+# Default values for connecting-systems-codejam.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 2
+
+namespace: intsuite-codejams
+
+bp_dependants_america:
+  name: bpd-americas
+  image: ghcr.io/sap-samples/codejam-intsuite-bp-dependants-mock-server:1.0.1
+  countries: BR,CA,CL,MX,US
+  mock_api_key: AB7E1567-2A6A-4E5D-A3B1-008B9BE6EEA2
+
+bp_dependants_europe:
+    name: bpd-europe
+    image: ghcr.io/sap-samples/codejam-intsuite-bp-dependants-mock-server:1.0.1
+    countries: CH,DE,ES,FR,GB,IT,NL,PT
+    mock_api_key: 7B32D801-EA44-4C51-A49D-2F380B3A8B06
+
+s4hana:
+  name: s4
+  image: ghcr.io/sap-samples/codejam-intsuite-s4-mock-server:1.0.1
