@@ -26,7 +26,7 @@ Once defined, you'll see an overview page that will show us the connectivity sta
 
 So far we've only registered the Cloud Connector instance against our SAP BTP subaccount. No on-premise systems are exposed via Cloud Connector yet. To expose a system we will need to add a mapping from virtual to an internal system.  Let's go ahead and do that.
 
-> The instructions below assume that you are running the SAP S/4HANA Cloud mock server locally. If you are not running it locally you can follow the instructions in the [running locally prerequisites page](../../running-locally-prerequisites.md#local-services) or just run the following command 🐳  `docker run --name s4-mock-server --hostname s4-mock-server --publish 8088:8080 -d ajmaradiaga/s4-mock-server`.
+> The instructions below assume that you are running the SAP S/4HANA Cloud mock server locally. If you are not running it locally you can follow the instructions in the [running locally prerequisites page](../../running-locally-prerequisites.md#local-services) or just run the following command 🐳  `docker run --name s4-mock-server --hostname s4-mock-server --publish 8088:8080 -d ghcr.io/sap-samples/codejam-intsuite-s4-mock-server:1.0.1`.
 
 👉  Navigate to the `Cloud to On-Premise` section of the recently defined subaccount. Click on the `Add System mapping button` and enter the following details.
 
@@ -70,7 +70,7 @@ It is also possible to [limit the accessible service for HTTP](https://help.sap.
 
 ```bash
 # Run the SAP S/4HANA Cloud mock server
-docker run --name s4-mock-server --hostname s4-mock-server --publish 8088:8080 -d ajmaradiaga/s4-mock-server
+docker run --name s4-mock-server --hostname s4-mock-server --publish 8088:8080 -d ghcr.io/sap-samples/codejam-intsuite-s4-mock-server:1.0.1
 
 # Run the Business Partner Dependants - European instance
 docker run --name bpd-europe --publish 8090:8080 --env COUNTRIES=CH,DE,ES,FR,GB,IT,NL,PT --env MOCK_API_KEY=7B32D801-EA44-4C51-A49D-2F380B3A8B06 --detach ajmaradiaga/businesspartner-dependants-mock-server
