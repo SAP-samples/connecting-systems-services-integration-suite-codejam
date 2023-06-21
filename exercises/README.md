@@ -8,7 +8,7 @@ See below for an overview of the exercises part of this CodeJam.
 
 * Please ensure you have completed all the [prerequisites](../prerequisites.md) and that you've made a copy of the [repository locally](../prerequisites.md#accessing-the-supporting-material-referenced-in-exercises).
 * Exercises:
-  * [Exercise 01 - Getting familiar with the SAP Business Accelerator Hub](./01-getting-familiar-business- accelerator-hub/README.md#exercise-01---getting-familiar-with-the-sap-business- accelerator-hub)
+  * [Exercise 01 - Getting familiar with the SAP Business Accelerator Hub](./01-getting-familiar-business-accelerator-hub/README.md)
   * [Exercise 02 - Exploring the mock services](./02-exploring-the-mock-services/README.md#exercise-02---exploring-the-mock-services)
   * [Exercise 03 - Build our first integration flow (Cloud Integration)](./03-build-first-integration-flow/README.md#exercise-03---building-our-first-integration-flow)
   * [Exercise 04 - Send messages and monitor our integration flow](./04-send-messages-and-monitor/README.md#exercise-04---sending-messages-and-monitoring-our-integration-flow)
