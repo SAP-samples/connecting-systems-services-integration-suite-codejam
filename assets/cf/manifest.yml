@@ -1,0 +1,28 @@
+---
+version: 1
+applications:
+- name: bpd-americas
+  memory: 256M
+  disk_quota: 1024M
+  instances: 1
+  docker:
+    image: ajmaradiaga/businesspartner-dependants-mock-server:latest
+  env:
+    COUNTRIES: BR,CA,CL,MX,US
+    MOCK_API_KEY: AB7E1567-2A6A-4E5D-A3B1-008B9BE6EEA2
+- name: bpd-europe
+  memory: 256M
+  disk_quota: 1024M
+  instances: 1
+  docker:
+    image: ajmaradiaga/businesspartner-dependants-mock-server:latest
+  env:
+    COUNTRIES: CH,DE,ES,FR,GB,IT,NL,PT
+    MOCK_API_KEY: 7B32D801-EA44-4C51-A49D-2F380B3A8B06
+- name: s4hana-mock
+  memory: 512M
+  disk_quota: 3072M
+  instances: 1
+  docker:
+    image: ajmaradiaga/s4-mock-server:latest
+  
