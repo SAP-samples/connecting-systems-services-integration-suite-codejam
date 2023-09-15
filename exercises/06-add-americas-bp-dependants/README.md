@@ -57,7 +57,7 @@ The Americas instance set up is very similar to the one we completed in the prev
 
 👉 Carry out the steps below:
 - *Deploy API Key*: [Deploy the Americas instance API key](../05-retrieve-bp-dependants/README.md#deploy-api-key-to-sap-cloud-integration) to the secure store
-- *Create Americas instance exchange properties*: Extend the `Set employee_id and country properties` content modifier to create a new property called `americas_countries`. The property will be assigned the value configured for the external parameter with the same name and set `US,CA,MX,CL,BR,HN` as the default value. Also, create an `americas-bp-dependants-api-key-alias` property. This property will be assigned the value configured for the external parameter with the same name and set `bp-dependants-americas` as the default value.
+- *Create Americas instance exchange properties*: Extend the `Set employee_id and country properties` content modifier to create a new property called `americas_countries`. The property will be assigned the value configured for the external parameter with the same name and set `US,CA,MX,CL,BR,HN` as the default value. Also, create an `americas-bp-dependants-api-key-alias` property. This property will be assigned the value configured for the external parameter with the same name and set `BP-Dependants-Americas` as the default value.
     ![Content Modifier - Add americas_countries properties](assets/api-key-alias-content-modifier.png)
     <p align = "center">
     <i>Content Modifier - Add americas_countries properties</i>
@@ -81,7 +81,7 @@ The Americas instance set up is very similar to the one we completed in the prev
   - Request Reply - HTTP adapter:
     | Field             | Value                                                                                                                    |
     | ----------------- | ------------------------------------------------------------------------------------------------------------------------ |
-    | *Address*         | https://businesspartner-dependants-americas-svc.c-1e90315.kyma.ondemand.com/employees/${property.employee_id}/dependants |
+    | *Address*         | https://bpd-americas.cfapps.eu10.hana.ondemand.com/employees/${property.employee_id}/dependants |
     | *Proxy Type*      | Internet                                                                                                                 |
     | *Method*          | GET                                                                                                                      |
     | *Authenticaton*   | None                                                                                                                     |
@@ -122,7 +122,7 @@ We've added a couple of local integration processes to our integration flow. Thi
 ## Further reading
 
 * [Local Integration Process](https://help.sap.com/docs/CLOUD_INTEGRATION/4b57f249012e4e1f8c15cbd5dbb4fff3/88faa5c1056c4c179a8d1967b2ce5669.html?locale=en-US)
-* [Pattern Recipient - Dynamic routing](https://api.sap.com/integrationflow/Pattern_RecipientList_DynamicRouting)
+* [Pattern Recipient - Dynamic routing](https://hub.sap.com/integrationflow/Pattern_RecipientList_DynamicRouting)
 
 ---
 

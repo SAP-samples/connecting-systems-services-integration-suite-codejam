@@ -14,7 +14,7 @@ To achieve the above we create an API in API Management that will act as a proxy
 
 In simple terms, the specification is a document that describes an API. 
 
-**Why is it important?** The OpenAPI specification is an industry-standard, it is widely adopted by different vendors/services to document their APIs and there is a [huge community](https://openapi.tools/) behind it. SAP has adopted the OpenAPI spec to document its APIs, e.g. in the SAP Business Accelerator Hub you can find the OpenAPI spec for the APIs exposed by the different products. If you download the JSON file listed within the [SAP S/4HANA Cloud Business Partner API](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) (`API resources > API specification > JSON`) and inspect it, you'll notice that it follows the OpenAPI spec `3.0.0`. Also, various SAP products, e.g. [SAP Process Automation](https://help.sap.com/docs/PROCESS_AUTOMATION/a331c4ef0a9d48a89c779fd449c022e7/609538e04bc843d887011765c14ecdda.html?locale=en-US), [API Management](https://help.sap.com/docs/SAP_CLOUD_PLATFORM_API_MANAGEMENT/66d066d903c2473f81ec33acfe2ccdb4/3ce080d478a34256b5dd4e971e7961f8.html?locale=en-US), [Cloud Integration](https://help.sap.com/docs/CLOUD_INTEGRATION/4b57f249012e4e1f8c15cbd5dbb4fff3/fb7c1df576d94516937ce773c456068a.html?locale=en-US), [SAP Data Intelligence](https://help.sap.com/docs/SAP_DATA_INTELLIGENCE/ca509b7635484070a655738be408da63/439278cbff87491c802d75de8cc5c97f.html?locale=en-US), use OpenAPI spec to define/consume APIs.
+**Why is it important?** The OpenAPI specification is an industry-standard, it is widely adopted by different vendors/services to document their APIs and there is a [huge community](https://openapi.tools/) behind it. SAP has adopted the OpenAPI spec to document its APIs, e.g. in the SAP Business Accelerator Hub you can find the OpenAPI spec for the APIs exposed by the different products. If you download the JSON file listed within the [SAP S/4HANA Cloud Business Partner API](https://hub.sap.com/api/API_BUSINESS_PARTNER/overview) (`API resources > API specification > JSON`) and inspect it, you'll notice that it follows the OpenAPI spec `3.0.0`. Also, various SAP products, e.g. [SAP Process Automation](https://help.sap.com/docs/PROCESS_AUTOMATION/a331c4ef0a9d48a89c779fd449c022e7/609538e04bc843d887011765c14ecdda.html?locale=en-US), [API Management](https://help.sap.com/docs/SAP_CLOUD_PLATFORM_API_MANAGEMENT/66d066d903c2473f81ec33acfe2ccdb4/3ce080d478a34256b5dd4e971e7961f8.html?locale=en-US), [Cloud Integration](https://help.sap.com/docs/CLOUD_INTEGRATION/4b57f249012e4e1f8c15cbd5dbb4fff3/fb7c1df576d94516937ce773c456068a.html?locale=en-US), [SAP Data Intelligence](https://help.sap.com/docs/SAP_DATA_INTELLIGENCE/ca509b7635484070a655738be408da63/439278cbff87491c802d75de8cc5c97f.html?locale=en-US), use OpenAPI spec to define/consume APIs.
 
 <p align = "center">
     <img alt="Business Partner API - specification" src="assets/business-partner-open-api-spec.png" width="90%"/><br/>
@@ -102,14 +102,14 @@ To communicate with the integration flow we need to send a Bearer token in the r
 Although it is possible to create a service key and share the details with a new consumer of the service, this approach might not be ideal as an administrator will need to be involved whenever new/update credentials is required. It is not self-service, meaning we cannot use the Business Accelerator Hub Enterpise to manage our application/credentials.
 
 Given that the communication to our integration flow can now go through API Management, we can use API Management to change how we keep our service secure. In our case, we will apply the following policies:
-1. [Business Technology Platform connectivity](https://api.sap.com/policytemplate/Cloud_Platform_Connectivity): This policy template helps us communicate with APIs hosted on SAP BTP and that are protected by the BTP OAuth, e.g. our integration flow. The template will be used to authenticate against Cloud Integration using our [existing service key](../../prerequisites.md#create-sap-cloud-integration-runtime-client-credentials).
+1. [Business Technology Platform connectivity](https://hub.sap.com/policytemplate/Cloud_Platform_Connectivity): This policy template helps us communicate with APIs hosted on SAP BTP and that are protected by the BTP OAuth, e.g. our integration flow. The template will be used to authenticate against Cloud Integration using our [existing service key](../../prerequisites.md#create-sap-cloud-integration-runtime-client-credentials).
 2. [Verify API Key](https://help.sap.com/docs/SAP_CLOUD_PLATFORM_API_MANAGEMENT/66d066d903c2473f81ec33acfe2ccdb4/4d15a0427494452dbb42a319e9bb420f.html?locale=en-US): Creating an application in the Developer Portal will generate for us an Application Key. We can use this Application Key to authenticate our calls to a Product API in API Management.
 
 ### Business Technology Platform connectivity
 
-The Business Technology Platform connectivity policy is available in the Business Accelerator Hub - https://api.sap.com/policytemplate/Cloud_Platform_Connectivity. To import it into our tenant, we will need to copy it from the Discover section in API Management.
+The Business Technology Platform connectivity policy is available in the Business Accelerator Hub - https://hub.sap.com/policytemplate/Cloud_Platform_Connectivity. To import it into our tenant, we will need to copy it from the Discover section in API Management.
 
-🧭 Take some time to explore what's documented for the [Business Technology Platform connectivity policy template](https://api.sap.com/policytemplate/Cloud_Platform_Connectivity). Pay particular attention to the `getcredential` and `getoauthtoken` steps as these are the steps that we will need to update later.
+🧭 Take some time to explore what's documented for the [Business Technology Platform connectivity policy template](https://hub.sap.com/policytemplate/Cloud_Platform_Connectivity). Pay particular attention to the `getcredential` and `getoauthtoken` steps as these are the steps that we will need to update later.
 
 👉 Navigate to `Discover > APIs` component of SAP Integration Suite, search for `Connectivity`, select `Connect to SAP Business Technology Platform Services` and copy the `Business Technology Platform connectivity` artefact.
 
@@ -186,7 +186,7 @@ We've achieved a lot in this exercise. We learnt about OpenAPI specifications, a
 ## Further reading
 
 * [API Management - Security Best Practices blog post](https://blogs.sap.com/2017/08/22/sap-cloud-platform-api-management-api-security-best-practices/)
-* [Security Best Practices - Policy Templates](https://api.sap.com/package/SecurityBestPractices/policytemplate)
+* [Security Best Practices - Policy Templates](https://hub.sap.com/package/SecurityBestPractices/policytemplate)
 * [Additional Attributes in OpenAPI Specification](https://help.sap.com/docs/SAP_CLOUD_PLATFORM_API_MANAGEMENT/66d066d903c2473f81ec33acfe2ccdb4/35f357c811f546c5ae3451df42f61ea0.html?locale=en-US)
 
 ---
