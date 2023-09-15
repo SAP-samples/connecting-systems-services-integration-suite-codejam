@@ -199,7 +199,7 @@ Very few changes in our main integration flow but we got to learn about a few co
 ## Further reading
 
 * [Decouple Sender and Flows Using Data Store](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/5467c77da3064f65a5b3a9351fed7d84.html?locale=en-US)
-* [Modeling Basics - Decouple Flows Using Persistence](https://api.sap.com/integrationflow/ModelingBasics_DecoupleFlowsUsingPersistence)
+* [Modeling Basics - Decouple Flows Using Persistence](https://hub.sap.com/integrationflow/ModelingBasics_DecoupleFlowsUsingPersistence)
 
 ---
 

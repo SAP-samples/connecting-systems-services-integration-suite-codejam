@@ -85,7 +85,7 @@ Before building the integration flow, let's start with some context and talk a b
 
 Under the hood, SAP Cloud Integration runs [Apache Camel](https://camel.apache.org/) 🐪, an open-source integration framework based on the enterprise integration patterns. This means that SAP Cloud Integration supports the implementation of these patterns. The patterns are explained in detail in the [Enterprise Integration Patterns book](https://www.enterpriseintegrationpatterns.com/books1.html) by Gregor Hohpe and Bobby Woolf and as stated on the [website](https://www.enterpriseintegrationpatterns.com/patterns/messaging/), *the patterns provide a consistent vocabulary and visual notation framework to describe large-scale integration solutions across many technologies*. The Enterprise Integration Patterns book is a great place to start if you are interested in the integration topic and want to understand the underlying concepts behind the patterns and some components available in SAP Cloud Integration.
 
-The [Integration Flow Design Guidelines - Enterprise Integration Patterns package](https://api.sap.com/package/DesignGuidelinesPatterns/overview), available in the SAP Business Accelerator Hub, contain integration flows that illustrate the design of the most common Enterprise Integration Patterns. These integration flows can be used as a reference when exploring an integration pattern and seeing how you can implement it in SAP Cloud Integration. These also come in handy when implementing the integration patterns in your integration flows.
+The [Integration Flow Design Guidelines - Enterprise Integration Patterns package](https://hub.sap.com/package/DesignGuidelinesPatterns/overview), available in the SAP Business Accelerator Hub, contain integration flows that illustrate the design of the most common Enterprise Integration Patterns. These integration flows can be used as a reference when exploring an integration pattern and seeing how you can implement it in SAP Cloud Integration. These also come in handy when implementing the integration patterns in your integration flows.
 
 > ℹ️ For more information about enterprise integration patterns, see https://www.enterpriseintegrationpatterns.com/patterns/messaging/
 
@@ -218,7 +218,7 @@ HTTP Connection details:
 
 | Field           | Value                                                                                                                                          |
 | :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
-| *Address*       | https://s4-mock-server-service.c-1e90315.kyma.ondemand.com/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('${property.employee_id}') |
+| *Address*       | https://s4hana-mock.cfapps.eu10.hana.ondemand.com/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner('${property.employee_id}') |
 | *Query*         | $expand=to_BusinessPartnerAddress                                                                                                              |
 | *Proxy Type*    | Internet                                                                                                                                       |
 | *Method*        | GET                                                                                                                                            |
@@ -228,7 +228,7 @@ HTTP Connection details:
 
 Let's break down the configuration set in the HTTP adapter:
 - Connection Details:
-  - *Address*: URL of the SAP S/4HANA Cloud mock server we're connecting to, e.g., https://s4-mock-server-service.c-1e90315.kyma.ondemand.com. You'll notice that we are also including the full path and dynamically setting the value stored in the `employee_id` exchange property as part of the URL.
+  - *Address*: URL of the SAP S/4HANA Cloud mock server we're connecting to, e.g., https://s4hana-mock.cfapps.eu10.hana.ondemand.com. You'll notice that we are also including the full path and dynamically setting the value stored in the `employee_id` exchange property as part of the URL.
     > 🐪 At runtime, the ${property.employee_id} string specified in the `Address` field will be substitute with the value that is stored in the property. We created this property in the Content Modifier previously. Following this approach you can dynamically set string values with values stored in the exchange headers/properties. For more information, check out how you can use the [Camel Simple Expression language](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/4688083fad6546c1ba25a06d4ffb9fae.html?locale=en-US) in SAP Cloud Integration.
   - *Query*: Query string that we want to send with the HTTP request. In our case, we are just expanding the `to_BusinessPartnerAddress` field.
   - *Proxy*: The type of proxy that you are using to connect to the target system. In our case, we are communicating with a cloud system; therefore, we select Internet. If we would be communicating with an on-premise system, we will need to set it to On-Premise.

@@ -73,10 +73,10 @@ It is also possible to [limit the accessible service for HTTP](https://help.sap.
 docker run --name s4-mock-server --hostname s4-mock-server --publish 8088:8080 -d ghcr.io/sap-samples/codejam-intsuite-s4-mock-server:1.0.1
 
 # Run the Business Partner Dependants - European instance
-docker run --name bpd-europe --publish 8090:8080 --env COUNTRIES=CH,DE,ES,FR,GB,IT,NL,PT --env MOCK_API_KEY=7B32D801-EA44-4C51-A49D-2F380B3A8B06 --detach ajmaradiaga/businesspartner-dependants-mock-server
+docker run --name bpd-europe --publish 8090:8080 --env COUNTRIES=CH,DE,ES,FR,GB,IT,NL,PT --env MOCK_API_KEY=7B32D801-EA44-4C51-A49D-2F380B3A8B06 --detach ghcr.io/sap-samples/codejam-intsuite-bp-dependants-mock-server:1.0.1
 
 # Run the Business Partner Dependants - Americas instance
-docker run --name bpd-americas --publish 8092:8080 --env COUNTRIES=BR,CA,CL,MX,US --env MOCK_API_KEY=7AB7E1567-2A6A-4E5D-A3B1-008B9BE6EEA2 --detach ajmaradiaga/businesspartner-dependants-mock-server
+docker run --name bpd-americas --publish 8092:8080 --env COUNTRIES=BR,CA,CL,MX,US --env MOCK_API_KEY=7AB7E1567-2A6A-4E5D-A3B1-008B9BE6EEA2 --detach ghcr.io/sap-samples/codejam-intsuite-bp-dependants-mock-server:1.0.1
 ```
 
 
@@ -120,7 +120,7 @@ The tables below captures the values configured in the different Receiver HTTP a
 
 | Field                             | SAP S/4HANA Cloud mock server                              | European BP Dependants service                                            | Americas BP Dependants service                                              |
 | :-------------------------------- | :--------------------------------------------------------- | :------------------------------------------------------------------------ | :-------------------------------------------------------------------------- |
-| *Address - Protocol and Hostname* | https://s4-mock-server-service.c-1e90315.kyma.ondemand.com | https://businesspartner-dependants-europe-svc.c-1e90315.kyma.ondemand.com | https://businesspartner-dependants-americas-svc.c-1e90315.kyma.ondemand.com |
+| *Address - Protocol and Hostname* | https://s4hana-mock.cfapps.eu10.hana.ondemand.com | https://bpd-europe.cfapps.eu10.hana.ondemand.com | https://bpd-americas.cfapps.eu10.hana.ondemand.com |
 | *Proxy Type*                      | Internet                                                   | Internet                                                                  | Internet                                                                    |
 | *Location ID*                     |                                                            |                                                                           |                                                                             |
 

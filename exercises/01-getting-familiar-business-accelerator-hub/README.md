@@ -10,7 +10,7 @@ Let's start by exploring the various features of the SAP Business Accelerator Hu
 
 👉 Perform all the steps in [tutorial: Tour the SAP Business Accelerator Hub](https://developers.sap.com/tutorials/hcp-abh-getting-started.html).
 
-So far we know that it is possible to interact with the APIs available for different SAP products via the SAP Business Accelerator Hub. What other type of content can we find for a product? Let's use [SAP S/4HANA Cloud](https://api.sap.com/products/SAPS4HANACloud/overview) as an example.
+So far we know that it is possible to interact with the APIs available for different SAP products via the SAP Business Accelerator Hub. What other type of content can we find for a product? Let's use [SAP S/4HANA Cloud](https://hub.sap.com/products/SAPS4HANACloud/overview) as an example.
 
 > The categories (content) available will vary depending on the product selected. 
 
@@ -24,13 +24,13 @@ In the case of SAP S/4HANA Cloud we have the following type of content available
 - *Integrations*: Integrations between SAP S/4HANA Cloud and other SAP products and third parties.
 - *Workflow Management*: Readily available content to digitize workflows, manage decisions, gain end-to-end process visibility, and configure common processes.
 
-There is a wealth of content available for each SAP product in the SAP Business Accelerator Hub. It is likely that for common integration scenarios there will be integration content readily available in the SAP Business Accelerator Hub, e.g. integration between SAP S/4HANA Cloud and governmental institutions - [Document and Reporting Compliance](https://api.sap.com/products/SAPS4HANACloud/overview?target=SAPDocumentandReportingCompliance). If that's the case, there is no need to build an integration but this content can easily be imported into your SAP Cloud Integration tenant, configured and deployed. 
+There is a wealth of content available for each SAP product in the SAP Business Accelerator Hub. It is likely that for common integration scenarios there will be integration content readily available in the SAP Business Accelerator Hub, e.g. integration between SAP S/4HANA Cloud and governmental institutions - [Document and Reporting Compliance](https://hub.sap.com/products/SAPS4HANACloud/overview?target=SAPDocumentandReportingCompliance). If that's the case, there is no need to build an integration but this content can easily be imported into your SAP Cloud Integration tenant, configured and deployed. 
 
 ## Explore the Business Partner API available in SAP S/4HANA Cloud 
 
 As part of this CodeJam we will simulate interacting with the Business Partner data from an SAP S/4HANA system. 
 
-👉 Now that you are familiar with how to get around the SAP Business Accelerator Hub, search for the [Business Partner API](https://api.sap.com/products/SAPS4HANACloud/apis/all) available for SAP S/4HANA Cloud, try it out and get acquainted with the response of the [/A_BusinessPartner](https://api.sap.com/api/API_BUSINESS_PARTNER/tryout) method.
+👉 Now that you are familiar with how to get around the SAP Business Accelerator Hub, search for the [Business Partner API](https://hub.sap.com/products/SAPS4HANACloud/apis/all) available for SAP S/4HANA Cloud, try it out and get acquainted with the response of the [/A_BusinessPartner](https://hub.sap.com/api/API_BUSINESS_PARTNER/tryout) method.
 
 ![Business Partner (A2X) tile in SAP Business Accelerator Hub](assets/S4HANACloud-API-BusinessPartner.png)
 
@@ -46,7 +46,7 @@ Available values: to_BuPaIdentification, to_BuPaIndustry, to_BusinessPartnerAddr
 
 > Why is this important? We will be using Business Partner Address data in our integration service to know to which server we will route our request.
 
-🧭 Take some time to explore what's documented on the [Business Partner API - Overview page](https://api.sap.com/api/API_BUSINESS_PARTNER/overview). You will be able to find lots of valuable information here, e.g. attributes, authentication methods, API specifications, and configuration details. In [exercise 08](../08-expose-integration-flow-api-management/) we will explore API specifications further.
+🧭 Take some time to explore what's documented on the [Business Partner API - Overview page](https://hub.sap.com/api/API_BUSINESS_PARTNER/overview). You will be able to find lots of valuable information here, e.g. attributes, authentication methods, API specifications, and configuration details. In [exercise 08](../08-expose-integration-flow-api-management/) we will explore API specifications further.
 
 
 ## Summary
@@ -57,7 +57,7 @@ Although we focused, in this exercise, on exploring APIs.... you can also find o
 
 ## Further Study
 
-* [Explore the SAP Business Accelerator Hub Community](https://api.sap.com/community)
+* [Explore the SAP Business Accelerator Hub Community](https://hub.sap.com/community)
 * [Configure workspaces for integration content available in the SAP Business Accelerator Hub](https://help.sap.com/docs/SAP_API_BUSINESS_HUB/e56a6c50d31541ea826021dc8e721a53/8f1a5bc71eef498aa51b99e90365c66e.html?locale=en-US)
 * [SAP API Deprecation Policy](https://help.sap.com/docs/SAP_API_BUSINESS_HUB/e56a6c50d31541ea826021dc8e721a53/5cbfda5a9efe4e97a3e24ddaf7ec5c16.html?locale=en-US)
 

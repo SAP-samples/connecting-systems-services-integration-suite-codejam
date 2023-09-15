@@ -137,7 +137,7 @@ Now that we've defined our routing conditions, we can simply call the Business P
 
 We need to include an API key in the request we send to the EU instance of the Business Partner Dependants mock service. We can use the secure store in SAP Cloud Integration to securely store the API key.
 
-👉 First, copy the API Key that's included in the `BP-Dependants-EU` Postman environment. Then, go to `Monitor > Security Material`, create a Secure Parameter and deploy it
+👉 First, copy the API Key that's included in the `BP-Dependants-EU` Postman environment. Then, go to `Monitor > Integrations > Security Material`, create a Secure Parameter and deploy it
 
 ![Deploy API key as secure parameter](assets/deploy-secure-parameter.png)
 <p align = "center">
@@ -181,7 +181,7 @@ To include the API Key in our request, we will first retrieve the secure paramet
 
   | Field             | Value                                                                                                                  |
   | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
-  | *Address*         | https://businesspartner-dependants-europe-svc.c-1e90315.kyma.ondemand.com/employees/${property.employee_id}/dependants |
+  | *Address*         | https://bpd-europe.cfapps.eu10.hana.ondemand.com/employees/${property.employee_id}/dependants |
   | *Proxy Type*      | Internet                                                                                                               |
   | *Method*          | GET                                                                                                                    |
   | *Authenticaton*   | None                                                                                                                   |
@@ -219,7 +219,7 @@ We've added some cool functionality to the integration flow. Some parts of it ha
 
 * [Externalise parameters of an integration flow](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/45b2a0772db94bd9b0e57bc82d8d3797.html?locale=en-US)
 * [Message routers in SAP Cloud Integration](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/ad0a19ab854c4e6e929013a9be66d809.html?locale=en-US)
-* [Integration Flow Design Guidelines - Enterprise Integration Patterns](https://api.sap.com/package/DesignGuidelinesPatterns/integrationflow)
+* [Integration Flow Design Guidelines - Enterprise Integration Patterns](https://hub.sap.com/package/DesignGuidelinesPatterns/integrationflow)
 
 ---
 
@@ -232,5 +232,5 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 Continue to 👉 [Exercise 06 - Add the Americas instance of the Business Partner Dependants service](../06-add-americas-bp-dependants/README.md#exercise-06---add-the-americas-instance-of-the-business-partner-dependants-service)
 
-[^1]: Pattern Content Based Routing: https://api.sap.com/integrationflow/Pattern_ContentBasedRouting_IgnoreIfNoReceiver
+[^1]: Pattern Content Based Routing: https://hub.sap.com/integrationflow/Pattern_ContentBasedRouting_IgnoreIfNoReceiver
 [^2]: Simple: https://camel.apache.org/components/3.18.x/languages/simple-language.html 
