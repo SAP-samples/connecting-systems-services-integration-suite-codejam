@@ -4,6 +4,8 @@ In this exercise, we will expose our integration flow via API Management and tak
 
 To achieve the above we create an API in API Management that will act as a proxy to our integration flow and we will leverage an OpenAPI specification to create it.
 
+> Under the [assets/api-management](assets/api-management/) folder you can find exports of the API that we will develop in this exercise at different stages, e.g. Before applying policies, after including the BTP connectivity policy and after adding the verify API Key policy. These files can be imported in your tenant in case you don't have time to complete the exercise. To import them, go to `Design > APIs > APIs > Import API button`.
+
 ## What is an OpenAPI specification?
 
 > From the specification [website](https://swagger.io/specification/)...
@@ -108,6 +110,8 @@ Given that the communication to our integration flow can now go through API Mana
 ### Business Technology Platform connectivity
 
 The Business Technology Platform connectivity policy is available in the Business Accelerator Hub - https://hub.sap.com/policytemplate/Cloud_Platform_Connectivity. To import it into our tenant, we will need to copy it from the Discover section in API Management.
+
+> Alternatively you can import the policy template included in the assets folder - [Cloud_Platform_Connectivity.zip](assets/api-management/Cloud_Platform_Connectivity.zip). To import it, go to `Design > APIs > Policy Templates > Import button`.
 
 🧭 Take some time to explore what's documented for the [Business Technology Platform connectivity policy template](https://hub.sap.com/policytemplate/Cloud_Platform_Connectivity). Pay particular attention to the `getcredential` and `getoauthtoken` steps as these are the steps that we will need to update later.
 
