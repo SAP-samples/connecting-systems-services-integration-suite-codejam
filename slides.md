@@ -1,65 +1,49 @@
 ---
 marp: true
 style: |
-  section {
-    font-family: "72";
-  }
+    section {
+       font-family: "72";
+    }
 
-  section.lead h1{
-    text-align: center;
-  }
-  section.lead h2{
-    text-align: center;
-  }
+    section.lead h1{
+        text-align: center;
+    }
 
-  section.centersingleimage p {
-    text-align: center;
-  }
+    section.lead h2{
+        text-align: center;
+    }
 
-  section.frontpage h1 {
-    font-weight: bold;
-    font-size: 30px
-  }
+    section.centersingleimage p {
+        text-align: center;
+    }
 
-  section.frontpage p {
-    font-size: 20px
-  }
+    section.frontpage h1 {
+        font-weight: bold;
+        font-size: 30px
+    }
 
-<!-- ---
-
-<!-- _class: frontpage 
-<br/><br/><br/><br/><br/><br/><br/><br/>
-# SAP CodeJam: Connecting systems and services using SAP Integration Suite
-
-<br/>
-
-Antonio Maradiaga 
-*Developer Advocate @ SAP*
-
-![bg](assets/sitbarcelona-logo.jpg)
-![bg vertical](assets/TechEd_Front.png)
-
--->
-<!-- 
-# SAP CodeJam
-*Connecting systems and services using
-SAP Integration Suite*
-
-<br/>
-Antonio Maradiaga
-
-*Developer Advocate @ SAP*
-
-<br/><br/>
-June, 2023
-
-![bg left:70% 90%](assets/art/CodeJam_Art_Madrid.png)
--->
-
+    section.frontpage p {
+        font-size: 20px
+    }
 ---
+
 <!-- paginate: false -->
 
-![bg](assets/art/CodeJam_Art_Madrid.png)
+![bg](assets/art/CodeJam_Art.png)
+
+---
+# SAP CodeJam - Agenda
+
+<br/>
+
+- *13:00* - Introduction
+- *13:30* - Exercise 01 - 04
+- *15:00* - Break
+- *15:30* - Exercise 05 - 08
+
+<br/>
+<br/>
+<br/>
 
 ---
 <!-- paginate: true -->
@@ -88,6 +72,7 @@ June, 2023
 
 # SAP CodeJam - Repository
  
+ <!-- _class: centersingleimage -->
 ![](assets/repository.png)
 
 --- 
@@ -96,78 +81,77 @@ June, 2023
 
 # SAP CodeJam - Exercises
 
-* [Exercise 01 - Getting familiar with the SAP Business Accelerator Hub](./01-getting-familiar-business-accelerator-hub/README.md#exercise-01---getting-familiar-with-the-sap-business-accelerator-hub)
-* [Exercise 02 - Exploring the mock services](./02-exploring-the-mock-services/README.md#exercise-02---exploring-the-mock-services)
-* [Exercise 03 - Build our first integration flow](./03-build-first-integration-flow/README.md#exercise-03---building-our-first-integration-flow)
-* [Exercise 04 - Send messages and monitor our integration flow](./04-send-messages-and-monitor/README.md#exercise-04---sending-messages-and-monitoring-our-integration-flow)
-* [Exercise 05 - Retrieve Business Partner dependant's information](./05-retrieve-bp-dependants/README.md#exercise-05---retrieve-business-partner-dependants-information)
-* [Exercise 06 - Add the America's instance of the Business Partner Dependants service](./06-add-americas-bp-dependants/README.md#exercise-06---add-the-americas-instance-of-the-business-partner-dependants-service)
-* [Exercise 07 - Log service call in Google BigQuery (Open Connectors)](./07-log-requests-in-bigquery/README.md#exercise-07---log-request-in-bigquery)
-* [Exercise 08 - Expose integration flow via API Management](./08-expose-integration-flow-api-management/README.md#exercise-08---expose-integration-flow-via-api-management)
+* [Exercise 01 - Getting familiar with the SAP Business Accelerator Hub](./01-getting-familiar-business-accelerator-hub/README.md#exercise-01---getting-familiar-with-the-sap-business-accelerator-hub) (20')
+* [Exercise 02 - Exploring the mock services](./02-exploring-the-mock-services/README.md#exercise-02---exploring-the-mock-services) (20')
+* [Exercise 03 - Build our first integration flow](./03-build-first-integration-flow/README.md#exercise-03---building-our-first-integration-flow) (30')
+* [Exercise 04 - Send messages and monitor our integration flow](./04-send-messages-and-monitor/README.md#exercise-04---sending-messages-and-monitoring-our-integration-flow) (20')
+* [Exercise 05 - Retrieve Business Partner dependant's information](./05-retrieve-bp-dependants/README.md#exercise-05---retrieve-business-partner-dependants-information) (30')
+* [Exercise 06 - Add the America's instance of the Business Partner Dependants service](./06-add-americas-bp-dependants/README.md#exercise-06---add-the-americas-instance-of-the-business-partner-dependants-service) (30')
+* [Exercise 07 - Log service call in Google BigQuery (Open Connectors)](./07-log-requests-in-bigquery/README.md#exercise-07---log-request-in-bigquery) (20')
+* [Exercise 08 - Expose integration flow via API Management](./08-expose-integration-flow-api-management/README.md#exercise-08---expose-integration-flow-via-api-management) (30')
 * [(Optional) Exercise 01 - Running locally services used in CodeJam](./optional-01-running-locally/README.md#optional-exercise-01---running-locally-services-used-in-codejam)
 
 
 --- 
 <!-- _class: centersingleimage -->
 
-# Exercise 01 - Getting familiar with the SAP Business Accelerator Hub
+# Exercise 01 - Getting familiar with the SAP Business Accelerator Hub (20')
 
 ![width:25cm height:14cm](exercises/01-getting-familiar-business-accelerator-hub/assets/S4HANACloud-API-BusinessPartner.png)
 
 --- 
 <!-- _class: centersingleimage -->
 
-# Exercise 02 - Exploring the mock services
+# Exercise 02 - Exploring the mock services (20')
 
-![width:25cm height:14cm](exercises/02-exploring-the-mock-services/assets/click-send-to-get-response.gif)
+![width:14cm height:14cm](exercises/02-exploring-the-mock-services/assets/click-send-to-get-response.gif)
 
 
 ---
 <!-- _class: centersingleimage -->
 
-# Exercise 03 - Build our first integration flow
+# Exercise 03 - Build our first integration flow (30')
 
 ![width:25cm height:14cm](exercises/03-build-first-integration-flow/assets/diagrams/first_data_flow.png)
 
 ---
 <!-- _class: centersingleimage -->
 
-# Exercise 04 - Send message and monitor our integration flow
+# Exercise 04 - Send message and monitor our integration flow (20')
 
 ![width:25cm height:14cm](exercises/04-send-messages-and-monitor/assets/send-request-integration-flow.png)
 
 ---
 <!-- _class: centersingleimage -->
 
-# Exercise 05 - Retrieve Business Partner dependant's information
+# Exercise 05 - Retrieve Business Partner dependant's information (30')
 
 ![height:14cm](exercises/05-retrieve-bp-dependants/assets/diagrams/bp_data_flow.png)
 
 ---
 <!-- _class: centersingleimage -->
 
-# Exercise 06 - Add the America's instance of the Business Partner Dependants service
+# Exercise 06 - Add the America's instance of the Business Partner Dependants service (30')
 
 ![height:12cm](exercises/06-add-americas-bp-dependants/assets/diagrams/bp_americas_data_flow.png)
 
 ---
 <!-- _class: centersingleimage -->
 
-# Exercise 07 - Log service call in Google BigQuery
+# Exercise 07 - Log service call in Google BigQuery (20')
 
 ![height:14cm](exercises/07-log-requests-in-bigquery/assets/diagrams/bigquery_data_flow.png)
 
 ---
 <!-- _class: centersingleimage -->
 
-# Exercise 08 - Expose integration flow via API Management
+# Exercise 08 - Expose integration flow via API Management (30')
 
 ![width:25cm height:14cm](exercises/08-expose-integration-flow-api-management/assets/import-spec-create-api.gif)
 
 --- 
-<!-- _class: lead -->
+<!-- _class: centersingleimage -->
 
-# Thank you for attending!!!
+# Thanks for attending!!!
 
-- Issues: You can [create an issue](https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam/issues/new) in this repository if you find a bug or have questions about it.
-- [Feedback](https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam/issues/new?assignees=&labels=feedback&template=session-feedback-template.md&title=Feedback): If you can spare a couple of minutes at the end of the session, please help us improve for next time by giving me some feedback.
+![bg right:50% 80%](SessionFeedback.png)
