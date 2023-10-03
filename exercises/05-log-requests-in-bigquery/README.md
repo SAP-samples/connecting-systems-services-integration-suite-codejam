@@ -1,4 +1,4 @@
-# Exercise 07 - Log request in BigQuery
+# Exercise 05 - Log request in BigQuery
 
 In our [integration scenario](../../README.md#integration-scenario), it is mentioned that we need to log the requests received by the integration flow. These requests will be logged in a table that exists in BigQuery. We will achieve this by using Open Connectors to simplify the connection between SAP Cloud Integration and Google's BigQuery. 
 
@@ -140,9 +140,9 @@ Now that we have a basic understanding of why and how we can decouple request lo
 
 ### Design > Integrations
 
-👉 Similar to previous exercises, let's start by making a copy of the integration flow we created in the previous exercises and add the `- Exercise 07` suffix to the name and open it.
+👉 Similar to previous exercises, let's start by making a copy of the integration flow we created in the previous exercises and add the `- Exercise 05` suffix to the name and open it.
 
-> As stated in the previous exercise, you might want to add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex7`, so that the address `/request-employee-dependants-ex7`  doesn't clash with the one configured for our previous integration flows.
+> As stated in the previous exercise, you might want to add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex5`, so that the address `/request-employee-dependants-ex5`  doesn't clash with the one configured for our previous integration flows.
 
 Given that the imported integration flow handles the communication with BigQuery, there is very little that we need to do in our main integration flow to "log requests".
 
@@ -177,7 +177,7 @@ That was simple, wasn't it?  We are now ready to deploy our integration flow.
 
 Our integration flow is now ready. Let's send some messages to it using Postman. 
 
-👉 Open the `Request Employee Dependants - Exercise 07` request under the cloud-integration folder in the Postman collection and test the following scenarios:
+👉 Open the `Request Employee Dependants - Exercise 05` request under the cloud-integration folder in the Postman collection and test the following scenarios:
 - Send a request and check the Data Store (`Monitor > Integrations > Manage Stores > Data Stores`). You will see that there is a new entry in the Data Store.
 
 <p align = "center">
@@ -212,4 +212,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 08 - Expose integration flow via API Management](../08-expose-integration-flow-api-management/README.md#exercise-08---expose-integration-flow-via-api-management)
+Continue to 👉 [Exercise 06 - Expose integration flow via API Management](../06-expose-integration-flow-api-management/README.md#exercise-06---expose-integration-flow-via-api-management)
