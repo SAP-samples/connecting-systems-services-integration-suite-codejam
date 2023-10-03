@@ -39,7 +39,7 @@ style: |
 - *13:00* - Introduction
 - *13:30* - Exercise 01 - 04
 - *15:00* - Break
-- *15:30* - Exercise 05 - 08
+- *15:30* - Exercise 05 - 06
 
 <br/>
 <br/>
@@ -81,14 +81,14 @@ style: |
 
 # SAP CodeJam - Exercises
 
-* [Exercise 01 - Getting familiar with the SAP Business Accelerator Hub](./01-getting-familiar-business-accelerator-hub/README.md#exercise-01---getting-familiar-with-the-sap-business-accelerator-hub) (20')
-* [Exercise 02 - Exploring the mock services](./02-exploring-the-mock-services/README.md#exercise-02---exploring-the-mock-services) (20')
-* [Exercise 03 - Build our first integration flow](./03-build-first-integration-flow/README.md#exercise-03---building-our-first-integration-flow) (30')
-* [Exercise 04 - Send messages and monitor our integration flow](./04-send-messages-and-monitor/README.md#exercise-04---sending-messages-and-monitoring-our-integration-flow) (20')
-* [Exercise 05 - Retrieve Business Partner dependant's information](./05-retrieve-bp-dependants/README.md#exercise-05---retrieve-business-partner-dependants-information) (30')
-* [Exercise 06 - Add the America's instance of the Business Partner Dependants service](./06-add-americas-bp-dependants/README.md#exercise-06---add-the-americas-instance-of-the-business-partner-dependants-service) (30')
-* [Exercise 07 - Log service call in Google BigQuery (Open Connectors)](./07-log-requests-in-bigquery/README.md#exercise-07---log-request-in-bigquery) (20')
-* [Exercise 08 - Expose integration flow via API Management](./08-expose-integration-flow-api-management/README.md#exercise-08---expose-integration-flow-via-api-management) (30')
+* [Exercise 01 - Getting familiar with the SAP Business Accelerator Hub](.//exercises/01-getting-familiar-business-accelerator-hub/) (20')
+* [Exercise 02 - Exploring the mock services](./exercises/02-exploring-the-mock-services/) (20')
+* [Exercise 03 - Build our first integration flow](./exercises/03-build-first-integration-flow/) (30')
+* [Exercise 04 - Send messages and monitor our integration flow](./exercises/04-send-messages-and-monitor/) (20')
+  * [Exercise 04.1 - Retrieve Business Partner dependant's information](./exercises/04.1-retrieve-bp-dependants/) (45')
+  * [Exercise 04.2 - Add the America's instance of the Business Partner Dependants service](./exercises/04.2-add-americas-bp-dependants/) (30')
+* [Exercise 05 - Log service call in Google BigQuery (Open Connectors)](./exercises/05-log-requests-in-bigquery/) (20')
+* [Exercise 06 - Expose integration flow via API Management](./exercises/06-expose-integration-flow-api-management/) (30')
 * [(Optional) Exercise 01 - Running locally services used in CodeJam](./optional-01-running-locally/README.md#optional-exercise-01---running-locally-services-used-in-codejam)
 
 
@@ -124,30 +124,30 @@ style: |
 ---
 <!-- _class: centersingleimage -->
 
-# Exercise 05 - Retrieve Business Partner dependant's information (30')
+# Exercise 04.1 - Retrieve Business Partner dependant's information (45')
 
-![height:14cm](exercises/05-retrieve-bp-dependants/assets/diagrams/bp_data_flow.png)
-
----
-<!-- _class: centersingleimage -->
-
-# Exercise 06 - Add the America's instance of the Business Partner Dependants service (30')
-
-![height:12cm](exercises/06-add-americas-bp-dependants/assets/diagrams/bp_americas_data_flow.png)
+![height:14cm](exercises/04.1-retrieve-bp-dependants/assets/diagrams/bp_data_flow.png)
 
 ---
 <!-- _class: centersingleimage -->
 
-# Exercise 07 - Log service call in Google BigQuery (20')
+# Exercise 04.2 - Add the America's instance of the Business Partner Dependants service (30')
 
-![height:14cm](exercises/07-log-requests-in-bigquery/assets/diagrams/bigquery_data_flow.png)
+![height:12cm](exercises/04.2-add-americas-bp-dependants/assets/diagrams/bp_americas_data_flow.png)
 
 ---
 <!-- _class: centersingleimage -->
 
-# Exercise 08 - Expose integration flow via API Management (30')
+# Exercise 05 - Log service call in Google BigQuery (20')
 
-![width:25cm height:14cm](exercises/08-expose-integration-flow-api-management/assets/import-spec-create-api.gif)
+![height:14cm](exercises/05-log-requests-in-bigquery/assets/diagrams/bigquery_data_flow.png)
+
+---
+<!-- _class: centersingleimage -->
+
+# Exercise 06 - Expose integration flow via API Management (30')
+
+![width:25cm height:14cm](exercises/06-expose-integration-flow-api-management/assets/import-spec-create-api.gif)
 
 --- 
 <!-- _class: centersingleimage -->
