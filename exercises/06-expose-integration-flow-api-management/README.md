@@ -95,16 +95,16 @@ Now that we've created the `Request_Employee_Dependants_v1` API, we can communic
 
 At the moment we've set up an API (`Request_Employee_Dependants_v1`) in API Management that is a proxy for our integration flow. By doing this we can use API Management to add common API functionality to our API, e.g. secure the API, modify headers, transform message formats, or implement [rate limits](https://help.sap.com/docs/SAP_CLOUD_PLATFORM_API_MANAGEMENT/66d066d903c2473f81ec33acfe2ccdb4/bf441dc839034613b059cb508ad610f7.html?locale=en-US).
 
-🧭 We've sent several messages to our integration flow via API Management. Take some time to check the message in Cloud Integration and explore the monitoring capabilities available to us in API Management (`Monitor > APIs`, Analyze section). You should see the successful and failed requests here. There is quite some information available to us here that can't be easily visualised in Cloud Integration and API Management gives us.
+> 🧭 We've sent several messages to our integration flow via API Management. Take some time to check the message in Cloud Integration and explore the monitoring capabilities available to us in API Management (`Monitor > APIs`, Analyze section). You should see the successful and failed requests here. There is quite some information available to us here that can't be easily visualised in Cloud Integration and API Management gives us.
 
-![API Management - Analyse section](assets/api-management-analyse.png)
-<p align = "center">
-<i>API Management - Analyse section</i>
-</p>
-
-The additional functionality can be set in API Management in the form of [Policies](https://help.sap.com/docs/SAP_CLOUD_PLATFORM_API_MANAGEMENT/66d066d903c2473f81ec33acfe2ccdb4/7e4f3e590f164996994cddc8e48bf7f5.html?locale=en-US). A policy is a program that executes a specific function at runtime, which is what allows us to add the extra functionality to our API.  
+> ![API Management - Analyse section](assets/api-management-analyse.png)
+> <p align = "center">
+> <i>API Management - Analyse section</i>
+> </p>  
 
 ## Examples of policies that we can apply to the Request_Employee_Dependants_v1 API
+
+Additional functionality can be set in API Management in the form of [Policies](https://help.sap.com/docs/SAP_CLOUD_PLATFORM_API_MANAGEMENT/66d066d903c2473f81ec33acfe2ccdb4/7e4f3e590f164996994cddc8e48bf7f5.html?locale=en-US). A policy is a program that executes a specific function at runtime, which is what allows us to add the extra functionality to our API.
 
 To communicate with the integration flow we need to send a Bearer token in the request headers. This Bearer token is obtained by first authenticating against the token server using the `clientid` and `clientsecret` we got from the [Cloud Integration runtime service key](../../prerequisites.md#create-sap-cloud-integration-runtime-client-credentials) that was created as part of the CodeJam prerequisites.
 
