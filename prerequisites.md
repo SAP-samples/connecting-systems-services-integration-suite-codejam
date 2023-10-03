@@ -123,6 +123,11 @@ From the BTP Cockpit:
 
 ### Set up API Management capability
 
+> 🚨 This is only required if you are running in a non-trial environment
+
+<details>
+<summary>Complete setup of SAP API Management (👉 <i><b>when not running in the trial environment</b></i> 👈)</summary>
+<br/>
 Before being able to access API Management, you will need to complete the setup. Go to the API Management settings by navigating within the Integration Suite UI to *Settings > APIs*.
 
 <p align = "center">
@@ -143,6 +148,8 @@ Enter a host alias, add a notification contact (your email address) and click th
 </p>
 
 For detailed steps, follow the instructions included in [step 5 - Configure the API Management Service](https://developers.sap.com/tutorials/api-mgmt-isuite-initial-setup.html#93fee77e-606e-425c-a6c3-1b6946d2ec87) of the  _Set Up API Management from Integration Suite_ tutorial. 
+
+</details>
 
 ### BigQuery
 
