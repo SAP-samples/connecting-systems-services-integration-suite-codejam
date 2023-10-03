@@ -1,22 +1,22 @@
-# Exercise 05 - Retrieve Business Partner dependant's information
+# Optional Exercise 04.1 - Retrieve Business Partner dependant's information
 
 At the end of this exercise, you'll have successfully retrieved Business Partner dependant data hosted in the European instance of the BP Dependants service.
 
 ![Connect the integration flow to the European instance of the BP Dependants service](assets/diagrams/bp_data_flow.png)
 <p align = "center">
-<i>Exercise 05 - Data flow</i>
+<i>Exercise - Data flow</i>
 </p>
 
 Now that we are familiar with the basics of SAP Cloud Integration, we will start moving a bit faster when adding components and deploying the integration flow. When we finish the exercise, the integration flow will include a few additional Content Modifiers and we will be familiar with a few new concepts/components, externalised parameters, simulation, secure store, scripting, and implemented a new pattern - Router (Content Based Routing)[^1].
 
-![Integration flow - End of Exercise 05](assets/end-of-exercise-integration-flow.png)
+![Integration flow - End of Exercise](assets/end-of-exercise-integration-flow.png)
 <p align = "center">
-<i>Integration Flow - End of Exercise 05</i>
+<i>Integration Flow - End of Exercise</i>
 </p>
 
 ## Design > Integrations
 
-👉 Let's start by making a copy of the integration flow we created in Exercise 03, add the `- Exercise 05` suffix to the name and open it.
+👉 Let's start by making a copy of the integration flow we created in Exercise 03, add the `- Exercise 04.1` suffix to the name and open it.
 
 ![Connect the integration flow to the European instance of the BP Dependants service](assets/copy-integration-flow.gif)
 
@@ -230,7 +230,7 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 06 - Add the Americas instance of the Business Partner Dependants service](../06-add-americas-bp-dependants/README.md#exercise-06---add-the-americas-instance-of-the-business-partner-dependants-service)
+Continue to 👉 [Exercise 04.2 - Add the Americas instance of the Business Partner Dependants service](../04.2-add-americas-bp-dependants/README.md#optional-exercise-042---add-the-americas-instance-of-the-business-partner-dependants-service)
 
 [^1]: Pattern Content Based Routing: https://hub.sap.com/integrationflow/Pattern_ContentBasedRouting_IgnoreIfNoReceiver
 [^2]: Simple: https://camel.apache.org/components/3.18.x/languages/simple-language.html 

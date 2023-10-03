@@ -1,26 +1,26 @@
-# Exercise 06 - Add the America's instance of the Business Partner Dependants service
+# Optional Exercise 04.2 - Add the America's instance of the Business Partner Dependants service
 
-In the previous exercise we set up the communication between our integration flow and the European instance of the Business Partner dependants service. In this exercise, we will extend our integration flow to also send requests to the Americas instance. We will repeat various of the steps carried out in exercise 05, helping us reinforce what we've learned, introduce a new component - local integration processes,  and add some additional conditions to handle the new instance.
+In the previous exercise we set up the communication between our integration flow and the European instance of the Business Partner dependants service. In this exercise, we will extend our integration flow to also send requests to the Americas instance. We will repeat various of the steps carried out in exercise 04.1, helping us reinforce what we've learned, introduce a new component - local integration processes,  and add some additional conditions to handle the new instance.
 
 ![Connect the integration flow to the European instance of the BP Dependants service](assets/diagrams/bp_americas_data_flow.png)
 <p align = "center">
-<i>Exercise 06 - Data flow</i>
+<i>Exercise - Data flow</i>
 </p>
 
 Now that we are familiar with the basics of SAP Cloud Integration.....
 
-![Integration flow - End of Exercise 06](assets/end-of-exercise-integration-flow.png)
+![Integration flow - End of Exercise](assets/end-of-exercise-integration-flow.png)
 <p align = "center">
-<i>Integration Flow - End of Exercise 06</i>
+<i>Integration Flow - End of Exercise</i>
 </p>
 
 At the end of this exercise, you'll have successfully added America's instance of Business Partner service to the integration flow.
 
 ## Design > Integrations
 
-👉 Let's start by making a copy of the integration flow we created in Exercise 05, add the `- Exercise 06` suffix to the name and open it.
+👉 Let's start by making a copy of the integration flow we created in Exercise 04.1, add the `- Exercise 04.2` suffix to the name and open it.
 
-> As stated in the previous exercise, you might want to add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex6`, so that the address `/request-employee-dependants-ex6`  doesn't clash with the one configured for our previous integration flows.
+> As stated in the previous exercise, you might want to add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex42`, so that the address `/request-employee-dependants-ex42`  doesn't clash with the one configured for our previous integration flows.
 
 In SAP Cloud Integration it is possible to define integration processes (smaller) within an integration process. This is called a local integration process. The idea behind fragmenting our integration process into smaller processes is to make our integration process more readable and easier to maintain.
 
@@ -110,7 +110,7 @@ Once you've carried out all the steps above, your integration flow will look lik
 
 Our integration flow is now ready. Let's send some messages to it using Postman. 
 
-👉 Open the `Request Employee Dependants - Exercise 06` request under the cloud-integration folder in the Postman collection and test the following scenarios:
+👉 Open the `Request Employee Dependants - Exercise 04.2` request under the cloud-integration folder in the Postman collection and test the following scenarios:
 - Send a request for `employee_id` = 1003764. Where is this employee from and what's the response you get?
 - Now, `employee_id` = 1003765. Where is this employee from and what's the response you get?
 - What if we send a request for `employee_id` = 1003800. Where is this employee from and what's the response you get?
@@ -133,4 +133,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 07 - Log requests in BigQuery](../07-log-requests-in-bigquery/README.md#exercise-07---log-request-in-bigquery)
+Continue to 👉 [Exercise 05 - Log requests in BigQuery](../05-log-requests-in-bigquery/README.md#exercise-05---log-request-in-bigquery)
