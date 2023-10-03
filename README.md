@@ -5,23 +5,20 @@
 ---
 ## *SAP CodeJam events scheduled*
 
-- 2023-06-21: 🇪🇸 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Madrid, Spain) - [RSVP here 🗓️](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap/ev-p/259449).
+- 2024-01-25: 🇩🇪 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Bonn, Germany) - [RSVP here 🗓️](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap-integration-suite/ev-p/290525).
 <p align = "center">
-    <img alt="CodeJam Madrid" src="assets/art/CodeJam_Art_Madrid.png" width="85%"/><br/>
-    <i>SAP CodeJam in Madrid</i>
+    <img alt="CodeJam Bonn" src="assets/art/CodeJam_Art_Bonn.png" width="85%"/><br/>
+    <i>SAP CodeJam in Bonn, Germany</i>
 </p>
 
-- 2023-09-22: 🇵🇱 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Warszawa, Poland) - [RSVP here 🗓️](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap/ev-p/263042).
-<p align = "center">
-    <img alt="CodeJam Warsaw" src="assets/art/CodeJam_Art_Warsaw.png" width="85%"/><br/>
-    <i>SAP CodeJam in Warsaw</i>
-</p>
 <details>
 <summary>Previous events</summary>
 <br>
 
 - 2022-09-29: 🇪🇸 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Madrid, Spain) - [✅](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap/ec-p/9782#M21).
 - 2022-10-28: 🇪🇸 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Barcelona, Spain) - [✅](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap/ec-p/9961#M32).
+- 2023-06-21: 🇪🇸 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Madrid, Spain) - [✅](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap/ev-p/259449).
+- 2023-09-22: 🇵🇱 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Warszawa, Poland) - [✅](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap/ev-p/263042).
 
 </details>
 
@@ -74,10 +71,10 @@ See below for an overview of the exercises part of this CodeJam.
   * [Exercise 02 - Exploring the mock services](./exercises/02-exploring-the-mock-services/README.md#exercise-02---exploring-the-mock-services)
   * [Exercise 03 - Build our first integration flow (Cloud Integration)](./exercises/03-build-first-integration-flow/README.md#exercise-03---building-our-first-integration-flow)
   * [Exercise 04 - Send messages and monitor our integration flow](./exercises/04-send-messages-and-monitor/README.md#exercise-04---sending-messages-and-monitoring-our-integration-flow)
-  * [Exercise 05 - Retrieve Business Partner dependant's information](./exercises/05-retrieve-bp-dependants/README.md#exercise-05---retrieve-business-partner-dependants-information)
-  * [Exercise 06 - Add the America's instance of the Business Partner Dependants service](./exercises/06-add-americas-bp-dependants/README.md#exercise-06---add-the-americas-instance-of-the-business-partner-dependants-service)
-  * [Exercise 07 - Log service call in Google BigQuery (Open Connectors)](./exercises/07-log-requests-in-bigquery/README.md#exercise-07---log-request-in-bigquery)
-  * [Exercise 08 - Expose integration flow via API Management](./exercises/08-expose-integration-flow-api-management/README.md#exercise-08---expose-integration-flow-via-api-management)
+    * [(Optional) Exercise 04.1 - Retrieve Business Partner dependant's information](./exercises/04.1-retrieve-bp-dependants/README.md#optional-exercise-041---retrieve-business-partner-dependants-information)
+    * [(Optional) Exercise 04.2 - Add the America's instance of the Business Partner Dependants service](./exercises/04.2-add-americas-bp-dependants/README.md#optional-exercise-042---add-the-americas-instance-of-the-business-partner-dependants-service)
+  * [Exercise 05 - Log service call in Google BigQuery (Open Connectors)](./exercises/05-log-requests-in-bigquery/README.md#exercise-05---log-request-in-bigquery)
+  * [Exercise 06 - Expose integration flow via API Management](./exercises/06-expose-integration-flow-api-management/README.md#exercise-06---expose-integration-flow-via-api-management)
   * [(Optional) Exercise 01 - Running locally services used in CodeJam](./exercises/optional-01-running-locally/README.md#optional-exercise-01---running-locally-services-used-in-codejam)
 
 ### Troubleshooting
