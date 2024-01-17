@@ -36,10 +36,14 @@ style: |
 
 <br/>
 
-- *13:00* - Introduction
+<!-- - *13:00* - Introduction
 - *13:30* - Exercise 01 - 04
 - *15:00* - Break
-- *15:30* - Exercise 05 - 06
+- *15:30* - Exercise 05 - 06 -->
+- *09:00* - Introduction
+- *09:30* - Exercise 01 - 04
+- *11:00* - Break
+- *11:30* - Exercise 05 - 06
 
 <br/>
 <br/>
