@@ -11,6 +11,8 @@
     <i>SAP CodeJam in Bonn, Germany</i>
 </p>
 
+- 2024-02-15: 🇭🇷 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Zagreb, Croatia) - [RSVP here 🗓️](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap-integration-suite/ev-p/296103).
+
 <details>
 <summary>Previous events</summary>
 <br>
