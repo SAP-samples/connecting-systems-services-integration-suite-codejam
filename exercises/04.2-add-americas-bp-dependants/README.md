@@ -57,7 +57,7 @@ The Americas instance set up is very similar to the one we completed in the prev
 
 👉 Carry out the steps below:
 - *Deploy API Key*: [Deploy the Americas instance API key](../05-retrieve-bp-dependants/README.md#deploy-api-key-to-sap-cloud-integration) to the secure store
-- *Create Americas instance exchange properties*: Extend the `Set employee_id and country properties` content modifier to create a new property called `americas_countries`. The property will be assigned the value configured for the external parameter with the same name and set `US,CA,MX,CL,BR,HN` as the default value. Also, create an `americas-bp-dependants-api-key-alias` property. This property will be assigned the value configured for the external parameter with the same name and set `BP-Dependants-Americas` as the default value.
+- *Create Americas instance exchange properties*: Extend the `Set employee_id and country properties` content modifier to create a new property called `americas_countries`. The property will be assigned the value configured for the external parameter with the same name and set `US,CA,MX,CL,BR,HN` as the default value. Also, create an `americas-bp-dependants-api-key-alias` property. This property will be assigned the value configured for the external parameter with the same name and set `bp-dependants-americas` as the default value.
     ![Content Modifier - Add americas_countries properties](assets/api-key-alias-content-modifier.png)
     <p align = "center">
     <i>Content Modifier - Add americas_countries properties</i>
@@ -128,7 +128,7 @@ We've added a couple of local integration processes to our integration flow. Thi
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. Can you think of how this process would be different if one of the instance required OAuth 2.0 authentication? Where would we store the credentials? How will we get a new token?
+1. Can you think of how this process would be different if one of the instances required OAuth 2.0 authentication? Where would we store the credentials? How will we get a new token?
 2. Given that the process carried out to call the instances is very similar, it is possible that we could create a single local integration process to handle it. How could we achieve that?
 
 ## Next
