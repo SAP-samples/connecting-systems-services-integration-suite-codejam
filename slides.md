@@ -32,6 +32,22 @@ style: |
 ![bg](assets/art/CodeJam_Art.png)
 
 ---
+<!-- paginate: false -->
+
+![bg](assets/slides/DeveloperAdvocates-export-what-we-do.jpg)
+
+---
+<!-- paginate: false -->
+
+![bg](assets/slides/DeveloperAdvocates-export-slide.jpg)
+
+---
+<!-- paginate: false -->
+
+![bg](assets/slides/DeveloperAdvocates-export-slide-2.jpg)
+
+
+---
 # SAP CodeJam - Agenda
 
 <br/>
