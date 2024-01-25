@@ -53,7 +53,7 @@ Available values: to_BuPaIdentification, to_BuPaIndustry, to_BusinessPartnerAddr
 
 Now that you are familiar with the basic functionality of SAP Business Accelerator Hub and the Business Partner API, we are ready to start interacting with the services from which our integration will be extracting data.
 
-Although we focused, in this exercise, on exploring APIs.... you can also find other types of objects in the Business Accelerator Hub, e.g. API Management - Policy templates. We will see more on this in [exercise 08](../08-expose-integration-flow-api-management/).
+Although we focused, in this exercise, on exploring APIs.... you can also find other types of objects in the Business Accelerator Hub, e.g. API Management - Policy templates. We will see more on this in [exercise 06](../06-expose-integration-flow-api-management/README.md).
 
 ## Further Study
 
