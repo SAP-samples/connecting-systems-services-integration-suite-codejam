@@ -78,7 +78,7 @@ If the call was successful, you will see a response similar to the one above. Th
 
 Let's start by validating that the API is up and running 
 
-👉 Send a Ping request to the service. Change the environment to `BP-Dependants-*`, Open the *Ping* request and click the send button.
+👉 Send a Ping request to the service. Change to the `bp-dependants-mock-service` folder in the collection and set the environment to `BP-Dependants-*`, Open the *Ping* request and click the send button.
 
 If the call was successful, you will see a response similar to the one below.
 
