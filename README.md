@@ -5,13 +5,11 @@
 ---
 ## *SAP CodeJam events scheduled*
 
-- 2024-01-25: 🇩🇪 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Bonn, Germany) - [RSVP here 🗓️](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap-integration-suite/ev-p/290525).
-<p align = "center">
-    <img alt="CodeJam Bonn" src="assets/art/CodeJam_Art_Bonn.png" width="85%"/><br/>
-    <i>SAP CodeJam in Bonn, Germany</i>
-</p>
-
 - 2024-02-15: 🇭🇷 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Zagreb, Croatia) - [RSVP here 🗓️](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap-integration-suite/ev-p/296103).
+<p align = "center">
+    <img alt="CodeJam Zagreb" src="assets/art/CodeJam_Art_Zagreb.jpg" width="85%"/><br/>
+    <i>SAP CodeJam in Zagreb, Croatia</i>
+</p>
 
 <details>
 <summary>Previous events</summary>
@@ -21,6 +19,7 @@
 - 2022-10-28: 🇪🇸 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Barcelona, Spain) - [✅](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap/ec-p/9961#M32).
 - 2023-06-21: 🇪🇸 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Madrid, Spain) - [✅](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap/ev-p/259449).
 - 2023-09-22: 🇵🇱 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Warszawa, Poland) - [✅](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap/ev-p/263042).
+- 2024-01-25: 🇩🇪 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Bonn, Germany) - [RSVP here 🗓️](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap-integration-suite/ev-p/290525).
 
 </details>
 

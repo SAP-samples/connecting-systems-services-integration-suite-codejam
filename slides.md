@@ -29,7 +29,7 @@ style: |
 
 <!-- paginate: false -->
 
-![bg](assets/art/CodeJam_Art.png)
+![bg](assets/art/CodeJam_Art.jpg)
 
 ---
 <!-- paginate: false -->
@@ -52,14 +52,14 @@ style: |
 
 <br/>
 
-<!-- - *13:00* - Introduction
-- *13:30* - Exercise 01 - 04
-- *15:00* - Break
-- *15:30* - Exercise 05 - 06 -->
-- *09:00* - Introduction
+- *14:00* - Introduction
+- *14:30* - Exercise 01 - 04
+- *16:00* - Break
+- *16:30* - Exercise 05 - 06
+<!-- - *09:00* - Introduction
 - *09:30* - Exercise 01 - 04
 - *11:00* - Break
-- *11:30* - Exercise 05 - 06
+- *11:30* - Exercise 05 - 06 -->
 
 <br/>
 <br/>
