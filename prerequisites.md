@@ -48,7 +48,18 @@ The application can also be used with Safari browser and Internet Explorer 9. Ho
 ## Services
 
 <details>
-<summary>Using the SAP BTP Free Tier (⚡️ recommended ⚡️)</summary>
+<summary>Using the SAP BTP Trial account (⚡️ recommended ⚡️)</summary>
+
+<br>
+
+* Get an SAP Business Technology Platform trial account:
+  * [Tutorial: Get an account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+  * [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6)
+
+</details>
+
+<details>
+<summary>Using the SAP BTP Free Tier</summary>
 
 <br>
 
@@ -59,16 +70,6 @@ The application can also be used with Safari browser and Internet Explorer 9. Ho
 
 </details>
 
-<details>
-<summary>Using the SAP BTP Trial account</summary>
-
-<br>
-
-* Get an SAP Business Technology Platform trial account:
-  * [Tutorial: Get an account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
-  * [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6)
-
-</details>
 
 ### Activating SAP Integration Suite capabilities
 
