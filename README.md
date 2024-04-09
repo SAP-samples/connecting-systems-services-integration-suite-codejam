@@ -7,7 +7,7 @@
 
 - 2024-04-16: 🇪🇸 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Valencia, Spain) - [RSVP here 🗓️](https://community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap-integration-suite/ev-p/13635827).
 <p align = "center">
-    <img alt="CodeJam Zagreb" src="assets/art/CodeJam_Art_Valencia.png" width="85%"/><br/>
+    <img alt="CodeJam Valencia" src="assets/art/CodeJam_Art_Valencia.png" width="85%"/><br/>
     <i>SAP CodeJam in Valencia, Spain</i>
 </p>
 
