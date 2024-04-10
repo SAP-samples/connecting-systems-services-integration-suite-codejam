@@ -133,10 +133,29 @@ To achieve this, we can decouple (separate) request logging from the integration
 
 Now that we have a basic understanding of why and how we can decouple request logging, let's go ahead and modify our integration flow to handle this.
 
+<details>
+<summary>If you've completed the optional exercises 4.1 and 4.2</summary>
+<br>
+
 ![Add Content Modifier and DataStore](assets/decouple-contentmodified-and-datastore.jpg)
 <p align = "center">
 <i>Add Content Modifier and DataStore</i>
 </p>
+
+</details>
+
+<details>
+<summary>If you've NOT completed the optional exercises</summary>
+<br>
+
+![Add Content Modifier and DataStore](assets/decouple-contentmodified-and-datastore-without-optional.png)
+<p align = "center">
+<i>Add Content Modifier and DataStore</i>
+</p>
+
+</details>
+
+
 
 ### Design > Integrations
 
@@ -173,7 +192,7 @@ That was simple, wasn't it?  We are now ready to deploy our integration flow.
 
 👉 Save and deploy the integration flow.
 
-> If the deployment process fails with an error similar to this: [Failed to create route - HTTP address already registered](../../troubleshooting.md#failed-to-create-route---http-address-already-registered-for-another-iflow), add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex7`, so that the address `/request-employee-dependants-ex7`  doesn't clash with the one configured for our previous integration flow, and try deploying it again.
+> If the deployment process fails with an error similar to this: [Failed to create route - HTTP address already registered](../../troubleshooting.md#failed-to-create-route---http-address-already-registered-for-another-iflow), add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex5`, so that the address `/request-employee-dependants-ex5`  doesn't clash with the one configured for our previous integration flow, and try deploying it again.
 
 Our integration flow is now ready. Let's send some messages to it using Postman. 
 
