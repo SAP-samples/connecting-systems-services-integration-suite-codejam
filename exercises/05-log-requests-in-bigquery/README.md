@@ -30,6 +30,20 @@ Before we can configure the connectivity between Open Connectors and BigQuery, w
 <i>OAuth consent screen</i>
 </p>
 
+In the scopes section, include the following scope:
+- API: `BigQuery API`, Scope: `.../auth/devstorage.read_write` 
+
+<p align = "center">
+  <img alt="App registration - scopes" src="assets/app-registration-scopes.png" width="75%"/><br/>
+  <i>App registration - scopes</i>
+</p>
+
+If your app is set as internal, you will need to add a test user. In test users, add your email address and click `Save and Continue`. It will likely be the same email you configured in the OAuth consent screen as user support email.
+
+<p align = "center">
+  <img alt="App registration - Test users" src="assets/app-registration-test-users.png" width="85%"/><br/>
+  <i>Test usApp registration - ers</i>
+</p>
 
 #### Create an OAuth 2.0 Client
 
