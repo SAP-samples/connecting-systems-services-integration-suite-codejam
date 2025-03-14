@@ -116,7 +116,13 @@ From the BTP Cockpit:
 
   > 👉 Copy and paste the credentials details from `iflow-client` service key in the `Cloud Integration` Postman environment.
 
-### Set up API Management capability
+### API Management
+
+For API Management we will need to do two things:
+1. Set up the API Management capability if you are using an instance of the SAP Integration Suite that is not on the trial environment.
+2. Access the Developer Hub to complete set up.
+
+#### Set up API Management capability
 
 > 🚨 This is only required if you are running in a non-trial environment
 
@@ -145,6 +151,20 @@ Enter a host alias, add a notification contact (your email address) and click th
 For detailed steps, follow the instructions included in [step 5 - Configure the API Management Service](https://developers.sap.com/tutorials/api-mgmt-isuite-initial-setup.html#93fee77e-606e-425c-a6c3-1b6946d2ec87) of the  _Set Up API Management from Integration Suite_ tutorial. 
 
 </details>
+
+#### Access the Developer Hub
+
+You can access the developer hub from the SAP Integration Suite UI. Click on the `Explore our ecosystem` button on the top bar and then select the `Developer Hub` tile.
+
+<p align = "center">
+  <img alt="Access Developer Hub" src="assets/access-developer-hub.png" width="70%"/><br/>
+  <i>Access Developer Hub</i>
+</p>
+
+> [!IMPORTANT]
+> We need to carry out this step in order to finish the set up of the API Management capability. If we don't complete this step, we won't be able to Publish a Product to the Developer Hub, which is required in exercise 6.
+
+After the first time you access the Developer Hub, the set up will complete and you will need to logout from it and log back in to access the Developer Hub.
 
 ### BigQuery
 
