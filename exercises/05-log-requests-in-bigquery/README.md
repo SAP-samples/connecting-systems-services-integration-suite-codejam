@@ -21,7 +21,7 @@ Before we can configure the connectivity between Open Connectors and BigQuery, w
 
 #### (Optional) ⚠️ If you've not defined an OAuth consent screen before ⚠️
 
-👉 In Google Cloud Platform, select the project and go to `API & Services > OAuth consent screen` - https://console.cloud.google.com/apis/credentials/consent. Set the `User Type` to `Internal` and the app configuration similar to the one in the screenshot below.
+👉 In Google Cloud Platform, select the project and go to `API & Services` and then click on `OAuth consent screen` - https://console.cloud.google.com/apis/auth/overview. Set the `User Type` to `Internal` and the app configuration similar to the one in the screenshot below.
 
 > If you aren't able to set the `User Type` to `Internal` and need to select `External`, once completed the OAuth consent screen configuration, you will need to `Publish the application` and confirm that you want to publish it. If you don't do this, OpenConnectors will not be able to authenticate against Google Cloud.
 
@@ -49,7 +49,7 @@ If your app is set as internal, you will need to add a test user. In test users,
 
 An OAuth client is needed to configure the connection between Open Connectors and BigQuery. For this, follow the instructions below:
 
-👉 Navigate to the Google Cloud Platform console and create an OAuth 2.0 client. In Google Cloud Platform, select the project and go to `API & Services > Credentials`. Create a credential for OAuth Client ID and select `Web application` as the application type. Make sure to add https://auth.cloudelements.io/oauth as an Authorised redirect URI.
+👉 Navigate to the Google Cloud Platform console and create an OAuth 2.0 client. In Google Cloud Platform, select the project and go to `API & Services > Credentials` (https://console.cloud.google.com/apis/credentials). Create a credential for OAuth Client ID and select `Web application` as the application type. Make sure to add https://auth.cloudelements.io/oauth as an Authorised redirect URI.
 
 <p align = "center">
 <img alt="CodeJam - OAuth 2.0" src="assets/codejam-oauth-clientid.png" width="66%"/><br/>
