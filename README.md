@@ -7,8 +7,8 @@
 
 - 2025-03-25: 🇦🇪 SAP CodeJam: Connecting systems and services using SAP Integration Suite (Dubai, UAE) - [RSVP here 🗓️](https://community.sap.com/t5/sap-codejam/sap-codejam-connecting-systems-and-services-using-sap-integration-suite/ev-p/14007747).
 <p align = "center">
-    <img alt="CodeJam Valencia" src="assets/art/CodeJam_Art_Valencia.png" width="85%"/><br/>
-    <i>SAP CodeJam in Valencia, Spain</i>
+    <img alt="CodeJam Dubai" src="assets/art/CodeJam_Art_UAE.png" width="85%"/><br/>
+    <i>SAP CodeJam in Dubai, UAE</i>
 </p>
 
 <details>
