@@ -47,14 +47,12 @@ The application can also be used with Safari browser and Internet Explorer 9. Ho
 
 ## Services
 
+> 🚨 It is recommended to use the SAP BTP Trial and create an account in the 🇸🇬 Singapore region.
+
 <details>
 <summary>Using the SAP BTP Trial account (⚡️ recommended ⚡️)</summary>
 
 <br>
-
-<blockquote>
-<b><i>It is recommended to create your SAP BTP Trial account in the 🇸🇬 Singapore region.</i></b>
-</blockquote>
 
 1. Get an SAP Business Technology Platform trial account: [Tutorial: Get an account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 2. Subscribe to the SAP Integration Suite service and activate capabilities by following the instructions included in [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6). This tutorial will guide you through the steps to subscribe to the SAP Integration Suite service and activate capabilities. We will need to provision the following capabilities: Cloud Integration, Manage APIs (API Management), and Extend Non-SAP Connectivity (Open Connectors)
@@ -77,7 +75,9 @@ The application can also be used with Safari browser and Internet Explorer 9. Ho
 </details>
 
 
-### Create SAP Cloud Integration runtime client credentials
+### (Optional) Create SAP Cloud Integration runtime client credentials
+
+> 🚨 This is only required if you didn't complete the [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6). As part of the tutorial you run the `Enable Integration Suite` booster, which will end up creating some client credentials on your behalf.
 
 Once subscribed to the SAP Integration Suite, we will need to provision the create an instance of the Process Integration runtime. This service allow us to create client credentials which can be used to retrieve data from the SAP Cloud Integration APIs or calling an integration flow.
 
@@ -121,7 +121,7 @@ From the BTP Cockpit:
 > 🚨 This is only required if you are running in a non-trial environment
 
 <details>
-<summary>Complete setup of SAP API Management (👉 <i><b>when not running in the trial environment</b></i> 👈)</summary>
+<summary>Complete setup of SAP API Management</summary>
 <br/>
 Before being able to access API Management, you will need to complete the setup. Go to the API Management settings by navigating within the Integration Suite UI to *Settings > APIs*.
 
