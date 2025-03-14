@@ -52,8 +52,15 @@ The application can also be used with Safari browser and Internet Explorer 9. Ho
 
 <br>
 
+<blockquote>
+<b><i>It is recommended to create your SAP BTP Trial account in the 🇸🇬 Singapore region.</i></b>
+</blockquote>
+
 1. Get an SAP Business Technology Platform trial account: [Tutorial: Get an account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
-2. [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6)
+2. Subscribe to the SAP Integration Suite service and activate capabilities by following the instructions included in [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6). This tutorial will guide you through the steps to subscribe to the SAP Integration Suite service and activate capabilities. We will need to provision the following capabilities: Cloud Integration, Manage APIs (API Management), and Extend Non-SAP Connectivity (Open Connectors)
+
+<blockquote><i>⚠️ Although the tutorial screenshot doesn't select the Extend Non-SAP Connectivity, don't be misguided by this... do include the Extend Non-SAP Connectivity capability.</i>
+</blockquote>
 
 </details>
 
@@ -65,21 +72,9 @@ The application can also be used with Safari browser and Internet Explorer 9. Ho
 1. Get a free SAP Business Technology Platform account (if you don't already have one):
      * [Tutorial: Get an Account on SAP BTP to Try Out Free Tier Service Plans](https://developers.sap.com/tutorials/btp-free-tier-account.html)
      * [Video: SAP BTP Free Tier: Create Your Individual Account](https://www.youtube.com/watch?v=0zGuMus4R10)
-2. Subscribe to the SAP Integration Suite service by following the instructions included in [step 2](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#754869b5-274f-4a7d-b195-f4082f790b0d) of the _Set up the SAP Integration Suite trial_ tutorial. 
+2. Subscribe to the SAP Integration Suite service and activate capabilities by following the instructions included in [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6). 
 
 </details>
-
-
-### Activating SAP Integration Suite capabilities
-
-Once subscribed to the SAP Integration Suite service, we will need to provision the following capabilities:
-- Cloud Integration
-- API Management
-- Extend Non-SAP Connectivity
-
-> ⚠️ *Although the tutorial screenshot doesn't select the Extend Non-SAP Connectivity, don't be misguided by this... do include the Extend Non-SAP Connectivity capability.*
-
-To provision the SAP Integration Suite capabilities, follow the instructions included in [step 3](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#d87e7e9f-7862-410d-ae85-ede409587a60) of the  _Set up the SAP Integration Suite trial_ tutorial.
 
 
 ### Create SAP Cloud Integration runtime client credentials
