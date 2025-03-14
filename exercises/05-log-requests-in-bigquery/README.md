@@ -49,7 +49,7 @@ If your app is set as internal, you will need to add a test user. In test users,
 
 An OAuth client is needed to configure the connection between Open Connectors and BigQuery. For this, follow the instructions below:
 
-👉 Navigate to the Google Cloud Platform console and create an OAuth 2.0 client. In Google Cloud Platform, select the project and go to `API & Services > Credentials` (https://console.cloud.google.com/apis/credentials). Create a credential for OAuth Client ID and select `Web application` as the application type. Make sure to add https://auth.cloudelements.io/oauth as an Authorised redirect URI.
+👉 Navigate to the Google Cloud Platform console and create an OAuth 2.0 client. In Google Cloud Platform, select the project and go to `API & Services > Credentials` (https://console.cloud.google.com/apis/credentials). Create a credential for OAuth Client ID by clicking on the `+ CREATE CREDENTIALS` link and select `OAuth client ID`. In the creation page set `Web application` as the application type. Make sure to add https://auth.cloudelements.io/oauth as an Authorised redirect URI.
 
 <p align = "center">
 <img alt="CodeJam - OAuth 2.0" src="assets/codejam-oauth-clientid.png" width="66%"/><br/>
@@ -80,9 +80,10 @@ Access the Open Connectors UI, from within the SAP Integration Suite landing pag
 <i>Access Open Connectors from SAP Integration Suite</i>
 </p>
 
-👉  In Open Connectors, go to Connectors and search for BigQuery and select Authenticate. It will open the configuration screen to create a new instance. Enter the required information and complete the authorization flow to grant Open Connectors access to BigQuery.
+👉  In Open Connectors, go to `Connectors` and search for `BigQuery` and select `Authenticate`. It will open the configuration screen to create a new instance. Enter the required information and complete the authorization flow to grant Open Connectors access to BigQuery.
 
-> ⚠️ If you set the `User Type` to `External`, remember that you will need to `Publish the application` and confirm that you want to publish it before creating the instance. If not, OpenConnectors will not be able to authenticate against Google Cloud.
+> [!WARNING]
+> If you set the `User Type` to `External`, remember that you will need to `Publish the application` and confirm that you want to publish it before creating the instance. If not, OpenConnectors will not be able to authenticate against Google Cloud.
 
 ![Create BigQuery instance in Open Connectors](assets/create-bigquery-instance.gif)
 <p align = "center">
@@ -98,36 +99,42 @@ Access the Open Connectors UI, from within the SAP Integration Suite landing pag
 | OAuth API Key       | \<Value from OAuth Client ID\>                     |
 | OAuth API Secret    | \<Value from OAuth Client Secret\>                 |
 | Project ID          | Google Cloud Project ID                            |
-| Dataset ID          | Copy the value from dataset properties in BigQuery |
+| Dataset ID          | Copy the value from dataset properties in BigQuery, strip out the Project ID. |
 
 | Project ID                               | Dataset ID                                    |
 | ---------------------------------------- | --------------------------------------------- |
 | ![Project ID](assets/gcp-project-id.png) | ![Dataset ID](assets/bigquery-dataset-id.png) |
 
-> ⚠️ You'll notice in the gif below that the Project ID is removed from the Dataset ID copied from the Dataset properties. If you don't remove it there will be an authentication error when creating the instance.
+> [!WARNING]
+> You'll notice in the gif below that the Project ID is removed from the Dataset ID copied from the Dataset properties. If you don't remove it there will be an authentication error when creating the instance.
 
 ![Testing instance API Docs](assets/testing-api-docs.gif)
 <p align = "center">
 <i>Testing instance API Docs</i>
 </p>
 
-👉  In the API docs, select any method and copy the value included as an Authorization header, e.g. `User QNBF4V=, Organization a0f234e, Element d3jbWv5/xxx/yyyyyyy/zzzzxqrk=`. We will use this value to configure the Open Connector credentials in the next step.
+👉  In the API docs, select any method, e.g. `GET /api-requests`, and copy the value included as an Authorization header, e.g. `User QNBF4V=, Organization a0f234e, Element d3jbWv5/xxx/yyyyyyy/zzzzxqrk=`. We will use this value to configure the Open Connector credentials in the next step.
 
 ## SAP Cloud Integration
 
 Before we can jump to add the necessary flow steps in our integration flow, we will first deploy the Open Connectors instance credentials in SAP Cloud Integration. These credentials will then be configured in the adapter when setting up a new receiver participant.
 
-👉 Go to your SAP Cloud Integration instance and create/deploy a new user credential (`Monitor > Integrations > Manage Security > Security Material`) for BigQuery. This will be used by the integration flow to communicate with BigQuery.
+👉 Go to your SAP Integration Suite instance and create/deploy a new user credential (`Monitor > Integrations and APIs > Manage Security > Security Material`) for BigQuery. In the `Manage Security Material`, select `Create > User Credentials`. The credential we will create will be used by the integration flow to communicate with BigQuery.
 
-| Name        | Type            | Fields                                                                       |
-| ----------- | --------------- | ---------------------------------------------------------------------------- |
-| oc-bigquery-bp-dependants-log | Open Connectors | Enter the `User`, `Organization`, and `Element` details from Open Connectors |
+| Field        | Value           |
+| ----------- | --------------- |
+| Name | oc-bigquery-bp-dependants-log | 
+| Type | Open Connectors | 
+| User | Enter the `User` from Open Connectors |
+| Organization | Enter `Organization` from Open Connectors |
+| Element | Enter the `Element` details from Open Connectors |
 
 Now that our Open Connectors credentials are in place, we can proceed to import the integration flow, that was built for us, which is responsible for inserting the request record in BigQuery. 
 
-👉 Go to the integration package and import the [Send BP Dependants Request Log to BigQuery integration flow](../../assets/cloud-integration/Send%20BP%20Dependants%20Request%20Log%20to%20BigQuery.zip) by clicking Add > Integration Flow and upload the integration flow. Once uploaded, configure it by setting the external parameters and deploy it.
+👉 Go to the integration package and import the [Send BP Dependants Request Log to BigQuery integration flow](../../assets/cloud-integration/Send%20BP%20Dependants%20Request%20Log%20to%20BigQuery.zip) by clicking `Add` > `Integration Flow` and upload the integration flow. Once uploaded, configure it by setting the external parameters and deploy it.
 
-> ⚠️ When configuring the integration flow, double check the hostname in the BASE URI field. Depending on the region (eu10, us10, etc.)/environment (free tier/trial) you are working on, the hostname of the URL might be different from the one you are accessing in the OpenConnectors UI.
+> [!WARNING]
+> When configuring the integration flow, double check the hostname in the BASE URI field. Depending on the region (eu10, us10, etc.)/environment (free tier/trial) you are working on, the hostname of the URL might be different from the one you are accessing in the OpenConnectors UI.
 
 ![Import Request Log iFlow](assets/import-request-log-to-bq-iflow.gif)
 <p align = "center">
@@ -142,7 +149,9 @@ As mentioned in the [integration scenario](../../README.md#integration-scenario)
 
 To achieve this, we can decouple (separate) request logging from the integration service. The `Send BP Dependants Request Log to BigQuery` integration flow is responsible for communicating with BigQuery and creating a record in a table. We can "communicate" with it in an asynchronous manner, using persistence, e.g. [using the Data Store](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/5467c77da3064f65a5b3a9351fed7d84.html?locale=en-US), and creating data entries in a Data Store. The `Send BP Dependants Request Log to BigQuery` integration flow will then, on a scheduled basis, process any entries it finds in the Data Store and proceeds to store the data in BigQuery.
 
+> [!NOTE]
 > What is a **Data Store**?
+> 
 > We are able to temporarily store data in our SAP Cloud Integration tenant database. We don't have physical access to the database itself but we can store data in it through the "Data Store" interface. There are a number of integration flow steps that allow us to perform [operations in the the Data Store](https://help.sap.com/docs/CLOUD_INTEGRATION/4b57f249012e4e1f8c15cbd5dbb4fff3/79f63a4bf5a44b5996aa34c51e2f187f.html?locale=en-US), e.g. Data Store Write, Data Store Read, Data Store Delete. The Data Store can also be used for asynchronous processing as highlighted [here](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/5467c77da3064f65a5b3a9351fed7d84.html?locale=en-US). 
 
 Now that we have a basic understanding of why and how we can decouple request logging, let's go ahead and modify our integration flow to handle this.
@@ -169,17 +178,16 @@ Now that we have a basic understanding of why and how we can decouple request lo
 
 </details>
 
-
-
 ### Design > Integrations
 
-👉 Similar to previous exercises, let's start by making a copy of the integration flow we created in the previous exercises and add the `- Exercise 05` suffix to the name and open it.
+👉 Let's start by making a copy of the integration flow we created in the previous exercises. Click the Actions button and select Copy and add the `- Exercise 05` suffix to the name and open it.
 
-> As stated in the previous exercise, you might want to add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex5`, so that the address `/request-employee-dependants-ex5`  doesn't clash with the one configured for our previous integration flows.
+> [!TIP]
+> You might want to add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex5`, so that the address `/request-employee-dependants-ex5`  doesn't clash with the one configured for our previous integration flows.
 
 Given that the imported integration flow handles the communication with BigQuery, there is very little that we need to do in our main integration flow to "log requests".
 
-👉 After the `Get Employee Country`, add a new content modifier, that we will use to set the payload that we want the `Send BP Dependants Request Log to BigQuery` integration flow to process asynchronously. The payload will then be stored in the `BP-Dependants-Request-Log` data store by using the `Data Store Operation Write` flow step.
+👉 After the `Get Employee Country`/`GET BusinessPartner`, depending if you've completed the optional exercises or not, add a new content modifier, that we will use to set the payload that we want the `Send BP Dependants Request Log to BigQuery` integration flow to process asynchronously. The payload will then be stored in the `BP-Dependants-Request-Log` data store by using the `Data Store Operation Write` flow step.
 
 - `Prepare request log payload` content modifier: Go to the Message Body tab and set the *Type* to `Expression` and *Body* below.
   
@@ -191,6 +199,7 @@ Given that the imported integration flow handles the communication with BigQuery
     }
     ```
 
+    > [!NOTE]
     > 🐪 Here, we are using the [Simple language](https://camel.apache.org/components/3.18.x/languages/simple-language.html) in our integration flow again. In this instance we are using Simple expressions to define/modify the payload in the exchange. In the example above, we access the exchange properties and [create a date and set its format](https://camel.apache.org/components/3.18.x/languages/simple-language.html#_examples).
 
 - `Write BP-Dependants-Request-Log` data store operation: Data Store Name: `BP-Dependants-Request-Log`
