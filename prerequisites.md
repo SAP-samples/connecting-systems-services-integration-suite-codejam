@@ -159,7 +159,7 @@ Once you have an account, navigate to BigQuery - https://console.cloud.google.co
 <i>Create bp_dependants_log dataset</i>
 </p>
 
-👉 Create a table under the `bp_dependants_log` dataset created with the schema below.
+👉 Create a table named `api-requests` under the `bp_dependants_log` dataset created with the schema below.
 
 | Field name        | Type      | Max Length |
 | ----------------- | --------- | ---------- |
