@@ -2,16 +2,18 @@
 
 At the end of this exercise, you'll have successfully created a simple integration flow that communicates with the SAP S/4HANA Cloud mock server.
 
+> [!NOTE]
 > **What is an integration flow [^1]?** 
 > 
 > An integration flow allows you to specify how SAP Cloud Integration is to process a message. The modelling environment, provided in SAP Cloud Integration, enables you to design the details of message processing (its senders and receivers and the individual processing steps) with a graphical user interface.
 
-The diagram below captures what we will achieve as part of this exercise from a data flow point of view. First, we will expose an HTTP endpoint through which we can send requests to the integration flow we develop. Next, the integration flow will extract some data (the `employee_id`) from the payload received. Finally, the employee_id is passed to the SAP S/4HANA Cloud Business Partner mock service to retrieve Business Partner information. 
+The diagram below captures what we will achieve as part of this exercise from a data flow point of view. First, we will expose an HTTP endpoint through which we can send requests to the integration flow we develop. Next, the integration flow will extract some data (the *employee_id*) from the payload received. Finally, the *employee_id* is passed to the SAP S/4HANA Cloud Business Partner mock service to retrieve Business Partner information. 
 
 ![Data flow](assets/diagrams/first_data_flow.png)
 
 The integration flow expects a sample request message like the one below and should return a response message like the one underneath the request. 
 
+> [!TIP]
 > The [assets folder](./assets/) contains a [sample request](assets/request-payload-sample.json) and a complete [response payload](assets/sample-response.json).
 
 ```json
@@ -72,6 +74,7 @@ The integration flow expects a sample request message like the one below and sho
 }
 ```
 
+> [!NOTE]
 > ℹ️ While going through the exercise, you might encounter common problems not explicitly related to it. Your first stop should be the [troubleshooting.md](../../troubleshooting.md) page, which includes a list of these common problems and their potential solutions.
 
 Before building the integration flow, let's start with some context and talk a bit about what Enterprise Integration Patterns are and what Apache Camel is.
@@ -87,6 +90,7 @@ Under the hood, SAP Cloud Integration runs [Apache Camel](https://camel.apache.o
 
 The [Integration Flow Design Guidelines - Enterprise Integration Patterns package](https://hub.sap.com/package/DesignGuidelinesPatterns/overview), available in the SAP Business Accelerator Hub, contain integration flows that illustrate the design of the most common Enterprise Integration Patterns. These integration flows can be used as a reference when exploring an integration pattern and seeing how you can implement it in SAP Cloud Integration. These also come in handy when implementing the integration patterns in your integration flows.
 
+> [!NOTE]
 > ℹ️ For more information about enterprise integration patterns, see https://www.enterpriseintegrationpatterns.com/patterns/messaging/
 
 ### Apache Camel 
@@ -107,25 +111,23 @@ Also, SAP Cloud Integration support the [Camel Simple expression language](https
 
 You set up SAP Integration Suite and activated several capabilities as part of the prerequisites of this SAP CodeJam. We now must access the Cloud Integration workspace to build our first integration flow.
 
-👉 Go to the BTP Cockpit, open the SAP Integration Suite application from within Services > Instances and Subscriptions, and then choose the expand the *Design section* and click *Integrations*.
+👉 Go to the BTP Cockpit, open the `SAP Integration Suite` application from within `Services` > `Instances and Subscriptions`.
 
-![Accessing SAP Cloud Integration](assets/accessing-cloud-integration.gif)
+![SAP Integration Suite - Home Page](assets/sap-integration-suite-home-page.png)
 
-We are now on the landing page of SAP Cloud Integration. The page is divided into the following sections: Discover, Design, Monitor, and Settings. In this CodeJam, we will interact the most with Design and Monitor. Below is a brief explanation of what you can find in each section.
+We are now on the landing page of SAP Integration Suite. The page is divided into various sections: `Discover`, `Design`, `Test`, `Configure`, `Monitor`, `Settings` and more. In this CodeJam, we will interact the most with `Design` and `Monitor`. Below is a brief explanation of what you can find in each section.
 
-![Cloud Integration components](assets/cloud_integration_components.png)
-
-- *Discover > Integrations*: Here, you can find predefined integration content provided by SAP that you can use out of the box and adapt to your requirements.
-- *Design > Integrations*: This is where you design your integration content. It contains the graphical integration flow modelling environment. You will find a list of integration packages defined for the tenant. When you select an integration package, you can find the integration flows (and other artefacts) defined for the package (on the `Artifacts` tab).
-- *Monitor > Integrations*: This is where you can monitor your integration flow. You also use this section to manage additional artefacts that you deploy on your tenant to complement your integration flows (for example, User Credential artefacts to configure connections using basic authentication).
+- `Discover > Integrations`: Here, you can find predefined integration content provided by SAP that you can use out of the box and adapt to your requirements.
+- `Design > Integrations and APIs`: This is where you design your integration content. It contains the graphical integration flow modelling environment. You will find a list of integration packages defined for the tenant. When you select an integration package, you can find the integration flows (and other artefacts) defined for the package (on the `Artifacts` tab).
+- `Monitor > Integrations and APIs`: This is where you can monitor your integration flow. You also use this section to manage additional artefacts that you deploy on your tenant to complement your integration flows (for example, User Credential artefacts to configure connections using basic authentication).
 
 ## Design
 
-Let's jump to the *Design > Integrations* component to start developing our integration flow. Before designing our integration flow, we will need to create an integration package. Cloud Integration allows us to assemble integration contents, e.g. integration flows, message mappings, value mappings, scripts, and APIs, into packages so that they can be part of our integration scenarios.
+Let's jump to the `Design > Integrations and APIs` component to start developing our integration flow. Before designing our integration flow, we will need to create an integration package. Cloud Integration allows us to assemble integration contents, e.g. integration flows, message mappings, value mappings, scripts, and APIs, into packages so that they can be part of our integration scenarios.
 
 ![Design section](assets/design-section.png)
 
-👉 Click the Create button and enter the integration package's name and short description.
+👉 Click the `Create` button and enter the integration package's name and short description.
 
 | Field               | Value                                                            |
 | ------------------- | ---------------------------------------------------------------- |
@@ -153,7 +155,7 @@ When accessing the newly created integration flow, you'll notice a couple of thi
 ![New integration flow](assets/new-integration-flow.png)
 - There is no connection between the Sender participant and our integration process or the integration process and the Receiver participant.
 - The palette is greyed out (*highlighted in orange*), and we cannot modify the integration flow. This is because our integration flow is not in edit mode. To switch to edit mode, click the `Edit button` (*highlighted in green*).
-- The configuration section at the bottom of the modelling area is collapsed. The contents of this section will change depending on the object selected in the modelling area. To expand it, click the `Restore button`.
+- The configuration section at the bottom of the modelling area is collapsed. The contents of this section will change depending on the object selected in the modelling area. To expand it, click the "Restore button".
   ![Expand configuration section](assets/expand-configuration-section.gif)
 
 
@@ -167,7 +169,10 @@ We will expose the integration flow via an HTTP endpoint. To send requests to th
 
 ![Connect sender](assets/connect-sender-to-start-message.gif)
 
-👉 Now that we've connected the sender participant, we can proceed to configure the connection of the HTTPS adapter. First, we need to specify an address, then a user role and finally, if the endpoint should be CSRF (Cross-site request forgery [^2]) protected. 
+👉 Now that we've connected the sender participant, we can proceed to configure the connection of the HTTPS adapter. First, we need to specify an address, then a user role and finally, if the endpoint should be CSRF (Cross-site request forgery [^2]) protected.
+
+> [!IMPORTANT]
+> Make sure to uncheck the `CSRF Protected` checkbox.
 
 ![HTTPS adapter connection settings](assets/http-adapter-connection.png)
 
@@ -192,7 +197,7 @@ The JSON to XML converter enables you to transform messages in JSON format to XM
 
 We can use the content modifier to define local properties for storing additional data during message processing. You can also use it to set header properties required in the HTTP request to other systems. The header and properties in the exchange can be used in connectors and conditions in the integration flow. 
 
-👉 Let's create a property in our exchange. The `employee_id` exchange property will store the employee_id value sent in the request payload. To do this, we need to access the field value using XPath. Let's configure the Content Modifier - Exchange Property, as shown in the screenshot below.
+👉 Let's create a property in our exchange. Navigate to the `Exchange Property` tab in the Content Modifier. Then click the `Add` button to add a new property. The `employee_id` exchange property will store the employee_id value sent in the request payload. To do this, we need to access the field value using XPath. Let's configure the Content Modifier - Exchange Property, as shown in the screenshot below.
 
 | Field          | Value                       |
 | -------------- | --------------------------- |
@@ -208,9 +213,10 @@ We can use the content modifier to define local properties for storing additiona
 
 For our integration scenarios, we require that our integration flow communicates with the SAP S/4HANA Cloud mock server to retrieve Business Partner data. In this case, we will use the request reply step to connect to the Business Partner mock service.
 
+> [!NOTE]
 > In exercise 4, we will further process the data received from the SAP S/4HANA Cloud - Business Partner mock service.
 
-👉 Add a Request Reply external call to call the SAP S/4HANA Cloud - Business Partner mock service, connect it to the Receiver participant, and select as a [receiver the HTTP adapter](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/2da452effb764b3bb28f8e0a2f5bd480.html?locale=en-US), and set the connections details in the HTTP adapter.
+👉 Add a `Request Reply` external call to call the SAP S/4HANA Cloud - Business Partner mock service, connect it to the `Receiver` participant, and select as a [receiver the HTTP adapter](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/2da452effb764b3bb28f8e0a2f5bd480.html?locale=en-US), and set the connections details in the HTTP adapter.
 
 ![Add Request Reply step in iFlow](assets/request-reply-step-in-iflow.png)
 
@@ -248,14 +254,21 @@ Now let's proceed to deploy the integration flow.
 
 We need to deploy the integration flow before it is ready to receive requests. 
 
-👉 Save your integration flow and deploy it by clicking the respective buttons in the upper right corner of the modelling area.
+👉 `Save` your integration flow and `Deploy` it by clicking the respective buttons in the upper right corner of the modelling area. 
+
+> [!NOTE]
+> If you are working in the SAP BTP trial environment, the first you deploy an integration flow will take some time :-).
 
 ![Deployment status](assets/deployment-starting-to-started.gif)
 
 Once deployed, and the runtime status is `✅ Started`, you can click the `Navigate to Manage Integration Content link` and it will take you to the details of the deployed content. An HTTP endpoint URL, similar to the one below, will be displayed in the UI.
 
+> [!TIP]
+> Alternatively you can check the deployment of the integration flow from the `Monitor > Integrations and APIs` section. Then click the `All` tile under `Manage Integration Content`.
+
 ![Deployed content - HTTP endpoint URL](assets/deployed-content.png)
 
+> [!CAUTION]
 > ℹ️ In case you don't see the HTTP endpoint URL immediately in the deployed content page, see [troubleshooting](../../troubleshooting.md#there-is-no-http-endpoint-url-on-the-deployed-content-page).
 
 👉 Copy the HTTP endpoint URL, as we will use it in the next exercise, [sending requests and monitoring the integration flow](../04-send-messages-and-monitor/).
