@@ -45,7 +45,7 @@ In the `Data Access` section, include the following scope under the sensitive sc
   <i>App registration - scopes</i>
 </p>
 
-If your app is set as internal, you will need to add a test user. In test users, add your email address and click `Save and Continue`. It will likely be the same email you configured in the OAuth consent screen as user support email.
+You will need to add a test user. In test users, add your email address and click `Save and Continue`. It will likely be the same email you configured in the OAuth consent screen as user support email.
 
 <p align = "center">
   <img alt="App registration - Test users" src="assets/app-registration-test-users.png" width="85%"/><br/>
@@ -56,7 +56,7 @@ If your app is set as internal, you will need to add a test user. In test users,
 
 An OAuth client is needed to configure the connection between Open Connectors and BigQuery. For this, follow the instructions below:
 
-👉 Navigate to the Google Cloud Platform console and create an OAuth 2.0 client. In Google Cloud Platform, select the project and go to `API & Services > Credentials` (https://console.cloud.google.com/apis/credentials). Create a credential for OAuth Client ID by clicking on the `+ CREATE CREDENTIALS` link and select `OAuth client ID`. In the creation page set `Web application` as the application type. Make sure to add https://auth.cloudelements.io/oauth as an Authorised redirect URI.
+👉 Navigate to the Google Cloud Platform console and create an OAuth 2.0 client. In Google Cloud Platform, select the project and go to `API & Services > Credentials` (https://console.cloud.google.com/apis/credentials). Create a credential for OAuth Client ID by clicking on the `+ CREATE CREDENTIALS` link and select `OAuth client ID`. In the creation page set `Web application` as the application type. Make sure to add `https://auth.cloudelements.io/oauth` as an Authorised redirect URI.
 
 <p align = "center">
 <img alt="CodeJam - OAuth 2.0" src="assets/codejam-oauth-clientid.png" width="66%"/><br/>
