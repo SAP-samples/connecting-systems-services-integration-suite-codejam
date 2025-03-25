@@ -21,20 +21,27 @@ Before we can configure the connectivity between Open Connectors and BigQuery, w
 
 #### (Optional) ⚠️ If you've not defined an OAuth consent screen before ⚠️
 
-👉 In Google Cloud Platform, select the project and go to `API & Services` and then click on `OAuth consent screen` - https://console.cloud.google.com/apis/auth/overview. Set the `User Type` to `Internal` and the app configuration similar to the one in the screenshot below.
+👉 In Google Cloud Platform, select the project and go to `API & Services` and then click on `OAuth consent screen` - https://console.cloud.google.com/apis/auth/overview. You will be redirected to a new screen and in it you need to select `Branding`. The app configuration page similar to the one in the screenshot below.
 
 > If you aren't able to set the `User Type` to `Internal` and need to select `External`, once completed the OAuth consent screen configuration, you will need to `Publish the application` and confirm that you want to publish it. If you don't do this, OpenConnectors will not be able to authenticate against Google Cloud.
 
 <p align = "center">
-<img alt="OAuth consent screen" src="assets/oauth-consent-screen.png" width="66%"/><br/>
-<i>OAuth consent screen</i>
+<img alt="Branding screen" src="assets/branding-screen.png" width="80%"/><br/>
+<i>Branding screen</i>
 </p>
 
-In the scopes section, include the following scope:
+In the same `Branding` screen, you will need to set the `cloudelements.io` as an `Authorised Domain`.
+
+<p align = "center">
+<img alt="Authorised domains" src="assets/authorised-domains.png" width="80%"/><br/>
+<i>Authorised domains</i>
+</p>
+
+In the `Data Access` section, include the following scope under the sensitive scopes:
 - API: `BigQuery API`, Scope: `.../auth/devstorage.read_write` 
 
 <p align = "center">
-  <img alt="App registration - scopes" src="assets/app-registration-scopes.png" width="75%"/><br/>
+  <img alt="App registration - scopes" src="assets/app-registration-scopes.png" width="85%"/><br/>
   <i>App registration - scopes</i>
 </p>
 
@@ -42,7 +49,7 @@ If your app is set as internal, you will need to add a test user. In test users,
 
 <p align = "center">
   <img alt="App registration - Test users" src="assets/app-registration-test-users.png" width="85%"/><br/>
-  <i>Test usApp registration - ers</i>
+  <i>App registration - Test users</i>
 </p>
 
 #### Create an OAuth 2.0 Client
