@@ -19,7 +19,7 @@ Once set up, we will need to authenticate against the SAP Cloud Integration auth
 👉 Open the `POST Token` request and click the send button.
 
 > [!NOTE]
-> ℹ️ You'll notice some Javascript code if you click on the Tests tab part of the `POST Token` request. The code facilitates copying the value of the `access_token` field in the response payload to the `access_token` variable in our environment. The token expires after 4200 seconds, as stated in the `expires_in` field, meaning that during the CodeJam, we will need to refresh it a couple of times. Keep this in mind in case you get an [HTTP 401 error](../../troubleshooting.md#http-401-unauthorized-error-when-sending-requests-to-the-integration-flow) when sending messages to the integration flow.
+> ℹ️ You'll notice some Javascript code if you click on the Scripts tab part of the `POST Token` request. The code facilitates copying the value of the `access_token` field in the response payload to the `access_token` variable in our environment. The token expires after 4200 seconds, as stated in the `expires_in` field, meaning that during the CodeJam, we will need to refresh it a couple of times. Keep this in mind in case you get an [HTTP 401 error](../../troubleshooting.md#http-401-unauthorized-error-when-sending-requests-to-the-integration-flow) when sending messages to the integration flow.
 
 ![Get access token](assets/get-access-token.png)
 <p align = "center">
@@ -30,7 +30,7 @@ Hooray! 🎉 🥳 We are now ready to send messages to the integration flow.
 
 ## Sending a message to our integration flow
 
-👉 Firstly, select the `Cloud Integration Instance` environment in Postman. Next, expand the `cloud-integration` folder in collections and open the `GET Request Employee Dependants request`. Finally, click the `Send button`.
+👉 Firstly, select the `Cloud Integration Instance` environment in Postman. Next, expand the `cloud-integration` folder in collections and open the `POST Request Employee Dependants request`. Finally, click the `Send button`.
 
 > [!TIP]
 > If everything goes as expected, you should see a response similar to the one in the screenshot below. If not, check out the [troubleshooting.md](../../troubleshooting.md) page, which includes a list of common problems and their potential solutions.
@@ -90,7 +90,7 @@ The following information is presented to us when selecting a message:
 - *Artifact details*: From here we can jump directly to the deployed integration content or to the modelling area to edit the integration flow.
 
 > [!TIP]
-> The cause and solution to the error in the screenshot below is included in the [troubleshooting](../../troubleshooting.md#an-internal-server-error-occurred-end-of-input-at-line-1-column-1-path) page. You can replicate this error by sending a message to the integration flow with no request body. An example is included in the Postman collection (`cloud-integration > GET Request Employee Dependants > 500 Error - No body in request`).
+> The cause and solution to the error in the screenshot below is included in the [troubleshooting](../../troubleshooting.md#an-internal-server-error-occurred-end-of-input-at-line-1-column-1-path) page. You can replicate this error by sending a message to the integration flow with no request body. An example is included in the Postman collection (`cloud-integration > POST Request Employee Dependants > 500 Error - No body in request`).
 
 ![Message monitoring - Failed message](assets/message-monitoring-failed-message.png)
 <p align = "center">
@@ -120,7 +120,7 @@ Congratulations, you've sent messages to the deployed integration flow. Also, yo
 
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
-1. Compare the response headers when calling the service directly (`s4-bp-mock-server > GET Single Business Partner`) vs via Cloud Integration (`cloud-integration > GET Request Employee Dependants`). Do you see any headers returned that might be specific to SAP Cloud Integration? Can you think of a place where you can use one of those headers?
+1. Compare the response headers when calling the service directly (`s4-bp-mock-server > GET Single Business Partner`) vs via Cloud Integration (`cloud-integration > POST Request Employee Dependants`). Do you see any headers returned that might be specific to SAP Cloud Integration? Can you think of a place where you can use one of those headers?
 2. Go ahead and on purpose make the integration flow fail. You can do this by sending a malformed payload to the integration flow. What's the error that you get? Try not sending a valid access token, what error do you get? What happens if no authentication token is sent? The idea here is to get familiar with different error situation that you might face.
 
 ## Next
