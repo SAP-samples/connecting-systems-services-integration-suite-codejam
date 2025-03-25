@@ -29,7 +29,28 @@ style: |
 
 <!-- paginate: false -->
 
-![bg](assets/art/CodeJam_Art.jpg)
+![bg](assets/art/CodeJam_Art_UAE.png)
+
+
+---
+
+<!-- paginate: false -->
+
+![bg left:68% 100%](assets/art/CodeJam_Art_UAE.png)
+
+
+**Welcome!**
+
+<br />
+
+*WiFi*:
+`TradeFinex-XDC-Guest`
+
+*Password*:
+`ilikexdcnetwork`
+
+
+
 
 ---
 <!-- paginate: false -->
@@ -48,14 +69,18 @@ style: |
 
 
 ---
-# SAP CodeJam - Agenda
 
-<br/>
+![bg left:55% 100%](assets/art/CodeJam_Art.png)
+<br />
 
-- *14:00* - Introduction
-- *14:30* - Exercise 01 - 04
-- *16:00* - Break
-- *16:30* - Exercise 05 - 06
+## Agenda
+
+
+*09:30* - Introduction
+*10:00* - Exercises 01 - 04
+*11:30* - Break
+*12:00* - Exercises 05 - 06
+*14:00* - Wrap-up
 <!-- - *09:00* - Introduction
 - *09:30* - Exercise 01 - 04
 - *11:00* - Break
@@ -93,7 +118,11 @@ style: |
 # SAP CodeJam - Repository
  
  <!-- _class: centersingleimage -->
-![](assets/repository.png)
+![width:24cm height:12cm](assets/repository.png)
+
+https://github.com/SAP-samples/connecting-systems-services-integration-suite-codejam
+
+
 
 --- 
 
@@ -117,7 +146,7 @@ style: |
 
 # Exercise 01 - Getting familiar with the SAP Business Accelerator Hub (20')
 
-![width:25cm height:14cm](exercises/01-getting-familiar-business-accelerator-hub/assets/S4HANACloud-API-BusinessPartner.png)
+![width:21cm height:12cm](exercises/01-getting-familiar-business-accelerator-hub/assets/S4HANACloud-API-BusinessPartner.png)
 
 --- 
 <!-- _class: centersingleimage -->
@@ -167,7 +196,7 @@ style: |
 
 # Exercise 06 - Expose integration flow via API Management (30')
 
-![width:25cm height:14cm](exercises/06-expose-integration-flow-api-management/assets/import-spec-create-api.gif)
+![width:25cm height:12cm](exercises/06-expose-integration-flow-api-management/assets/import-spec-create-api.png)
 
 --- 
 <!-- _class: centersingleimage -->
@@ -175,3 +204,4 @@ style: |
 # Thanks for attending!!!
 
 ![bg right:50% 80%](SessionFeedback.png)
+https://forms.office.com/e/McnEHPPJFk
