@@ -38,12 +38,42 @@ Cloud Integration has been tested using the following browsers:
 The application can also be used with Safari browser and Internet Explorer 9. However, some features might not work as expected.
 ```
 
-### Postman
+### Bruno
 
-[Postman](https://www.getpostman.com/downloads/), to send requests to the integration flows that we deploy to SAP Cloud Integration. Follow the installation instructions included in this [tutorial: Install Postman REST Client](https://developers.sap.com/tutorials/api-tools-postman-install.html).
-  > Once installed you can import the collection and environments included in the `./connecting-systems-services-integration-suite-codejam/assets/postman` folder.
+In this CodeJam we will use [Bruno](https://www.usebruno.com/downloads), to send requests to the integration flows that we deploy to SAP Cloud Integration. Please install the client in your computer.
 
-  > ![Import objects to Postman](./assets/import-objects-to-Postman.gif)
+👉 Once installed you can open the Bruno collection (`codejam-collection` folder) that's included in the `./connecting-systems-services-integration-suite-codejam/assets/bruno` folder.
+
+![Bruno - Open Collection](./assets/open-collection.png)
+
+Now that we've imported the collection, select the collection and it will display its details, e.g. requests, environments, that are part of the collection. 
+
+![Bruno - Collection details](./assets/bruno-collection-details.png)
+
+You'll notice that there are some environments included with the collection. These environments contains variables, which at runtime, Bruno will need to replace its values with the actual values of our systems. To manage the secrets securely we will use the DotEnv mechanism (`.env` - file) described in [this page](https://docs.usebruno.com/secrets-management/dotenv-file).
+
+👉 Make a copy of the `.env.sample` file included in the repository and name it just `.env`
+
+The values in the new `.env` file will be used by Bruno when communicating with the different systems. Your new .env file should look something like the example below:
+
+```
+AMERICAS_HOST=https://bpd-[name].cfapps.eu10.hana.ondemand.com
+AMERICAS_API_KEY=EG6T2086-0C8K-6G8J-T1U2-736C3UC1GXN1
+
+EUROPE_HOST=https://bpd-[name].cfapps.eu10.hana.ondemand.com
+EUROPE_API_KEY=1R55V773-XF35-4J17-A17M-1L106D2A7T54
+
+S4HC_MOCK_HOST=https://[host-name].cfapps.eu10.hana.ondemand.com
+
+CPI_HOST=https://my-tenant.it-cpi018-rt.cfapps.eu10-003.hana.ondemand.com
+CPI_SK_CLIENT_ID=sb-5357x445-l723-7634-n057-01703y207h20!b139588|it-rt-my-account!b117912
+CPI_SK_CLIENT_SECRET=7055y834-3200-17464-gaws-36m00264h2t0Iq3=
+CPI_SK_TOKEN_URL=https://my-tenant.authentication.eu10.hana.ondemand.com/oauth/token
+CPI_ACCESS_TOKEN=eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vYW50b25pby1tYXJhZGlhZ
+```
+
+> 🔐 As part of the event, your instructor will provide you with the values for the `AMERICAS_HOST`, `AMERICAS_API_KEY`, `EUROPE_HOST`, `EUROPE_API_KEY`, and `S4HC_MOCK_HOST` variables.
+
 
 ## Services
 
@@ -114,7 +144,17 @@ From the BTP Cockpit:
 3. Copy credentials: click on the service key just created and a pop-up will appear with the service key details, e.g. `clientid`, `clientsecret`, `url`, `tokenurl`.
    ![view-service-key](assets/pi-rt-view-service-key.png)
 
-  > 👉 Copy and paste the credentials details from `iflow-client` service key in the `Cloud Integration` Postman environment.
+4. Copy and paste the credentials details from the `iflow-client` service key in the `.env` file we created in the [Bruno section](#bruno). You will need to replace the variables with the values included in the service key:
+  
+  | .env file variable | service key field |
+  | ---- | ---- |
+  | CPI_HOST | oauth.url |
+  | CPI_SK_CLIENT_ID | oauth.clientid |
+  | CPI_SK_CLIENT_SECRET | oauth.clientsecret |
+  | CPI_SK_TOKEN_URL | oauth.tokenurl |
+
+> Once you've updated the environment variables you can test you connection by requesting an access token for Cloud Integration. A successful response will look like the screenshot below.
+> ![Success token request](./assets/token-success.png)
 
 ### API Management
 
@@ -166,35 +206,11 @@ You can access the developer hub from the SAP Integration Suite UI. Click on the
 
 After the first time you access the Developer Hub, the set up will complete and you will need to logout from it and log back in to access the Developer Hub.
 
-### BigQuery
+### Slack
 
-In [exercise 05](exercises/05-log-requests-in-bigquery/README.md#exercise-05---log-request-in-bigquery) we will configure a connection to Google's BigQuery via Open Connectors. Google Cloud Platform offers a free tier, through which you can use BigQuery. Go ahead and create a free account if you don’t have access to Google Cloud Platform – https://cloud.google.com/free/.
+In [exercise 05](exercises/05-log-requests-in-slack/README.md#exercise-05---log-request-in-slack) we will configure a connection to Slack via HTTP. We will need to join a Slack workspace (https://isuite-codejam.slack.com) to successfully complete the exercise and see the results of the messages we will be creating as part of the exercise.
 
-Once you have an account, navigate to BigQuery - https://console.cloud.google.com/bigquery, create a dataset and a table under your project.
-
-👉 Create dataset under your Google Cloud project. Enable table expiration and set the maximum table age to `60` days.
-
-![Create bp_dependants_log dataset](assets/create-dataset.gif)
-<p align = "center">
-<i>Create bp_dependants_log dataset</i>
-</p>
-
-👉 Create a table named `api-requests` under the `bp_dependants_log` dataset created with the schema below.
-
-| Field name        | Type      | Max Length |
-| ----------------- | --------- | ---------- |
-| request_timestamp | TIMESTAMP |            |
-| employee_id       | STRING    | 15         |
-| employee_country  | STRING    | 2          |
-
-![Create api-requests table](assets/create-api-requests-table.gif)
-<p align = "center">
-<i>Create api-requests table</i>
-</p>
-
-
-[^1]: [Feature Scope Description for SAP Integration
-Suite](https://help.sap.com/doc/e50e61e7b66c4b60ae5e88c00c01486a/sap.cp.integration.suite/en-US/FSD_IntegrationSuite.pdf)
+> 🔐 As part of the event preparation, your instructor will send you an invite to join the workspace.
 
 ## Running the services outside of a CodeJam event
 

@@ -1,0 +1,15 @@
+meta {
+  name: All Dependants
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/employees/{{employee_id}}/dependants
+  body: none
+  auth: none
+}
+
+headers {
+  apiKey: {{apiKey}}
+}

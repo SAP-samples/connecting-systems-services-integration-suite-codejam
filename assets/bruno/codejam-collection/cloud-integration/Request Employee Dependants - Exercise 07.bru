@@ -1,0 +1,21 @@
+meta {
+  name: Request Employee Dependants - Exercise 07
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{host}}/http/request-employee-dependants-ex7
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access_token}}
+}
+
+body:json {
+  {
+      "employee_id": "1003766"
+  }
+}

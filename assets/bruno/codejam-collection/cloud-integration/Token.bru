@@ -1,0 +1,27 @@
+meta {
+  name: Token
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{token_url}}?grant_type=client_credentials
+  body: none
+  auth: basic
+}
+
+params:query {
+  grant_type: client_credentials
+}
+
+auth:basic {
+  username: {{client_id}}
+  password: {{client_secret}}
+}
+
+script:post-response {
+  if (res.status == 200) {
+    const token = res.body.access_token;
+    bru.setEnvVar("access_token",token); 
+  }
+}
