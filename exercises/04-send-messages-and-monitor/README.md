@@ -125,7 +125,7 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 05 - Log request in BigQuery](../05-log-requests-in-bigquery/README.md#exercise-05---log-request-in-bigquery)
+Continue to 👉 [Exercise 05 - Log request in Slack](../05-log-requests-in-slack/README.md#exercise-05---log-request-in-slack)
 
 [^1]: Bearer Tokens: https://www.oauth.com/oauth2-servers/differences-between-oauth-1-2/bearer-tokens/ 
 [^2]: URL hostnames: https://developer.mozilla.org/en-US/docs/Web/API/URL/hostname

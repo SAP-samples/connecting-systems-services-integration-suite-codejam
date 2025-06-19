@@ -133,4 +133,4 @@ If you finish earlier than your fellow participants, you might like to ponder th
 
 ## Next
 
-Continue to 👉 [Exercise 05 - Log requests in BigQuery](../05-log-requests-in-bigquery/README.md#exercise-05---log-request-in-bigquery)
+Continue to 👉 [Exercise 05 - Log requests in Slack](../05-log-requests-in-slack/README.md#exercise-05---log-request-in-slack)
