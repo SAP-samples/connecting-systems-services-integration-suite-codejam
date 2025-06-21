@@ -7,7 +7,6 @@ from diagrams.custom import Custom
 from diagrams.sap.other import Placeholder_Circle
 from diagrams.sap.integration import ProcessIntegration_Circle, OpenConnectors_Circle, APIManagement_Circle
 from diagrams.sap.runtimes import KymaRuntime_Circle
-from diagrams.gcp.analytics import BigQuery
 from diagrams.sap.erp import SAPS4HANACloud
 
 # SAP BTP Solution Diagrams and Icons guidelines colors
