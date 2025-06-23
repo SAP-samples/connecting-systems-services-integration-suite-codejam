@@ -1,13 +1,9 @@
 # tech-byte-diagram.py
-from diagrams import Cluster, Diagram, Edge, Node
-from diagrams.onprem.compute import Server
-from diagrams.generic.compute import Rack
-from diagrams.generic.place import Datacenter
+from diagrams import Cluster, Diagram, Edge
 from diagrams.custom import Custom
-from diagrams.sap.other import Placeholder_Circle
-from diagrams.sap.integration import ProcessIntegration_Circle, OpenConnectors_Circle, APIManagement_Circle
-from diagrams.sap.runtimes import KymaRuntime_Circle
-from diagrams.sap.erp import SAPS4HANACloud
+from diagrams.sap.integration_suite import CloudIntegration, OpenConnectors, APIManagement
+from diagrams.sap.foundational import SAPBTPKymaRuntime
+from diagrams.sap.brands import SAPS4HANACloud
 
 # SAP BTP Solution Diagrams and Icons guidelines colors
 L0_BLUE_COLOUR = "#316CCA"
@@ -32,12 +28,12 @@ with Diagram("", show=False, filename="bp_data_flow", graph_attr={"splines": "tr
 
     with Cluster("SAP Business Technology Platform - CodeJam account", graph_attr=GLOBALACCOUNT_GRAPH_ATTR):
         with Cluster("European Subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
-            european_service = KymaRuntime_Circle("BP Dependants\nService", **NODE_LABEL)
+            european_service = SAPBTPKymaRuntime("BP Dependants\nService", **NODE_LABEL)
             
     with Cluster("SAP Business Technology Platform - Participant account", graph_attr=GLOBALACCOUNT_GRAPH_ATTR):
         with Cluster("Your Subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
             with Cluster("SAP Integration Suite", graph_attr=PRIMARY_EMPHASIZE_AREA_GRAPH_ATTR):
-                cloud_integration = ProcessIntegration_Circle("Cloud Integration", **NODE_LABEL)
+                cloud_integration = CloudIntegration("Cloud Integration", **NODE_LABEL)
                 
                 cloud_integration >> Edge(label="Business Partners", **EDGE_LABEL) >> sap_server
 
