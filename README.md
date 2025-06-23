@@ -5,10 +5,11 @@
 ---
 ## *SAP CodeJam events scheduled*
 
-- 2025-03-25: 🇦🇪 SAP CodeJam: Connecting systems and services using SAP Integration Suite (Dubai, UAE) - [RSVP here 🗓️](https://community.sap.com/t5/sap-codejam/sap-codejam-connecting-systems-and-services-using-sap-integration-suite/ev-p/14007747).
+- 2025-07-14: 🇮🇳 SAP CodeJam: Connecting systems and services using SAP Integration Suite (Mumbai, India) - [RSVP here 🗓️](https://community.sap.com/t5/sap-codejam/sap-codejam-connecting-systems-and-services-using-sap-integration-suite/ev-p/14110686).
+- 2025-07-18: 🇮🇳 SAP CodeJam: Connecting systems and services using SAP Integration Suite (Bengaluru, India) - [RSVP here 🗓️](https://community.sap.com/t5/sap-codejam/sap-codejam-connecting-systems-and-services-using-sap-integration-suite/ev-p/14110696).
 <p align = "center">
-    <img alt="CodeJam Dubai" src="assets/art/CodeJam_Art_UAE.png" width="85%"/><br/>
-    <i>SAP CodeJam in Dubai, UAE</i>
+    <img alt="CodeJams" src="assets/art/CodeJam_Art.png" width="85%"/><br/>
+    <i>SAP CodeJams</i>
 </p>
 
 <details>
@@ -22,6 +23,8 @@
 - 2024-01-25: 🇩🇪 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Bonn, Germany) - [RSVP here 🗓️](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap-integration-suite/ev-p/290525).
 - 2024-02-15: 🇭🇷 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Zagreb, Croatia) - [RSVP here 🗓️](https://groups.community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap-integration-suite/ev-p/296103)
 - 2024-04-16: 🇪🇸 SAP CodeJam BTP: Connecting systems and services using SAP Integration Suite (Valencia, Spain) - [RSVP here 🗓️](https://community.sap.com/t5/sap-codejam/sap-codejam-btp-connecting-systems-and-services-using-sap-integration-suite/ev-p/13635827).
+- 2025-03-25: 🇦🇪 SAP CodeJam: Connecting systems and services using SAP Integration Suite (Dubai, UAE) - [RSVP here 🗓️](https://community.sap.com/t5/sap-codejam/sap-codejam-connecting-systems-and-services-using-sap-integration-suite/ev-p/14007747).
+
 </details>
 
 ---
