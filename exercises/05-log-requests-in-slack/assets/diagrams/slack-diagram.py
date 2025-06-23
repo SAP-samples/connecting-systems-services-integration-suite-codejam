@@ -1,9 +1,9 @@
 from diagrams import Cluster, Diagram, Edge, Node
 from diagrams.custom import Custom
-from diagrams.sap.integration import CloudIntegration
-from diagrams.sap.runtimes import KymaRuntime
+from diagrams.sap.integration_suite import CloudIntegration
+from diagrams.sap.foundational import SAPBTPKymaRuntime
 from diagrams.saas.chat import Slack
-from diagrams.sap.erp import SAPS4HANACloud
+from diagrams.sap.brands import SAPS4HANACloud
 
 # SAP BTP Solution Diagrams and Icons guidelines colors
 L0_BLUE_COLOUR = "#316CCA"
@@ -29,10 +29,10 @@ with Diagram("", show=False, filename="slack_data_flow", graph_attr={"splines": 
 
     with Cluster("SAP Business Technology Platform - CodeJam account", graph_attr=GLOBALACCOUNT_GRAPH_ATTR):
         with Cluster("European subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
-            european_service = KymaRuntime("BP Dependants\nService", **NODE_LABEL)
+            european_service = SAPBTPKymaRuntime("BP Dependants\nService", **NODE_LABEL)
         
         with Cluster("Americas subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
-            americas_service = KymaRuntime("BP Dependants\nService", **NODE_LABEL)
+            americas_service = SAPBTPKymaRuntime("BP Dependants\nService", **NODE_LABEL)
             
     with Cluster("SAP Business Technology Platform - Participant account", graph_attr=GLOBALACCOUNT_GRAPH_ATTR):
         with Cluster("Your subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
