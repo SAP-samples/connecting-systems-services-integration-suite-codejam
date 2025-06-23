@@ -1,0 +1,21 @@
+meta {
+  name: Request Employee Dependants
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{host}}/http/request-employee-dependants
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access_token}}
+}
+
+body:json {
+  {
+      "employee_id": "1003764"
+  }
+}

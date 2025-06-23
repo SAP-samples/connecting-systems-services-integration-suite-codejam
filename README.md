@@ -75,7 +75,7 @@ See below for an overview of the exercises part of this CodeJam.
   * [Exercise 04 - Send messages and monitor our integration flow](./exercises/04-send-messages-and-monitor/README.md#exercise-04---sending-messages-and-monitoring-our-integration-flow)
     * [(Optional) Exercise 04.1 - Retrieve Business Partner dependant's information](./exercises/04.1-retrieve-bp-dependants/README.md#optional-exercise-041---retrieve-business-partner-dependants-information)
     * [(Optional) Exercise 04.2 - Add the America's instance of the Business Partner Dependants service](./exercises/04.2-add-americas-bp-dependants/README.md#optional-exercise-042---add-the-americas-instance-of-the-business-partner-dependants-service)
-  * [Exercise 05 - Log service call in Google BigQuery (Open Connectors)](./exercises/05-log-requests-in-bigquery/README.md#exercise-05---log-request-in-bigquery)
+  * [Exercise 05 - Log service call in Slack](./exercises/05-log-requests-in-slack/README.md#exercise-05---log-request-in-slack)
   * [Exercise 06 - Expose integration flow via API Management](./exercises/06-expose-integration-flow-api-management/README.md#exercise-06---expose-integration-flow-via-api-management)
   * [(Optional) Exercise 01 - Running locally services used in CodeJam](./exercises/optional-01-running-locally/README.md#optional-exercise-01---running-locally-services-used-in-codejam)
 

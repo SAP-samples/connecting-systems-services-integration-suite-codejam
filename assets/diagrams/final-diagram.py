@@ -1,13 +1,10 @@
 # tech-byte-diagram.py
-from diagrams import Cluster, Diagram, Edge, Node
+from diagrams import Cluster, Diagram, Edge
 from diagrams.onprem.compute import Server
-from diagrams.generic.compute import Rack
-from diagrams.generic.place import Datacenter
 from diagrams.custom import Custom
-from diagrams.sap.other import Placeholder_Circle
-from diagrams.sap.integration import ProcessIntegration_Circle, OpenConnectors_Circle, APIManagement_Circle
-from diagrams.sap.runtimes import KymaRuntime_Circle
-from diagrams.gcp.analytics import BigQuery
+from diagrams.sap.integration import CloudIntegration, OpenConnectors, APIManagement
+from diagrams.sap.runtimes import KymaRuntime
+from diagrams.saas.chat import Slack
 from diagrams.sap.erp import SAPS4HANACloud
 
 # SAP BTP Solution Diagrams and Icons guidelines colors
@@ -31,25 +28,24 @@ with Diagram("", show=False, filename="final_data_flow", graph_attr={"splines": 
     rest_client = Custom("REST Client", "../postman-logo.png")
     benefits_platform = Server("Benefits Platform", **NODE_LABEL)
     sap_server = SAPS4HANACloud(**{"height": "2.5", "width": "2.5"})
-    big_query = BigQuery("Logs")
+    slack = Slack("Logs")
 
     with Cluster("SAP Business Technology Platform - CodeJam account", graph_attr=GLOBALACCOUNT_GRAPH_ATTR):
-        with Cluster("Americas Subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
-            americas_service = KymaRuntime_Circle("BP Dependants\nService", **NODE_LABEL)
+        with Cluster("Americas subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
+            americas_service = KymaRuntime("BP Dependants\nService", **NODE_LABEL)
 
-        with Cluster("European Subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
-            european_service = KymaRuntime_Circle("BP Dependants\nService", **NODE_LABEL)
+        with Cluster("European subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
+            european_service = KymaRuntime("BP Dependants\nService", **NODE_LABEL)
             
     with Cluster("SAP Business Technology Platform - Participant account", graph_attr=GLOBALACCOUNT_GRAPH_ATTR):
-        with Cluster("Your Subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
+        with Cluster("Your subaccount", graph_attr=SUBACCOUNT_GRAPH_ATTR):
             with Cluster("SAP Integration Suite", graph_attr=PRIMARY_EMPHASIZE_AREA_GRAPH_ATTR):
-                cloud_integration = ProcessIntegration_Circle("Cloud Integration", **NODE_LABEL)
-                api_management = APIManagement_Circle("API Management", **NODE_LABEL)
-                open_connectors = OpenConnectors_Circle("Open Connectors", **NODE_LABEL)
+                cloud_integration = CloudIntegration("Cloud Integration", **NODE_LABEL)
+                api_management = APIManagement("API Management", **NODE_LABEL)
                 
                 cloud_integration >> Edge(label="Business Partners", **EDGE_LABEL) >> sap_server
 
-                open_connectors >> Edge(label="Log request", **EDGE_LABEL) >> big_query
+                cloud_integration >> Edge(label="Log request", **EDGE_LABEL) >> slack
 
                 cloud_integration >> americas_service
 
@@ -58,6 +54,4 @@ with Diagram("", show=False, filename="final_data_flow", graph_attr={"splines": 
 
                 benefits_platform >> Edge(label="Send request", orientation="135", **EDGE_LABEL) >> api_management
                 rest_client >> Edge(label="Send request", **EDGE_LABEL) >> api_management
-                api_management - cloud_integration - open_connectors
-
-                
+                api_management - cloud_integration

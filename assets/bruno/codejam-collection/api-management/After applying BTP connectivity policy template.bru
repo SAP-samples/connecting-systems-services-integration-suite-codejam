@@ -1,0 +1,17 @@
+meta {
+  name: After applying BTP connectivity policy template
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{proxy_url}}/http/request-employee-dependants-ex7
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "employee_id": "1003764"
+  }
+}

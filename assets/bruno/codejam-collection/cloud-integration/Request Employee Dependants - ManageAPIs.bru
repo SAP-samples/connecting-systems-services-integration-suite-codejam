@@ -1,0 +1,21 @@
+meta {
+  name: Request Employee Dependants - ManageAPIs
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{host}}/http/request-employee-dependants-manage-apis
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access_token}}
+}
+
+body:json {
+  {
+      "employee_id": "1003805"
+  }
+}

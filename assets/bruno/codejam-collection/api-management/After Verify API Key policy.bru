@@ -1,0 +1,21 @@
+meta {
+  name: After Verify API Key policy
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{proxy_url}}/http/request-employee-dependants-ex7
+  body: json
+  auth: none
+}
+
+headers {
+  APIKey: {{apiKey}}
+}
+
+body:json {
+  {
+      "employee_id": "1003764"
+  }
+}

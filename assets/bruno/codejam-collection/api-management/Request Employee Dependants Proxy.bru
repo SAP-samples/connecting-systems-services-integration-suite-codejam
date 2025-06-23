@@ -1,0 +1,21 @@
+meta {
+  name: Request Employee Dependants Proxy
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{proxy_url}}/http/request-employee-dependants-ex7
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access_token}}
+}
+
+body:json {
+  {
+      "employee_id": "1003767"
+  }
+}
