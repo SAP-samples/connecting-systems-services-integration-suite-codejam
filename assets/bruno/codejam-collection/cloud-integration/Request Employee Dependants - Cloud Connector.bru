@@ -1,0 +1,21 @@
+meta {
+  name: Request Employee Dependants - Cloud Connector
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{host}}/http/request-employee-dependants-cc
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access_token}}
+}
+
+body:json {
+  {
+      "employee_id": "1003766"
+  }
+}

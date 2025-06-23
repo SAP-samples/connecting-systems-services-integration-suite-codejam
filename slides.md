@@ -136,7 +136,7 @@ https://github.com/SAP-samples/connecting-systems-services-integration-suite-cod
 * [Exercise 04 - Send messages and monitor our integration flow](./exercises/04-send-messages-and-monitor/) (20')
   * [Exercise 04.1 - Retrieve Business Partner dependant's information](./exercises/04.1-retrieve-bp-dependants/) (45')
   * [Exercise 04.2 - Add the America's instance of the Business Partner Dependants service](./exercises/04.2-add-americas-bp-dependants/) (30')
-* [Exercise 05 - Log service call in Google BigQuery (Open Connectors)](./exercises/05-log-requests-in-bigquery/) (20')
+* [Exercise 05 - Log service call in Slack (Open Connectors)](./exercises/05-log-requests-in-slack/) (20')
 * [Exercise 06 - Expose integration flow via API Management](./exercises/06-expose-integration-flow-api-management/) (30')
 * [(Optional) Exercise 01 - Running locally services used in CodeJam](./optional-01-running-locally/README.md#optional-exercise-01---running-locally-services-used-in-codejam)
 
@@ -187,9 +187,9 @@ https://github.com/SAP-samples/connecting-systems-services-integration-suite-cod
 ---
 <!-- _class: centersingleimage -->
 
-# Exercise 05 - Log service call in Google BigQuery (20')
+# Exercise 05 - Log service call in Slack (20')
 
-![height:14cm](exercises/05-log-requests-in-bigquery/assets/diagrams/bigquery_data_flow.png)
+![height:14cm](exercises/05-log-requests-in-slack/assets/diagrams/slack_data_flow.png)
 
 ---
 <!-- _class: centersingleimage -->

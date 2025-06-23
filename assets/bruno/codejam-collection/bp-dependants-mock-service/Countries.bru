@@ -1,0 +1,15 @@
+meta {
+  name: Countries
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{host}}/countries
+  body: none
+  auth: none
+}
+
+headers {
+  apiKey: {{apiKey}}
+}
