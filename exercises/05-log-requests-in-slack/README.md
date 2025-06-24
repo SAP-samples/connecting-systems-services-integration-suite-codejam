@@ -121,9 +121,9 @@ That was simple, wasn't it?  We are now ready to deploy our integration flow.
 
 > If the deployment process fails with an error similar to this: [Failed to create route - HTTP address already registered](../../troubleshooting.md#failed-to-create-route---http-address-already-registered-for-another-iflow), add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex5`, so that the address `/request-employee-dependants-ex5`  doesn't clash with the one configured for our previous integration flow, and try deploying it again.
 
-Our integration flow is now ready. Let's send some messages to it using Postman.
+Our integration flow is now ready. Let's send some messages to it using Bruno.
 
-👉 Open the `Request Employee Dependants - Exercise 05` request under the cloud-integration folder in the Postman collection and test the following scenarios:
+👉 Open the `Request Employee Dependants - Exercise 05` request under the cloud-integration folder in the Bruno collection and test the following scenarios:
 
 - Send a request and check the Data Store (`Monitor > Integrations > Manage Stores > Data Stores`). You will see that there is a new entry in the Data Store.
 

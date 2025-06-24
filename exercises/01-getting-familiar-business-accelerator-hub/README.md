@@ -66,7 +66,7 @@ Although we focused, in this exercise, on exploring APIs.... you can also find o
 If you finish earlier than your fellow participants, you might like to ponder these questions. There isn't always a single correct answer and there are no prizes - they're just to give you something else to think about.
 
 1. Can you list some of the third-party services that there are integration packages available for SAP SuccessFactors?
-2. We were able to retrieve data from a sandbox environment via the web browser. What is required to retrieve data from the sandbox APIs available in SAP Business Accelerator via other utilities/applications, e.g. curl, Postman?
+2. We were able to retrieve data from a sandbox environment via the web browser. What is required to retrieve data from the sandbox APIs available in SAP Business Accelerator via other utilities/applications, e.g. curl, Bruno?
 3. Whilst navigating the APIs for different SAP products, you might have noticed the different states of an API, e.g. `ACTIVE`, `BETA`, `DECOMMISSIONED`, `DEPRECATED`. What is the deprecation policy of APIs published by SAP? 
 
 ## Next

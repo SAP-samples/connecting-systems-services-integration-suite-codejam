@@ -93,14 +93,8 @@ The Americas instance set up is very similar to the one we completed in the prev
 Once you've carried out all the steps above, your integration flow will look like the screenshots below.
 
 ![Main integration process](assets/main-integration-process.png)
-<p align = "center">
-<i>Main integration process</i>
-</p>
 
 ![European and Americas local integration processes](assets/european-americas-instance-local-integration-processes.png)
-<p align = "center">
-<i>European and Americas local integration processes</i>
-</p>
 
 ## Deploy
 
@@ -108,9 +102,10 @@ Once you've carried out all the steps above, your integration flow will look lik
 
 > If the deployment process fails with an error similar to this: [Failed to create route - HTTP address already registered](../../troubleshooting.md#failed-to-create-route---http-address-already-registered-for-another-iflow), add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex6`, so that the address `/request-employee-dependants-ex6`  doesn't clash with the one configured for our previous integration flow, and try deploying it again.
 
-Our integration flow is now ready. Let's send some messages to it using Postman. 
+Our integration flow is now ready. Let's send some messages to it using Bruno.
 
-👉 Open the `Request Employee Dependants - Exercise 04.2` request under the cloud-integration folder in the Postman collection and test the following scenarios:
+👉 Open the `Request Employee Dependants - Exercise 04.2` request under the cloud-integration folder in the Bruno collection and test the following scenarios:
+
 - Send a request for `employee_id` = 1003764. Where is this employee from and what's the response you get?
 - Now, `employee_id` = 1003765. Where is this employee from and what's the response you get?
 - What if we send a request for `employee_id` = 1003800. Where is this employee from and what's the response you get?

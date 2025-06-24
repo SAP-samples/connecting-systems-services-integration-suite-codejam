@@ -7,7 +7,7 @@ At the end of this exercise, you'll have successfully sent messages to the integ
 
 ## Set up the Cloud Integration instance environment
 
-As part of the prerequisites of this CodeJam, you should have imported the [Postman collection and environments](../../prerequisites.md#postman) included in the assets folder. We will use these to send messages to the integration flow we deployed.
+As part of the prerequisites of this CodeJam, you should have imported the [Bruno collection and environments](../../prerequisites.md#bruno) included in the assets folder. We will use these to send messages to the integration flow we deployed.
 
 👉 First, we will update the Current Value of the `host`, `client_id`, `client_secret`, and `token_url` variables included in the `Cloud Integration Instance` environment. Open the `Cloud Integration Instance` environment and update the variable's current value.
 
@@ -30,7 +30,7 @@ Hooray! 🎉 🥳 We are now ready to send messages to the integration flow.
 
 ## Sending a message to our integration flow
 
-👉 Firstly, select the `Cloud Integration Instance` environment in Postman. Next, expand the `cloud-integration` folder in collections and open the `POST Request Employee Dependants request`. Finally, click the `Send button`.
+👉 Firstly, select the `Cloud Integration Instance` environment in Bruno. Next, expand the `cloud-integration` folder in collections and open the `POST Request Employee Dependants request`. Finally, click the `Send button`.
 
 > [!TIP]
 > If everything goes as expected, you should see a response similar to the one in the screenshot below. If not, check out the [troubleshooting.md](../../troubleshooting.md) page, which includes a list of common problems and their potential solutions.
@@ -90,7 +90,7 @@ The following information is presented to us when selecting a message:
 - *Artifact details*: From here we can jump directly to the deployed integration content or to the modelling area to edit the integration flow.
 
 > [!TIP]
-> The cause and solution to the error in the screenshot below is included in the [troubleshooting](../../troubleshooting.md#an-internal-server-error-occurred-end-of-input-at-line-1-column-1-path) page. You can replicate this error by sending a message to the integration flow with no request body. An example is included in the Postman collection (`cloud-integration > POST Request Employee Dependants > 500 Error - No body in request`).
+> The cause and solution to the error in the screenshot below is included in the [troubleshooting](../../troubleshooting.md#an-internal-server-error-occurred-end-of-input-at-line-1-column-1-path) page. You can replicate this error by sending a message to the integration flow with no request body.
 
 ![Message monitoring - Failed message](assets/message-monitoring-failed-message.png)
 <p align = "center">
