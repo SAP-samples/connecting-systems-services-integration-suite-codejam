@@ -80,78 +80,21 @@ CPI_ACCESS_TOKEN=eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vYW50b25pby1tYXJhZGlhZ
 
 ## Services
 
+> [!IMPORTANT]
 > 🚨 It is recommended to use the SAP BTP Trial and create an account in the 🇸🇬 Singapore region.
 
-<!-- markdownlint-disable MD033 -->
-<details>
-<summary>Using the SAP BTP Trial account (⚡️ recommended ⚡️)</summary>
+### 1. Set up the SAP Integration Suite in your SAP BTP Trial account
 
-<br>
+The instructions below guide you on how to create an SAP Integration Suite instance using the SAP BTP Trial account:
 
 1. Get an SAP Business Technology Platform trial account: [Tutorial: Get an account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 2. Subscribe to the SAP Integration Suite service and activate capabilities by following the instructions included in [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6). This tutorial will guide you through the steps to subscribe to the SAP Integration Suite service and activate capabilities. We will need to provision the following capabilities: Cloud Integration and Manage APIs (API Management).
 
-</details>
+### 2. Copy SAP Cloud Integration runtime client credentials to local environment
 
-<details>
-<summary>Using the SAP BTP Free Tier</summary>
-
-<br>
-
-1. Get a free SAP Business Technology Platform account (if you don't already have one):
-     * [Tutorial: Get an Account on SAP BTP to Try Out Free Tier Service Plans](https://developers.sap.com/tutorials/btp-free-tier-account.html)
-     * [Video: SAP BTP Free Tier: Create Your Individual Account](https://www.youtube.com/watch?v=0zGuMus4R10)
-2. Subscribe to the SAP Integration Suite service and activate capabilities by following the instructions included in [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6).
-
-</details>
-<!-- markdownlint-enable MD033 -->
-
-### (Optional) Create SAP Cloud Integration runtime client credentials
-
-> 🚨 This is only required if you didn't complete the [Tutorial: Set up the SAP Integration Suite trial](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html#f55ec71c-2853-4b83-8092-4e3031f8d6e6). As part of the tutorial you run the `Enable Integration Suite` booster, which will end up creating some client credentials on your behalf.
-
-Once subscribed to the SAP Integration Suite, we will need to provision the create an instance of the Process Integration runtime. This service allow us to create client credentials which can be used to retrieve data from the SAP Cloud Integration APIs or calling an integration flow.
-
-From command line:
-
-```bash
-# Login to Cloud Foundry
-$ cf login --sso
-
-# Create instance of service
-$ cf create-service it-rt integration-flow pi-rt-iflow -c '{"roles": ["ESBMessaging.send"],"grant-types": ["client_credentials"],"redirect-uris": [] }'
-
-# Create service key
-$ cf create-service-key  pi-rt-iflow iflow-client
-
-# Get the credentials
-$ cf service-key pi-rt-iflow iflow-client
-```
-
-From the BTP Cockpit:
-
-1. Create instance of service
-   ![create-service-instance](assets/pi-rt-create-service-instance.png)
-
-   Ensure the `ESBMessaging.send` role is selected and the grant-type is `Client Credentials`
-
-   ![create-service-params](assets/pi-rt-create-service-instance-2.png)
-
-   Finalise by clicking the create button
-
-   ![create-service-finalise](assets/pi-rt-create-service-instance-3.png)
-
-2. Create service key
-   ![create-service-key](assets/pi-rt-create-service-key.png)
-
-3. Copy credentials: click on the service key just created and a pop-up will appear with the service key details, e.g. `clientid`, `clientsecret`, `url`, `tokenurl`.
-   ![view-service-key](assets/pi-rt-view-service-key.png)
-
-### Copy SAP Cloud Integration runtime client credentials to local environment
-
-Copy and paste the credentials details from the Process Integration runtime service key that's in your SAP BTP subaccount, for example, `iflow-client`, in the `.env` file we created in the [Bruno section](#bruno). You will need to replace the variables with the values included in the service key:
+In the tutorial above you used a Booster to set up SAP Integration Suite in your SAP BTP Trial account. The booster automatically create an instance of the Process Integration runtime. You will need to copy and paste the credentials details from the Process Integration runtime service key that's in your SAP BTP subaccount, for example, `default_it-rt_integration-flow`, in the `.env` file we created in the [Bruno section](#bruno). You will need to replace the variables with the values included in the service key:
   
-  | .env file variable | service key field |
+  | `.env` file variable | service key field |
   | ---- | ---- |
   | CPI_HOST | oauth.url |
   | CPI_SK_CLIENT_ID | oauth.clientid |
@@ -161,46 +104,23 @@ Copy and paste the credentials details from the Process Integration runtime serv
 > Once you've updated the environment variables you can test you connection by requesting an access token for Cloud Integration. A successful response will look like the screenshot below.
 > ![Success token request](./assets/token-success.png)
 
-### API Management
+### 3. API Management
 
 For API Management we will need to do two things:
 
-1. Set up the API Management capability if you are using an instance of the SAP Integration Suite that is not on the trial environment.
+1. Complete the set up the API Management capability
 2. Access the Developer Hub to complete set up.
 
-#### Set up API Management capability
+#### 3.1 Complete the set up API Management capability
 
-> 🚨 This is only required if you are running in a non-trial environment
-
-<!-- markdownlint-disable MD033 -->
-<details>
-<summary>Complete setup of SAP API Management</summary>
-<br/>
 Before being able to access API Management, you will need to complete the setup. Go to the API Management settings by navigating within the Integration Suite UI to *Settings > APIs*.
 
-<p align = "center">
-  <img alt="API Management settings" src="assets/api-management-settings.png" width="100%"/><br/>
-  <i>API Management settings</i>
-</p>
+![API Management settings](assets/api-management-settings.png)
 
-Enter a host alias, add a notification contact (your email address) and click the `Set Up` button on the upper right corner.
+> [!NOTE]
+> By just choosing the API item, you will complete the setup of the API Management capability. Make sure to log out and log back for the changes to take effect.
 
-<p align = "center">
-  <img alt="Set up API Management capability" src="assets/set-up-api-management.jpg" width="100%"/><br/>
-  <i>Set up API Management capability</i>
-</p>
-
-<p align = "center">
-  <img alt="Set up API Management - Complete" src="assets/set-up-api-management-complete.jpg" width="100%"/><br/>
-  <i>Set up API Management - Complete</i>
-</p>
-
-For detailed steps, follow the instructions included in [step 5 - Configure the API Management Service](https://developers.sap.com/tutorials/api-mgmt-isuite-initial-setup.html#93fee77e-606e-425c-a6c3-1b6946d2ec87) of the  _Set Up API Management from Integration Suite_ tutorial.
-
-</details>
-<!-- markdownlint-enable MD033 -->
-
-#### Access the Developer Hub
+#### 3.2 Access the Developer Hub
 
 You can access the developer hub from the SAP Integration Suite UI. Click on the `Explore our ecosystem` button on the top bar and then select the `Developer Hub` tile.
 
@@ -211,7 +131,7 @@ You can access the developer hub from the SAP Integration Suite UI. Click on the
 
 After the first time you access the Developer Hub, the set up will complete and you will need to logout from it and log back in to access the Developer Hub.
 
-### Slack
+### 4. Slack
 
 In [exercise 05](exercises/05-log-requests-in-slack/README.md#exercise-05---log-request-in-slack) we will configure a connection to Slack via HTTP. We will need to join a Slack workspace ([https://isuite-codejam.slack.com](https://isuite-codejam.slack.com)) to successfully complete the exercise and see the results of the messages we will be creating as part of the exercise.
 
