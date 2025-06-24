@@ -137,7 +137,7 @@ Now that we've defined our routing conditions, we can simply call the Business P
 
 We need to include an API key in the request we send to the EU instance of the Business Partner Dependants mock service. We can use the secure store in SAP Cloud Integration to securely store the API key.
 
-👉 First, copy the API Key that's included in the `BP-Dependants-EU` Postman environment. Then, go to `Monitor > Integrations > Security Material`, create a Secure Parameter and deploy it
+👉 First, copy the API Key that's included in the `BP-Dependants-EU` Bruno environment. Then, go to `Monitor > Integrations > Security Material`, create a Secure Parameter and deploy it
 
 ![Deploy API key as secure parameter](assets/deploy-secure-parameter.png)
 <p align = "center">
@@ -204,9 +204,10 @@ We are almost done, we just need to define the property that the script is readi
 
 > If the deployment process fails with an error similar to this: [Failed to create route - HTTP address already registered](../../troubleshooting.md#failed-to-create-route---http-address-already-registered-for-another-iflow), add a suffix to the address in the `HTTP Sender` adapter, e.g. `-ex5`, so that the address `/request-employee-dependants-ex5`  doesn't clash with the one configured for our previous integration flow, and try deploying it again.
 
-Our integration flow is now ready. Let's send some messages to it using Postman. 
+Our integration flow is now ready. Let's send some messages to it using Bruno.
 
-👉 Open the `Request Employee Dependants - Exercise 05` request under the cloud-integration folder in the Postman collection and test the following scenarios:
+👉 Open the `Request Employee Dependants - Exercise 05` request under the cloud-integration folder in the Bruno collection and test the following scenarios:
+
 - Send a request for `employee_id` = 1003764. Where is this employee from and what's the response you get?
 - Now, `employee_id` = 1003765. Where is this employee from and what's the response you get?
 - Finally, an employee that doesn't exist, e.g. `8765432ABC`.
