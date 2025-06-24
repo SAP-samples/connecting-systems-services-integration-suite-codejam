@@ -5,19 +5,44 @@ from diagrams.sap.integration_suite import CloudIntegration, OpenConnectors, API
 from diagrams.sap.foundational import SAPBTPKymaRuntime
 from diagrams.sap.brands import SAPS4HANACloud
 
-# SAP BTP Solution Diagrams and Icons guidelines colors
-L0_BLUE_COLOUR = "#316CCA"
-L1_BLUE_COLOUR = "#074D92"
+# SAP BTP Solution Diagrams and Icons guidelines colours
+
+# SAP Areas
+L0_BORDER_COLOUR = "#0070F2"
+L0_FILLED_COLOUR = "#EBF8FF"
+L1_BORDER_COLOUR = "#0070F2"
+L1_FILLED_COLOUR = "#FFFFFF"
 L2_GREEN_COLOUR = "#0F828F"
+SUCCESS_GREEN_COLOUR = "#188918"
+SUCCESS_FILLED_COLOUR = "#F5FAE5"
+
+TEAL_BORDER_COLOUR = "#07838F"
+TEAL_FILLED_COLOUR = "#DAFDF5"
+
+INDIGO_BORDER_COLOUR = "#5D36FF"
+INDIGO_FILLED_COLOUR = "#F1ECFF"
+
+PINK_BORDER_COLOUR = "#5D36FF"
+PINK_FILLED_COLOUR = "#FFF0FA"
+
+# Non-SAP Areas
+L0_NON_SAP_BORDER_COLOUR = "#475E75"
+L0_NON_SAP_FILLED_COLOUR = "#F5F6F7"
+L1_NON_SAP_BORDER_COLOUR = "#595959"
+L1_NON_SAP_FILLED_COLOUR = "#FFFFFF"
+
 FIX_GREY_COLOUR = "#7F7F7F"
 NON_SAP_AREA_COLOUR = "#595959"
 
-GLOBALACCOUNT_GRAPH_ATTR = {"bgcolor": "white",
-                            "pencolor": L0_BLUE_COLOUR, "penwidth":"3.0", "fontname": "72 Bold"}
-SUBACCOUNT_GRAPH_ATTR = {"bgcolor": "white",
-                         "pencolor": L1_BLUE_COLOUR, "penwidth":"2.5", "fontname": "72 Bold Italic"}
+PRODUCER_COLOUR = "#07838F"
+CONSUMER_COLOUR = "#5D36FF"
+
+GLOBALACCOUNT_GRAPH_ATTR = {"bgcolor": L0_FILLED_COLOUR,
+                            "pencolor": L0_BORDER_COLOUR, "penwidth":"3.0", "fontname": "72 Bold"}
+SUBACCOUNT_GRAPH_ATTR = {"bgcolor": L1_FILLED_COLOUR,
+                         "pencolor": L1_BORDER_COLOUR, "penwidth":"2.5", "fontname": "72 Bold"}
 PRIMARY_EMPHASIZE_AREA_GRAPH_ATTR = {
-    "bgcolor": "white", "pencolor": L2_GREEN_COLOUR, "penwidth":"2.0", "style": "dashed", "fontname": "72 Italic"}
+    "bgcolor": TEAL_FILLED_COLOUR, "pencolor": TEAL_BORDER_COLOUR, "penwidth":"2.0", "fontname": "72 Regular"}
 
 NODE_LABEL = {"fontname": "72 Regular"}
 EDGE_LABEL = {"color": FIX_GREY_COLOUR, "fontname": "72 Italic"}
