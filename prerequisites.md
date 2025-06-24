@@ -147,7 +147,9 @@ From the BTP Cockpit:
 3. Copy credentials: click on the service key just created and a pop-up will appear with the service key details, e.g. `clientid`, `clientsecret`, `url`, `tokenurl`.
    ![view-service-key](assets/pi-rt-view-service-key.png)
 
-4. Copy and paste the credentials details from the `iflow-client` service key in the `.env` file we created in the [Bruno section](#bruno). You will need to replace the variables with the values included in the service key:
+### Copy SAP Cloud Integration runtime client credentials to local environment
+
+Copy and paste the credentials details from the Process Integration runtime service key that's in your SAP BTP subaccount, for example, `iflow-client`, in the `.env` file we created in the [Bruno section](#bruno). You will need to replace the variables with the values included in the service key:
   
   | .env file variable | service key field |
   | ---- | ---- |
@@ -215,7 +217,7 @@ In [exercise 05](exercises/05-log-requests-in-slack/README.md#exercise-05---log-
 
 > 🔐 As part of the event preparation, your instructor will send you an invite to join the workspace.
 
-## Running the services outside of a CodeJam event
+## (Optional) Running the services outside of a CodeJam event
 
 Alternatively, the remote services can be run locally or deployed to Cloud Foundry.
 
