@@ -48,7 +48,7 @@ NODE_LABEL = {"fontname": "72 Regular"}
 EDGE_LABEL = {"color": FIX_GREY_COLOUR, "fontname": "72 Italic"}
 
 with Diagram("", show=False, filename="slack_data_flow", graph_attr={"splines": "true"}):
-    rest_client = Custom("REST Client", "../../../../assets/postman-logo.png")
+    rest_client = Custom("REST Client", "../../../../assets/bruno-logo.png")
     sap_server = SAPS4HANACloud(**{"height": "2.5", "width": "2.5"})
     slack = Slack("Logs")
 
