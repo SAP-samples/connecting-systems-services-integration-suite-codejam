@@ -54,11 +54,11 @@ Now that we've imported the collection, select the collection and it will displa
 
 ![Bruno - Collection details](./assets/bruno-collection-details.png)
 
-You'll notice that there are some environments included with the collection. These environments contains variables, which at runtime, Bruno will need to replace its values with the actual values of our systems. To manage the secrets securely we will use the DotEnv mechanism (`.env` - file) described in [this page](https://docs.usebruno.com/secrets-management/dotenv-file).
+You'll notice that there are some environments included with the collection. These environments contains variables, which at runtime, Bruno will need to replace its values with the actual values of our systems. To manage the secrets securely we will use the DotEnv mechanism (`.env` - file) described in [this page](https://docs.usebruno.com/secrets-management/dotenv-file). We have given a sample (the `.env.sample` file included in the `assets/bruno/codejam-collection` folder), and you will replace the top values (`AMERICAS_HOST`, `AMERICAS_API_KEY`, `EUROPE_HOST`, `EUROPE_API_KEY`, and `S4HC_MOCK_HOST` variables) with values from your instructor, and the bottom 5 with values from your system – more details in the [Services > Copy SAP Cloud Integration runtime client credentials to local environment](#2-copy-sap-cloud-integration-runtime-client-credentials-to-local-environment) section.
 
 👉 Make a copy of the `.env.sample` file included in the repository and name it just `.env`
 
-The values in the new `.env` file will be used by Bruno when communicating with the different systems. Your new .env file should look something like the example below:
+The values in the new `.env` file will be used by Bruno when communicating with the different systems. Your new `.env` file should look something like the example below.
 
 ```text
 AMERICAS_HOST=https://bpd-[name].cfapps.eu10.hana.ondemand.com
@@ -101,7 +101,8 @@ In the tutorial above you used a Booster to set up SAP Integration Suite in your
   | CPI_SK_CLIENT_SECRET | oauth.clientsecret |
   | CPI_SK_TOKEN_URL | oauth.tokenurl |
 
-> Once you've updated the environment variables you can test you connection by requesting an access token for Cloud Integration. A successful response will look like the screenshot below.
+> Once you've updated the environment variables you can test your connection by requesting an access token for Cloud Integration. A successful response will look like the screenshot below. Select the `POST Token` request under the `cloud-integration` folder in the Bruno collection and click on the *-> button* to send the request.
+>
 > ![Success token request](./assets/token-success.png)
 
 ### 3. API Management
