@@ -21,10 +21,7 @@ Once set up, we will need to authenticate against the SAP Cloud Integration auth
 > [!NOTE]
 > ℹ️ You'll notice some Javascript code if you click on the Scripts tab part of the `POST Token` request. The code facilitates copying the value of the `access_token` field in the response payload to the `access_token` variable in our environment. The token expires after 4200 seconds, as stated in the `expires_in` field, meaning that during the CodeJam, we will need to refresh it a couple of times. Keep this in mind in case you get an [HTTP 401 error](../../troubleshooting.md#http-401-unauthorized-error-when-sending-requests-to-the-integration-flow) when sending messages to the integration flow.
 
-![Get access token](assets/get-access-token.png)
-<p align = "center">
-<i>GET access token from authentication server</i>
-</p>
+![Get an access token](assets/get-access-token.png)
 
 Hooray! 🎉 🥳 We are now ready to send messages to the integration flow.
 
@@ -42,9 +39,6 @@ In the request body, we specified that we want the details available for employe
 The response contains Business Partner (employee) data, as expected, and address information in the `to_BusinessPartnerAddress` field. This is because we specified, in the [HTTP Receiver adapter](../03-build-first-integration-flow/README.md#requestreply), to *$expand* the `to_BusinessPartnerAddress` field as a query parameter.
 
 ![Send message to integration flow - Successful response](assets/send-request-integration-flow.png)
-<p align = "center">
-<i>Send message to integration flow - Successful response</i>
-</p>
 
 > [!WARNING]
 > The URL's hostname [^2] where our integration flow is deployed , e.g. https://my-instance.it-cpi018-rt.cfapps.eu10-003.hana.ondemand.com/http/my-endpoint is very similar to the URL's hostname through which we access the SAP Cloud Integration UI, e.g. https://my-instance.it-cpi018.cfapps.eu10-003.hana.ondemand.com/itspaces/. So make sure to use the correct hostname when invoking the integration flow; if not, an HTML page will be returned as a response when trying to send a message to the integration flow. A sample response is included under the request - *Wrong host - HTML page response*.  🙋‍♂️ Can you spot the difference in the URL hostnames❓❓❓
