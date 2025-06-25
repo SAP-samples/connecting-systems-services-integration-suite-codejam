@@ -50,7 +50,7 @@ NODE_LABEL = {"fontname": "72 Regular"}
 EDGE_LABEL = {"color": FIX_GREY_COLOUR, "fontname": "72 Italic"}
 
 with Diagram("", show=False, filename="final_data_flow", graph_attr={"splines": "true"}):
-    rest_client = Custom("REST Client", "../postman-logo.png")
+    rest_client = Custom("REST Client", "../bruno-logo.png")
     benefits_platform = Server("Benefits Platform", **NODE_LABEL)
     sap_server = SAPS4HANACloud(**{"height": "2.5", "width": "2.5"})
     slack = Slack("Logs")
