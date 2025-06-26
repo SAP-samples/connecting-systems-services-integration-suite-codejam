@@ -1,0 +1,15 @@
+meta {
+  name: All Business Partners with Addresses
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner?$expand=to_BusinessPartnerAddress
+  body: none
+  auth: none
+}
+
+params:query {
+  $expand: to_BusinessPartnerAddress
+}
