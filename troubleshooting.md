@@ -49,7 +49,7 @@ This page intends to capture common problems that you might face while going thr
 - ### HTTP 401 Unauthorized error when sending requests to the integration flow
 
     1. Ensure that you are including authorization details in your request. In our case, that would be a Bearer token in the Authorization HTTP header.
-    2. If the Authorization header is set, the Bearer token may have expired. Refresh the token by sending a request to the token URL (In Postman collection - `cloud-integration > POST Token`) and then retry sending the request to the integration flow.
+    2. If the Authorization header is set, the Bearer token may have expired. Refresh the token by sending a request to the token URL (In Bruno collection - `cloud-integration > POST Token`) and then retry sending the request to the integration flow.
 
 - ### HTTP 403 Forbidden error message when posting a message to SAP Cloud Integration
 
@@ -107,7 +107,7 @@ This page intends to capture common problems that you might face while going thr
 
   - Check SAP Note 2718466: [https://launchpad.support.sap.com/#/notes/0002718466](https://launchpad.support.sap.com/#/notes/0002718466)
 
-## Postman
+## Bruno
 
 - ### Could not send request - Error: getaddrinfo ENOTFOUND or Error: Invalid URI
 
