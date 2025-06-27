@@ -54,7 +54,11 @@ To expose the API in the Developer Portal (Developer Hub) we first need to add i
 
 After publishing the product, we can navigate to the Developer Hub and see the `Business Partners` product we just published and the `Request_Employee_Dependants_v1` API.
 
-👉 Navigate to the `Developer Hub`, click on the `Business Partners` tile. Now, select the `API` tab and you will see the API we deployed.
+👉 Navigate to the `Developer Hub`.
+
+![Access Developer Hub](assets/access-developer-hub.png)
+
+👉 Now, choose the `Business Partners` tile. Now, select the `API` tab and you will see the API we deployed.
 
 ![Developer Hub - Business Partners product](assets/developer-hub-business-partners-product.png)
 
@@ -78,15 +82,18 @@ Now that we've created the `Request_Employee_Dependants_v1` API, we can communic
 
 - *From Bruno*
   
-    👉 Update the `proxy_url` variable in the `API Management` Bruno environment with the API Proxy URL that's in the API and send a message to the integration flow by using the `api-management > Request Employee Dependants Proxy` request in Bruno.
+    👉 Update the `proxy_url` variable in the `API Management` Bruno environment with the API Proxy URL that's in the API.
 
     ![API Proxy URL](assets/api-proxy-url.png)
 
-    > 👀 In the image below, you'll notice that you need to specify a `Bearer Token` in the `Auth` tab of the request. This is because we are not managing the authentication process with Cloud Integration in API Management. We can alter this behaviour. More details in the [next section](#examples-of-policies-that-we-can-apply-to-the-request_employee_dependants_v1-api).
-    >
-    > ![Send message via API Management from Bruno](assets/send-message-via-api-management-from-bruno.png)
+     👉 Now, send a message to the integration flow by using the `api-management > Request Employee Dependants Proxy` request in Bruno. Open the request and choose the send button.
 
-At the moment we've set up an API (`Request_Employee_Dependants_v1`) in API Management that is a proxy for our integration flow. By doing this we can use API Management to add common API functionality to our API, e.g. secure the API, modify headers, transform message formats, or implement [rate limits](https://help.sap.com/docs/SAP_CLOUD_PLATFORM_API_MANAGEMENT/66d066d903c2473f81ec33acfe2ccdb4/bf441dc839034613b059cb508ad610f7.html?locale=en-US).
+    > [!NOTE]
+    > In the image below, you'll notice that you need to specify a `Bearer Token` in the `Auth` tab of the request. This is because we are not managing the authentication process with Cloud Integration in API Management. We can alter this behaviour. More details in the [next section](#examples-of-policies-that-we-can-apply-to-the-request_employee_dependants_v1-api).
+
+    ![Send message via API Management from Bruno](assets/send-message-via-api-management-from-bruno.png)
+
+At the moment we've set up an API (`Request_Employee_Dependants_v1`) in API Management that is a proxy for our integration flow. Meaning that the request from our REST Client (Bruno) is now sent to API Management, which will then forward the request with all its headers and payload to Cloud Integration. That said, by acting as a proxy, we can use API Management to add common API functionality to our API, for example, secure the API, modify headers, transform message formats, or implement [rate limits](https://help.sap.com/docs/SAP_CLOUD_PLATFORM_API_MANAGEMENT/66d066d903c2473f81ec33acfe2ccdb4/bf441dc839034613b059cb508ad610f7.html?locale=en-US).
 
 > 🧭 We've sent messages to our integration flow via API Management. Take some time to check the message in Cloud Integration and explore the monitoring capabilities available to us in API Management (`Analyze` section). You should see the successful and failed requests here. There is quite some information available to us here that can't be easily visualised in Cloud Integration and API Management gives us.
 >
