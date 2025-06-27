@@ -10,6 +10,8 @@ At the end of this exercise, you'll have successfully configured an integration 
 
 As part of the [prerequisites](../../prerequisites.md#slack) of this CodeJam, you should have created a Slack account, if you didn't have one, and you've joined the Slack workspace that we've created as part of this CodeJam.
 
+You will be using Slack to log the requests received by our integration flow. The messages will be posted in a channel in the Slack workspace that has been created for this CodeJam. You will be provided with two Slack URLs: one to join the Slack workspace (*Slack workspace invite URL*) and another to post messages in a channel (*Slack webhook URL*). The *Slack webhook URL* will be configure in the integration flow to post messages in the channel.
+
 To communicate with Slack, a Slack workspace was previously created, as well as an app (Employee Request). The app allows incoming communications via webhooks. If you are interested in learning how you can reproduce creating an app to allow this functionality in another Slack workspace, check out the links below:
 
 - Slack API:
@@ -32,7 +34,7 @@ To configure the integration flow, select the three dots next to the integration
 > [!WARNING]
 > When configuring the integration flow, we need to set two values:
 >
-> 1. In the **Receiver** tab, set the address with the address provided by the event instructor. This URL is where the integration flow will post the message.
+> 1. In the **Receiver** tab, set the address with the *Slack webhook URL* provided by the event instructor. This URL is where the integration flow will post the message.
 >
 >     ![Receiver tab config](assets/receiver-tab-config.png)
 >
