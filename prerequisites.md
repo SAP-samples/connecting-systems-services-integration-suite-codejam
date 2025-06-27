@@ -136,7 +136,10 @@ After the first time you access the Developer Hub, the set up will complete and 
 
 In [exercise 05](exercises/05-log-requests-in-slack/README.md#exercise-05---log-request-in-slack) we will configure a connection to Slack via HTTP. We will need to join a Slack workspace ([https://isuite-codejam.slack.com](https://isuite-codejam.slack.com)) to successfully complete the exercise and see the results of the messages we will be creating as part of the exercise.
 
-> 🔐 As part of the event preparation, your instructor will send you an invite to join the workspace.
+> [!NOTE]
+> You will be using Slack to log the requests received by our integration flow. The messages will be posted in a channel in the Slack workspace that has been created for this CodeJam. You will be provided with two Slack URLs: one to join the Slack workspace (Slack workspace invite URL) and another to post messages in a channel (Slack webhook URL). The Slack webhook URL will be used in the integration flow to post messages in the channel.
+>
+> 🔐 As part of the event preparation, your instructor will send you an invite to join the workspace (Slack workspace invite URL).
 
 ## (Optional) Running the services outside of a CodeJam event
 
