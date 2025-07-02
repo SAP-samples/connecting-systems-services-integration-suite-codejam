@@ -29,7 +29,7 @@
     }
   ],
   "paths": {
-    "/http/request-employee-dependants-ex7": {
+    "/http/request-employee-dependants-ex5": {
       "post": {
         "tags": [
           "cloud-integration"
