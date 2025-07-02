@@ -34,7 +34,7 @@ An OpenAPI specification for our integration flow is included in the assets of t
 👉 Open the specification file located under the assets folder in the root of the repository, e.g. `connecting-systems-services-integration-suite-codejam/assets/cloud-integration/integration-flow-openapi-spec-1.0.0.json` and update the following components.
 
 - `.servers.url`: Replace the value `https://your-tenant-free-tier-gfm1c35e.it-cpi018-rt.cfapps.eu10-654.hana.ondemand.com` with the value you configured for `host` variable in the Bruno environment that communicates with the integration flow.
-- *(Optional)* `.paths`: Depending on how you are deploying your integration flows, you might need to update the path as well, e.g. from `/http/request-employee-dependants-ex4` to `/http/request-employee-dependants` if you are not adding the suffix to the integration flows created.
+- *(Optional)* `.paths`: Depending on how you are deploying your integration flows, you might need to update the path as well, e.g. from `/http/request-employee-dependants-ex5` to `/http/request-employee-dependants` if you are not adding the suffix to the integration flows created.
 
 Once we've updated the specification file, we can use this to create an API in API Management. Once the API is created we will add it to the Developer Portal. First, let's go ahead and create the API.
 

@@ -10,7 +10,7 @@ At the end of this exercise, you'll have successfully configured an integration 
 
 As part of the [prerequisites](../../prerequisites.md#slack) of this CodeJam, you should have created a Slack account, if you didn't have one, and you've joined the Slack workspace that we've created as part of this CodeJam.
 
-You will be using Slack to log the requests received by our integration flow. The messages will be posted in a channel in the Slack workspace that has been created for this CodeJam. You will be provided with two Slack URLs: one to join the Slack workspace (*Slack workspace invite URL*) and another to post messages in a channel (*Slack webhook URL*). The *Slack webhook URL* will be configure in the integration flow to post messages in the channel.
+You will be using Slack to log the requests received by our integration flow. The messages will be posted in the `#notifications` channel in the Slack workspace (Integration Suite CodeJam) that has been created for this CodeJam. You will be provided with two Slack URLs: one to join the Slack workspace (*Slack workspace invite URL*) and another to post messages in a channel (*Slack webhook URL*). The *Slack webhook URL* will be configure in the integration flow to post messages in the `#notifications` channel of the workspace.
 
 To communicate with Slack, a Slack workspace was previously created, as well as an app (Employee Request). The app allows incoming communications via webhooks. If you are interested in learning how you can reproduce creating an app to allow this functionality in another Slack workspace, check out the links below:
 
@@ -41,6 +41,8 @@ To configure the integration flow, select the three dots next to the integration
 > 2. In the **More** tab, set your SAP Community Display Name in the `SAP_Community_Display_Name`field.
 >
 >     ![More tab config](assets/more-tab-config.png)
+
+👉 Now that you've configured the Slack integration flow, choose the `Deploy` button to deploy it in the tenant. Remember that you can check the deployment process in the `Integration Flow` > `Deployment Status` and in the `Monitor` > `Integrations and APIs` section.
 
 ### Send BP Dependants Request Log to Slack integration flow
 
@@ -87,7 +89,7 @@ Now that we have a basic understanding of why and how we can decouple request lo
 </details>
 <!-- markdownlint-enable no-inline-html -->
 
-### Design > Integrations
+## Design > Integrations
 
 👉 Let's start by making a copy of the integration flow we created in the previous exercises. Click the Actions button and select Copy and add the `- Exercise 05` suffix to the name and open it.
 
@@ -125,7 +127,7 @@ Given that the imported integration flow handles the communication with Slack, t
 
 That was simple, wasn't it?  We are now ready to deploy our integration flow.
 
-### Deploy
+## Deploy
 
 👉 Save and deploy the integration flow.
 
