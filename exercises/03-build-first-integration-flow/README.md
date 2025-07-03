@@ -311,9 +311,9 @@ Congratulations, you've built and deployed the first integration flow. You now h
 ## Further reading
 
 - [Integration Artifact Types](https://help.sap.com/docs/integration-suite/sap-integration-suite/integration-artifact-types) part of an integration package.
-- [Defining the JSON-to-XML converter](https://help.sap.com/docs/CLOUD_INTEGRATION/987273656c2f47d2aca4e0bfce26c594/2f75a807d7574f099170de52dd8f91e2.html?locale=en-US&version=Cloud)
-- [Request Reply external call](https://help.sap.com/docs/CLOUD_INTEGRATION/987273656c2f47d2aca4e0bfce26c594/dc39fdd4a44d4b9a9eabb56f49434250.html?locale=en-US&version=Cloud)
-- [Externalise parameters of an Integration flow](https://help.sap.com/docs/CLOUD_INTEGRATION/368c481cd6954bdfa5d0435479fd4eaf/45b2a0772db94bd9b0e57bc82d8d3797.html?locale=en-US)
+- [Defining the JSON-to-XML converter](https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-xml-to-json-converter)
+- [Request Reply external call](https://help.sap.com/docs/cloud-integration/sap-cloud-integration/define-request-reply)
+- [Externalise parameters of an Integration flow](https://help.sap.com/docs/cloud-integration/sap-cloud-integration/externalize-parameters-of-integration-flow)
 
 ---
 
