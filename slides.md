@@ -29,14 +29,14 @@ style: |
 
 <!-- paginate: false -->
 
-![bg](assets/art/CodeJam_Art_UAE.png)
+![bg](assets/art/CodeJam_Art.png)
 
 
 ---
 
 <!-- paginate: false -->
 
-![bg left:68% 100%](assets/art/CodeJam_Art_UAE.png)
+![bg left:68% 100%](assets/art/CodeJam_Art.png)
 
 
 **Welcome!**
@@ -44,18 +44,28 @@ style: |
 <br />
 
 *WiFi*:
-`TradeFinex-XDC-Guest`
+`TBD`
 
 *Password*:
-`ilikexdcnetwork`
-
+`SomePassw0rd`
 
 
 
 ---
 <!-- paginate: false -->
 
+![bg](assets/slides/codejam-about.png)
+
+
+---
+<!-- paginate: false -->
+
 ![bg](assets/slides/DeveloperAdvocates-export-what-we-do.jpg)
+
+---
+<!-- paginate: false -->
+
+![bg](assets/slides/global-team.png)
 
 ---
 <!-- paginate: false -->
@@ -67,6 +77,10 @@ style: |
 
 ![bg](assets/slides/DeveloperAdvocates-export-slide-2.jpg)
 
+---
+<!-- paginate: false -->
+
+![bg](assets/slides/what-we-do.png)
 
 ---
 
@@ -136,7 +150,7 @@ https://github.com/SAP-samples/connecting-systems-services-integration-suite-cod
 * [Exercise 04 - Send messages and monitor our integration flow](./exercises/04-send-messages-and-monitor/) (20')
   * [Exercise 04.1 - Retrieve Business Partner dependant's information](./exercises/04.1-retrieve-bp-dependants/) (45')
   * [Exercise 04.2 - Add the America's instance of the Business Partner Dependants service](./exercises/04.2-add-americas-bp-dependants/) (30')
-* [Exercise 05 - Log service call in Slack (Open Connectors)](./exercises/05-log-requests-in-slack/) (20')
+* [Exercise 05 - Log service call in Slack](./exercises/05-log-requests-in-slack/) (20')
 * [Exercise 06 - Expose integration flow via API Management](./exercises/06-expose-integration-flow-api-management/) (30')
 * [(Optional) Exercise 01 - Running locally services used in CodeJam](./optional-01-running-locally/README.md#optional-exercise-01---running-locally-services-used-in-codejam)
 
@@ -203,5 +217,4 @@ https://github.com/SAP-samples/connecting-systems-services-integration-suite-cod
 
 # Thanks for attending!!!
 
-![bg right:50% 80%](SessionFeedback.png)
-https://forms.office.com/e/McnEHPPJFk
+![bg right:60% 80%](assets/art/CodeJam_Art.png)
