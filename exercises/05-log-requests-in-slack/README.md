@@ -65,29 +65,13 @@ To achieve this, we can decouple (separate) request logging from the integration
 
 Now that we have a basic understanding of why and how we can decouple request logging, let's go ahead and modify our integration flow to handle this.
 
-<!-- markdownlint-disable no-inline-html -->
-<details>
-<summary>If you've completed the optional exercises 4.1 and 4.2</summary>
-<br>
+#### If you've completed the optional exercises 4.1 and 4.2
 
 ![Add Content Modifier and DataStore](assets/decouple-contentmodified-and-datastore.jpg)
-<p align = "center">
-<i>Add Content Modifier and DataStore</i>
-</p>
 
-</details>
-
-<details>
-<summary>If you've NOT completed the optional exercises</summary>
-<br>
+#### If you've NOT completed the optional exercises
 
 ![Add Content Modifier and DataStore](assets/decouple-contentmodified-and-datastore-without-optional.png)
-<p align = "center">
-<i>Add Content Modifier and DataStore</i>
-</p>
-
-</details>
-<!-- markdownlint-enable no-inline-html -->
 
 ## Design > Integrations
 
