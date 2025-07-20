@@ -114,12 +114,12 @@ For API Management we will need to do two things:
 
 #### 3.1 Complete the set up API Management capability
 
-Before being able to access API Management, you will need to complete the setup. Go to the API Management settings by navigating within the Integration Suite UI to *Settings > APIs*.
+Before being able to access API Management, you will need to complete the setup. Go to the API Management settings by navigating within the Integration Suite UI to *Settings > Runtimes* and choose the **Activate** button. This action will activate API Management in your SAP Integration Suite tenant.
 
 ![API Management settings](assets/api-management-settings.png)
 
 > [!NOTE]
-> By just choosing the API item, you will complete the setup of the API Management capability. Make sure to log out and log back for the changes to take effect.
+> By activating the API Management runtime, you will complete the setup of the API Management capability. Make sure to log out and log back for the changes to take effect.
 
 #### 3.2 Access the Developer Hub
 
